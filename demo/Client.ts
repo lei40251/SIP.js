@@ -4,7 +4,7 @@ import { SimpleUser, SimpleUserDelegate, SimpleUserOptions } from "../lib/platfo
 import {ClientDelegate} from "./ClientDelegate.js"
 import {HttpDelegate} from "./HttpDelegate.js"
 import {MakeCallT,FSAPIHeader,MakeCallInfo,VideoBugT,GetVideoT} from "./AllStruct.js"
-import {CallType,MediaType,APIHEADER,CallDirect,CallState,AnswerType,SpeakType,HearType,PushVideoType,ECode} from "./AllEnum.js"
+import {CallType,MediaType,APIHEADER,CallState,AnswerType,SpeakType,HearType,PushVideoType,ECode} from "./AllEnum.js"
 import {GetUUID,GetCallType,GetCallDirect,GetCallState} from "./util.js"
 import {httpUpload,cancleUploadFile,httpGet} from "./HttpMgr.js"
 import { Md5 } from "../src/core/messages/md5.js";
@@ -24,7 +24,7 @@ let recordwebport:string;
 let ServerWebSocketPATH:string;
 let ServerWebSocket:WebSocket| undefined;
 let webjcookie:undefined|string|null;
-let recordwebcookie:undefined|string|null;
+// let recordwebcookie:undefined|string|null;
 let ServerWebSocketLoginSuccess:boolean;
 const simpleUserDelegate: SimpleUserDelegate = {
   onCallCreated: (id:string): void => {
@@ -32,7 +32,7 @@ const simpleUserDelegate: SimpleUserDelegate = {
     if (clientcallback && clientcallback.onCallCreated) {
       clientcallback.onCallCreated(id,"");
     }
-   
+
   },
   onCallReceived: (id:string,sid:string): void => {
     console.log(`[${displayName}] Call received sid:`+sid);
@@ -264,7 +264,7 @@ function TreateMsg(message: string)
             useex=true;
           }
         }
-        
+
         if(useex)
         {
           webport=recvinfo["body"][0]["EXServerWebHttpsPort"];
@@ -353,7 +353,7 @@ export function connect(callback: ClientDelegate){
     clientcallback=callback;
     simpleUser.connect()
     .then(() => {
-      
+
       console.log("conn success");
       if (clientcallback && clientcallback.onServerConnectState) {
         clientcallback.onServerConnectState(true);
@@ -361,7 +361,7 @@ export function connect(callback: ClientDelegate){
       return true;
     })
     .catch((error: Error) => {
-      
+
       console.error(`[${simpleUser.id}] failed to connect`);
       console.error(error);
       window.open(httpsserverurl);
@@ -428,7 +428,7 @@ export function UnRegister()
   .catch((error: Error) => {
     console.error(`[${simpleUser.id}] failed to unregister`);
     console.error(error);
-    
+
   });
 }
 export function ConnWebSocket()
@@ -465,7 +465,7 @@ function onWebSocketClose(ev: CloseEvent): void {
   ServerWebSocket = undefined;
 }
 function onWebSocketError(ev: Event): void {
-  console.error("WebSocket error occurred.");
+  console.error("WebSocket error occurred.", ev);
 }
 
 function onWebSocketMessage(ev: MessageEvent): void {
@@ -496,7 +496,7 @@ function onWebSocketMessage(ev: MessageEvent): void {
     TreateMsg(finishedData);
 }
 function onWebSocketOpen(ev: Event): void {
-  console.log("WebSocket opened");
+  console.log("WebSocket opened",ev);
   ServerWebSocketLogin("");
 }
 function ServerWebSocketLogin(checkuuid:string)
@@ -730,7 +730,7 @@ export function TakePhoto(sid:string,pathname:string):boolean
   }
   return false;
 }
-export function MediaRecordStart(sid:string,pathname:string,timeslice?: number):boolean
+export function MediaRecordStart(sid:string,pathname:string):boolean
 {
   let sessioninfo=arrSessions.get(sid);
   if(sessioninfo )
@@ -754,7 +754,7 @@ export function MediaRecordStart(sid:string,pathname:string,timeslice?: number):
                 a.download = pathname;
                 a.click();
             }
-            } 
+            }
             //sessioninfo.mediaRecorder.start(timeslice);
             sessioninfo.mediaRecorder.start();
           }
@@ -772,7 +772,7 @@ export function MediaRecordStart(sid:string,pathname:string,timeslice?: number):
   }
   return false;
 }
-export function MediaRecordStop(sid:string,pathname:string):boolean
+export function MediaRecordStop(sid:string):boolean
 {
   let sessioninfo=arrSessions.get(sid);
   if(sessioninfo )
@@ -956,7 +956,7 @@ export function SetGetCallMemberVideo(cid:string,srcmember:string,sessionnum:str
   SendAPI(JSON.stringify(header));
 }
 /**
- * 
+ *
  * @param sid 呼叫ID
  * @param FileID 文件ID
  * @param playnum 播放次数
@@ -1029,11 +1029,11 @@ export function SetMemberSpeakType(sid:string,number:string,stype:SpeakType): vo
   }
   SendAPI(JSON.stringify(header));
 }
-export function SetMemberUnSpeak(sid:string,number:string): void 
+export function SetMemberUnSpeak(sid:string,number:string): void
 {
   SetMemberSpeakType(sid,number,SpeakType.SpeakTypeMute);
 }
-export function SetMemberSpeak(sid:string,number:string): void 
+export function SetMemberSpeak(sid:string,number:string): void
 {
   SetMemberSpeakType(sid,number,SpeakType.SpeakTypeUnmute);
 }
@@ -1051,11 +1051,11 @@ export function SetMemberHearType(sid:string,number:string,htype:HearType): void
   }
   SendAPI(JSON.stringify(header));
 }
-export function SetMemberUnHear(sid:string,number:string): void 
+export function SetMemberUnHear(sid:string,number:string): void
 {
   SetMemberHearType(sid,number,HearType.HearTypeMute);
 }
-export function SetMemberHear(sid:string,number:string): void 
+export function SetMemberHear(sid:string,number:string): void
 {
   SetMemberHearType(sid,number,HearType.HearTypeUnmute);
 }
@@ -1073,11 +1073,11 @@ export function SetMemberPushType(sid:string,number:string,ptype:PushVideoType):
   }
   SendAPI(JSON.stringify(header));
 }
-export function SetMemberPush(sid:string,number:string): void 
+export function SetMemberPush(sid:string,number:string): void
 {
   SetMemberPushType(sid,number,PushVideoType.PushVideoTypePush);
 }
-export function SetMemberUnPush(sid:string,number:string): void 
+export function SetMemberUnPush(sid:string,number:string): void
 {
   SetMemberPushType(sid,number,PushVideoType.PushVideoTypeUnpush);
 }
@@ -1145,11 +1145,11 @@ export function ApplySpeakByType(groupnum:string,optype:number,remoteaudio:HTMLA
   arrMakeCalls.set(header.msgid,confkinfo);
   SendAPI(JSON.stringify(header));
 }
-export function ApplySpeak(groupnum:string,remoteaudio:HTMLAudioElement): void 
+export function ApplySpeak(groupnum:string,remoteaudio:HTMLAudioElement): void
 {
   ApplySpeakByType(groupnum,55,remoteaudio);
 }
-export function ReleaseSpeak(groupnum:string,remoteaudio:HTMLAudioElement): void 
+export function ReleaseSpeak(groupnum:string,remoteaudio:HTMLAudioElement): void
 {
   ApplySpeakByType(groupnum,56,remoteaudio);
 }

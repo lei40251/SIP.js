@@ -1,4 +1,4 @@
-import {CallType,MediaType,APIHEADER,CallDirect,CallState} from "./AllEnum.js"
+import {CallType,CallDirect,CallState} from "./AllEnum.js"
 export  function  GetUUID()
 {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
@@ -68,7 +68,7 @@ export  function  GetCallDirect(type:string):CallDirect
     }
 }
 export  function  GetCallState(type:string):CallState
-{  
+{
     switch(type)
     {
         case "1":

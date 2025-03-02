@@ -7,8 +7,18 @@ var pkg = require('../package.json')
 var year = new Date().getFullYear()
 module.exports = {
   entry: {
-    Client: './demo/Client.ts',
-    AllEnum: './demo/AllEnum.ts'
+    Client: {
+      import: './demo/Client.ts',
+      library: { type: 'assign', name: '[name]' }
+    },
+    AllEnum: {
+      import: './demo/AllEnum.ts',
+      library: { type: 'assign', name: '[name]' }
+    },
+    demoUtils: {
+      import: './demo/demo-utils.ts',
+      filename: 'demo-utils.js', // 单独指定输出文件名
+    }
   },
   // devtool: 'inline-source-map',
   mode: 'none',
@@ -30,9 +40,9 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    globalObject: 'this',
-    library: '[name]',
-    path: path.resolve(__dirname, 'dist')
+    globalObject: 'window',
+    libraryTarget: 'window',
+    path: path.resolve(__dirname, 'dist'),
   },
   optimization: {
     minimizer: [

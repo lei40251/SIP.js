@@ -61,3 +61,11 @@ export function getVideo(id: string): HTMLVideoElement {
   }
   return el;
 }
+
+export function getTextArea(id: string): HTMLTextAreaElement {
+  const el = document.getElementById(id);
+  if (!(el instanceof HTMLTextAreaElement)) {
+    throw new Error(`Element "${id}" not found or not a video element.`);
+  }
+  return el;
+}

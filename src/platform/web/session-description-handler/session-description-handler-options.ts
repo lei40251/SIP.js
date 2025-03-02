@@ -37,6 +37,7 @@ export interface SessionDescriptionHandlerOptions extends SessionDescriptionHand
    * If true, offer and answer directions will be set to place peer on hold.
    */
   hold?: boolean;
+  videoRecvonly?:boolean;
 
   /**
    * The maximum duration to wait in ms for ICE gathering to complete.
@@ -53,4 +54,5 @@ export interface SessionDescriptionHandlerOptions extends SessionDescriptionHand
    * Called upon creating a data channel.
    */
   onDataChannel?: (dataChannel: RTCDataChannel) => void;
+  isshowscreen?: boolean;
 }

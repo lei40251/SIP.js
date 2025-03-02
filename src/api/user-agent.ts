@@ -243,6 +243,12 @@ export class UserAgent {
    * Create a URI instance from a string.
    * @param uri - The string to parse.
    *
+   * @remarks
+   * Returns undefined if the syntax of the URI is invalid.
+   * The syntax must conform to a SIP URI as defined in the RFC.
+   * 25 Augmented BNF for the SIP Protocol
+   * https://tools.ietf.org/html/rfc3261#section-25
+   *
    * @example
    * ```ts
    * const uri = UserAgent.makeURI("sip:edgar@example.com");
@@ -800,16 +806,17 @@ export class UserAgent {
 
         // Delegate invitation handling.
         if (this.delegate?.onInvite) {
+          let sid=incomingInviteRequest.message.getHeader("ids");
           if (invitation.autoSendAnInitialProvisionalResponse) {
             invitation.progress().then(() => {
               if (this.delegate?.onInvite === undefined) {
                 throw new Error("onInvite undefined.");
               }
-              this.delegate.onInvite(invitation);
+              this.delegate.onInvite(invitation,sid);
             });
             return;
           }
-          this.delegate.onInvite(invitation);
+          this.delegate.onInvite(invitation,sid);
           return;
         }
 

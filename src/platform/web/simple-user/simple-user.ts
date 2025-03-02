@@ -14,7 +14,7 @@ import { RegistererState } from "../../../api/registerer-state.js";
 import { RegistererUnregisterOptions } from "../../../api/registerer-unregister-options.js";
 import { RequestPendingError } from "../../../api/exceptions/request-pending.js";
 import { Session } from "../../../api/session.js";
-import { SessionInviteOptions } from "../../../api/session-invite-options.js";
+import { SessionInviteOptions,SessionStateInfo } from "../../../api/session-invite-options.js";
 import { SessionState } from "../../../api/session-state.js";
 import { UserAgent } from "../../../api/user-agent.js";
 import { UserAgentOptions } from "../../../api/user-agent-options.js";
@@ -24,7 +24,7 @@ import { SessionDescriptionHandler } from "../session-description-handler/sessio
 import { SessionDescriptionHandlerOptions } from "../session-description-handler/session-description-handler-options.js";
 import { Transport } from "../transport/transport.js";
 import { SimpleUserDelegate } from "./simple-user-delegate.js";
-import { SimpleUserOptions } from "./simple-user-options.js";
+import { SimpleUserMediaLocal, SimpleUserOptions ,SimpleUserMediaRemote} from "./simple-user-options.js";
 
 /**
  * A simple SIP user class.
@@ -43,11 +43,10 @@ export class SimpleUser {
   private connectRequested = false;
   private logger: Logger;
   private held = false;
-  private muted = false;
   private options: SimpleUserOptions;
   private registerer: Registerer | undefined = undefined;
   private registerRequested = false;
-  private session: Session | undefined = undefined;
+  public arrCalls:Map<string,Session>= new Map();
   private userAgent: UserAgent;
 
   /**
@@ -116,9 +115,9 @@ export class SimpleUser {
         if (this.delegate && this.delegate.onServerDisconnect) {
           this.delegate.onServerDisconnect(error);
         }
-        if (this.session) {
-          this.logger.log(`[${this.id}] Hanging up...`);
-          this.hangup() // cleanup hung calls
+        for(let key of this.arrCalls.keys()) {
+          this.logger.log(`[${key}] Hanging up...`);
+          this.hangup(key) // cleanup hung calls
             .catch((e: Error) => {
               this.logger.error(`[${this.id}] Error occurred hanging up call after connection with server was lost.`);
               this.logger.error(e.toString());
@@ -139,37 +138,21 @@ export class SimpleUser {
         }
       },
       // Handle incoming invitations
-      onInvite: (invitation: Invitation): void => {
+      onInvite: (invitation: Invitation,sid:string): void => {
         this.logger.log(`[${this.id}] Received INVITE`);
-
-        // Guard against a pre-existing session. This implementation only supports one session at a time.
-        // However an incoming INVITE request may be received at any time and/or while in the process
-        // of sending an outgoing INVITE request. So we reject any incoming INVITE in those cases.
-        if (this.session) {
-          this.logger.warn(`[${this.id}] Session already in progress, rejecting INVITE...`);
-          invitation
-            .reject()
-            .then(() => {
-              this.logger.log(`[${this.id}] Rejected INVITE`);
-            })
-            .catch((error: Error) => {
-              this.logger.error(`[${this.id}] Failed to reject INVITE`);
-              this.logger.error(error.toString());
-            });
-          return;
-        }
-
         // Use our configured constraints as options for any Inviter created as result of a REFER
         const referralInviterOptions: InviterOptions = {
           sessionDescriptionHandlerOptions: { constraints: this.constraints }
         };
-
+        if(sid && sid!="")
+        {
+          invitation.sid=sid;
+        }
         // Initialize our session
         this.initSession(invitation, referralInviterOptions);
-
         // Delegate
         if (this.delegate && this.delegate.onCallReceived) {
-          this.delegate.onCallReceived();
+          this.delegate.onCallReceived(invitation.id,invitation.sid);
         } else {
           this.logger.warn(`[${this.id}] No handler available, rejecting INVITE...`);
           invitation
@@ -187,7 +170,15 @@ export class SimpleUser {
       onMessage: (message: Message): void => {
         message.accept().then(() => {
           if (this.delegate && this.delegate.onMessageReceived) {
-            this.delegate.onMessageReceived(message.request.body);
+            let contenttype=message.request.getHeader("Content-Type");
+            if(contenttype)
+            {
+              this.delegate.onMessageReceived(contenttype,message.request.body);
+            }
+            else
+            {
+              this.delegate.onMessageReceived("",message.request.body);
+            }
           }
         });
       }
@@ -212,8 +203,8 @@ export class SimpleUser {
   }
 
   /** The local media stream. Undefined if call not answered. */
-  get localMediaStream(): MediaStream | undefined {
-    const sdh = this.session?.sessionDescriptionHandler;
+  public getlocalMediaStream(session:Session): MediaStream | undefined {
+    const sdh = session?.sessionDescriptionHandler;
     if (!sdh) {
       return undefined;
     }
@@ -224,8 +215,8 @@ export class SimpleUser {
   }
 
   /** The remote media stream. Undefined if call not answered. */
-  get remoteMediaStream(): MediaStream | undefined {
-    const sdh = this.session?.sessionDescriptionHandler;
+  public getremoteMediaStream(session:Session): MediaStream | undefined {
+    const sdh = session?.sessionDescriptionHandler;
     if (!sdh) {
       return undefined;
     }
@@ -234,37 +225,54 @@ export class SimpleUser {
     }
     return sdh.remoteMediaStream;
   }
-
+  public getremoteMediaStreambycallid(callid:string|undefined): MediaStream | undefined {
+    if(callid!=undefined)
+    {
+      const session =this.arrCalls.get(callid);
+      if(session)
+      {
+        const sdh = session?.sessionDescriptionHandler;
+        if (!sdh) {
+          return undefined;
+        }
+        if (!(sdh instanceof SessionDescriptionHandler)) {
+          throw new Error("Session description handler not instance of web SessionDescriptionHandler");
+        }
+        return sdh.remoteMediaStream;
+      }
+    }
+    return undefined;
+  }
   /**
    * The local audio track, if available.
    * @deprecated Use localMediaStream and get track from the stream.
    */
-  get localAudioTrack(): MediaStreamTrack | undefined {
-    return this.localMediaStream?.getTracks().find((track) => track.kind === "audio");
+  public getlocalAudioTrack(session:Session): MediaStreamTrack | undefined {
+    return this.getlocalMediaStream(session)?.getTracks().find((track) => track.kind === "audio");
   }
 
   /**
    * The local video track, if available.
    * @deprecated Use localMediaStream and get track from the stream.
    */
-  get localVideoTrack(): MediaStreamTrack | undefined {
-    return this.localMediaStream?.getTracks().find((track) => track.kind === "video");
+  public getlocalVideoTrack(session:Session): MediaStreamTrack | undefined {
+    return this.getlocalMediaStream(session)?.getTracks().find((track) => track.kind === "video");
   }
 
   /**
    * The remote audio track, if available.
    * @deprecated Use remoteMediaStream and get track from the stream.
    */
-  get remoteAudioTrack(): MediaStreamTrack | undefined {
-    return this.remoteMediaStream?.getTracks().find((track) => track.kind === "audio");
+  public getremoteAudioTrack(session:Session): MediaStreamTrack | undefined {
+    return this.getremoteMediaStream(session)?.getTracks().find((track) => track.kind === "audio");
   }
 
   /**
    * The remote video track, if available.
    * @deprecated Use remoteMediaStream and get track from the stream.
    */
-  get remoteVideoTrack(): MediaStreamTrack | undefined {
-    return this.remoteMediaStream?.getTracks().find((track) => track.kind === "video");
+  public getremoteVideoTrack(session:Session): MediaStreamTrack | undefined {
+    return this.getremoteMediaStream(session)?.getTracks().find((track) => track.kind === "video");
   }
 
   /**
@@ -378,10 +386,6 @@ export class SimpleUser {
   ): Promise<void> {
     this.logger.log(`[${this.id}] Beginning Session...`);
 
-    if (this.session) {
-      return Promise.reject(new Error("Session already exists."));
-    }
-
     const target = UserAgent.makeURI(destination);
     if (!target) {
       return Promise.reject(new Error(`Failed to create a valid URI from "${destination}"`));
@@ -414,9 +418,9 @@ export class SimpleUser {
    * Resolves when the request/response is sent, otherwise rejects.
    * Use `onCallTerminated` delegate method to determine if and when call is ended.
    */
-  public hangup(): Promise<void> {
+  public hangup(callid:string): Promise<void> {
     this.logger.log(`[${this.id}] Hangup...`);
-    return this.terminate();
+    return this.terminate(callid);
   }
 
   /**
@@ -427,29 +431,33 @@ export class SimpleUser {
    * Use `onCallAnswered` delegate method to determine if and when call is established.
    * @param invitationAcceptOptions - Optional options for Inviter.accept().
    */
-  public answer(invitationAcceptOptions?: InvitationAcceptOptions): Promise<void> {
+  public answer(callid:string,invitationAcceptOptions?: InvitationAcceptOptions): Promise<void> {
     this.logger.log(`[${this.id}] Accepting Invitation...`);
-
-    if (!this.session) {
-      return Promise.reject(new Error("Session does not exist."));
+    const session =this.arrCalls.get(callid);
+    if(session)
+    {
+      if (!(session instanceof Invitation)) {
+        return Promise.reject(new Error("Session not instance of Invitation."));
+      }
+  
+      // Use our configured constraints as InvitationAcceptOptions if none provided
+      if (!invitationAcceptOptions) {
+        invitationAcceptOptions = {};
+      }
+      if (!invitationAcceptOptions.sessionDescriptionHandlerOptions) {
+        invitationAcceptOptions.sessionDescriptionHandlerOptions = {};
+      }
+      if (!invitationAcceptOptions.sessionDescriptionHandlerOptions.constraints) {
+        invitationAcceptOptions.sessionDescriptionHandlerOptions.constraints = this.constraints;
+      }
+  
+      return session.accept(invitationAcceptOptions);
     }
-
-    if (!(this.session instanceof Invitation)) {
-      return Promise.reject(new Error("Session not instance of Invitation."));
+    else
+    {
+      this.logger.error(`[${this.id}] can not find call by callid:`+callid);
     }
-
-    // Use our configured constraints as InvitationAcceptOptions if none provided
-    if (!invitationAcceptOptions) {
-      invitationAcceptOptions = {};
-    }
-    if (!invitationAcceptOptions.sessionDescriptionHandlerOptions) {
-      invitationAcceptOptions.sessionDescriptionHandlerOptions = {};
-    }
-    if (!invitationAcceptOptions.sessionDescriptionHandlerOptions.constraints) {
-      invitationAcceptOptions.sessionDescriptionHandlerOptions.constraints = this.constraints;
-    }
-
-    return this.session.accept(invitationAcceptOptions);
+    return Promise.resolve();
   }
 
   /**
@@ -459,18 +467,21 @@ export class SimpleUser {
    * Resolves with the response is sent, otherwise rejects.
    * Use `onCallTerminated` delegate method to determine if and when call is ended.
    */
-  public decline(): Promise<void> {
+  public decline(callid:string): Promise<void> {
     this.logger.log(`[${this.id}] rejecting Invitation...`);
-
-    if (!this.session) {
-      return Promise.reject(new Error("Session does not exist."));
+    const session =this.arrCalls.get(callid);
+    if(session)
+    {
+      if (!(session instanceof Invitation)) {
+        return Promise.reject(new Error("Session not instance of Invitation."));
+      }
+      return session.reject();
     }
-
-    if (!(this.session instanceof Invitation)) {
-      return Promise.reject(new Error("Session not instance of Invitation."));
+    else
+    {
+      this.logger.error(`[${this.id}] can not find call by callid:`+callid);
     }
-
-    return this.session.reject();
+    return Promise.resolve();
   }
 
   /**
@@ -481,9 +492,9 @@ export class SimpleUser {
    * Use `onCallHold` delegate method to determine if request is accepted or rejected.
    * See: https://tools.ietf.org/html/rfc6337
    */
-  public hold(): Promise<void> {
+  public hold(callid:string): Promise<void> {
     this.logger.log(`[${this.id}] holding session...`);
-    return this.setHold(true);
+    return this.setHold(true,callid);
   }
 
   /**
@@ -494,9 +505,9 @@ export class SimpleUser {
    * Use `onCallHold` delegate method to determine if request is accepted or rejected.
    * See: https://tools.ietf.org/html/rfc6337
    */
-  public unhold(): Promise<void> {
+  public unhold(callid:string): Promise<void> {
     this.logger.log(`[${this.id}] unholding session...`);
-    return this.setHold(false);
+    return this.setHold(false,callid);
   }
 
   /**
@@ -513,9 +524,9 @@ export class SimpleUser {
    * @remarks
    * Disable sender's media tracks.
    */
-  public mute(): void {
+  public mute(callid:string): void {
     this.logger.log(`[${this.id}] disabling media tracks...`);
-    this.setMute(true);
+    this.setMute(true,callid);
   }
 
   /**
@@ -523,9 +534,9 @@ export class SimpleUser {
    * @remarks
    * Enable sender's media tracks.
    */
-  public unmute(): void {
+  public unmute(callid:string): void {
     this.logger.log(`[${this.id}] enabling media tracks...`);
-    this.setMute(false);
+    this.setMute(false,callid);
   }
 
   /**
@@ -533,8 +544,13 @@ export class SimpleUser {
    * @remarks
    * True if sender's media track is disabled.
    */
-  public isMuted(): boolean {
-    return this.muted;
+  public isMuted(callid:string): boolean {
+    const session =this.arrCalls.get(callid);
+    if(session)
+    {
+      return session.muted;
+    }
+    return false;
   }
 
   /**
@@ -543,7 +559,7 @@ export class SimpleUser {
    * Send an INFO request with content type application/dtmf-relay.
    * @param tone - Tone to send.
    */
-  public sendDTMF(tone: string): Promise<void> {
+  public sendDTMF(tone: string,callid:string): Promise<void> {
     this.logger.log(`[${this.id}] sending DTMF...`);
 
     // As RFC 6086 states, sending DTMF via INFO is not standardized...
@@ -561,31 +577,36 @@ export class SimpleUser {
       return Promise.reject(new Error("Invalid DTMF tone."));
     }
 
-    if (!this.session) {
-      return Promise.reject(new Error("Session does not exist."));
+    const session =this.arrCalls.get(callid);
+    if(session)
+    {
+      // The UA MUST populate the "application/dtmf-relay" body, as defined
+      // earlier, with the button pressed and the duration it was pressed
+      // for.  Technically, this actually requires the INFO to be generated
+      // when the user *releases* the button, however if the user has still
+      // not released a button after 5 seconds, which is the maximum duration
+      // supported by this mechanism, the UA should generate the INFO at that
+      // time.
+      // https://tools.ietf.org/html/draft-kaplan-dispatch-info-dtmf-package-00#section-5.3
+      this.logger.log(`[${this.id}] Sending DTMF tone: ${tone}`);
+      const dtmf = tone;
+      const duration = 2000;
+      const body = {
+        contentDisposition: "render",
+        contentType: "application/dtmf-relay",
+        content: "Signal=" + dtmf + "\r\nDuration=" + duration
+      };
+      const requestOptions = { body };
+
+      return session.info({ requestOptions }).then(() => {
+        return;
+      });
     }
-
-    // The UA MUST populate the "application/dtmf-relay" body, as defined
-    // earlier, with the button pressed and the duration it was pressed
-    // for.  Technically, this actually requires the INFO to be generated
-    // when the user *releases* the button, however if the user has still
-    // not released a button after 5 seconds, which is the maximum duration
-    // supported by this mechanism, the UA should generate the INFO at that
-    // time.
-    // https://tools.ietf.org/html/draft-kaplan-dispatch-info-dtmf-package-00#section-5.3
-    this.logger.log(`[${this.id}] Sending DTMF tone: ${tone}`);
-    const dtmf = tone;
-    const duration = 2000;
-    const body = {
-      contentDisposition: "render",
-      contentType: "application/dtmf-relay",
-      content: "Signal=" + dtmf + "\r\nDuration=" + duration
-    };
-    const requestOptions = { body };
-
-    return this.session.info({ requestOptions }).then(() => {
-      return;
-    });
+    else
+    {
+      this.logger.error(`[${this.id}] can not find call by callid:`+callid);
+    }
+    return Promise.resolve();
   }
 
   /**
@@ -603,7 +624,15 @@ export class SimpleUser {
     }
     return new Messager(this.userAgent, target, message).message();
   }
+  public messageType(destination: string, message: string,contentType:string): Promise<void> {
+    this.logger.log(`[${this.id}] sending message...`);
 
+    const target = UserAgent.makeURI(destination);
+    if (!target) {
+      return Promise.reject(new Error(`Failed to create a valid URI from "${destination}"`));
+    }
+    return new Messager(this.userAgent, target, message,contentType).message();
+  }
   /** Media constraints. */
   private get constraints(): { audio: boolean; video: boolean } {
     let constraints = { audio: true, video: false }; // default to audio only calls
@@ -676,71 +705,74 @@ export class SimpleUser {
   }
 
   /** Helper function to remove media from html elements. */
-  private cleanupMedia(): void {
-    if (this.options.media) {
-      if (this.options.media.local) {
-        if (this.options.media.local.video) {
-          this.options.media.local.video.srcObject = null;
-          this.options.media.local.video.pause();
+  private cleanupMedia(local?: SimpleUserMediaLocal,remote?: SimpleUserMediaRemote): void {
+      if (local) {
+        if (local.video) {
+          local.video.srcObject = null;
+          local.video.pause();
         }
       }
-      if (this.options.media.remote) {
-        if (this.options.media.remote.audio) {
-          this.options.media.remote.audio.srcObject = null;
-          this.options.media.remote.audio.pause();
+      if (remote) {
+        if (remote.audio) {
+          remote.audio.srcObject = null;
+          remote.audio.pause();
         }
-        if (this.options.media.remote.video) {
-          this.options.media.remote.video.srcObject = null;
-          this.options.media.remote.video.pause();
+        if (remote.video) {
+          remote.video.srcObject = null;
+          remote.video.pause();
         }
       }
+    
+  }
+
+  /** Helper function to enable/disable media tracks. */
+  private enableReceiverTracks(enable: boolean,callid:string): void {
+    const session =this.arrCalls.get(callid) ;
+    if(session)
+    {
+      const sessionDescriptionHandler = session.sessionDescriptionHandler;
+      if (!(sessionDescriptionHandler instanceof SessionDescriptionHandler)) {
+        throw new Error("Session's session description handler not instance of SessionDescriptionHandler.");
+      }
+
+      const peerConnection = sessionDescriptionHandler.peerConnection;
+      if (!peerConnection) {
+        throw new Error("Peer connection closed.");
+      }
+
+      peerConnection.getReceivers().forEach((receiver) => {
+        if (receiver.track) {
+          receiver.track.enabled = enable;
+        }
+      });
+    }
+    else
+    {
+      this.logger.error(`[${this.id}] can not find call by callid:`+callid);
     }
   }
 
   /** Helper function to enable/disable media tracks. */
-  private enableReceiverTracks(enable: boolean): void {
-    if (!this.session) {
-      throw new Error("Session does not exist.");
-    }
-
-    const sessionDescriptionHandler = this.session.sessionDescriptionHandler;
-    if (!(sessionDescriptionHandler instanceof SessionDescriptionHandler)) {
-      throw new Error("Session's session description handler not instance of SessionDescriptionHandler.");
-    }
-
-    const peerConnection = sessionDescriptionHandler.peerConnection;
-    if (!peerConnection) {
-      throw new Error("Peer connection closed.");
-    }
-
-    peerConnection.getReceivers().forEach((receiver) => {
-      if (receiver.track) {
-        receiver.track.enabled = enable;
+  private enableSenderTracks(enable: boolean,callid:string): void {
+    const session =this.arrCalls.get(callid) ;
+    if(session)
+    {
+      const sessionDescriptionHandler = session.sessionDescriptionHandler;
+      if (!(sessionDescriptionHandler instanceof SessionDescriptionHandler)) {
+        throw new Error("Session's session description handler not instance of SessionDescriptionHandler.");
       }
-    });
-  }
 
-  /** Helper function to enable/disable media tracks. */
-  private enableSenderTracks(enable: boolean): void {
-    if (!this.session) {
-      throw new Error("Session does not exist.");
-    }
-
-    const sessionDescriptionHandler = this.session.sessionDescriptionHandler;
-    if (!(sessionDescriptionHandler instanceof SessionDescriptionHandler)) {
-      throw new Error("Session's session description handler not instance of SessionDescriptionHandler.");
-    }
-
-    const peerConnection = sessionDescriptionHandler.peerConnection;
-    if (!peerConnection) {
-      throw new Error("Peer connection closed.");
-    }
-
-    peerConnection.getSenders().forEach((sender) => {
-      if (sender.track) {
-        sender.track.enabled = enable;
+      const peerConnection = sessionDescriptionHandler.peerConnection;
+      if (!peerConnection) {
+        throw new Error("Peer connection closed.");
       }
-    });
+
+      peerConnection.getSenders().forEach((sender) => {
+        if (sender.track) {
+          sender.track.enabled = enable;
+        }
+      });
+    }
   }
 
   /**
@@ -750,38 +782,35 @@ export class SimpleUser {
    */
   private initSession(session: Session, referralInviterOptions?: InviterOptions): void {
     // Set session
-    this.session = session;
-
+    let sessionid=session?.id;
+    this.logger.log(`[${this.id}] new session id is:`+ sessionid);
     // Call session created callback
     if (this.delegate && this.delegate.onCallCreated) {
-      this.delegate.onCallCreated();
+      this.delegate.onCallCreated(sessionid);
     }
 
     // Setup session state change handler
-    this.session.stateChange.addListener((state: SessionState) => {
-      if (this.session !== session) {
-        return; // if our session has changed, just return
-      }
-      this.logger.log(`[${this.id}] session state changed to ${state}`);
-      switch (state) {
+    session.stateChange.addListener((info: SessionStateInfo) => {
+      this.logger.log(`[${session.id}] session state changed to ${info.state} sid:`+info.sid);
+      switch (info.state) {
         case SessionState.Initial:
           break;
         case SessionState.Establishing:
           break;
         case SessionState.Established:
-          this.setupLocalMedia();
-          this.setupRemoteMedia();
+          this.setupLocalMedia(info?.sessionDescriptionHandlerOptions?.local?.video,sessionid);
+          this.setupRemoteMedia(info?.sessionDescriptionHandlerOptions?.remote?.video,info?.sessionDescriptionHandlerOptions?.remote?.audio,sessionid);
           if (this.delegate && this.delegate.onCallAnswered) {
-            this.delegate.onCallAnswered();
+            this.delegate.onCallAnswered(info.id,info.sid);
           }
           break;
         case SessionState.Terminating:
         // fall through
         case SessionState.Terminated:
-          this.session = undefined;
-          this.cleanupMedia();
+          this.arrCalls.delete(info.id);
+          this.cleanupMedia(info?.sessionDescriptionHandlerOptions?.local,info?.sessionDescriptionHandlerOptions?.remote);
           if (this.delegate && this.delegate.onCallHangup) {
-            this.delegate.onCallHangup();
+            this.delegate.onCallHangup(info.id,info.sid);
           }
           break;
         default:
@@ -790,7 +819,7 @@ export class SimpleUser {
     });
 
     // Setup delegate
-    this.session.delegate = {
+    session.delegate = {
       onInfo: (info: Info): void => {
         // As RFC 6086 states, sending DTMF via INFO is not standardized...
         //
@@ -876,6 +905,7 @@ export class SimpleUser {
           });
       }
     };
+    this.arrCalls.set(session.id,session);
   }
 
   /** Helper function to init send then send invite. */
@@ -897,7 +927,7 @@ export class SimpleUser {
       const existingOnProgress = options.requestDelegate.onProgress;
       options.requestDelegate.onProgress = (response) => {
         if (response.message.statusCode === 183) {
-          this.setupRemoteMedia();
+          this.setupRemoteMedia(inviterOptions?.sessionDescriptionHandlerOptions?.remote?.video,inviterOptions?.sessionDescriptionHandlerOptions?.remote?.audio,inviter.id);
         }
         existingOnProgress && existingOnProgress(response);
       };
@@ -913,148 +943,162 @@ export class SimpleUser {
    * Puts Session on hold.
    * @param hold - Hold on if true, off if false.
    */
-  private setHold(hold: boolean): Promise<void> {
-    if (!this.session) {
-      return Promise.reject(new Error("Session does not exist."));
-    }
-    const session = this.session;
-
-    // Just resolve if we are already in correct state
-    if (this.held === hold) {
-      return Promise.resolve();
-    }
-
-    const sessionDescriptionHandler = this.session.sessionDescriptionHandler;
-    if (!(sessionDescriptionHandler instanceof SessionDescriptionHandler)) {
-      throw new Error("Session's session description handler not instance of SessionDescriptionHandler.");
-    }
-
-    const options: SessionInviteOptions = {
-      requestDelegate: {
-        onAccept: (): void => {
-          this.held = hold;
-          this.enableReceiverTracks(!this.held);
-          this.enableSenderTracks(!this.held && !this.muted);
-          if (this.delegate && this.delegate.onCallHold) {
-            this.delegate.onCallHold(this.held);
-          }
-        },
-        onReject: (): void => {
-          this.logger.warn(`[${this.id}] re-invite request was rejected`);
-          this.enableReceiverTracks(!this.held);
-          this.enableSenderTracks(!this.held && !this.muted);
-          if (this.delegate && this.delegate.onCallHold) {
-            this.delegate.onCallHold(this.held);
-          }
-        }
+  private setHold(hold: boolean,callid:string): Promise<void> {
+    const session =this.arrCalls.get(callid) ;
+    if(session)
+    {
+       // Just resolve if we are already in correct state
+      if (this.held === hold) {
+        return Promise.resolve();
       }
-    };
 
-    // Session properties used to pass options to the SessionDescriptionHandler:
-    //
-    // 1) Session.sessionDescriptionHandlerOptions
-    //    SDH options for the initial INVITE transaction.
-    //    - Used in all cases when handling the initial INVITE transaction as either UAC or UAS.
-    //    - May be set directly at anytime.
-    //    - May optionally be set via constructor option.
-    //    - May optionally be set via options passed to Inviter.invite() or Invitation.accept().
-    //
-    // 2) Session.sessionDescriptionHandlerOptionsReInvite
-    //    SDH options for re-INVITE transactions.
-    //    - Used in all cases when handling a re-INVITE transaction as either UAC or UAS.
-    //    - May be set directly at anytime.
-    //    - May optionally be set via constructor option.
-    //    - May optionally be set via options passed to Session.invite().
+      const sessionDescriptionHandler = session.sessionDescriptionHandler;
+      if (!(sessionDescriptionHandler instanceof SessionDescriptionHandler)) {
+        throw new Error("Session's session description handler not instance of SessionDescriptionHandler.");
+      }
 
-    const sessionDescriptionHandlerOptions =
-      session.sessionDescriptionHandlerOptionsReInvite as SessionDescriptionHandlerOptions;
-    sessionDescriptionHandlerOptions.hold = hold;
-    session.sessionDescriptionHandlerOptionsReInvite = sessionDescriptionHandlerOptions;
-
-    // Send re-INVITE
-    return this.session
-      .invite(options)
-      .then(() => {
-        // preemptively enable/disable tracks
-        this.enableReceiverTracks(!hold);
-        this.enableSenderTracks(!hold && !this.muted);
-      })
-      .catch((error: Error) => {
-        if (error instanceof RequestPendingError) {
-          this.logger.error(`[${this.id}] A hold request is already in progress.`);
+      const options: SessionInviteOptions = {
+        requestDelegate: {
+          onAccept: (): void => {
+            this.held = hold;
+            this.enableReceiverTracks(!this.held,callid);
+            this.enableSenderTracks(!this.held && !session.muted,callid);
+            if (this.delegate && this.delegate.onCallHold) {
+              this.delegate.onCallHold(callid,this.held);
+            }
+          },
+          onReject: (): void => {
+            this.logger.warn(`[${this.id}] re-invite request was rejected`);
+            this.enableReceiverTracks(!this.held,callid);
+            this.enableSenderTracks(!this.held && !session.muted,callid);
+            if (this.delegate && this.delegate.onCallHold) {
+              this.delegate.onCallHold(callid,this.held);
+            }
+          }
         }
-        throw error;
-      });
-  }
+      };
 
+      // Session properties used to pass options to the SessionDescriptionHandler:
+      //
+      // 1) Session.sessionDescriptionHandlerOptions
+      //    SDH options for the initial INVITE transaction.
+      //    - Used in all cases when handling the initial INVITE transaction as either UAC or UAS.
+      //    - May be set directly at anytime.
+      //    - May optionally be set via constructor option.
+      //    - May optionally be set via options passed to Inviter.invite() or Invitation.accept().
+      //
+      // 2) Session.sessionDescriptionHandlerOptionsReInvite
+      //    SDH options for re-INVITE transactions.
+      //    - Used in all cases when handling a re-INVITE transaction as either UAC or UAS.
+      //    - May be set directly at anytime.
+      //    - May optionally be set via constructor option.
+      //    - May optionally be set via options passed to Session.invite().
+
+      const sessionDescriptionHandlerOptions =
+        session.sessionDescriptionHandlerOptionsReInvite as SessionDescriptionHandlerOptions;
+      sessionDescriptionHandlerOptions.hold = hold;
+      session.sessionDescriptionHandlerOptionsReInvite = sessionDescriptionHandlerOptions;
+
+      // Send re-INVITE
+      return session
+        .invite(options)
+        .then(() => {
+          // preemptively enable/disable tracks
+          this.enableReceiverTracks(!hold,callid);
+          this.enableSenderTracks(!hold && !session.muted,callid);
+        })
+        .catch((error: Error) => {
+          if (error instanceof RequestPendingError) {
+            this.logger.error(`[${this.id}] A hold request is already in progress.`);
+          }
+          throw error;
+        });
+    }
+    else
+    {
+      this.logger.error(`[${this.id}] can not find call by callid:`+callid);
+    }
+    return Promise.resolve();
+  }
   /**
    * Puts Session on mute.
    * @param mute - Mute on if true, off if false.
    */
-  private setMute(mute: boolean): void {
-    if (!this.session) {
-      this.logger.warn(`[${this.id}] A session is required to enabled/disable media tracks`);
-      return;
+  private setMute(mute: boolean,callid:string): void {
+    const session =this.arrCalls.get(callid) ;
+    if(session)
+    {
+      if (session.state !== SessionState.Established) {
+        this.logger.warn(`[${this.id}] An established session is required to enable/disable media tracks`);
+        return;
+      }
+
+      session.muted = mute;
+
+      this.enableSenderTracks(!this.held && !session.muted,callid);
     }
-
-    if (this.session.state !== SessionState.Established) {
-      this.logger.warn(`[${this.id}] An established session is required to enable/disable media tracks`);
-      return;
+    else
+    {
+      this.logger.error(`[${this.id}] can not find call by callid:`+callid);
     }
-
-    this.muted = mute;
-
-    this.enableSenderTracks(!this.held && !this.muted);
   }
 
   /** Helper function to attach local media to html elements. */
-  private setupLocalMedia(): void {
-    if (!this.session) {
-      throw new Error("Session does not exist.");
-    }
-
-    const mediaElement = this.options.media?.local?.video;
-    if (mediaElement) {
-      const localStream = this.localMediaStream;
-      if (!localStream) {
-        throw new Error("Local media stream undefiend.");
+  private setupLocalMedia(mediaElement:HTMLVideoElement|undefined,callid:string): void {
+    const session =this.arrCalls.get(callid) ;
+    if(session)
+    {
+      if (mediaElement) {
+        const localStream = this.getlocalMediaStream(session);
+        if (!localStream) {
+          throw new Error("Local media stream undefiend.");
+        }
+        mediaElement.srcObject = localStream;
+        mediaElement.volume = 0;
+        mediaElement.play().catch((error: Error) => {
+          this.logger.error(`[${this.id}] Failed to play local media`);
+          this.logger.error(error.message);
+        });
       }
-      mediaElement.srcObject = localStream;
-      mediaElement.volume = 0;
-      mediaElement.play().catch((error: Error) => {
-        this.logger.error(`[${this.id}] Failed to play local media`);
-        this.logger.error(error.message);
-      });
+    }
+    else
+    {
+      this.logger.error(`[${this.id}] can not find call by callid:`+callid);
     }
   }
 
   /** Helper function to attach remote media to html elements. */
-  private setupRemoteMedia(): void {
-    if (!this.session) {
-      throw new Error("Session does not exist.");
-    }
+  private setupRemoteMedia(videoElement:HTMLVideoElement|undefined,audioElement:HTMLAudioElement|undefined,callid:string): void {
 
-    const mediaElement = this.options.media?.remote?.video || this.options.media?.remote?.audio;
+    const session =this.arrCalls.get(callid) ;
+    if(session)
+    {
+      const mediaElement = videoElement || audioElement;
 
-    if (mediaElement) {
-      const remoteStream = this.remoteMediaStream;
-      if (!remoteStream) {
-        throw new Error("Remote media stream undefiend.");
-      }
-      mediaElement.autoplay = true; // Safari hack, because you cannot call .play() from a non user action
-      mediaElement.srcObject = remoteStream;
-      mediaElement.play().catch((error: Error) => {
-        this.logger.error(`[${this.id}] Failed to play remote media`);
-        this.logger.error(error.message);
-      });
-      remoteStream.onaddtrack = (): void => {
-        this.logger.log(`[${this.id}] Remote media onaddtrack`);
-        mediaElement.load(); // Safari hack, as it doesn't work otheriwse
+      if (mediaElement) {
+        const remoteStream = this.getremoteMediaStream(session);
+        if (!remoteStream) {
+          throw new Error("Remote media stream undefiend.");
+        }
+        mediaElement.autoplay = true; // Safari hack, because you cannot call .play() from a non user action
+        mediaElement.srcObject = remoteStream;
         mediaElement.play().catch((error: Error) => {
           this.logger.error(`[${this.id}] Failed to play remote media`);
           this.logger.error(error.message);
         });
-      };
+        remoteStream.onaddtrack = (): void => {
+          this.logger.log(`[${this.id}] Remote media onaddtrack`);
+          mediaElement.load(); // Safari hack, as it doesn't work otheriwse
+          mediaElement.play().catch((error: Error) => {
+            this.logger.error(`[${this.id}] Failed to play remote media`);
+            this.logger.error(error.message);
+          });
+        };
+      }
+    }
+    else
+    {
+      this.logger.error(`[${this.id}] can not find call by callid:`+callid);
     }
   }
 
@@ -1065,51 +1109,55 @@ export class SimpleUser {
    * Resolves when the request/response is sent, otherwise rejects.
    * Use `onCallTerminated` delegate method to determine if and when Session is terminated.
    */
-  private terminate(): Promise<void> {
+  private terminate(callid:string): Promise<void> {
     this.logger.log(`[${this.id}] Terminating...`);
 
-    if (!this.session) {
-      return Promise.reject(new Error("Session does not exist."));
-    }
+    const session =this.arrCalls.get(callid) ;
+    if(session)
+    {
+      switch (session.state) {
+        case SessionState.Initial:
+          if (session instanceof Inviter) {
+            return session.cancel().then(() => {
+              this.logger.log(`[${this.id}] Inviter never sent INVITE (canceled)`);
+            });
+          } else if (session instanceof Invitation) {
+            return session.reject().then(() => {
+              this.logger.log(`[${this.id}] Invitation rejected (sent 480)`);
+            });
+          } else {
+            throw new Error("Unknown session type.");
+          }
+        case SessionState.Establishing:
+          if (session instanceof Inviter) {
+            return session.cancel().then(() => {
+              this.logger.log(`[${this.id}] Inviter canceled (sent CANCEL)`);
+            });
+          } else if (session instanceof Invitation) {
+            return session.reject().then(() => {
+              this.logger.log(`[${this.id}] Invitation rejected (sent 480)`);
+            });
+          } else {
+            throw new Error("Unknown session type.");
+          }
+        case SessionState.Established:
+          return session.bye().then(() => {
+            this.logger.log(`[${this.id}] Session ended (sent BYE)`);
+          });
+        case SessionState.Terminating:
+          break;
+        case SessionState.Terminated:
+          break;
+        default:
+          throw new Error("Unknown state");
+      }
 
-    switch (this.session.state) {
-      case SessionState.Initial:
-        if (this.session instanceof Inviter) {
-          return this.session.cancel().then(() => {
-            this.logger.log(`[${this.id}] Inviter never sent INVITE (canceled)`);
-          });
-        } else if (this.session instanceof Invitation) {
-          return this.session.reject().then(() => {
-            this.logger.log(`[${this.id}] Invitation rejected (sent 480)`);
-          });
-        } else {
-          throw new Error("Unknown session type.");
-        }
-      case SessionState.Establishing:
-        if (this.session instanceof Inviter) {
-          return this.session.cancel().then(() => {
-            this.logger.log(`[${this.id}] Inviter canceled (sent CANCEL)`);
-          });
-        } else if (this.session instanceof Invitation) {
-          return this.session.reject().then(() => {
-            this.logger.log(`[${this.id}] Invitation rejected (sent 480)`);
-          });
-        } else {
-          throw new Error("Unknown session type.");
-        }
-      case SessionState.Established:
-        return this.session.bye().then(() => {
-          this.logger.log(`[${this.id}] Session ended (sent BYE)`);
-        });
-      case SessionState.Terminating:
-        break;
-      case SessionState.Terminated:
-        break;
-      default:
-        throw new Error("Unknown state");
+      this.logger.log(`[${this.id}] Terminating in state ${session.state}, no action taken`);
     }
-
-    this.logger.log(`[${this.id}] Terminating in state ${this.session.state}, no action taken`);
+    else
+    {
+      this.logger.error(`[${this.id}] can not find call by callid:`+callid);
+    }
     return Promise.resolve();
   }
 }

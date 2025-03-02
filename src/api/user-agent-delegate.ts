@@ -29,7 +29,7 @@ export interface UserAgentDelegate {
    * Handler for incoming out of dialog INVITE requests.
    * @param invitation - The invitation.
    */
-  onInvite?(invitation: Invitation): void;
+  onInvite?(invitation: Invitation,sid:string|undefined): void;
 
   /**
    * Called upon receipt of a message.

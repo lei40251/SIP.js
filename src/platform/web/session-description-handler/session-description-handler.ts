@@ -454,7 +454,7 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
    * @param options - Session description handler options.
    */
   protected getLocalMediaStream(options?: SessionDescriptionHandlerOptions): Promise<void> {
-    this.logger.debug("SessionDescriptionHandler.getLocalMediaStream");
+    this.logger.debug("SessionDescriptionHandler.getLocalMediaStream isshowscreen:"+options?.isshowscreen);
     if (this._peerConnection === undefined) {
       return Promise.reject(new Error("Peer connection closed."));
     }
@@ -481,9 +481,34 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
     }
 
     this.localMediaStreamConstraints = constraints;
-    return this.mediaStreamFactory(constraints, this, options).then((mediaStream) =>
+    return this.mediaStreamFactory(constraints, this, options).then((mediaStream) =>{
       this.setLocalMediaStream(mediaStream)
-    );
+    }
+    ) .catch((error) => {
+      this.logger.error("getLocalMediaStream video error " + error);
+      if(constraints.video)
+      {
+        constraints.video=false;
+        return this.mediaStreamFactory(constraints, this, options).then((mediaStream) =>{
+          this.setLocalMediaStream(mediaStream,options)
+        }
+        ).catch((error) => {
+          this.logger.error("getLocalMediaStream audio error " + error);
+          if(constraints.audio)
+          {
+            constraints.audio=false;
+            return this.mediaStreamFactory(constraints, this, options).then((mediaStream) =>{
+              this.setLocalMediaStream(mediaStream,options)
+            })
+          }
+        });
+      }
+      else
+      {
+        throw error;
+      }
+
+    });
   }
 
   /**
@@ -495,7 +520,7 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
    *
    * @param stream - Media stream containing tracks to be utilized.
    */
-  protected setLocalMediaStream(stream: MediaStream): Promise<void> {
+  protected setLocalMediaStream(stream: MediaStream,options?: SessionDescriptionHandlerOptions): Promise<void> {
     this.logger.debug("SessionDescriptionHandler.setLocalMediaStream");
 
     if (!this._peerConnection) {
@@ -565,11 +590,24 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
     if (audioTracks.length) {
       updateTrack(audioTracks[0]);
     }
-
+    else if(options && options.constraints && options.constraints.audio)
+    {
+      this.logger.debug(`not find audio device add recvonly track`);
+      pc.addTransceiver("audio", {
+        direction: "recvonly"
+    })
+    }
     // update peer connection video tracks
     const videoTracks = stream.getVideoTracks();
     if (videoTracks.length) {
       updateTrack(videoTracks[0]);
+    }
+    else if(options && options.constraints && options.constraints.video)
+    {
+      this.logger.debug(`not find video device add recvonly track`);
+      pc.addTransceiver("video", {
+        direction: "recvonly"
+    })
     }
 
     return trackUpdates.reduce((p, x) => p.then(() => x), Promise.resolve());
@@ -750,7 +788,7 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
         this.logger.debug("SessionDescriptionHandler.updateDirection - setting offer direction");
         {
           // determine the direction to offer given the current direction and hold state
-          const directionToOffer = (currentDirection: RTCRtpTransceiverDirection): RTCRtpTransceiverDirection => {
+          const directionToOffer = (currentDirection: RTCRtpTransceiverDirection,kind:string): RTCRtpTransceiverDirection => {
             switch (currentDirection) {
               case "inactive":
                 return options?.hold ? "inactive" : "recvonly";
@@ -759,7 +797,21 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
               case "sendonly":
                 return options?.hold ? "sendonly" : "sendrecv";
               case "sendrecv":
-                return options?.hold ? "sendonly" : "sendrecv";
+                {
+                  if(kind=="video")
+                  {
+                    if(options?.videoRecvonly)
+                    {
+                      return options?.hold ? "sendonly" : "recvonly";
+                    }
+                    return options?.hold ? "sendonly" : "sendrecv";
+                  }
+                  else
+                  {
+                    return options?.hold ? "sendonly" : "sendrecv";
+                  }
+                }
+                
               case "stopped":
                 return "stopped";
               default:
@@ -769,7 +821,8 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
           // set the transceiver direction to the offer direction
           this._peerConnection.getTransceivers().forEach((transceiver) => {
             if (transceiver.direction /* guarding, but should always be true */) {
-              const offerDirection = directionToOffer(transceiver.direction);
+              
+              const offerDirection = directionToOffer(transceiver.direction,transceiver.receiver.track.kind);
               if (transceiver.direction !== offerDirection) {
                 transceiver.direction = offerDirection;
               }
@@ -810,7 +863,7 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
           })();
 
           // determine the answer direction based on the offered direction and our hold state
-          const answerDirection = ((): "inactive" | "recvonly" | "sendonly" | "sendrecv" => {
+          const answerDirection = (kind:string): RTCRtpTransceiverDirection  => {
             switch (offeredDirection) {
               case "inactive":
                 return "inactive";
@@ -819,17 +872,27 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
               case "sendonly":
                 return options?.hold ? "inactive" : "recvonly";
               case "sendrecv":
-                return options?.hold ? "sendonly" : "sendrecv";
+                if(kind=="video")
+                  {
+                    if(options?.videoRecvonly)
+                    {
+                      return options?.hold ? "sendonly" : "recvonly";
+                    }
+                    return options?.hold ? "sendonly" : "sendrecv";
+                  }
+                  else
+                  {
+                    return options?.hold ? "sendonly" : "sendrecv";
+                  }
               default:
                 throw new Error("Should never happen");
             }
-          })();
-
+          };
           // set the transceiver direction to the answer direction
           this._peerConnection.getTransceivers().forEach((transceiver) => {
             if (transceiver.direction /* guarding, but should always be true */) {
-              if (transceiver.direction !== "stopped" && transceiver.direction !== answerDirection) {
-                transceiver.direction = answerDirection;
+              if (transceiver.direction !== "stopped" && transceiver.direction !== answerDirection(transceiver.receiver.track.kind)) {
+                transceiver.direction = answerDirection(transceiver.receiver.track.kind);
               }
             }
           });
@@ -873,7 +936,7 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
       this.iceGatheringCompleteReject = reject;
       if (timeout > 0) {
         this.logger.debug("SessionDescriptionHandler.waitForIceGatheringToComplete - timeout in " + timeout);
-        this.iceGatheringCompleteTimeoutId = setTimeout(() => {
+        this.iceGatheringCompleteTimeoutId = window.setTimeout(() => {
           this.logger.debug("SessionDescriptionHandler.waitForIceGatheringToComplete - timeout");
           this.iceGatheringComplete();
         }, timeout);

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8" />
+  <title>视频监控</title>
+  <link rel="stylesheet" type="text/css" href="./demo-1.css">
+</head>
+
+<body>
+    <li>
+      服务器IP:<input type="text" id="serverip" placeholder="ip" value="192.168.21.152" >
+      端口:<input type="text" id="serverport" placeholder="端口" value="7443" >
+      登录用户名：<input type="text" id="userid" placeholder="号码" value="2000" >
+      用户密码<input type="text" id="userpwd" placeholder="密码" value="123456" >
+    </li>
+    <li>
+      <button id="connect" onclick="Init()">Connect</button>
+      <button id="register" onclick="Register()"  >注册</button>
+      <button id="unregister" onclick="UnRegister()" >注销</button>
+      <button id="disconnect" onclick="Disconnect()" >Disconnect</button>
+    </li>
+    <li>
+      <button  onclick="GetServerLoginInfo()">获取配置信息</button>
+      <button  onclick="ConnectServerWebSocket()">连接WebSocket</button>
+      <button  onclick="DisConnectServerWebSocket()">断开WebSocket</button>
+    </li>
+    <li>
+      被叫：<input type="text" id="othernum" value="3000" >
+      <button id="VideoBug" >手机监控</button>
+      <button id="hangup" onclick="HangUP()" >挂断</button>
+      当前呼叫ID:<input type="text" id="callid" value="" >
+      <button id="answer" onclick="Answer()">接听</button>
+    </li>
+    <li>
+      调用api:<input type="text" id="apimsg" value='{"header":"session.getmember","sid":"1"}' style="width:600px">
+      <button id="sendapi" >发送</button>
+    </li>
+    <div >
+      <table>
+        <tr>
+          <td>
+            <video id="videoRemote" width="400" height="400">
+              <p>Your browser doesn't support HTML5 video.</p>
+            </video>
+          </td>
+          <td>
+            <video id="videoLocal" muted="muted" width="400" height="400">
+              <p>Your browser doesn't support HTML5 video.</p>
+            </video>
+      </td>
+      <td>
+        <audio id="remoteAudio" controls>
+          <p>Your browser doesn't support HTML5 audio.</p>
+        </audio>
+      </td>
+      </tr>
+      </table>
+    </div>
+    <textarea id="logdev" value="" style="height:200px;width:600px" ></textarea>
+    <button id="clearlog" onclick="clearlog()" >清空</button>
+  </div>
+  <script language=javascript src=./dist/demo-utils.js></script>
+  <script language=javascript src='./dist/Client.js'></script>
+  <script language=javascript src='./dist/AllEnum.js'></script>
+  <script src="./dist/demo.js" onerror="alert('To run this demo you must first build the library and demo source! See the README.')">
+  </script>
+    <script language=javascript >
+      const VideoBugButton=getButton("VideoBug");
+      VideoBugButton.addEventListener("click", () => {
+        const othernum = getInput("othernum");
+      const RemoteaudioElement = getAudio("remoteAudio");
+      const RemoteVideoElement = getVideo("videoRemote");
+      const localVideoElement = getVideo("videoLocal");
+      Client.VideoBug(othernum.value,"",localVideoElement,RemoteVideoElement,RemoteaudioElement);
+    });
+    </script>
+</body>
+
+</html>

@@ -74,9 +74,34 @@ export interface SessionDescriptionHandlerModifier {
  * @public
  */
 export interface SessionDescriptionHandlerOptions {
-  constraints?: object;
+  constraints?: MediaStreamConstraints;
+  //media?: SimpleUserMedia;
+  /** HTML elements for local media streams. */
+  local?: SimpleUserMediaLocal;
+  /** Local HTML media elements. */
+  remote?: SimpleUserMediaRemote;
+  videoRecvonly?:boolean;
+  isshowscreen?:boolean;
 }
 
+/**
+ * Local media elements for {@link SessionDescriptionHandler}.
+ * @public
+ */
+export interface SimpleUserMediaLocal {
+  /** The local video media stream is attached to this element. */
+  video?: HTMLVideoElement;
+}
+/**
+ * Remote media elements for {@link SessionDescriptionHandler}.
+ * @public
+ */
+ export interface SimpleUserMediaRemote {
+  /** The remote audio media stream is attached to this element. */
+  audio?: HTMLAudioElement;
+  /** The remote video media stream is attached to this element. */
+  video?: HTMLVideoElement;
+}
 /**
  * Message body content and type.
  * @public

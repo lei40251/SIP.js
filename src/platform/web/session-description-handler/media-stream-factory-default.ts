@@ -1,11 +1,14 @@
 import { MediaStreamFactory } from "./media-stream-factory.js";
-
+import { SessionDescriptionHandlerOptions } from "./session-description-handler-options.js";
+import { SessionDescriptionHandler } from "./session-description-handler.js";
 /**
  * Function which returns a MediaStreamFactory.
  * @public
  */
 export function defaultMediaStreamFactory(): MediaStreamFactory {
-  return (constraints: MediaStreamConstraints): Promise<MediaStream> => {
+  return (constraints: MediaStreamConstraints, sessionDescriptionHandler: SessionDescriptionHandler,
+    options?: SessionDescriptionHandlerOptions): Promise<MediaStream> => {
+   
     // if no audio or video, return a media stream without tracks
     if (!constraints.audio && !constraints.video) {
       return Promise.resolve(new MediaStream());
@@ -17,6 +20,20 @@ export function defaultMediaStreamFactory(): MediaStreamFactory {
     if (navigator.mediaDevices === undefined) {
       return Promise.reject(new Error("Media devices not available in insecure contexts."));
     }
+    //ygh thechange getMediaStream
+    //console.log("defaultMediaStreamFactory isshowscreen:"+options?.isshowscreen);
+    if(options?.isshowscreen)
+    {
+      if (navigator.mediaDevices.getDisplayMedia) {
+        return navigator.mediaDevices.getDisplayMedia({audio:true,video: true});
+      } 
+      /**
+      else {
+        return navigator.mediaDevices.getUserMedia({audio:true,video: {mediaSource:'screen'}});
+      }
+       */
+    }
+   
     return navigator.mediaDevices.getUserMedia.call(navigator.mediaDevices, constraints);
   };
 }

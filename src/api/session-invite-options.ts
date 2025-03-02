@@ -1,6 +1,6 @@
 import { OutgoingRequestDelegate, RequestOptions } from "../core/messages/outgoing-request.js";
 import { SessionDescriptionHandlerModifier, SessionDescriptionHandlerOptions } from "./session-description-handler.js";
-
+import { SessionState } from "./session-state.js";
 /**
  * Options for {@link Session.invite}.
  * @public
@@ -26,4 +26,10 @@ export interface SessionInviteOptions {
    * If true, send INVITE without SDP. Default is false.
    */
   withoutSdp?: boolean;
+}
+export interface SessionStateInfo{
+  id:string;
+  state?:SessionState;
+  sid?:string;
+  sessionDescriptionHandlerOptions?: SessionDescriptionHandlerOptions;
 }

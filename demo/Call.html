@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <script language=javascript src=./dist/demo-utils.js></script>
+  <script language=javascript src='./dist/Client.js'></script>
+  <script language=javascript src='./dist/AllEnum.js'></script>
+  <script src="./dist/demo.js"
+  onerror="alert('To run this demo you must first build the library and demo source! See the README.')">
+  </script>
+<head>
+  <meta charset="utf-8" />
+  <title>呼叫</title>
+  <link rel="stylesheet" type="text/css" href="./demo-1.css">
+</head>
+
+<body>
+    <li>
+      服务器IP:<input type="text" id="serverip" placeholder="ip" value="111.198.30.44" >
+      端口:<input type="text" id="serverport" placeholder="端口" value="7443" >
+      登录用户名：<input type="text" id="userid" placeholder="号码" value="82003" >
+      用户密码<input type="text" id="userpwd" placeholder="密码" value="123456" >
+    </li>
+    <li>
+      <button id="connect" onclick="Init()">Connect</button>
+      <button id="register" onclick="Register()"  >注册</button>
+      <button id="unregister" onclick="UnRegister()" >注销</button>
+      <button id="disconnect" onclick="Disconnect()" >Disconnect</button>
+    </li>
+    <li>
+      <button  onclick="GetServerLoginInfo()">获取配置信息</button>
+      <button  onclick="ConnectServerWebSocket()">连接WebSocket</button>
+      <button  onclick="DisConnectServerWebSocket()">断开WebSocket</button>
+    </li>
+    <li>
+      被叫：<input type="text" id="othernum" value="3000" >
+      <button id="voicecall" onclick="AudioCall()" >语音呼叫</button>
+      <button id="Videocall" onclick="VideoCall()" >视频呼叫</button>
+      <button id="Screencall" onclick="MakeScreenCall()" >投屏呼叫</button>
+      <button id="hangup" onclick="HangUP()" >挂断</button>
+      当前呼叫ID:<input type="text" id="callid" value="" >
+      <button id="answer" onclick="Answer()" >接听</button>
+      <button id="Screenanswer" onclick="ScreenAnswer()" >投屏接听</button>
+      <button id="takephoto" onclick="takephoto()" >截屏</button>
+      <button id="startrecord" onclick="startrecord()" >开始录像</button>
+      <button id="stoprecord" onclick="stoprecord()" >结束录像</button>
+    </li>
+    <li>
+      强制操作的号码：<input type="text" id="forceopnumber" value="" >
+      强制操作的呼叫ID(人员同时有多个呼叫时指定)：<input type="text" id="forceopcid" value="" >
+      <button  onclick="froceOPInterpose()">强插</button>
+      <button  onclick="froceOPRemoveOther()">强拆</button>
+      <button  onclick="froceOPMonitor()">监听</button>
+      <button  onclick="froceOPRemove()">强断</button>
+    </li>
+    <li>
+      文件：<input id="UploadFile" type="file">
+      <button onclick="StartUpload()" >开始上传</button>
+      <button onclick="StopUpload()" >停止上传</button>
+    </li>
+    <li>
+      调用api:<input type="text" id="apimsg" value='{"header":"session.getmember","sid":"1"}' style="width:600px">
+      <button id="sendapi" onclick="SendAPI()">发送</button>
+    </li>
+    <div >
+      <table>
+        <tr>
+          <td>
+            <video id="videoRemote" width="400" height="400">
+              <p>Your browser doesn't support HTML5 video.</p>
+            </video>
+          </td>
+          <td>
+            <video id="videoLocal" muted="muted" width="400" height="400">
+              <p>Your browser doesn't support HTML5 video.</p>
+            </video>
+      </td>
+      <td>
+        <audio id="remoteAudio" controls>
+          <p>Your browser doesn't support HTML5 audio.</p>
+        </audio>
+      </td>
+      </tr>
+      </table>
+    </div>
+  <div class="dtmf">DTMF sent: <span id="dtmf"></span></div>
+  <div>
+    <div>
+      <button class="keypad" onclick="SendDtmf('1')">1</button>
+      <button class="keypad"  onclick="SendDtmf('2')">2</button>
+      <button class="keypad" onclick="SendDtmf('3')">3</button>
+    </div>
+    <div>
+      <button class="keypad" onclick="SendDtmf('4')">4</button>
+      <button class="keypad" onclick="SendDtmf('5')">5</button>
+      <button class="keypad" onclick="SendDtmf('6')">6</button>
+    </div>
+    <div>
+      <button class="keypad" onclick="SendDtmf('7')">7</button>
+      <button class="keypad" onclick="SendDtmf('8')">8</button>
+      <button class="keypad" onclick="SendDtmf('9')">9</button>
+    </div>
+    <div>
+      <button class="keypad" onclick="SendDtmf('*')">*</button>
+      <button class="keypad" onclick="SendDtmf('0')">0</button>
+      <button class="keypad" onclick="SendDtmf('#')">#</button>
+    </div>
+  </div>
+  <div>
+    <input type="checkbox" id="hold" name="hold" onclick="HoldChange()" >
+    <label for="hold">Hold</label>
+  </div>
+  <div>
+    <input type="checkbox" id="mute" name="mute" onclick="MuteChange()">
+    <label for="mute">Mute</label>
+  </div>
+  <div>
+    <textarea id="logdev" value="" style="height:200px;width:600px" ></textarea>
+    <button id="clearlog" onclick="clearlog()" >清空</button>
+  </div>
+  
+  <script language=javascript >
+
+  </script>
+</body>
+
+</html>

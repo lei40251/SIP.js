@@ -44,7 +44,7 @@ import {
 } from "./session-description-handler.js";
 import { SessionDescriptionHandlerFactory } from "./session-description-handler-factory.js";
 import { SessionInfoOptions } from "./session-info-options.js";
-import { SessionInviteOptions } from "./session-invite-options.js";
+import { SessionInviteOptions,SessionStateInfo } from "./session-invite-options.js";
 import { SessionMessageOptions } from "./session-message-options.js";
 import { SessionOptions } from "./session-options.js";
 import { SessionReferOptions } from "./session-refer-options.js";
@@ -115,9 +115,10 @@ export abstract class Session {
   /** Session state. */
   private _state: SessionState = SessionState.Initial;
   /** Session state emitter. */
-  private _stateEventEmitter: EmitterImpl<SessionState>;
+  private _stateEventEmitter: EmitterImpl<SessionStateInfo>;
   /** User agent. */
   private _userAgent: UserAgent;
+  private _muted = false;
 
   /**
    * The identity of the local user.
@@ -136,7 +137,7 @@ export abstract class Session {
 
   /** @internal */
   protected abstract _id: string;
-
+  private _sid ="";
   /**
    * Constructor.
    * @param userAgent - User agent. See {@link UserAgent} for details.
@@ -144,7 +145,7 @@ export abstract class Session {
    */
   protected constructor(userAgent: UserAgent, options: SessionOptions = {}) {
     this.delegate = options.delegate;
-    this._stateEventEmitter = new EmitterImpl<SessionState>();
+    this._stateEventEmitter = new EmitterImpl<SessionStateInfo>();
     this._userAgent = userAgent;
   }
 
@@ -221,7 +222,19 @@ export abstract class Session {
   public get id(): string {
     return this._id;
   }
-
+  public get sid(): string {
+    return this._sid;
+  }
+  public set sid(value:string){
+    this._sid=value;
+  }
+  public get muted():boolean{
+    return this._muted;
+  }
+  public set muted(value:boolean)
+  {
+    this._muted=value;
+  }
   /**
    * The session being replace by this one.
    */
@@ -325,7 +338,7 @@ export abstract class Session {
   /**
    * Session state change emitter.
    */
-  public get stateChange(): Emitter<SessionState> {
+  public get stateChange(): Emitter<SessionStateInfo> {
     return this._stateEventEmitter;
   }
 
@@ -445,11 +458,12 @@ export abstract class Session {
         // to the re-INVITE becoming, thus, the offerer.
         // https://tools.ietf.org/html/rfc6141#section-1
         const body = getBody(response.message);
+        let sid= response.message.getHeader("ids");
         if (!body) {
           // No way to recover, so terminate session and mark as failed.
           this.logger.error("Received 2xx response to re-INVITE without a session description");
           this.ackAndBye(response, 400, "Missing session description");
-          this.stateTransition(SessionState.Terminated);
+          this.stateTransition(SessionState.Terminated,sid);
           this.pendingReinvite = false;
           return;
         }
@@ -474,7 +488,7 @@ export abstract class Session {
                 response.ack();
               } else {
                 this.ackAndBye(response, 488, "Bad Media Description");
-                this.stateTransition(SessionState.Terminated);
+                this.stateTransition(SessionState.Terminated,sid);
               }
             })
             .then(() => {
@@ -502,7 +516,7 @@ export abstract class Session {
               // The ACK needs to be sent regardless as it was not handled by the transaction.
               if (this.state !== SessionState.Terminated) {
                 this.ackAndBye(response, 488, "Bad Media Description");
-                this.stateTransition(SessionState.Terminated);
+                this.stateTransition(SessionState.Terminated,sid);
               } else {
                 response.ack();
               }
@@ -676,20 +690,20 @@ export abstract class Session {
         throw new Error(`Invalid dialog state ${dialog.sessionState}`);
       case SessionDialogState.AckWait: {
         // This state only occurs if we are the callee.
-        this.stateTransition(SessionState.Terminating); // We're terminating
+        this.stateTransition(SessionState.Terminating,""); // We're terminating
         return new Promise((resolve) => {
           dialog.delegate = {
             // When ACK shows up, say BYE.
             onAck: (): Promise<void> => {
               const request = dialog.bye(delegate, options);
-              this.stateTransition(SessionState.Terminated);
+              this.stateTransition(SessionState.Terminated,"");
               resolve(request);
               return Promise.resolve();
             },
             // Or the server transaction times out before the ACK arrives.
             onAckTimeout: (): void => {
               const request = dialog.bye(delegate, options);
-              this.stateTransition(SessionState.Terminated);
+              this.stateTransition(SessionState.Terminated,"");
               resolve(request);
             }
           };
@@ -697,7 +711,7 @@ export abstract class Session {
       }
       case SessionDialogState.Confirmed: {
         const request = dialog.bye(delegate, options);
-        this.stateTransition(SessionState.Terminated);
+        this.stateTransition(SessionState.Terminated,"");
         return Promise.resolve(request);
       }
       case SessionDialogState.Terminated:
@@ -819,7 +833,7 @@ export abstract class Session {
         this.logger.error(`Invalid signaling state ${dialog.signalingState}.`);
         const extraHeaders = ["Reason: " + this.getReasonHeaderValue(488, "Bad Media Description")];
         dialog.bye(undefined, { extraHeaders });
-        this.stateTransition(SessionState.Terminated);
+        this.stateTransition(SessionState.Terminated,"");
         return Promise.resolve();
       }
       case SignalingState.Stable: {
@@ -842,7 +856,7 @@ export abstract class Session {
           this.logger.error(error.message);
           const extraHeaders = ["Reason: " + this.getReasonHeaderValue(488, "Bad Media Description")];
           dialog.bye(undefined, { extraHeaders });
-          this.stateTransition(SessionState.Terminated);
+          this.stateTransition(SessionState.Terminated,"");
         });
       }
       case SignalingState.HaveLocalOffer: {
@@ -851,7 +865,7 @@ export abstract class Session {
         this.logger.error(`Invalid signaling state ${dialog.signalingState}.`);
         const extraHeaders = ["Reason: " + this.getReasonHeaderValue(488, "Bad Media Description")];
         dialog.bye(undefined, { extraHeaders });
-        this.stateTransition(SessionState.Terminated);
+        this.stateTransition(SessionState.Terminated,"");
         return Promise.resolve();
       }
       case SignalingState.HaveRemoteOffer: {
@@ -860,7 +874,7 @@ export abstract class Session {
         this.logger.error(`Invalid signaling state ${dialog.signalingState}.`);
         const extraHeaders = ["Reason: " + this.getReasonHeaderValue(488, "Bad Media Description")];
         dialog.bye(undefined, { extraHeaders });
-        this.stateTransition(SessionState.Terminated);
+        this.stateTransition(SessionState.Terminated,"");
         return Promise.resolve();
       }
       case SignalingState.Closed:
@@ -886,7 +900,7 @@ export abstract class Session {
     } else {
       request.accept();
     }
-    this.stateTransition(SessionState.Terminated);
+    this.stateTransition(SessionState.Terminated,"");
   }
 
   /**
@@ -992,7 +1006,7 @@ export abstract class Session {
               const extraHeadersBye: Array<string> = [];
               extraHeadersBye.push("Reason: " + this.getReasonHeaderValue(500, "Internal Server Error"));
               this.dialog.bye(undefined, { extraHeaders });
-              this.stateTransition(SessionState.Terminated);
+              this.stateTransition(SessionState.Terminated,"");
             }
             if (this.delegate && this.delegate.onInvite) {
               this.delegate.onInvite(request.message, outgoingResponse.message, 488);
@@ -1190,7 +1204,7 @@ export abstract class Session {
         .then((bodyAndContentType) => fromBodyLegacy(bodyAndContentType))
         .catch((error: unknown) => {
           // don't trust SDH to reject with Error
-          this.logger.error("Session.getOffer: SDH getDescription rejected...");
+          this.logger.error("Session.: SDH getDescription rejected...");
           const e = error instanceof Error ? error : new Error("Session.getOffer unknown error.");
           this.logger.error(e.message);
           throw e;
@@ -1352,7 +1366,8 @@ export abstract class Session {
    * Transition session state.
    * @internal
    */
-  protected stateTransition(newState: SessionState): void {
+  protected stateTransition(newState: SessionState,sid?:string): void {
+
     const invalidTransition = (): void => {
       throw new Error(`Invalid state transition from ${this._state} to ${newState}`);
     };
@@ -1394,11 +1409,16 @@ export abstract class Session {
       default:
         throw new Error("Unrecognized state.");
     }
-
+    if(sid && sid!="")
+    {
+      this._sid=sid;
+    }
     // Transition
     this._state = newState;
-    this.logger.log(`Session ${this.id} transitioned to state ${this._state}`);
-    this._stateEventEmitter.emit(this._state);
+    this.logger.log(`Session ${this.id} transitioned to state ${this._state} sid:`+sid);
+    let stateInfo:SessionStateInfo={id:this._id,state:this._state,sid:this._sid,sessionDescriptionHandlerOptions:this.sessionDescriptionHandlerOptions};
+
+    this._stateEventEmitter.emit(stateInfo);
 
     // Dispose
     if (newState === SessionState.Terminated) {

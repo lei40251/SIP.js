@@ -410,6 +410,7 @@ export class Inviter extends Session {
 
     // just send an INVITE with no sdp...
     if (options.withoutSdp || this.inviteWithoutSdp) {
+      this.logger.log("Inviter.invite no sdp");
       if (this._renderbody && this._rendertype) {
         this.outgoingRequestMessage.body = { contentType: this._rendertype, body: this._renderbody };
       }
@@ -425,6 +426,7 @@ export class Inviter extends Session {
       sessionDescriptionHandlerModifiers: this.sessionDescriptionHandlerModifiers,
       sessionDescriptionHandlerOptions: this.sessionDescriptionHandlerOptions
     };
+    this.logger.log("Inviter.invite use sdp");
     return this.getOffer(offerOptions)
       .then((body) => {
         this.outgoingRequestMessage.body = { body: body.content, contentType: body.contentType };
@@ -436,7 +438,11 @@ export class Inviter extends Session {
       })
       .catch((error) => {
         this.logger.log(error.message);
-        this.stateTransition(SessionState.Terminated);
+        // It's possible we are already terminated,
+        // so don't throw trying to transition again.
+        if (this.state !== SessionState.Terminated) {
+          this.stateTransition(SessionState.Terminated);
+        }
         throw error;
       });
   }
@@ -809,19 +815,19 @@ export class Inviter extends Session {
       onRefer: (referRequest): void => this.onReferRequest(referRequest)
     };
     this._dialog = session;
-
+    let sid=response.getHeader("sid");
     switch (session.signalingState) {
       case SignalingState.Initial:
         // INVITE without offer, so MUST have offer at this point, so invalid state.
         this.logger.error("Received 2xx response to INVITE without a session description");
         this.ackAndBye(inviteResponse, 400, "Missing session description");
-        this.stateTransition(SessionState.Terminated);
+        this.stateTransition(SessionState.Terminated,sid);
         return Promise.reject(new Error("Bad Media Description"));
       case SignalingState.HaveLocalOffer:
         // INVITE with offer, so MUST have answer at this point, so invalid state.
         this.logger.error("Received 2xx response to INVITE without a session description");
         this.ackAndBye(inviteResponse, 400, "Missing session description");
-        this.stateTransition(SessionState.Terminated);
+        this.stateTransition(SessionState.Terminated,sid);
         return Promise.reject(new Error("Bad Media Description"));
       case SignalingState.HaveRemoteOffer: {
         // INVITE without offer, received offer in 2xx, so MUST send answer in ACK.
@@ -835,11 +841,11 @@ export class Inviter extends Session {
         return this.setOfferAndGetAnswer(this._dialog.offer, options)
           .then((body) => {
             inviteResponse.ack({ body });
-            this.stateTransition(SessionState.Established);
+            this.stateTransition(SessionState.Established,sid);
           })
           .catch((error: Error) => {
             this.ackAndBye(inviteResponse, 488, "Invalid session description");
-            this.stateTransition(SessionState.Terminated);
+            this.stateTransition(SessionState.Terminated,sid);
             throw error;
           });
       }
@@ -853,7 +859,7 @@ export class Inviter extends Session {
           this.setSessionDescriptionHandler(sdh);
           this.earlyMediaSessionDescriptionHandlers.delete(session.id);
           inviteResponse.ack();
-          this.stateTransition(SessionState.Established);
+          this.stateTransition(SessionState.Established,sid);
           return Promise.resolve();
         }
 
@@ -879,12 +885,12 @@ export class Inviter extends Session {
             const error = new Error("Early media dialog does not equal confirmed dialog, terminating session");
             this.logger.error(error.message);
             this.ackAndBye(inviteResponse, 488, "Not Acceptable Here");
-            this.stateTransition(SessionState.Terminated);
+            this.stateTransition(SessionState.Terminated,sid);
             return Promise.reject(error);
           }
           // Otherwise we are good to go.
           inviteResponse.ack();
-          this.stateTransition(SessionState.Established);
+          this.stateTransition(SessionState.Established,sid);
           return Promise.resolve();
         }
 
@@ -907,12 +913,12 @@ export class Inviter extends Session {
               };
             }
             inviteResponse.ack(ackOptions);
-            this.stateTransition(SessionState.Established);
+            this.stateTransition(SessionState.Established,sid);
           })
           .catch((error: Error) => {
             this.logger.error(error.message);
             this.ackAndBye(inviteResponse, 488, "Not Acceptable Here");
-            this.stateTransition(SessionState.Terminated);
+            this.stateTransition(SessionState.Terminated,sid);
             throw error;
           });
       }

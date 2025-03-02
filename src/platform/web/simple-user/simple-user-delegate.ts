@@ -8,14 +8,14 @@ export interface SimpleUserDelegate {
    * @remarks
    * Callback for handling establishment of a new Session.
    */
-  onCallAnswered?(): void;
+  onCallAnswered?(id?:string,sid?:string): void;
 
   /**
    * Called when a call is created.
    * @remarks
    * Callback for handling the creation of a new Session.
    */
-  onCallCreated?(): void;
+  onCallCreated?(id?:string): void;
 
   /**
    * Called when a call is received.
@@ -23,21 +23,21 @@ export interface SimpleUserDelegate {
    * Callback for handling incoming INVITE requests.
    * The callback must either accept or reject the incoming call by calling `answer()` or `decline()` respectively.
    */
-  onCallReceived?(): void;
+  onCallReceived?(id:string,sid:string): void;
 
   /**
    * Called when a call is hung up.
    * @remarks
    * Callback for handling termination of a Session.
    */
-  onCallHangup?(): void;
+  onCallHangup?(id?:string,sid?:string): void;
 
   /**
    * Called when a call is put on hold or taken off hold.
    * @remarks
    * Callback for handling re-INVITE responses.
    */
-  onCallHold?(held: boolean): void;
+  onCallHold?(id?:string,held?: boolean): void;
 
   /**
    * Called when a call receives an incoming DTMF tone.
@@ -52,7 +52,7 @@ export interface SimpleUserDelegate {
    * Callback for handling incoming MESSAGE requests.
    * @param message - The message received.
    */
-  onMessageReceived?(message: string): void;
+  onMessageReceived?(contenttype:string,message: string): void;
 
   /**
    * Called when user is registered to received calls.

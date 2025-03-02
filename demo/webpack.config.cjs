@@ -1,16 +1,16 @@
-const path = require('path');
-var webpack = require('webpack');
-var TerserPlugin = require('terser-webpack-plugin');
+const path = require('path')
+var webpack = require('webpack')
+var TerserPlugin = require('terser-webpack-plugin')
 const CircularDependencyPlugin = require('circular-dependency-plugin')
 
-var pkg = require('../package.json');
-var year = new Date().getFullYear();
+var pkg = require('../package.json')
+var year = new Date().getFullYear()
 module.exports = {
   entry: {
     Client: './demo/Client.ts',
     AllEnum: './demo/AllEnum.ts'
   },
-  devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
   mode: 'none',
   module: {
     rules: [
@@ -22,7 +22,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
+    extensions: ['.tsx', '.ts', '.js'],
     extensionAlias: {
       '.js': ['.ts', '.js'],
       '.mjs': ['.mts', '.mjs'],
@@ -31,6 +31,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     globalObject: 'this',
+    library: '[name]',
     path: path.resolve(__dirname, 'dist')
   },
   optimization: {
@@ -54,4 +55,4 @@ module.exports = {
       cwd: process.cwd(),
     })
   ]
-};
+}

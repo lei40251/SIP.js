@@ -1,78 +1,86 @@
-# How To version release SIP.js
+# How to version release SIP.js
 
-(These are developer notes.)
+On `main` branch...
 
-(These may not be entirely accurate.)
+## Development Dependencies
 
-(Eric Green demands credit for these.)
+Prior to making a release, consider updating out of date dependencies.
 
-(So remember that if it's broken, you know who to contact.)
+* `npm outdated`
+* `npm update --save`
 
-(If you don't know, it's Eric Green.)
+Note that the source code itself has no dependencies.
+A lot of work has been done to make it that way, so please keep it that way.
 
-* On your own github, checkout last tagged release on a new branch (note: this can be done on the repo's release branch, instead of making your own)
-* remove all dist files
-* cherry pick commits you want using -x flag (for "hot patch" releases)
-* once ready, test.
-* update version number on master
-* cherry pick version number commit to new branch (or just merge master, if you want everything)
-* build and test.
-* test again
-* add new dist files (git add -f if it complains)
-* commit
-* test npm:
+## Clean, Build and Test
 
-    ```shell
-    #!/usr/bin/env bash
-    set -e
-    SIPJS_DIR=`pwd`
+Make sure it builds and the tests pass from a clean checkout.
 
-    cd /tmp
-    rm -rf node_modules
-    npm install $SIPJS_DIR
+* `git clean -xdf .`
+* `npm i`
+* `npm run build-and-test`
 
-    node -e "var SIP = require('sip.js'); new SIP.UA({traceSip: true}); setTimeout(process.exit, 2000)"
-    cd node_modules/sip.js && npm install && npm test
+All tests must pass.
 
-    SIPJS_TEST="var SIP = require('sip.js'); var session = new SIP.UA({traceSip: true}).invite('welcome@onsip.com', new Audio());"
-    SIPJS_TEST+="session.on('accepted', setTimeout.bind(null, window.close, 5000))"
-    npm install -g browserify smokestack
-    browserify -r sip.js | cat - <(echo $SIPJS_TEST) | smokestack
+* `npm run build-demo`
 
-    # more tests
+All the demos must work.
 
-    cd $SIPJS_DIR
-    set +e
-    ```
+## Documentation
 
-* test bower:
+Make sure the documentation is up to date and review any changes to the API. Commit any new documentation and consider the version number bump based on the changes to the API. If you commit any changes, go back to the Clean, Build and Test step.
 
-    ```shell
-    #!/usr/bin/env bash
-    set -e
-    SIPJS_DIR=`pwd`
-    SIPJS_HASH=`git rev-parse HEAD`
+* `npm run build-docs`
 
-    cd /tmp
-    rm -rf bower_components
-    bower install "$SIPJS_DIR/.git#$SIPJS_HASH"
+## Version
 
-    SIPJS_TEST="var session = new SIP.UA({traceSip: true}).invite('welcome@onsip.com', new Audio());"
-    SIPJS_TEST+="session.on('accepted', setTimeout.bind(null, window.close, 5000))"
-    npm install -g smokestack
-    cat ./bower_components/sip.js/dist/sip.min.js <(echo $SIPJS_TEST) | smokestack
+DO NOT MANUALLY UPDATE THE VERSION NUMBERS.
 
-    # more tests
+We hardcode the version in the library, using npm version will update it appropriately.
 
-    cd $SIPJS_DIR
-    set +e
-    ```
+* `npm version <major.minor.patch> --git-tag-version false`
 
-* push to local github
-* merge (this step and the above one can be skipped if you just do it on the the repo's release branch itself)
-* git tag (your version number)
-* git push --tags
-* get a clean release (as in, fresh clone)
-* npm publish
-* do release notes on github and release!
-* update website
+The updated files must be commited with a message "Version <major.minor.patch>".
+
+## Before Publishing: Make Sure Your Package Installs and Works
+
+This is important.
+
+If you can not install it locally, you'll have problems trying to publish it. Or, worse yet, you'll be able to publish it, but you'll be publishing a broken or pointless package. So don't do that.
+
+This approach will leverage the `npm pack` command to package up and zip your npm package into a single file (`<package-name>.tgz`), the same way it does for publishing. You can double check that your package will include only the files you intend it to when published and you can go to the project you want to use the package in and install it via this file. The steps to do this are as follows:
+
+1. From within your npm package directory, run `npm pack` in your terminal. Note the .tgz file it produces and the location of it.
+2. Change directories to the project directory where you want to use the npm package. Example: `cd /path/to/project`
+3. From within the client project directory, run `npm install /path/to/package.tgz` but replace it with the proper path to the location of the .tgz file from step 1.
+4. Then you can start using the package in that client project to test things out. This will give you the closest to production experience for using your npm package.
+5. Delete the .tgz file created in step 1.
+
+## Tag, Push and Publish
+
+* `git tag <major.minor.patch>`
+* `git push`
+* `git push --tags`
+* `npm publish`
+
+### Sigh, don’t use .npmignore
+
+Instead whitelist files in `package.json`. It's better to be exact about what we want in than to be forgetting to add what we want out.
+
+```
+  "main": "./lib/index.js",
+  "files": [
+    "/lib"
+  ],
+```
+
+## Update release notes on GitHub
+
+Build the bundle files to upload.
+
+`npm run build-bundles`
+
+* Find 'Releases' on repository page
+* Draft and publish release notes for new tag
+* Upload bundles for new verison
+

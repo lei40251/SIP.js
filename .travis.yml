@@ -1,12 +1,17 @@
+dist: xenial
+
+addons:
+  chrome: stable
+
 sudo: required
 
 language: node_js
 
 script:
-  - npm run buildAndTest
+  - npm run build-and-test
 
 node_js:
-  - "6"
+  - "10"
   - "stable"
 
 cache:

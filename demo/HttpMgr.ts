@@ -1,7 +1,28 @@
 
+/**
+ * HTTP管理模块
+ * 该模块提供了HTTP相关的功能，包括文件上传和HTTP GET请求
+ * 主要功能:
+ * - 文件上传(支持进度显示和取消)
+ * - HTTP GET请求
+ * - 上传进度计算
+ * - 速度计算
+ */
+
 import {ClientDelegate} from "./ClientDelegate.js"
 import {HttpDelegate} from "./HttpDelegate.js"
 // import { Md5 } from "../src/core/messages/md5.js";
+
+/**
+ * 文件上传函数
+ * @param serverip 服务器IP地址
+ * @param serverport 服务器端口
+ * @param filename 文件名
+ * @param ftype 文件类型
+ * @param file 要上传的文件对象
+ * @param clientcallback 客户端回调对象，用于处理上传进度和结果
+ * @returns XMLHttpRequest对象，可用于取消上传
+ */
 export function httpUpload(serverip:string,serverport:string,filename:string,ftype:number,file:File,clientcallback:ClientDelegate):XMLHttpRequest
 {
     let url="https://"+serverip+":"+serverport+"/UpFileServlet"

@@ -17,11 +17,11 @@ module.exports = {
     },
     demoUtils: {
       import: './demo/demo-utils.ts',
-      filename: 'demo-utils.js', // 单独指定输出文件名
+      filename: 'demo-utils.js'
     }
   },
-  // devtool: 'inline-source-map',
-  mode: 'none',
+  devtool: 'source-map', // 生产环境使用source-map，体积较小但仍可调试
+  mode: 'production', // 启用所有内置优化
   module: {
     rules: [
       {
@@ -40,29 +40,59 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
+    chunkFilename: '[name].chunk.js', // 使用更简单的chunk文件命名方式
     globalObject: 'window',
     libraryTarget: 'window',
     path: path.resolve(__dirname, 'dist'),
   },
+  experiments: {
+    outputModule: false
+  },
   optimization: {
+    minimize: true,
     minimizer: [
       new TerserPlugin({
+        parallel: true,
         terserOptions: {
+          ecma: 2017,
+          parse: {
+            ecma: 2017
+          },
+          compress: {
+            ecma: 5,
+            warnings: false,
+            comparisons: false,
+            inline: 2,
+            drop_console: true,
+            drop_debugger: true,
+            pure_funcs: ['console.log']
+          },
+          mangle: {
+            safari10: true,
+            keep_classnames: true,
+            keep_fnames: true
+          },
           output: {
+            ecma: 5,
+            comments: false,
             ascii_only: true
           }
-        }
+        },
+        extractComments: false
       })
-    ]
+    ],
+    splitChunks: false,
+    runtimeChunk: false,
+    moduleIds: 'deterministic',
+    chunkIds: 'deterministic',
+    usedExports: true,
+    concatenateModules: true
   },
   plugins: [
     new CircularDependencyPlugin({
-      // exclude detection of files based on a RegExp
       exclude: /a\.js|node_modules/,
-      // add errors to webpack instead of warnings
       failOnError: true,
-      // set the current working directory for displaying module paths
-      cwd: process.cwd(),
+      cwd: process.cwd()
     })
   ]
 }

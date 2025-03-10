@@ -3,11 +3,13 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <script language=javascript src=./dist/demo-utils.js></script>
-<script type="module">
-  import * as Client from './dist/Client.js'
+<script language=javascript src='./dist/Client.umd.js'></script>
+<!-- <script type="module">
+  // 使用命名导入，导入所有导出并命名为 IDPClient
+  import * as IDPClient from "./dist/Client.esm.js"
 
-  console.warn('client: ', Client)
-</script>
+  console.warn('client: ', IDPClient);
+</script> -->
 <script language=javascript src='./dist/AllEnum.js'></script>
 <script src="./demo.js"
   onerror="alert('To run this demo you must first build the library and demo source! See the README.')">

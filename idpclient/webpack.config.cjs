@@ -2,15 +2,8 @@ const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 
-module.exports = {
-  entry: {
-    Client: {
-      import: './Client.ts',
-      library: {
-        type: 'module'
-      }
-    }
-  },
+// 创建基础配置
+const baseConfig = {
   devtool: 'source-map',
   mode: 'production',
   module: {
@@ -28,18 +21,6 @@ module.exports = {
       '.js': ['.ts', '.js'],
       '.mjs': ['.mts', '.mjs'],
     }
-  },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
-    library: {
-      type: 'module'
-    },
-    globalObject: 'this',
-    clean: true
-  },
-  experiments: {
-    outputModule: true
   },
   optimization: {
     minimize: true,
@@ -86,3 +67,54 @@ module.exports = {
     })
   ]
 };
+
+// UMD 配置
+const umdConfig = {
+  ...baseConfig,
+  entry: {
+    Client: {
+      import: './Client.ts',
+      library: {
+        type: 'umd',
+        name: 'IDPClient'
+      }
+    }
+  },
+  output: {
+    filename: '[name].umd.js',
+    path: path.resolve(__dirname, 'dist'),
+    library: {
+      type: 'umd',
+      name: 'IDPClient'
+    },
+    globalObject: 'this',
+    clean: true
+  }
+};
+
+// ESM 配置
+const esmConfig = {
+  ...baseConfig,
+  entry: {
+    Client: {
+      import: './Client.ts',
+      library: {
+        type: 'module'
+      }
+    }
+  },
+  output: {
+    filename: '[name].esm.js',
+    path: path.resolve(__dirname, 'dist'),
+    library: {
+      type: 'module'
+    },
+    clean: false // 避免清除 UMD 输出
+  },
+  experiments: {
+    outputModule: true
+  }
+};
+
+// 导出配置数组
+module.exports = [umdConfig, esmConfig];

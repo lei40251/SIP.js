@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig-base.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": true,
+    "outDir": "./dist",
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2017"
+  },
+  "include": [
+    "**/*.ts"
+  ]
+}

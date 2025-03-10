@@ -56,10 +56,11 @@
     "mock-socket": "^9.1.5",
     "peggy": "^1.2.0",
     "prettier": "^2.7.1",
-    "ts-loader": "^9.4.1",
+    "terser-webpack-plugin": "^5.3.14",
+    "ts-loader": "^9.5.2",
     "ts-pegjs": "^1.2.2",
     "typescript": "^4.8.3",
-    "webpack": "^5.74.0",
+    "webpack": "^5.98.0",
     "webpack-cli": "^4.10.0"
   },
   "engines": {
@@ -70,6 +71,7 @@
     "build-bundles": "npm run build-reg-bundle && npm run build-min-bundle && npm run copy-dist-files",
     "build-reg-bundle": "webpack --progress --config build/webpack.config.cjs --env buildType=reg",
     "build-min-bundle": "webpack --progress --config build/webpack.config.cjs --env buildType=min",
+    "build-idp": "npm run build && webpack --progress --config idpclient/webpack.config.cjs",
     "build-demo": "npm run build && webpack --progress --config demo/webpack.config.cjs",
     "build-demo1": "npm run build && webpack --progress --config demo/tsconfig.json",
     "build-lib": "tsc -p src",

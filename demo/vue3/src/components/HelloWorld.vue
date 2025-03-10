@@ -1,9 +1,12 @@
 <script setup>
 import { ref } from 'vue'
+import * as Client from '/src/assets/Client.js'
 
 defineProps({
   msg: String,
 })
+
+console.warn('client: ', Client.init())
 
 const count = ref(0)
 </script>

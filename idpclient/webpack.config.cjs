@@ -4,6 +4,7 @@ const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 // 创建基础配置
 const baseConfig = {
+  context: __dirname,
   devtool: 'source-map',
   mode: 'production',
   module: {
@@ -85,10 +86,10 @@ const umdConfig = {
     path: path.resolve(__dirname, 'dist'),
     library: {
       type: 'umd',
-      name: 'IDPClient'
+      name: 'Client'
     },
     globalObject: 'this',
-    clean: true
+    clean: false
   }
 };
 

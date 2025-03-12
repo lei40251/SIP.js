@@ -115,7 +115,7 @@ const simpleUserDelegate: SimpleUserDelegate = {
           sessioninfo.ctype = GetCallType(sidArr[1])
           // 处理自动应答
           if (sessioninfo.autoanswer) {
-            Answerbycallid(id, sessioninfo.lvideo, sessioninfo.rvideo, sessioninfo.raudio, sessioninfo.isshowscreen)
+            answerbycallid(id, sessioninfo.lvideo, sessioninfo.rvideo, sessioninfo.raudio, sessioninfo.isshowscreen)
             console.log('auto answer call')
             if (clientcallback && clientcallback.onCallCreated) {
               clientcallback.onCallCreated(sessioninfo.cid, JSON.stringify(sessioninfo))
@@ -258,7 +258,7 @@ const simpleUserDelegate: SimpleUserDelegate = {
    */
   onMessageReceived: (contenttype: string, message: string): void => {
     if (contenttype == APIHEADER.FSMSGRESTYPE) {
-      TreateMsg(message)
+      treateMsg(message)
     }
     else {
       if (clientcallback && clientcallback.onMessageReceived) {
@@ -282,7 +282,7 @@ const simpleUserDelegate: SimpleUserDelegate = {
  *    - WebSocket登录消息：处理WebSocket连接的登录状态
  * 4. 对于未识别的消息类型，通过onAPIReceived回调通知上层
  */
-function TreateMsg(message: string) {
+function treateMsg(message: string) {
   window.console.log("onMessageReceived:" + message)
   let recvinfo = JSON.parse(message)
   switch (recvinfo["header"]) {
@@ -310,7 +310,7 @@ function TreateMsg(message: string) {
               // 自动应答处理
               if (mkinfo.autoanswer) {
                 if (mkinfo.callid) {
-                  Answerbycallid(mkinfo.callid, mkinfo.lvideo, mkinfo.rvideo, mkinfo.raudio, mkinfo.isshowscreen)
+                  answerbycallid(mkinfo.callid, mkinfo.lvideo, mkinfo.rvideo, mkinfo.raudio, mkinfo.isshowscreen)
                   console.log('auto answer call')
                 }
                 if (clientcallback && clientcallback.onCallCreated) {
@@ -414,7 +414,7 @@ function TreateMsg(message: string) {
           console.debug("websocket login success")
         }
         else if (recvinfo["code"] == ECode.ECodeRegisterCheckPwd) {
-          ServerWebSocketLogin(recvinfo["body"][0]["checkuuid"])
+          serverWebSocketLogin(recvinfo["body"][0]["checkuuid"])
           return
         }
         break
@@ -512,7 +512,7 @@ export function connect(callback: ClientDelegate) {
   clientcallback = callback
 
   // 尝试连接到服务器
-  simpleUser.connect()
+  return simpleUser.connect()
     .then(() => {
       console.log("conn success")
       // 连接成功，通知回调
@@ -527,7 +527,7 @@ export function connect(callback: ClientDelegate) {
       console.error(error)
       // 打开HTTPS URL
       window.open(httpsserverurl)
-      return false
+      throw error
     })
 }
 /**
@@ -541,18 +541,20 @@ export function connect(callback: ClientDelegate) {
  */
 export function disconnect() {
   // 执行断开连接操作
-  simpleUser
+ return simpleUser
     .disconnect()
     .then(() => {
       // 断开成功，通知状态变更
       if (clientcallback && clientcallback.onServerConnectState) {
         clientcallback.onServerConnectState(false)
       }
+      return true;
     })
     .catch((error: Error) => {
       // 断开失败，记录错误
       console.error(`[${simpleUser.id}] failed to disconnect`)
       console.error(error)
+      throw error
     })
 }
 /**
@@ -576,7 +578,7 @@ export function disconnect() {
  * - 通知注册状态变更
  * - 输出错误日志
  */
-export function Register(timeexp: number | undefined) {
+export function register(timeexp: number | undefined) {
   // 验证超时时间范围
   if (timeexp == undefined || timeexp <= 1 || timeexp >= 600) {
     timeexp = 60  // 使用默认值
@@ -586,7 +588,7 @@ export function Register(timeexp: number | undefined) {
   let operate = { expires: timeexp }
 
   // 执行注册操作
-  simpleUser.register(operate, {
+  return simpleUser.register(operate, {
     // An example of how to get access to a SIP response message for custom handling
     requestDelegate: {
       // 注册被拒绝的处理
@@ -608,6 +610,7 @@ export function Register(timeexp: number | undefined) {
       if (clientcallback && clientcallback.onRegisteredState) {
         clientcallback.onRegisteredState(true)
       }
+      return true;
     })
     .catch((error: Error) => {
       // 注册异常处理
@@ -616,6 +619,7 @@ export function Register(timeexp: number | undefined) {
       if (clientcallback && clientcallback.onRegisteredState) {
         clientcallback.onRegisteredState(false)
       }
+      throw error
     })
 }
 /**
@@ -627,20 +631,24 @@ export function Register(timeexp: number | undefined) {
  *    - 成功：通知注册状态变更为false
  *    - 失败：记录错误信息
  */
-export function UnRegister() {
+export function unRegister() {
   // 执行注销操作
-  simpleUser
+  return simpleUser
     .unregister()
     .then(() => {
       // 注销成功，通知状态变更
       if (clientcallback && clientcallback.onRegisteredState) {
         clientcallback.onRegisteredState(false)
       }
+
+      return true
     })
     .catch((error: Error) => {
       // 注销失败，记录错误
       console.error(`[${simpleUser.id}] failed to unregister`)
       console.error(error)
+
+      throw error
     })
 }
 /**
@@ -655,14 +663,14 @@ export function UnRegister() {
  *    - 设置二进制数据类型
  *    - 注册事件监听器(关闭、错误、打开、消息)
  */
-export function ConnWebSocket() {
+export function connWebSocket() {
   if (ServerWebSocketPATH == undefined || ServerWebSocketPATH == "") {
     console.error(`[${simpleUser.id}] websocketpath is null`)
     return
   }
   let url = ServerWebSocketPATH + "/websocketapi"
   console.debug(`websocketpath:` + ServerWebSocketPATH)
-  DisConnWebSocket()
+  disConnWebSocket()
   ServerWebSocket = new WebSocket(url)
   ServerWebSocket.binaryType = "arraybuffer" // set data type of received binary messages
   ServerWebSocket.addEventListener("close", (ev: CloseEvent) => onWebSocketClose(ev))
@@ -679,9 +687,9 @@ export function ConnWebSocket() {
  * 3. 关闭WebSocket连接
  * 4. 清除WebSocket实例
  */
-export function DisConnWebSocket() {
+export function disConnWebSocket() {
   if (ServerWebSocket != undefined) {
-    ServerWebSocketLogout()
+    serverWebSocketLogout()
     ServerWebSocket.close()
     ServerWebSocket = undefined
   }
@@ -753,7 +761,7 @@ function onWebSocketMessage(ev: MessageEvent): void {
     // WebSocket text message.
     finishedData = data
   }
-  TreateMsg(finishedData)
+  treateMsg(finishedData)
 }
 /**
  * WebSocket打开事件处理
@@ -766,7 +774,7 @@ function onWebSocketMessage(ev: MessageEvent): void {
  */
 function onWebSocketOpen(ev: Event): void {
   console.log("WebSocket opened", ev)
-  ServerWebSocketLogin("")
+  serverWebSocketLogin("")
 }
 /**
  * WebSocket登录处理
@@ -780,7 +788,7 @@ function onWebSocketOpen(ev: Event): void {
  * 2. 创建登录消息头
  * 3. 发送登录请求
  */
-function ServerWebSocketLogin(checkuuid: string) {
+function serverWebSocketLogin(checkuuid: string) {
   const info = {
     username: displayName,
     password: ""
@@ -811,7 +819,7 @@ function ServerWebSocketLogin(checkuuid: string) {
  * 2. 创建注销消息头
  * 3. 发送注销请求
  */
-function ServerWebSocketLogout() {
+function serverWebSocketLogout() {
   const info = {
     username: displayName
   }
@@ -820,7 +828,7 @@ function ServerWebSocketLogout() {
     header: APIHEADER.API_REG_WS_LOGOUT,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 /**
  * 获取员工登录信息
@@ -829,20 +837,40 @@ function ServerWebSocketLogout() {
  * 1. 创建获取登录信息的消息头
  * 2. 发送获取登录信息请求
  */
-export function GetEmployeeLoginInfo() {
+export function getEmployeeLoginInfo() {
   const header: FSAPIHeader = {
     msgid: GetUUID(),
     header: APIHEADER.API_SYSTEM_LOGININFO
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
-export function MakeCallold(number: string, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement) {
+
+/**
+ * 发起一个SIP视频通话
+ *
+ * @param number - 被叫号码，将与服务器IP一起组成SIP URI (sip:number@serverip)
+ * @param localvideo - 本地视频HTML元素，用于显示本地视频流
+ * @param remotevideo - 远程视频HTML元素，用于显示远端视频流。如果提供此参数则自动开启视频通话
+ * @param remoteaudio - 远程音频HTML元素，用于播放远端音频流
+ *
+ * @returns 返回Promise对象，包含通话会话信息。如果呼叫失败会reject并显示错误提示
+ *
+ * @description
+ * 该方法用于建立SIP视频通话，主要配置说明：
+ * 1. inviteWithoutSdp: false - 在INVITE请求中包含SDP信息
+ * 2. constraints: 媒体约束
+ *    - audio: true 启用音频
+ *    - video: 根据是否提供remotevideo决定是否启用视频
+ * 3. local/remote: 设置本地和远端媒体元素
+ * 4. videoRecvonly: true 仅接收视频流模式
+ */
+export function makeCallold(number: string, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement) {
   let callurl = "sip:" + number + "@" + m_serverip
   let videocall = false
   if (remotevideo) {
     videocall = true
   }
-  simpleUser.call(callurl, {
+  return simpleUser.call(callurl, {
     inviteWithoutSdp: false,
     sessionDescriptionHandlerOptions: {
       constraints: { // This demo is making "video only" calls
@@ -863,6 +891,7 @@ export function MakeCallold(number: string, localvideo: HTMLVideoElement, remote
       console.error(`[${simpleUser.id}] failed to place call`)
       console.error(error)
       alert("Failed to place call.\n" + error)
+      throw error;
     })
 }
 /**
@@ -876,10 +905,10 @@ export function MakeCallold(number: string, localvideo: HTMLVideoElement, remote
  * 3. 执行挂断操作
  * 4. 处理可能的错误
  */
-export function Hangup(sid: string,) {
+export function hangup(sid: string,) {
   let sessioninfo = arrSessions.get(sid)
   if (sessioninfo && sessioninfo.callid) {
-    simpleUser.hangup(sessioninfo.callid).catch((error: Error) => {
+    return simpleUser.hangup(sessioninfo.callid).catch((error: Error) => {
       console.error(`[${simpleUser.id}] failed to hangup call`)
       console.error(error)
       alert("Failed to hangup call.\n" + error)
@@ -887,6 +916,7 @@ export function Hangup(sid: string,) {
   }
   else {
     console.error("Hangup find callid error sid:" + sid)
+    return Promise.reject("Hangup find callid error sid:" + sid)
   }
 }
 /**
@@ -903,11 +933,11 @@ export function Hangup(sid: string,) {
  * 2. 验证会话是否存在且有效
  * 3. 调用应答处理函数
  */
-export function Answer(sid: string, localvideo?: HTMLVideoElement, remotevideo?: HTMLVideoElement, remoteaudio?: HTMLAudioElement, isshowscreen?: boolean) {
+export function answer(sid: string, localvideo?: HTMLVideoElement, remotevideo?: HTMLVideoElement, remoteaudio?: HTMLAudioElement, isshowscreen?: boolean) {
   console.log("Answer now call")
   let sessioninfo = arrSessions.get(sid)
   if (sessioninfo && sessioninfo.callid) {
-    Answerbycallid(sessioninfo.callid, localvideo, remotevideo, remoteaudio, isshowscreen)
+    answerbycallid(sessioninfo.callid, localvideo, remotevideo, remoteaudio, isshowscreen)
   }
   else {
     console.error("Answer find callid error sid:" + sid)
@@ -930,7 +960,7 @@ export function Answer(sid: string, localvideo?: HTMLVideoElement, remotevideo?:
  * 3. 执行应答操作
  * 4. 处理可能的错误
  */
-export function Answerbycallid(callid: string, localvideo?: HTMLVideoElement, remotevideo?: HTMLVideoElement, remoteaudio?: HTMLAudioElement, isshowscreen?: boolean) {
+export function answerbycallid(callid: string, localvideo?: HTMLVideoElement, remotevideo?: HTMLVideoElement, remoteaudio?: HTMLAudioElement, isshowscreen?: boolean) {
   let videocall = false
   if (remotevideo) {
     videocall = true
@@ -968,7 +998,7 @@ export function Answerbycallid(callid: string, localvideo?: HTMLVideoElement, re
  * 2. 验证会话是否存在且有效
  * 3. 发送DTMF信号
  */
-export function SendDTMF(tone: string, sid: string) {
+export function sendDTMF(tone: string, sid: string) {
   let sessioninfo = arrSessions.get(sid)
   if (sessioninfo && sessioninfo.callid) {
     simpleUser.sendDTMF(tone, sessioninfo.callid)
@@ -987,13 +1017,14 @@ export function SendDTMF(tone: string, sid: string) {
  * 2. 验证会话是否存在且有效
  * 3. 执行保持操作
  */
-export function Hold(sid: string) {
+export function hold(sid: string) {
   let sessioninfo = arrSessions.get(sid)
   if (sessioninfo && sessioninfo.callid) {
-    simpleUser.hold(sessioninfo.callid)
+    return simpleUser.hold(sessioninfo.callid)
   }
   else {
-    console.error("Hold find callid error sid:" + sid)
+    console.error("hold find callid error sid:" + sid)
+    return Promise.reject("hold find callid error sid:" + sid)
   }
 }
 /**
@@ -1006,13 +1037,14 @@ export function Hold(sid: string) {
  * 2. 验证会话是否存在且有效
  * 3. 执行取消保持操作
  */
-export function UnHold(sid: string) {
+export function unHold(sid: string) {
   let sessioninfo = arrSessions.get(sid)
   if (sessioninfo && sessioninfo.callid) {
-    simpleUser.unhold(sessioninfo.callid)
+    return simpleUser.unhold(sessioninfo.callid)
   }
   else {
-    console.error("UnHold find callid error sid:" + sid)
+    console.error("unHold find callid error sid:" + sid)
+    return Promise.reject("unHold find callid error sid:" + sid)
   }
 }
 /**
@@ -1025,7 +1057,7 @@ export function UnHold(sid: string) {
  * 2. 验证会话是否存在且有效
  * 3. 执行静音操作
  */
-export function Mute(sid: string) {
+export function mute(sid: string) {
   let sessioninfo = arrSessions.get(sid)
   if (sessioninfo && sessioninfo.callid) {
     simpleUser.mute(sessioninfo.callid)
@@ -1044,7 +1076,7 @@ export function Mute(sid: string) {
  * 2. 验证会话是否存在且有效
  * 3. 执行取消静音操作
  */
-export function UnMute(sid: string) {
+export function unMute(sid: string) {
   let sessioninfo = arrSessions.get(sid)
   if (sessioninfo && sessioninfo.callid) {
     simpleUser.unmute(sessioninfo.callid)
@@ -1064,7 +1096,7 @@ export function UnMute(sid: string) {
  * 2. 验证会话是否存在且有效
  * 3. 检查静音状态
  */
-export function IsMuted(sid: string): boolean {
+export function isMuted(sid: string): boolean {
   let sessioninfo = arrSessions.get(sid)
   if (sessioninfo && sessioninfo.callid) {
     simpleUser.isMuted(sessioninfo.callid)
@@ -1089,7 +1121,7 @@ export function IsMuted(sid: string): boolean {
  * 5. 将Canvas内容转换为图片
  * 6. 创建下载链接并保存
  */
-export function TakePhoto(sid: string, pathname: string): boolean {
+export function takePhoto(sid: string, pathname: string): boolean {
   let sessioninfo = arrSessions.get(sid)
   if (sessioninfo) {
     if (sessioninfo.rvideo) {
@@ -1136,7 +1168,7 @@ export function TakePhoto(sid: string, pathname: string): boolean {
  *    - 创建下载链接并保存
  * 6. 开始录制
  */
-export function MediaRecordStart(sid: string, pathname: string): boolean {
+export function mediaRecordStart(sid: string, pathname: string): boolean {
   let sessioninfo = arrSessions.get(sid)
   if (sessioninfo) {
     if (sessioninfo.rvideo) {
@@ -1186,7 +1218,7 @@ export function MediaRecordStart(sid: string, pathname: string): boolean {
  * 3. 停止录制
  * 4. 清除MediaRecorder实例
  */
-export function MediaRecordStop(sid: string): boolean {
+export function mediaRecordStop(sid: string): boolean {
   let sessioninfo = arrSessions.get(sid)
   if (sessioninfo) {
     if (sessioninfo.mediaRecorder) {
@@ -1241,7 +1273,7 @@ export function dataURLtoBlob(dataurl: string) {
  * 2. 如果WebSocket可用，通过WebSocket发送消息
  * 3. 如果WebSocket不可用，通过SIP消息发送
  */
-export function SendAPI(msg: string): void {
+export function sendAPI(msg: string): void {
   if (ServerWebSocket != undefined && ServerWebSocketLoginSuccess) {
     console.log("ServerWebSocket send:" + msg)
     ServerWebSocket.send(msg)
@@ -1266,7 +1298,7 @@ export function SendAPI(msg: string): void {
  * 3. 保存呼叫信息
  * 4. 发送呼叫请求
  */
-export function MakeCall(called: string, videotype: MediaType, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement, isshowscreen: boolean): void {
+export function makeCall(called: string, videotype: MediaType, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement, isshowscreen: boolean): void {
   const info: MakeCallT = {
     caller: displayName,
     ctype: CallType.CallTypeSingle2,
@@ -1289,7 +1321,7 @@ export function MakeCall(called: string, videotype: MediaType, localvideo: HTMLV
     isshowscreen: isshowscreen
   }
   arrMakeCalls.set(header.msgid, callinfo)
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 /**
  * 创建视频监控
@@ -1306,7 +1338,7 @@ export function MakeCall(called: string, videotype: MediaType, localvideo: HTMLV
  * 3. 保存监控信息
  * 4. 发送监控请求
  */
-export function VideoBug(called: string, codec: string, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement): void {
+export function videoBug(called: string, codec: string, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement): void {
   const info: VideoBugT = {
     caller: displayName,
     called: called,
@@ -1327,7 +1359,7 @@ export function VideoBug(called: string, codec: string, localvideo: HTMLVideoEle
     isshowscreen: false
   }
   arrMakeCalls.set(header.msgid, mkinfo)
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
@@ -1348,7 +1380,7 @@ export function VideoBug(called: string, codec: string, localvideo: HTMLVideoEle
  * 3. 保存会议信息
  * 4. 发送创建会议请求
  */
-export function CreateConf(called: string, confnum: string, confname: string, videotype: MediaType, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement, isshowscreen: boolean): void {
+export function createConf(called: string, confnum: string, confname: string, videotype: MediaType, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement, isshowscreen: boolean): void {
   const info: MakeCallT = {
     caller: displayName,
     ctype: CallType.CallTypeTemporary,
@@ -1373,15 +1405,52 @@ export function CreateConf(called: string, confnum: string, confname: string, vi
     isshowscreen: isshowscreen
   }
   arrMakeCalls.set(header.msgid, confkinfo)
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
-export function CreatePlayFileBroadcast(called: string, confnum: string, confname: string, videotype: MediaType, fileid: string, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement, isshowscreen: boolean): void {
-  CreatePlayFileCall(called, confnum, confname, videotype, fileid, CallType.CallTypeBroadcast, localvideo, remotevideo, remoteaudio, isshowscreen)
+/**
+ * 创建文件广播会议
+ * @param called 与会成员，多个成员用逗号分隔
+ * @param confnum 会议号码
+ * @param confname 会议名称
+ * @param videotype 媒体类型，指定是否包含视频
+ * @param fileid 要播放的文件ID
+ * @param localvideo 本地视频显示元素
+ * @param remotevideo 远程视频显示元素
+ * @param remoteaudio 远程音频播放元素
+ * @param isshowscreen 是否显示屏幕共享
+ */
+export function createPlayFileBroadcast(called: string, confnum: string, confname: string, videotype: MediaType, fileid: string, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement, isshowscreen: boolean): void {
+  createPlayFileCall(called, confnum, confname, videotype, fileid, CallType.CallTypeBroadcast, localvideo, remotevideo, remoteaudio, isshowscreen)
 }
-export function CreatePlayFileConf(called: string, confnum: string, confname: string, videotype: MediaType, fileid: string, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement, isshowscreen: boolean): void {
-  CreatePlayFileCall(called, confnum, confname, videotype, fileid, CallType.CallTypeTemporary, localvideo, remotevideo, remoteaudio, isshowscreen)
+/**
+ * 创建文件播放会议
+ * @param called 与会成员，多个成员用逗号分隔
+ * @param confnum 会议号码
+ * @param confname 会议名称
+ * @param videotype 媒体类型，指定是否包含视频
+ * @param fileid 要播放的文件ID
+ * @param localvideo 本地视频显示元素
+ * @param remotevideo 远程视频显示元素
+ * @param remoteaudio 远程音频播放元素
+ * @param isshowscreen 是否显示屏幕共享
+ */
+export function createPlayFileConf(called: string, confnum: string, confname: string, videotype: MediaType, fileid: string, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement, isshowscreen: boolean): void {
+  createPlayFileCall(called, confnum, confname, videotype, fileid, CallType.CallTypeTemporary, localvideo, remotevideo, remoteaudio, isshowscreen)
 }
-export function CreatePlayFileCall(called: string, confnum: string, confname: string, videotype: MediaType, fileid: string, calltype: CallType, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement, isshowscreen: boolean): void {
+/**
+ * 创建文件播放通话
+ * @param called 与会成员，多个成员用逗号分隔
+ * @param confnum 会议号码
+ * @param confname 会议名称
+ * @param videotype 媒体类型，指定是否包含视频
+ * @param fileid 要播放的文件ID
+ * @param calltype 通话类型，可以是广播或临时会议
+ * @param localvideo 本地视频显示元素
+ * @param remotevideo 远程视频显示元素
+ * @param remoteaudio 远程音频播放元素
+ * @param isshowscreen 是否显示屏幕共享
+ */
+export function createPlayFileCall(called: string, confnum: string, confname: string, videotype: MediaType, fileid: string, calltype: CallType, localvideo: HTMLVideoElement, remotevideo: HTMLVideoElement, remoteaudio: HTMLAudioElement, isshowscreen: boolean): void {
   const info: MakeCallT = {
     caller: displayName,
     ctype: calltype,
@@ -1407,9 +1476,18 @@ export function CreatePlayFileCall(called: string, confnum: string, confname: st
     isshowscreen: isshowscreen
   }
   arrMakeCalls.set(header.msgid, confkinfo)
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
-export function SetGetCallMemberVideo(cid: string, srcmember: string, sessionnum: string, sessionname: string, strcalleds: string, remotevideo: HTMLVideoElement): void {
+/**
+ * 设置获取会议成员视频
+ * @param cid 通话ID
+ * @param srcmember 源成员号码
+ * @param sessionnum 会话号码
+ * @param sessionname 会话名称
+ * @param strcalleds 目标成员列表，多个成员用逗号分隔
+ * @param remotevideo 远程视频显示元素
+ */
+export function setGetCallMemberVideo(cid: string, srcmember: string, sessionnum: string, sessionname: string, strcalleds: string, remotevideo: HTMLVideoElement): void {
 
   const info: GetVideoT = {
     srccid: cid,
@@ -1432,7 +1510,7 @@ export function SetGetCallMemberVideo(cid: string, srcmember: string, sessionnum
     isshowscreen: false
   }
   arrMakeCalls.set(header.msgid, confkinfo)
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 /**
  *
@@ -1456,7 +1534,7 @@ export function SetGetCallMemberVideo(cid: string, srcmember: string, sessionnum
  * 2. 创建API消息头
  * 3. 发送播放请求
  */
-export function PlayFile(sid: string, fileid: string, playnum: number): void {
+export function playFile(sid: string, fileid: string, playnum: number): void {
   const info = {
     cid: sid,
     FileID: fileid,
@@ -1468,7 +1546,7 @@ export function PlayFile(sid: string, fileid: string, playnum: number): void {
     header: APIHEADER.API_SESSION_PLAYFILE,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 /**
  * 停止播放文件
@@ -1481,7 +1559,7 @@ export function PlayFile(sid: string, fileid: string, playnum: number): void {
  * 2. 创建API消息头
  * 3. 发送停止播放请求
  */
-export function PlayFileStop(sid: string, fileid: string): void {
+export function playFileStop(sid: string, fileid: string): void {
   const info = {
     cid: sid,
     FileID: fileid
@@ -1491,7 +1569,7 @@ export function PlayFileStop(sid: string, fileid: string): void {
     header: APIHEADER.API_SESSION_PLAYFILESTOP,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 /**
  * 添加会议成员
@@ -1508,7 +1586,7 @@ export function PlayFileStop(sid: string, fileid: string): void {
  * 2. 创建API消息头
  * 3. 发送添加成员请求
  */
-export function AddMember(sid: string, addnum: string): void {
+export function addMember(sid: string, addnum: string): void {
   const info = {
     cid: sid,
     astype: AnswerType.AnswerTypeMan,
@@ -1520,7 +1598,7 @@ export function AddMember(sid: string, addnum: string): void {
     header: APIHEADER.API_OPERATE_MEMBERADD,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 /**
  * 删除会议成员
@@ -1533,7 +1611,7 @@ export function AddMember(sid: string, addnum: string): void {
  * 2. 创建API消息头
  * 3. 发送删除成员请求
  */
-export function DelMember(sid: string, delnum: string): void {
+export function delMember(sid: string, delnum: string): void {
   const info = {
     cid: sid,
     number: delnum
@@ -1543,7 +1621,7 @@ export function DelMember(sid: string, delnum: string): void {
     header: APIHEADER.API_OPERATE_MEMBERDEL,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 /**
  * 设置成员发言类型
@@ -1557,7 +1635,7 @@ export function DelMember(sid: string, delnum: string): void {
  * 2. 创建API消息头
  * 3. 发送设置请求
  */
-export function SetMemberSpeakType(sid: string, number: string, stype: SpeakType): void {
+export function setMemberSpeakType(sid: string, number: string, stype: SpeakType): void {
   const info = {
     cid: sid,
     number: number,
@@ -1568,7 +1646,7 @@ export function SetMemberSpeakType(sid: string, number: string, stype: SpeakType
     header: APIHEADER.API_OPERATE_MEMBER_SPEAK,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 /**
  * 禁止成员发言
@@ -1576,8 +1654,8 @@ export function SetMemberSpeakType(sid: string, number: string, stype: SpeakType
  * @param sid - 会话ID
  * @param number - 成员号码
  */
-export function SetMemberUnSpeak(sid: string, number: string): void {
-  SetMemberSpeakType(sid, number, SpeakType.SpeakTypeMute)
+export function setMemberUnSpeak(sid: string, number: string): void {
+  setMemberSpeakType(sid, number, SpeakType.SpeakTypeMute)
 }
 /**
  * 允许成员发言
@@ -1585,8 +1663,8 @@ export function SetMemberUnSpeak(sid: string, number: string): void {
  * @param sid - 会话ID
  * @param number - 成员号码
  */
-export function SetMemberSpeak(sid: string, number: string): void {
-  SetMemberSpeakType(sid, number, SpeakType.SpeakTypeUnmute)
+export function setMemberSpeak(sid: string, number: string): void {
+  setMemberSpeakType(sid, number, SpeakType.SpeakTypeUnmute)
 }
 /**
  * 设置成员听讲类型
@@ -1600,7 +1678,7 @@ export function SetMemberSpeak(sid: string, number: string): void {
  * 2. 创建API消息头
  * 3. 发送设置请求
  */
-export function SetMemberHearType(sid: string, number: string, htype: HearType): void {
+export function setMemberHearType(sid: string, number: string, htype: HearType): void {
   const info = {
     cid: sid,
     number: number,
@@ -1611,7 +1689,7 @@ export function SetMemberHearType(sid: string, number: string, htype: HearType):
     header: APIHEADER.API_OPERATE_MEMBER_HEAR,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
@@ -1620,8 +1698,8 @@ export function SetMemberHearType(sid: string, number: string, htype: HearType):
  * @param sid - 会话ID
  * @param number - 成员号码
  */
-export function SetMemberUnHear(sid: string, number: string): void {
-  SetMemberHearType(sid, number, HearType.HearTypeMute)
+export function setMemberUnHear(sid: string, number: string): void {
+  setMemberHearType(sid, number, HearType.HearTypeMute)
 }
 
 /**
@@ -1630,8 +1708,8 @@ export function SetMemberUnHear(sid: string, number: string): void {
  * @param sid - 会话ID
  * @param number - 成员号码
  */
-export function SetMemberHear(sid: string, number: string): void {
-  SetMemberHearType(sid, number, HearType.HearTypeUnmute)
+export function setMemberHear(sid: string, number: string): void {
+  setMemberHearType(sid, number, HearType.HearTypeUnmute)
 }
 
 /**
@@ -1646,7 +1724,7 @@ export function SetMemberHear(sid: string, number: string): void {
  * 2. 创建API消息头
  * 3. 发送设置请求
  */
-export function SetMemberPushType(sid: string, number: string, ptype: PushVideoType): void {
+export function setMemberPushType(sid: string, number: string, ptype: PushVideoType): void {
   const info = {
     cid: sid,
     number: number,
@@ -1657,7 +1735,7 @@ export function SetMemberPushType(sid: string, number: string, ptype: PushVideoT
     header: APIHEADER.API_OPERATE_MEMBER_PUSH,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
@@ -1666,8 +1744,8 @@ export function SetMemberPushType(sid: string, number: string, ptype: PushVideoT
  * @param sid - 会话ID
  * @param number - 成员号码
  */
-export function SetMemberPush(sid: string, number: string): void {
-  SetMemberPushType(sid, number, PushVideoType.PushVideoTypePush)
+export function setMemberPush(sid: string, number: string): void {
+  setMemberPushType(sid, number, PushVideoType.PushVideoTypePush)
 }
 
 /**
@@ -1676,8 +1754,8 @@ export function SetMemberPush(sid: string, number: string): void {
  * @param sid - 会话ID
  * @param number - 成员号码
  */
-export function SetMemberUnPush(sid: string, number: string): void {
-  SetMemberPushType(sid, number, PushVideoType.PushVideoTypeUnpush)
+export function setMemberUnPush(sid: string, number: string): void {
+  setMemberPushType(sid, number, PushVideoType.PushVideoTypeUnpush)
 }
 
 /**
@@ -1690,7 +1768,7 @@ export function SetMemberUnPush(sid: string, number: string): void {
  * 2. 创建API消息头
  * 3. 发送结束会议请求
  */
-export function FoceEndConf(sid: string): void {
+export function foceEndConf(sid: string): void {
   const info = {
     cid: sid
   }
@@ -1699,7 +1777,7 @@ export function FoceEndConf(sid: string): void {
     header: APIHEADER.API_OPERATE_FORCEEND_CALL,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
@@ -1733,7 +1811,7 @@ export function froceOPCall(optype: number, opnumber: string, opcid: string, loc
     header: APIHEADER.API_OPERATE_CALL,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
@@ -1750,7 +1828,7 @@ export function froceOPCall(optype: number, opnumber: string, opcid: string, loc
  * 获取会话中的所有成员信息
  * @param sid 会话ID
  */
-export function GetCallAllMembers(sid: string): void {
+export function getCallAllMembers(sid: string): void {
   const info = {
     cid: sid
   }
@@ -1759,7 +1837,7 @@ export function GetCallAllMembers(sid: string): void {
     header: APIHEADER.API_SESSION_GETALLMEMBERS,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
@@ -1768,7 +1846,7 @@ export function GetCallAllMembers(sid: string): void {
  * @param optype 操作类型（55:申请发言，56:释放发言）
  * @param remoteaudio 远端音频元素
  */
-export function ApplySpeakByType(groupnum: string, optype: number, remoteaudio: HTMLAudioElement): void {
+export function applySpeakByType(groupnum: string, optype: number, remoteaudio: HTMLAudioElement): void {
   const info: MakeCallT = {
     caller: displayName,
     ctype: CallType.CallTypeIntercom,
@@ -1790,7 +1868,7 @@ export function ApplySpeakByType(groupnum: string, optype: number, remoteaudio: 
     isshowscreen: false
   }
   arrMakeCalls.set(header.msgid, confkinfo)
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
@@ -1798,8 +1876,8 @@ export function ApplySpeakByType(groupnum: string, optype: number, remoteaudio: 
  * @param groupnum 对讲组号
  * @param remoteaudio 远端音频元素
  */
-export function ApplySpeak(groupnum: string, remoteaudio: HTMLAudioElement): void {
-  ApplySpeakByType(groupnum, 55, remoteaudio)
+export function applySpeak(groupnum: string, remoteaudio: HTMLAudioElement): void {
+  applySpeakByType(groupnum, 55, remoteaudio)
 }
 
 /**
@@ -1807,8 +1885,8 @@ export function ApplySpeak(groupnum: string, remoteaudio: HTMLAudioElement): voi
  * @param groupnum 对讲组号
  * @param remoteaudio 远端音频元素
  */
-export function ReleaseSpeak(groupnum: string, remoteaudio: HTMLAudioElement): void {
-  ApplySpeakByType(groupnum, 56, remoteaudio)
+export function releaseSpeak(groupnum: string, remoteaudio: HTMLAudioElement): void {
+  applySpeakByType(groupnum, 56, remoteaudio)
 }
 
 /**
@@ -1818,7 +1896,7 @@ export function ReleaseSpeak(groupnum: string, remoteaudio: HTMLAudioElement): v
  * @param confname 会议名称
  * @param remoteaudio 远端音频元素
  */
-export function CreateTmpIntercom(called: string, confnum: string, confname: string, remoteaudio: HTMLAudioElement): void {
+export function createTmpIntercom(called: string, confnum: string, confname: string, remoteaudio: HTMLAudioElement): void {
   const info: MakeCallT = {
     caller: displayName,
     ctype: CallType.CallTypeTmpintercom,
@@ -1841,14 +1919,14 @@ export function CreateTmpIntercom(called: string, confnum: string, confname: str
     isshowscreen: false
   }
   arrMakeCalls.set(header.msgid, confkinfo)
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
  * 设置GIS跟踪
  * @param opemps 需要跟踪的成员列表
  */
-export function SetGisTrace(opemps: string): void {
+export function setGisTrace(opemps: string): void {
   const info = {
     type: 1,
     getemp: displayName,
@@ -1859,14 +1937,14 @@ export function SetGisTrace(opemps: string): void {
     header: APIHEADER.API_GIS_SET_TRACE,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
  * 取消GIS跟踪
  * @param opemps 需要取消跟踪的成员列表
  */
-export function SetGisUnTrace(opemps: string): void {
+export function setGisUnTrace(opemps: string): void {
   const info = {
     type: 2,
     getemp: displayName,
@@ -1877,14 +1955,14 @@ export function SetGisUnTrace(opemps: string): void {
     header: APIHEADER.API_GIS_SET_TRACE,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
  * 获取成员GIS位置信息
  * @param getemps 需要获取位置的成员列表
  */
-export function GetEmpsGisInfo(getemps: string): void {
+export function getEmpsGisInfo(getemps: string): void {
   const info = {
     emps: getemps
   }
@@ -1893,13 +1971,13 @@ export function GetEmpsGisInfo(getemps: string): void {
     header: APIHEADER.API_GIS_GET_EMPPOS,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
  * 获取组织架构树
  */
-export function GetGroupTree(): void {
+export function getGroupTree(): void {
   const info = {
     type: -1,
     dnsprefix: "",
@@ -1910,7 +1988,7 @@ export function GetGroupTree(): void {
     header: APIHEADER.API_DATA_GET_ALLGROUP,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
@@ -1919,7 +1997,7 @@ export function GetGroupTree(): void {
  * @param type 组织类型
  * @param dns DNS前缀
  */
-export function GetGroupMember(groupnum: string, type: number, dns: string): void {
+export function getGroupMember(groupnum: string, type: number, dns: string): void {
   const info = {
     type: type,
     dnsprefix: dns,
@@ -1931,14 +2009,14 @@ export function GetGroupMember(groupnum: string, type: number, dns: string): voi
     header: APIHEADER.API_DATA_GET_GROUPEMPS,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
  * 查询成员信息
  * @param queryinfo 查询条件
  */
-export function QueryEmps(queryinfo: string): void {
+export function queryEmps(queryinfo: string): void {
   const info = {
     queryinfo: queryinfo,
     getemp: displayName
@@ -1948,14 +2026,14 @@ export function QueryEmps(queryinfo: string): void {
     header: APIHEADER.API_DATA_QUERY_EMPS,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
  * 根据类型查询成员
  * @param type 成员类型
  */
-export function QueryEmpsByType(type: number): void {
+export function queryEmpsByType(type: number): void {
   const info = {
     type: type,
     getemp: displayName
@@ -1965,7 +2043,7 @@ export function QueryEmpsByType(type: number): void {
     header: APIHEADER.API_DATA_GET_EMPSBYTYPE,
     body: info
   }
-  SendAPI(JSON.stringify(header))
+  sendAPI(JSON.stringify(header))
 }
 
 /**
@@ -1992,6 +2070,6 @@ export function httpUploadStop(xhr: XMLHttpRequest) {
  * @param path 请求路径
  * @param httpcall
 */
-export function ClienthttpGet(path: string, httpcallback: HttpDelegate): XMLHttpRequest {
+export function clienthttpGet(path: string, httpcallback: HttpDelegate): XMLHttpRequest {
   return httpGet(path, webjcookie, httpcallback)
 }

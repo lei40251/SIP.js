@@ -1,11 +1,12 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // 添加这行
 
 // 创建基础配置
 const baseConfig = {
   context: __dirname,
-  devtool: 'source-map',
+  // devtool: 'source-map',
   mode: 'production',
   module: {
     rules: [
@@ -72,12 +73,16 @@ const baseConfig = {
 // UMD 配置
 const umdConfig = {
   ...baseConfig,
+  plugins: [
+    new CleanWebpackPlugin(),  // 只在 UMD 配置中清理
+    ...baseConfig.plugins
+  ],
   entry: {
     Client: {
       import: './Client.ts',
       library: {
         type: 'umd',
-        name: 'IDPClient'
+        name: 'Client'
       }
     }
   },
@@ -89,7 +94,6 @@ const umdConfig = {
       name: 'Client'
     },
     globalObject: 'this',
-    clean: false
   }
 };
 
@@ -105,12 +109,11 @@ const esmConfig = {
     }
   },
   output: {
-    filename: '[name].esm.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     library: {
       type: 'module'
     },
-    clean: false // 避免清除 UMD 输出
   },
   experiments: {
     outputModule: true

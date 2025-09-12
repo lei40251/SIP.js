@@ -11,7 +11,7 @@ DEPRECATED Authentication factory function.
 ```typescript
 authenticationFactory(): DigestAuthentication | undefined;
 ```
+
 <b>Returns:</b>
 
 DigestAuthentication \| undefined
-

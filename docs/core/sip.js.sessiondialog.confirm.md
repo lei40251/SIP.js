@@ -11,7 +11,7 @@ Confirm the dialog. Only matters if dialog is currently early.
 ```typescript
 confirm(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

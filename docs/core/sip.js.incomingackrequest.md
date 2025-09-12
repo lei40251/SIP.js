@@ -9,12 +9,11 @@ Incoming ACK request.
 <b>Signature:</b>
 
 ```typescript
-export interface IncomingAckRequest 
+export interface IncomingAckRequest
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [message](./sip.js.incomingackrequest.message.md) |  | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | The incoming message. |
-
+| Property                                          | Modifiers | Type                                                         | Description           |
+| ------------------------------------------------- | --------- | ------------------------------------------------------------ | --------------------- |
+| [message](./sip.js.incomingackrequest.message.md) |           | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | The incoming message. |

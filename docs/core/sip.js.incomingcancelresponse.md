@@ -9,7 +9,7 @@ Incoming CANCEL response.
 <b>Signature:</b>
 
 ```typescript
-export interface IncomingCancelResponse extends IncomingResponse 
+export interface IncomingCancelResponse extends IncomingResponse
 ```
-<b>Extends:</b> [IncomingResponse](./sip.js.incomingresponse.md)
 
+<b>Extends:</b> [IncomingResponse](./sip.js.incomingresponse.md)

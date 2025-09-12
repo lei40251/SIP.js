@@ -5,7 +5,6 @@
 ## WebAudioSessionDescriptionHandler.initLocalMediaStream() method
 
 > This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
-> 
 
 Returns a WebRTC MediaStream proxying the provided audio media stream. This allows additional Web Audio media stream source nodes to be connected to the destination node assoicated with the returned stream so we can mix aditional audio sorces into the local media stream (ie for 3-way conferencing).
 
@@ -17,11 +16,10 @@ initLocalMediaStream(stream: MediaStream): MediaStream;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  stream | MediaStream | The MediaStream to proxy. |
+| Parameter | Type        | Description               |
+| --------- | ----------- | ------------------------- |
+| stream    | MediaStream | The MediaStream to proxy. |
 
 <b>Returns:</b>
 
 MediaStream
-

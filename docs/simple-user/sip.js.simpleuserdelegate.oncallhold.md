@@ -14,9 +14,9 @@ onCallHold?(held: boolean): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  held | boolean |  |
+| Parameter | Type    | Description |
+| --------- | ------- | ----------- |
+| held      | boolean |             |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ void
 ## Remarks
 
 Callback for handling re-INVITE responses.
-

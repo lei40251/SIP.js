@@ -11,7 +11,7 @@ Timed out waiting to receive the initial subscription creating NOTIFY in respons
 ```typescript
 onNotifyTimeout?(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

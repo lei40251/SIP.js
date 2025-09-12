@@ -15,4 +15,3 @@ iceStopWaitingOnServerReflexive?: boolean;
 ## Remarks
 
 This is an aggressive approach to limiting the amount of time spent gathering ICE candidates. While this will contribute to minimizing the post dial/answer delay experienced, it will very likely prevent a complete set of candidates from being gathered. If an ICE gathering timeout is also provided as an option to the session description handler, waiting will stop on whichever event occurs first.
-

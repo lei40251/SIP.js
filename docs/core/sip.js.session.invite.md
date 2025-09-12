@@ -14,12 +14,11 @@ invite(delegate?: OutgoingInviteRequestDelegate, options?: RequestOptions): Outg
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  delegate | [OutgoingInviteRequestDelegate](./sip.js.outgoinginviterequestdelegate.md) | Request delegate. |
-|  options | [RequestOptions](./sip.js.requestoptions.md) | Options bucket. |
+| Parameter | Type                                                                       | Description       |
+| --------- | -------------------------------------------------------------------------- | ----------------- |
+| delegate  | [OutgoingInviteRequestDelegate](./sip.js.outgoinginviterequestdelegate.md) | Request delegate. |
+| options   | [RequestOptions](./sip.js.requestoptions.md)                               | Options bucket.   |
 
 <b>Returns:</b>
 
 [OutgoingInviteRequest](./sip.js.outgoinginviterequest.md)
-

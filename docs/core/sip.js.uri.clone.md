@@ -9,7 +9,7 @@
 ```typescript
 clone(): URI;
 ```
+
 <b>Returns:</b>
 
 [URI](./sip.js.uri.md)
-

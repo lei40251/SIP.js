@@ -6,7 +6,7 @@
 # SIP Library for JavaScript
 
 - Create real-time peer-to-peer audio and video sessions via [WebRTC](https://webrtc.org/)
-- Utilize SIP in your web application via [SIP over WebSocket](https://tools.ietf.org/html/rfc7118) 
+- Utilize SIP in your web application via [SIP over WebSocket](https://tools.ietf.org/html/rfc7118)
 - Send instant messages and view presence
 - Support early media, hold and transfers
 - Send DTMF RFC 2833 or SIP INFO
@@ -53,7 +53,8 @@ const server = "wss://sip.example.com";
 const simpleUser = new Web.SimpleUser(server, options);
 
 // Connect to server and place call
-simpleUser.connect()
+simpleUser
+  .connect()
   .then(() => simpleUser.call("sip:bob@example.com"))
   .catch((error: Error) => {
     // Call failed
@@ -70,12 +71,11 @@ const userAgent = new UserAgent({
   uri: UserAgent.makeURI("sip:alice@example.com"),
   transportOptions: {
     server: "wss://sip.example.com"
-  },
+  }
 });
 
 // Connect the user agent
 userAgent.start().then(() => {
-
   // Set target destination (callee)
   const target = UserAgent.makeURI("sip:bob@example.com");
   if (!target) {
@@ -107,24 +107,27 @@ userAgent.start().then(() => {
   });
 
   // Send initial INVITE request
-  inviter.invite()
+  inviter
+    .invite()
     .then(() => {
       // INVITE sent
     })
     .catch((error: Error) => {
       // INVITE did not send
     });
-
 });
 ```
+
 ## Installation
 
 Node module
+
 ```sh
 npm install sip.js
 ```
 
- UMD bundle
+UMD bundle
+
 - Download [sipjs.com/download](https://sipjs.com/download)
 - CDN [jsDelivr.com](https://www.jsdelivr.com/package/npm/sip.js)
 
@@ -141,7 +144,7 @@ For more info please see the [Documentation](./docs/README.md).
 
 ## Support
 
-* For migration guides and API reference please see the [Documentation](./docs/README.md).
-* For bug reports and feature requests please open a [GitHub Issue](https://github.com/onsip/sip.js/issues).
-* For questions or usage problems please use the [Google Group](https://groups.google.com/forum/#!forum/sip_js).
-* For more information see the project website at [SIPjs.com](https://sipjs.com).
+- For migration guides and API reference please see the [Documentation](./docs/README.md).
+- For bug reports and feature requests please open a [GitHub Issue](https://github.com/onsip/sip.js/issues).
+- For questions or usage problems please use the [Google Group](https://groups.google.com/forum/#!forum/sip_js).
+- For more information see the project website at [SIPjs.com](https://sipjs.com).

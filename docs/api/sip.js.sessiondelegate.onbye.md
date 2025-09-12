@@ -14,11 +14,10 @@ onBye?(bye: Bye): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  bye | [Bye](./sip.js.bye.md) | The bye. |
+| Parameter | Type                   | Description |
+| --------- | ---------------------- | ----------- |
+| bye       | [Bye](./sip.js.bye.md) | The bye.    |
 
 <b>Returns:</b>
 
 void
-

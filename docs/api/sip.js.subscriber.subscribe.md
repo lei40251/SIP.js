@@ -14,9 +14,9 @@ subscribe(options?: SubscriberSubscribeOptions): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [SubscriberSubscribeOptions](./sip.js.subscribersubscribeoptions.md) |  |
+| Parameter | Type                                                                 | Description |
+| --------- | -------------------------------------------------------------------- | ----------- |
+| options   | [SubscriberSubscribeOptions](./sip.js.subscribersubscribeoptions.md) |             |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Send an initial SUBSCRIBE request if no subscription as been established. Sends a re-SUBSCRIBE request if the subscription is "active".
-

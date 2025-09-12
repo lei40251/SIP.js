@@ -9,13 +9,13 @@ Indicates that the operation could not be completed given the current transactio
 <b>Signature:</b>
 
 ```typescript
-export declare class TransactionStateError extends Exception 
+export declare class TransactionStateError extends Exception
 ```
+
 <b>Extends:</b> [Exception](./sip.js.exception.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(message)](./sip.js.transactionstateerror._constructor_.md) |  | Constructs a new instance of the <code>TransactionStateError</code> class |
-
+| Constructor                                                               | Modifiers | Description                                                               |
+| ------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------- |
+| [(constructor)(message)](./sip.js.transactionstateerror._constructor_.md) |           | Constructs a new instance of the <code>TransactionStateError</code> class |

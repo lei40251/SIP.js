@@ -9,19 +9,19 @@ Incoming INVITE response received when request is progressed.
 <b>Signature:</b>
 
 ```typescript
-export interface PrackableIncomingResponseWithSession extends IncomingResponse 
+export interface PrackableIncomingResponseWithSession extends IncomingResponse
 ```
+
 <b>Extends:</b> [IncomingResponse](./sip.js.incomingresponse.md)
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [session](./sip.js.prackableincomingresponsewithsession.session.md) |  | [Session](./sip.js.session.md) | Session associated with outgoing request progress. If out of dialog request, an early dialog. |
+| Property                                                            | Modifiers | Type                           | Description                                                                                   |
+| ------------------------------------------------------------------- | --------- | ------------------------------ | --------------------------------------------------------------------------------------------- |
+| [session](./sip.js.prackableincomingresponsewithsession.session.md) |           | [Session](./sip.js.session.md) | Session associated with outgoing request progress. If out of dialog request, an early dialog. |
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [prack(options)](./sip.js.prackableincomingresponsewithsession.prack.md) | Send an PRACK to acknowledge this response. |
-
+| Method                                                                   | Description                                 |
+| ------------------------------------------------------------------------ | ------------------------------------------- |
+| [prack(options)](./sip.js.prackableincomingresponsewithsession.prack.md) | Send an PRACK to acknowledge this response. |

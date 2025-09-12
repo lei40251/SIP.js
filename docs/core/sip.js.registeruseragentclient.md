@@ -9,15 +9,15 @@ REGISTER UAC.
 <b>Signature:</b>
 
 ```typescript
-export declare class RegisterUserAgentClient extends UserAgentClient implements OutgoingRegisterRequest 
+export declare class RegisterUserAgentClient extends UserAgentClient implements OutgoingRegisterRequest
 ```
+
 <b>Extends:</b> [UserAgentClient](./sip.js.useragentclient.md)
 
 <b>Implements:</b> [OutgoingRegisterRequest](./sip.js.outgoingregisterrequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(core, message, delegate)](./sip.js.registeruseragentclient._constructor_.md) |  | Constructs a new instance of the <code>RegisterUserAgentClient</code> class |
-
+| Constructor                                                                                 | Modifiers | Description                                                                 |
+| ------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------- |
+| [(constructor)(core, message, delegate)](./sip.js.registeruseragentclient._constructor_.md) |           | Constructs a new instance of the <code>RegisterUserAgentClient</code> class |

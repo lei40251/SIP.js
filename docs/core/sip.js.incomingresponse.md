@@ -9,7 +9,7 @@ A SIP message sent from a remote server to a local client.
 <b>Signature:</b>
 
 ```typescript
-export interface IncomingResponse 
+export interface IncomingResponse
 ```
 
 ## Remarks
@@ -18,7 +18,6 @@ For indicating the status of a request sent from the client to the server. https
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [message](./sip.js.incomingresponse.message.md) |  | [IncomingResponseMessage](./sip.js.incomingresponsemessage.md) | The incoming message. |
-
+| Property                                        | Modifiers | Type                                                           | Description           |
+| ----------------------------------------------- | --------- | -------------------------------------------------------------- | --------------------- |
+| [message](./sip.js.incomingresponse.message.md) |           | [IncomingResponseMessage](./sip.js.incomingresponsemessage.md) | The incoming message. |

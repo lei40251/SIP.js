@@ -18,6 +18,7 @@ In your web browser, open the `index.html` file in this directory to run the dem
 ### Safari
 
 Safari requires either...
+
 - enabling `Develop -> WebRTC -> Allow Media Capture on Insecure Sites`
 - or serving the demo from a secure website
 

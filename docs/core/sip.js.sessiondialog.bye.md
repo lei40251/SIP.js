@@ -20,14 +20,13 @@ bye(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingByeRe
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  delegate | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) |  |
-|  options | [RequestOptions](./sip.js.requestoptions.md) | BYE options bucket. |
+| Parameter | Type                                                           | Description         |
+| --------- | -------------------------------------------------------------- | ------------------- |
+| delegate  | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) |                     |
+| options   | [RequestOptions](./sip.js.requestoptions.md)                   | BYE options bucket. |
 
 <b>Returns:</b>
 
 [OutgoingByeRequest](./sip.js.outgoingbyerequest.md)
 
 Throws `Error` if callee's UA attempts a BYE on an early dialog. Throws `Error` if callee's UA attempts a BYE on a confirmed dialog while it's waiting on the ACK for its 2xx response.
-

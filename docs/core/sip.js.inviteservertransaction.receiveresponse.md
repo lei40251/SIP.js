@@ -14,12 +14,11 @@ receiveResponse(statusCode: number, response: string): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  statusCode | number | Status code of response. |
-|  response | string | Response. |
+| Parameter  | Type   | Description              |
+| ---------- | ------ | ------------------------ |
+| statusCode | number | Status code of response. |
+| response   | string | Response.                |
 
 <b>Returns:</b>
 
 void
-

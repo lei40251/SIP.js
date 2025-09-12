@@ -9,12 +9,11 @@ Local media elements for [SimpleUserMedia](./sip.js.simpleusermedia.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface SimpleUserMediaLocal 
+export interface SimpleUserMediaLocal
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [video](./sip.js.simpleusermedialocal.video.md) |  | HTMLVideoElement | The local video media stream is attached to this element. |
-
+| Property                                        | Modifiers | Type             | Description                                               |
+| ----------------------------------------------- | --------- | ---------------- | --------------------------------------------------------- |
+| [video](./sip.js.simpleusermedialocal.video.md) |           | HTMLVideoElement | The local video media stream is attached to this element. |

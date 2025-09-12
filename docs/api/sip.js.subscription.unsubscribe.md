@@ -14,9 +14,9 @@ abstract unsubscribe(options?: SubscriptionUnsubscribeOptions): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [SubscriptionUnsubscribeOptions](./sip.js.subscriptionunsubscribeoptions.md) |  |
+| Parameter | Type                                                                         | Description |
+| --------- | ---------------------------------------------------------------------------- | ----------- |
+| options   | [SubscriptionUnsubscribeOptions](./sip.js.subscriptionunsubscribeoptions.md) |             |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 If the subscription state is SubscriptionState.Subscribed, sends an in dialog SUBSCRIBE request with expires time of zero (an un-subscribe) and terminates the subscription. Otherwise a noop.
-

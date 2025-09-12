@@ -14,9 +14,8 @@ constructor(request: OutgoingRequestMessage, transport: Transport, user: ClientT
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) | The outgoing INVITE request. |
-|  transport | [Transport](./sip.js.transport.md) | The transport. |
-|  user | [ClientTransactionUser](./sip.js.clienttransactionuser.md) | The transaction user. |
-
+| Parameter | Type                                                         | Description                  |
+| --------- | ------------------------------------------------------------ | ---------------------------- |
+| request   | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) | The outgoing INVITE request. |
+| transport | [Transport](./sip.js.transport.md)                           | The transport.               |
+| user      | [ClientTransactionUser](./sip.js.clienttransactionuser.md)   | The transaction user.        |

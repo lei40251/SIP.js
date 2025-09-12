@@ -9,15 +9,15 @@
 <b>Signature:</b>
 
 ```typescript
-export declare enum UserAgentState 
+export declare enum UserAgentState
 ```
 
 ## Enumeration Members
 
-|  Member | Value | Description |
-|  --- | --- | --- |
-|  Started | <code>&quot;Started&quot;</code> |  |
-|  Stopped | <code>&quot;Stopped&quot;</code> |  |
+| Member  | Value                            | Description |
+| ------- | -------------------------------- | ----------- |
+| Started | <code>&quot;Started&quot;</code> |             |
+| Stopped | <code>&quot;Stopped&quot;</code> |             |
 
 ## Remarks
 
@@ -27,4 +27,3 @@ Valid state transitions:
 1. "Started" --> "Stopped"
 2. "Stopped" --> "Started"
 ```
-

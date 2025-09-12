@@ -11,6 +11,7 @@ Hold state.
 ```typescript
 isHeld(): boolean;
 ```
+
 <b>Returns:</b>
 
 boolean
@@ -18,4 +19,3 @@ boolean
 ## Remarks
 
 True if session is on hold.
-

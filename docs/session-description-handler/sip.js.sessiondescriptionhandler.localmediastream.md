@@ -15,4 +15,3 @@ get localMediaStream(): MediaStream;
 ## Remarks
 
 The local media stream initially has no tracks, so the presence of tracks should not be assumed. Furthermore, tracks may be added or removed if the local media changes - for example, on upgrade from audio only to a video session. At any given time there will be at most one audio track and one video track (it's possible that this restriction may not apply to sub-classes). Use `MediaStream.onaddtrack` or add a listener for the `addtrack` event to detect when a new track becomes available: https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/onaddtrack
-

@@ -9,5 +9,5 @@ Factory for [SessionDescriptionHandler](./sip.js.sessiondescriptionhandler.md)<!
 <b>Signature:</b>
 
 ```typescript
-export interface SessionDescriptionHandlerFactory 
+export interface SessionDescriptionHandlerFactory
 ```

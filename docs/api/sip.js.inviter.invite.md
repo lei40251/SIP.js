@@ -14,9 +14,9 @@ invite(options?: InviterInviteOptions): Promise<OutgoingInviteRequest>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [InviterInviteOptions](./sip.js.inviterinviteoptions.md) |  |
+| Parameter | Type                                                     | Description |
+| --------- | -------------------------------------------------------- | ----------- |
+| options   | [InviterInviteOptions](./sip.js.inviterinviteoptions.md) |             |
 
 <b>Returns:</b>
 
@@ -26,7 +26,7 @@ Promise&lt;OutgoingInviteRequest&gt;
 
 TLDR... 1) Only one offer/answer exchange permitted during initial INVITE. 2) No "early media" if the initial offer is in an INVITE (default behavior). 3) If "early media" and the initial offer is in an INVITE, no INVITE forking.
 
-1) Only one offer/answer exchange permitted during initial INVITE.
+1. Only one offer/answer exchange permitted during initial INVITE.
 
 Our implementation replaces the following bullet point...
 
@@ -42,7 +42,7 @@ o Once the UAS has sent or received an answer to the initial offer, it MUST NOT 
 
 ...ensures that EXACTLY ONE offer/answer exchange will occur during an initial out of dialog INVITE request made by our UAC.
 
-2) No "early media" if the initial offer is in an INVITE (default behavior).
+2. No "early media" if the initial offer is in an INVITE (default behavior).
 
 While our implementation adheres to the following bullet point...
 
@@ -56,7 +56,6 @@ The reason for this decision is rooted in a restriction currently inherent in We
 
 The upshot is that if you want "early media", you must not put the initial offer in the INVITE. Instead, force the UAS to provide the initial offer by sending an INVITE without an offer. In the WebRTC case this allows us to create a unique peer connection with a unique answer for every provisional offer with "early media" on all of them.
 
-3) If "early media" and the initial offer is in an INVITE, no INVITE forking.
+3. If "early media" and the initial offer is in an INVITE, no INVITE forking.
 
 The default behavior may be altered and "early media" utilized if the initial offer is in the an INVITE by setting the `earlyMedia` options. However in that case the INVITE request MUST NOT fork. This allows for "early media" in environments where the forking behavior of the SIP servers being utilized is configured to disallow forking.
-

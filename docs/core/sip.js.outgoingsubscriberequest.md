@@ -9,19 +9,19 @@ Outgoing SUBSCRIBE request.
 <b>Signature:</b>
 
 ```typescript
-export interface OutgoingSubscribeRequest extends OutgoingRequest 
+export interface OutgoingSubscribeRequest extends OutgoingRequest
 ```
+
 <b>Extends:</b> [OutgoingRequest](./sip.js.outgoingrequest.md)
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [delegate](./sip.js.outgoingsubscriberequest.delegate.md) |  | [OutgoingSubscribeRequestDelegate](./sip.js.outgoingsubscriberequestdelegate.md) | Delegate providing custom handling of this outgoing SUBSCRIBE request. |
+| Property                                                  | Modifiers | Type                                                                             | Description                                                            |
+| --------------------------------------------------------- | --------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [delegate](./sip.js.outgoingsubscriberequest.delegate.md) |           | [OutgoingSubscribeRequestDelegate](./sip.js.outgoingsubscriberequestdelegate.md) | Delegate providing custom handling of this outgoing SUBSCRIBE request. |
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [waitNotifyStop()](./sip.js.outgoingsubscriberequest.waitnotifystop.md) | Stop waiting for an inital subscription creating NOTIFY. |
-
+| Method                                                                  | Description                                              |
+| ----------------------------------------------------------------------- | -------------------------------------------------------- |
+| [waitNotifyStop()](./sip.js.outgoingsubscriberequest.waitnotifystop.md) | Stop waiting for an inital subscription creating NOTIFY. |

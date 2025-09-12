@@ -11,7 +11,7 @@ Function which returns a MediaStreamFactory.
 ```typescript
 export declare function defaultMediaStreamFactory(): MediaStreamFactory;
 ```
+
 <b>Returns:</b>
 
 [MediaStreamFactory](./sip.js.mediastreamfactory.md)
-

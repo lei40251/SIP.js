@@ -14,13 +14,12 @@ getHeader(name: string): string | undefined;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  name | string | header name |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| name      | string | header name |
 
 <b>Returns:</b>
 
 string \| undefined
 
 Returns the specified header, undefined if header doesn't exist.
-

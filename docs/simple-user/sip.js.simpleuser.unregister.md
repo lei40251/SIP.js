@@ -14,9 +14,9 @@ unregister(registererUnregisterOptions?: RegistererUnregisterOptions): Promise<v
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  registererUnregisterOptions | RegistererUnregisterOptions |  |
+| Parameter                   | Type                        | Description |
+| --------------------------- | --------------------------- | ----------- |
+| registererUnregisterOptions | RegistererUnregisterOptions |             |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Send an un-REGISTER request for the UserAgent's AOR. Resolves when the un-REGISTER request is sent, otherwise rejects.
-

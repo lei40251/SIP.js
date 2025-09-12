@@ -11,6 +11,7 @@ Connect.
 ```typescript
 connect(): Promise<void>;
 ```
+
 <b>Returns:</b>
 
 Promise&lt;void&gt;
@@ -18,4 +19,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 If not started, starts the UserAgent connecting the WebSocket Transport. Otherwise reconnects the UserAgent's WebSocket Transport. Attempts will be made to reconnect as needed.
-

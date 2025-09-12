@@ -9,8 +9,9 @@ Re-INVITE UAS.
 <b>Signature:</b>
 
 ```typescript
-export declare class ReInviteUserAgentServer extends UserAgentServer implements IncomingInviteRequest 
+export declare class ReInviteUserAgentServer extends UserAgentServer implements IncomingInviteRequest
 ```
+
 <b>Extends:</b> [UserAgentServer](./sip.js.useragentserver.md)
 
 <b>Implements:</b> [IncomingInviteRequest](./sip.js.incominginviterequest.md)
@@ -21,16 +22,15 @@ export declare class ReInviteUserAgentServer extends UserAgentServer implements 
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(dialog, message, delegate)](./sip.js.reinviteuseragentserver._constructor_.md) |  | Constructs a new instance of the <code>ReInviteUserAgentServer</code> class |
+| Constructor                                                                                   | Modifiers | Description                                                                 |
+| --------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------- |
+| [(constructor)(dialog, message, delegate)](./sip.js.reinviteuseragentserver._constructor_.md) |           | Constructs a new instance of the <code>ReInviteUserAgentServer</code> class |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [accept(options)](./sip.js.reinviteuseragentserver.accept.md) |  | Update the dialog signaling state on a 2xx response. |
-|  [progress(options)](./sip.js.reinviteuseragentserver.progress.md) |  | Update the dialog signaling state on a 1xx response. |
-|  [redirect(contacts, options)](./sip.js.reinviteuseragentserver.redirect.md) |  | TODO: Not Yet Supported |
-|  [reject(options)](./sip.js.reinviteuseragentserver.reject.md) |  | 3.1 Background on Re-INVITE Handling by UASs An error response to a re-INVITE has the following semantics. As specified in Section 12.2.2 of RFC 3261 \[RFC3261\], if a re-INVITE is rejected, no state changes are performed. https://tools.ietf.org/html/rfc6141\#section-3.1 |
-
+| Method                                                                      | Modifiers | Description                                                                                                                                                                                                                                                                     |
+| --------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [accept(options)](./sip.js.reinviteuseragentserver.accept.md)               |           | Update the dialog signaling state on a 2xx response.                                                                                                                                                                                                                            |
+| [progress(options)](./sip.js.reinviteuseragentserver.progress.md)           |           | Update the dialog signaling state on a 1xx response.                                                                                                                                                                                                                            |
+| [redirect(contacts, options)](./sip.js.reinviteuseragentserver.redirect.md) |           | TODO: Not Yet Supported                                                                                                                                                                                                                                                         |
+| [reject(options)](./sip.js.reinviteuseragentserver.reject.md)               |           | 3.1 Background on Re-INVITE Handling by UASs An error response to a re-INVITE has the following semantics. As specified in Section 12.2.2 of RFC 3261 \[RFC3261\], if a re-INVITE is rejected, no state changes are performed. https://tools.ietf.org/html/rfc6141\#section-3.1 |

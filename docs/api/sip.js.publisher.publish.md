@@ -14,12 +14,11 @@ publish(content: string, options?: PublisherPublishOptions): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  content | string | Body to publish |
-|  options | [PublisherPublishOptions](./sip.js.publisherpublishoptions.md) |  |
+| Parameter | Type                                                           | Description     |
+| --------- | -------------------------------------------------------------- | --------------- |
+| content   | string                                                         | Body to publish |
+| options   | [PublisherPublishOptions](./sip.js.publisherpublishoptions.md) |                 |
 
 <b>Returns:</b>
 
 Promise&lt;void&gt;
-

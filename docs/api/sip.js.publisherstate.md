@@ -9,17 +9,17 @@
 <b>Signature:</b>
 
 ```typescript
-export declare enum PublisherState 
+export declare enum PublisherState
 ```
 
 ## Enumeration Members
 
-|  Member | Value | Description |
-|  --- | --- | --- |
-|  Initial | <code>&quot;Initial&quot;</code> |  |
-|  Published | <code>&quot;Published&quot;</code> |  |
-|  Terminated | <code>&quot;Terminated&quot;</code> |  |
-|  Unpublished | <code>&quot;Unpublished&quot;</code> |  |
+| Member      | Value                                | Description |
+| ----------- | ------------------------------------ | ----------- |
+| Initial     | <code>&quot;Initial&quot;</code>     |             |
+| Published   | <code>&quot;Published&quot;</code>   |             |
+| Terminated  | <code>&quot;Terminated&quot;</code>  |             |
+| Unpublished | <code>&quot;Unpublished&quot;</code> |             |
 
 ## Remarks
 
@@ -33,4 +33,3 @@ Constructed -> Initial -> Published -> Unpublished -> Terminated
                              |   ^____________|             ^
                              |______________________________|
 ```
-

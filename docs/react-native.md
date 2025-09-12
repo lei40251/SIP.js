@@ -1,6 +1,5 @@
 # React Native
 
-
 ### SimpleUser class
 
 The [SimpleUser](./simple-user.md) class will not work with React Native (it depends on the DOM).
@@ -15,6 +14,7 @@ In order to use the [API](./api.md) framework in React Native (for building Andr
 By calling `registerGlobals()`, classes required by WebRTC such as `RTCPeerConnection` and `MediaStream` (among others) will be exposed in the global scope which is required by the default WebRTC [SessionDescriptionHandler](./session-description-handler).
 
 For example...
+
 ```
 import { registerGlobals } from 'react-native-webrtc';
 import { UserAgent } from 'sip.js';

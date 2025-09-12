@@ -11,7 +11,7 @@ Stop tracks and close peer connection.
 ```typescript
 close(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

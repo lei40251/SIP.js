@@ -14,12 +14,11 @@ redirect(contacts: Array<URI>, options?: ResponseOptions): OutgoingResponse;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  contacts | Array&lt;[URI](./sip.js.uri.md)<!-- -->&gt; | Contacts to redirect the UAC to. |
-|  options | [ResponseOptions](./sip.js.responseoptions.md) | Response options bucket. |
+| Parameter | Type                                           | Description                      |
+| --------- | ---------------------------------------------- | -------------------------------- |
+| contacts  | Array&lt;[URI](./sip.js.uri.md)<!-- -->&gt;    | Contacts to redirect the UAC to. |
+| options   | [ResponseOptions](./sip.js.responseoptions.md) | Response options bucket.         |
 
 <b>Returns:</b>
 
 [OutgoingResponse](./sip.js.outgoingresponse.md)
-

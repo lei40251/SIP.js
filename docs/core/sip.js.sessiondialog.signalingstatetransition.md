@@ -14,11 +14,10 @@ signalingStateTransition(message: IncomingRequestMessage | IncomingResponseMessa
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) \| [IncomingResponseMessage](./sip.js.incomingresponsemessage.md) \| [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) \| [Body](./sip.js.body.md) | The message to base the update off of. |
+| Parameter | Type                                                                                                                                                                                                                       | Description                            |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| message   | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) \| [IncomingResponseMessage](./sip.js.incomingresponsemessage.md) \| [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) \| [Body](./sip.js.body.md) | The message to base the update off of. |
 
 <b>Returns:</b>
 
 void
-

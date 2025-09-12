@@ -5,9 +5,8 @@
 ## SessionManager.getRemoteAudioTrack() method
 
 > Warning: This API is now obsolete.
-> 
+>
 > Use remoteMediaStream and get track from the stream.
-> 
 
 The remote audio track, if available.
 
@@ -19,11 +18,10 @@ getRemoteAudioTrack(session: Session): MediaStreamTrack | undefined;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session | Session to get track from. |
+| Parameter | Type    | Description                |
+| --------- | ------- | -------------------------- |
+| session   | Session | Session to get track from. |
 
 <b>Returns:</b>
 
 MediaStreamTrack \| undefined
-

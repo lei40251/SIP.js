@@ -11,6 +11,7 @@ Mute state.
 ```typescript
 isMuted(): boolean;
 ```
+
 <b>Returns:</b>
 
 boolean
@@ -18,4 +19,3 @@ boolean
 ## Remarks
 
 True if sender's media track is disabled.
-

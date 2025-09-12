@@ -6,7 +6,6 @@
 
 ## Packages
 
-|  Package | Description |
-|  --- | --- |
-|  [sip.js](./sip.js.md) | A simple yet powerful API which takes care of SIP signaling and WebRTC media sessions for you. |
-
+| Package               | Description                                                                                    |
+| --------------------- | ---------------------------------------------------------------------------------------------- |
+| [sip.js](./sip.js.md) | A simple yet powerful API which takes care of SIP signaling and WebRTC media sessions for you. |

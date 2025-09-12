@@ -9,14 +9,13 @@ Options for [Session.refer()](./sip.js.session.refer.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface SessionReferOptions 
+export interface SessionReferOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [onNotify](./sip.js.sessionreferoptions.onnotify.md) |  | (notification: [Notification](./sip.js.notification.md)<!-- -->) =&gt; void | Called upon receiving an incoming NOTIFY associated with a REFER. |
-|  [requestDelegate](./sip.js.sessionreferoptions.requestdelegate.md) |  | OutgoingRequestDelegate | See <code>core</code> API. |
-|  [requestOptions](./sip.js.sessionreferoptions.requestoptions.md) |  | RequestOptions | See <code>core</code> API. |
-
+| Property                                                           | Modifiers | Type                                                                        | Description                                                       |
+| ------------------------------------------------------------------ | --------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| [onNotify](./sip.js.sessionreferoptions.onnotify.md)               |           | (notification: [Notification](./sip.js.notification.md)<!-- -->) =&gt; void | Called upon receiving an incoming NOTIFY associated with a REFER. |
+| [requestDelegate](./sip.js.sessionreferoptions.requestdelegate.md) |           | OutgoingRequestDelegate                                                     | See <code>core</code> API.                                        |
+| [requestOptions](./sip.js.sessionreferoptions.requestoptions.md)   |           | RequestOptions                                                              | See <code>core</code> API.                                        |

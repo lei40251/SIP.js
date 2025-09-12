@@ -15,4 +15,3 @@ transportOptions?: unknown;
 ## Remarks
 
 See WebSocket Transport Configuration Parameters for the full list of options for the default transport.
-

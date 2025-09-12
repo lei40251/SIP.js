@@ -11,6 +11,7 @@ Dispose.
 ```typescript
 dispose(): Promise<void>;
 ```
+
 <b>Returns:</b>
 
 Promise&lt;void&gt;
@@ -18,4 +19,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 When the `UserAgent` is disposed or stopped, this method is called. The `UserAgent` MUST NOT continue to utilize the instance after calling this method.
-

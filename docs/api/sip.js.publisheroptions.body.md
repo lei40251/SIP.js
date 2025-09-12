@@ -5,9 +5,8 @@
 ## PublisherOptions.body property
 
 > Warning: This API is now obsolete.
-> 
+>
 > TODO: provide alternative.
-> 
 
 <b>Signature:</b>
 

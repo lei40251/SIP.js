@@ -15,4 +15,3 @@ userAgentHeaderFieldValue: string | undefined;
 ## Remarks
 
 https://tools.ietf.org/html/rfc3261\#section-20.41
-

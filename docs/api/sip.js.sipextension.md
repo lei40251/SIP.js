@@ -9,14 +9,13 @@ SIP extension support level.
 <b>Signature:</b>
 
 ```typescript
-export declare enum SIPExtension 
+export declare enum SIPExtension
 ```
 
 ## Enumeration Members
 
-|  Member | Value | Description |
-|  --- | --- | --- |
-|  Required | <code>&quot;Required&quot;</code> |  |
-|  Supported | <code>&quot;Supported&quot;</code> |  |
-|  Unsupported | <code>&quot;Unsupported&quot;</code> |  |
-
+| Member      | Value                                | Description |
+| ----------- | ------------------------------------ | ----------- |
+| Required    | <code>&quot;Required&quot;</code>    |             |
+| Supported   | <code>&quot;Supported&quot;</code>   |             |
+| Unsupported | <code>&quot;Unsupported&quot;</code> |             |

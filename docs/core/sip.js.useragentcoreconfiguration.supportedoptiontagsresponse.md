@@ -15,4 +15,3 @@ supportedOptionTagsResponse: Array<string>;
 ## Remarks
 
 FIXME: Make this go away.
-

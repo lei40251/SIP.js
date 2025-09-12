@@ -14,13 +14,12 @@ hasDescription(contentType: string): boolean;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  contentType | string | The content type that is in the SIP Message. |
+| Parameter   | Type   | Description                                  |
+| ----------- | ------ | -------------------------------------------- |
+| contentType | string | The content type that is in the SIP Message. |
 
 <b>Returns:</b>
 
 boolean
 
 True if the content type is handled by this session description handler. False otherwise.
-

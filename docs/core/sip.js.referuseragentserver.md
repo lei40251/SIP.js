@@ -9,15 +9,15 @@ REFER UAS.
 <b>Signature:</b>
 
 ```typescript
-export declare class ReferUserAgentServer extends UserAgentServer implements IncomingReferRequest 
+export declare class ReferUserAgentServer extends UserAgentServer implements IncomingReferRequest
 ```
+
 <b>Extends:</b> [UserAgentServer](./sip.js.useragentserver.md)
 
 <b>Implements:</b> [IncomingReferRequest](./sip.js.incomingreferrequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(dialogOrCore, message, delegate)](./sip.js.referuseragentserver._constructor_.md) |  | REFER UAS constructor. |
-
+| Constructor                                                                                      | Modifiers | Description            |
+| ------------------------------------------------------------------------------------------------ | --------- | ---------------------- |
+| [(constructor)(dialogOrCore, message, delegate)](./sip.js.referuseragentserver._constructor_.md) |           | REFER UAS constructor. |

@@ -14,11 +14,10 @@ protected constructor(_request: IncomingRequestMessage, transport: Transport, us
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  \_request | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) |  |
-|  transport | [Transport](./sip.js.transport.md) |  |
-|  user | [ServerTransactionUser](./sip.js.servertransactionuser.md) |  |
-|  state | [TransactionState](./sip.js.transactionstate.md) |  |
-|  loggerCategory | string |  |
-
+| Parameter      | Type                                                         | Description |
+| -------------- | ------------------------------------------------------------ | ----------- |
+| \_request      | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) |             |
+| transport      | [Transport](./sip.js.transport.md)                           |             |
+| user           | [ServerTransactionUser](./sip.js.servertransactionuser.md)   |             |
+| state          | [TransactionState](./sip.js.transactionstate.md)             |             |
+| loggerCategory | string                                                       |             |

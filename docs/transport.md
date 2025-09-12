@@ -9,4 +9,4 @@ The associated `TransportOptions` interface are used to configure the transport 
 
 ## Reference Documentation
 
-* [Transport Class Reference](./transport/sip.js.md)
+- [Transport Class Reference](./transport/sip.js.md)

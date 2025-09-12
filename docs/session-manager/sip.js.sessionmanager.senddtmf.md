@@ -14,10 +14,10 @@ sendDTMF(session: Session, tone: string): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session | Session to send on. |
-|  tone | string | Tone to send. |
+| Parameter | Type    | Description         |
+| --------- | ------- | ------------------- |
+| session   | Session | Session to send on. |
+| tone      | string  | Tone to send.       |
 
 <b>Returns:</b>
 
@@ -26,4 +26,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Send an INFO request with content type application/dtmf-relay.
-

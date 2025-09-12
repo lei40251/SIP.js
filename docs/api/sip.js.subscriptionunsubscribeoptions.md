@@ -9,5 +9,5 @@ Options for [Subscription.unsubscribe()](./sip.js.subscription.unsubscribe.md)<!
 <b>Signature:</b>
 
 ```typescript
-export interface SubscriptionUnsubscribeOptions 
+export interface SubscriptionUnsubscribeOptions
 ```

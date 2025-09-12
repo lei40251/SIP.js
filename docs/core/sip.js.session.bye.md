@@ -14,12 +14,11 @@ bye(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingByeRe
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  delegate | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) | Request delegate. |
-|  options | [RequestOptions](./sip.js.requestoptions.md) | Options bucket. |
+| Parameter | Type                                                           | Description       |
+| --------- | -------------------------------------------------------------- | ----------------- |
+| delegate  | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) | Request delegate. |
+| options   | [RequestOptions](./sip.js.requestoptions.md)                   | Options bucket.   |
 
 <b>Returns:</b>
 
 [OutgoingByeRequest](./sip.js.outgoingbyerequest.md)
-

@@ -12,11 +12,10 @@ protected setState(state: TransactionState): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  state | [TransactionState](./sip.js.transactionstate.md) |  |
+| Parameter | Type                                             | Description |
+| --------- | ------------------------------------------------ | ----------- |
+| state     | [TransactionState](./sip.js.transactionstate.md) |             |
 
 <b>Returns:</b>
 
 void
-

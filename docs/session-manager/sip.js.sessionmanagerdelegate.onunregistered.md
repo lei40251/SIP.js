@@ -11,7 +11,7 @@ Called when user is no longer registered to received calls.
 ```typescript
 onUnregistered?(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

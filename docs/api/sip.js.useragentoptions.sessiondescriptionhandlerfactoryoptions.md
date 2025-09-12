@@ -15,4 +15,3 @@ sessionDescriptionHandlerFactoryOptions?: object;
 ## Remarks
 
 See `Web.SessionDescriptionHandlerOptions` for details.
-

@@ -6,7 +6,6 @@
 
 ## Packages
 
-|  Package | Description |
-|  --- | --- |
-|  [sip.js](./sip.js.md) | A SessionDescriptionHandler for web browsers. |
-
+| Package               | Description                                   |
+| --------------------- | --------------------------------------------- |
+| [sip.js](./sip.js.md) | A SessionDescriptionHandler for web browsers. |

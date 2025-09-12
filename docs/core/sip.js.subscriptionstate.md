@@ -9,20 +9,19 @@ Subscription state.
 <b>Signature:</b>
 
 ```typescript
-export declare enum SubscriptionState 
+export declare enum SubscriptionState
 ```
 
 ## Enumeration Members
 
-|  Member | Value | Description |
-|  --- | --- | --- |
-|  Active | <code>&quot;Active&quot;</code> |  |
-|  Initial | <code>&quot;Initial&quot;</code> |  |
-|  NotifyWait | <code>&quot;NotifyWait&quot;</code> |  |
-|  Pending | <code>&quot;Pending&quot;</code> |  |
-|  Terminated | <code>&quot;Terminated&quot;</code> |  |
+| Member     | Value                               | Description |
+| ---------- | ----------------------------------- | ----------- |
+| Active     | <code>&quot;Active&quot;</code>     |             |
+| Initial    | <code>&quot;Initial&quot;</code>    |             |
+| NotifyWait | <code>&quot;NotifyWait&quot;</code> |             |
+| Pending    | <code>&quot;Pending&quot;</code>    |             |
+| Terminated | <code>&quot;Terminated&quot;</code> |             |
 
 ## Remarks
 
 https://tools.ietf.org/html/rfc6665\#section-4.1.2
-

@@ -14,11 +14,10 @@ removeListener(listener: (data: T) => void): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  listener | (data: T) =&gt; void | Callback function. |
+| Parameter | Type                 | Description        |
+| --------- | -------------------- | ------------------ |
+| listener  | (data: T) =&gt; void | Callback function. |
 
 <b>Returns:</b>
 
 void
-

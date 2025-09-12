@@ -9,15 +9,15 @@ Re-SUBSCRIBE UAS.
 <b>Signature:</b>
 
 ```typescript
-export declare class ReSubscribeUserAgentServer extends UserAgentServer implements IncomingSubscribeRequest 
+export declare class ReSubscribeUserAgentServer extends UserAgentServer implements IncomingSubscribeRequest
 ```
+
 <b>Extends:</b> [UserAgentServer](./sip.js.useragentserver.md)
 
 <b>Implements:</b> [IncomingSubscribeRequest](./sip.js.incomingsubscriberequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(dialog, message, delegate)](./sip.js.resubscribeuseragentserver._constructor_.md) |  | Constructs a new instance of the <code>ReSubscribeUserAgentServer</code> class |
-
+| Constructor                                                                                      | Modifiers | Description                                                                    |
+| ------------------------------------------------------------------------------------------------ | --------- | ------------------------------------------------------------------------------ |
+| [(constructor)(dialog, message, delegate)](./sip.js.resubscribeuseragentserver._constructor_.md) |           | Constructs a new instance of the <code>ReSubscribeUserAgentServer</code> class |

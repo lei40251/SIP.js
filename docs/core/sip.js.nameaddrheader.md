@@ -9,28 +9,28 @@ Name Address SIP header.
 <b>Signature:</b>
 
 ```typescript
-export declare class NameAddrHeader extends Parameters 
+export declare class NameAddrHeader extends Parameters
 ```
+
 <b>Extends:</b> Parameters
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(uri, displayName, parameters)](./sip.js.nameaddrheader._constructor_.md) |  | Constructor |
+| Constructor                                                                             | Modifiers | Description |
+| --------------------------------------------------------------------------------------- | --------- | ----------- |
+| [(constructor)(uri, displayName, parameters)](./sip.js.nameaddrheader._constructor_.md) |           | Constructor |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [displayName](./sip.js.nameaddrheader.displayname.md) |  | string |  |
-|  [friendlyName](./sip.js.nameaddrheader.friendlyname.md) |  | string |  |
-|  [uri](./sip.js.nameaddrheader.uri.md) |  | [URI](./sip.js.uri.md) |  |
+| Property                                                | Modifiers | Type                   | Description |
+| ------------------------------------------------------- | --------- | ---------------------- | ----------- |
+| [displayName](./sip.js.nameaddrheader.displayname.md)   |           | string                 |             |
+| [friendlyName](./sip.js.nameaddrheader.friendlyname.md) |           | string                 |             |
+| [uri](./sip.js.nameaddrheader.uri.md)                   |           | [URI](./sip.js.uri.md) |             |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [clone()](./sip.js.nameaddrheader.clone.md) |  |  |
-|  [toString()](./sip.js.nameaddrheader.tostring.md) |  |  |
-
+| Method                                            | Modifiers | Description |
+| ------------------------------------------------- | --------- | ----------- |
+| [clone()](./sip.js.nameaddrheader.clone.md)       |           |             |
+| [toString()](./sip.js.nameaddrheader.tostring.md) |           |             |

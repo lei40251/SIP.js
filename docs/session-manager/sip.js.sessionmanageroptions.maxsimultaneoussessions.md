@@ -15,4 +15,3 @@ maxSimultaneousSessions?: number;
 ## Remarks
 
 Set to 0 for unlimited.
-

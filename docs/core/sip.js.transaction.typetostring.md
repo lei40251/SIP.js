@@ -9,7 +9,7 @@
 ```typescript
 protected typeToString(): string;
 ```
+
 <b>Returns:</b>
 
 string
-

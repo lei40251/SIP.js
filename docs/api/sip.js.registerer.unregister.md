@@ -14,9 +14,9 @@ unregister(options?: RegistererUnregisterOptions): Promise<OutgoingRegisterReque
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [RegistererUnregisterOptions](./sip.js.registererunregisteroptions.md) |  |
+| Parameter | Type                                                                   | Description |
+| --------- | ---------------------------------------------------------------------- | ----------- |
+| options   | [RegistererUnregisterOptions](./sip.js.registererunregisteroptions.md) |             |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ Promise&lt;OutgoingRegisterRequest&gt;
 ## Remarks
 
 Rejects with `RequestPendingError` if a REGISTER request is already in progress.
-

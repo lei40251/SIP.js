@@ -8,13 +8,12 @@ A Transport implementation for web browsers.
 
 ## Classes
 
-|  Class | Description |
-|  --- | --- |
-|  [Transport](./sip.js.transport.md) | Transport for SIP over secure WebSocket (WSS). |
+| Class                              | Description                                    |
+| ---------------------------------- | ---------------------------------------------- |
+| [Transport](./sip.js.transport.md) | Transport for SIP over secure WebSocket (WSS). |
 
 ## Interfaces
 
-|  Interface | Description |
-|  --- | --- |
-|  [TransportOptions](./sip.js.transportoptions.md) | Transport options. |
-
+| Interface                                        | Description        |
+| ------------------------------------------------ | ------------------ |
+| [TransportOptions](./sip.js.transportoptions.md) | Transport options. |

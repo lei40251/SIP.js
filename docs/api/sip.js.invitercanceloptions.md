@@ -9,14 +9,13 @@ Options for [Inviter.cancel()](./sip.js.inviter.cancel.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface InviterCancelOptions 
+export interface InviterCancelOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [extraHeaders](./sip.js.invitercanceloptions.extraheaders.md) |  | Array&lt;string&gt; |  |
-|  [reasonPhrase](./sip.js.invitercanceloptions.reasonphrase.md) |  | string |  |
-|  [statusCode](./sip.js.invitercanceloptions.statuscode.md) |  | number |  |
-
+| Property                                                      | Modifiers | Type                | Description |
+| ------------------------------------------------------------- | --------- | ------------------- | ----------- |
+| [extraHeaders](./sip.js.invitercanceloptions.extraheaders.md) |           | Array&lt;string&gt; |             |
+| [reasonPhrase](./sip.js.invitercanceloptions.reasonphrase.md) |           | string              |             |
+| [statusCode](./sip.js.invitercanceloptions.statuscode.md)     |           | number              |             |

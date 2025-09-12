@@ -14,11 +14,10 @@ bye(options?: SessionByeOptions): Promise<OutgoingByeRequest>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [SessionByeOptions](./sip.js.sessionbyeoptions.md) | Options bucket. See [SessionByeOptions](./sip.js.sessionbyeoptions.md) for details. |
+| Parameter | Type                                               | Description                                                                         |
+| --------- | -------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| options   | [SessionByeOptions](./sip.js.sessionbyeoptions.md) | Options bucket. See [SessionByeOptions](./sip.js.sessionbyeoptions.md) for details. |
 
 <b>Returns:</b>
 
 Promise&lt;OutgoingByeRequest&gt;
-

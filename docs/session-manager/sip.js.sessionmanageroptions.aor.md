@@ -15,4 +15,3 @@ aor?: string;
 ## Remarks
 
 The AOR is registered to receive incoming calls. If not specified, a random anonymous address is created for the user.
-

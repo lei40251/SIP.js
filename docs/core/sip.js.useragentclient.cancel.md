@@ -14,12 +14,11 @@ cancel(reason?: string, options?: RequestOptions): OutgoingRequestMessage;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  reason | string |  |
-|  options | [RequestOptions](./sip.js.requestoptions.md) | Cancel options bucket. |
+| Parameter | Type                                         | Description            |
+| --------- | -------------------------------------------- | ---------------------- |
+| reason    | string                                       |                        |
+| options   | [RequestOptions](./sip.js.requestoptions.md) | Cancel options bucket. |
 
 <b>Returns:</b>
 
 [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md)
-

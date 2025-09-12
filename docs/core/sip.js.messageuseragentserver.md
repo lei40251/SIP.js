@@ -9,15 +9,15 @@ MESSAGE UAS.
 <b>Signature:</b>
 
 ```typescript
-export declare class MessageUserAgentServer extends UserAgentServer implements IncomingMessageRequest 
+export declare class MessageUserAgentServer extends UserAgentServer implements IncomingMessageRequest
 ```
+
 <b>Extends:</b> [UserAgentServer](./sip.js.useragentserver.md)
 
 <b>Implements:</b> [IncomingMessageRequest](./sip.js.incomingmessagerequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(core, message, delegate)](./sip.js.messageuseragentserver._constructor_.md) |  | Constructs a new instance of the <code>MessageUserAgentServer</code> class |
-
+| Constructor                                                                                | Modifiers | Description                                                                |
+| ------------------------------------------------------------------------------------------ | --------- | -------------------------------------------------------------------------- |
+| [(constructor)(core, message, delegate)](./sip.js.messageuseragentserver._constructor_.md) |           | Constructs a new instance of the <code>MessageUserAgentServer</code> class |

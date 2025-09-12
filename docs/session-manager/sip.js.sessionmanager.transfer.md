@@ -14,11 +14,11 @@ transfer(session: Session, target: Session | string, options?: SessionReferOptio
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session | Session with the transferee to transfer. |
-|  target | Session \| string | The referral target. |
-|  options | SessionReferOptions |  |
+| Parameter | Type                | Description                              |
+| --------- | ------------------- | ---------------------------------------- |
+| session   | Session             | Session with the transferee to transfer. |
+| target    | Session \| string   | The referral target.                     |
+| options   | SessionReferOptions |                                          |
 
 <b>Returns:</b>
 
@@ -27,4 +27,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 If target is a Session this is an attended transfer completion (REFER with Replaces), otherwise this is a blind transfer (REFER). Attempting an attended transfer completion on a call that has not been answered will be rejected. To implement an attended transfer with early completion, hangup the call with the target and execute a blind transfer to the target.
-

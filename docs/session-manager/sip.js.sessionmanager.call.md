@@ -14,11 +14,11 @@ call(destination: string, inviterOptions?: InviterOptions, inviterInviteOptions?
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  destination | string | The target destination to call. A SIP address to send the INVITE to. |
-|  inviterOptions | InviterOptions | Optional options for Inviter constructor. |
-|  inviterInviteOptions | InviterInviteOptions | Optional options for Inviter.invite(). |
+| Parameter            | Type                 | Description                                                          |
+| -------------------- | -------------------- | -------------------------------------------------------------------- |
+| destination          | string               | The target destination to call. A SIP address to send the INVITE to. |
+| inviterOptions       | InviterOptions       | Optional options for Inviter constructor.                            |
+| inviterInviteOptions | InviterInviteOptions | Optional options for Inviter.invite().                               |
 
 <b>Returns:</b>
 
@@ -27,4 +27,3 @@ Promise&lt;Inviter&gt;
 ## Remarks
 
 Send an INVITE request to create a new Session. Resolves when the INVITE request is sent, otherwise rejects. Use `onCallAnswered` delegate method to determine if Session is established.
-

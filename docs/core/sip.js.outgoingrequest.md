@@ -9,7 +9,7 @@ A SIP message sent from a local client to a remote server.
 <b>Signature:</b>
 
 ```typescript
-export interface OutgoingRequest 
+export interface OutgoingRequest
 ```
 
 ## Remarks
@@ -18,15 +18,14 @@ For the purpose of invoking a particular operation. https://tools.ietf.org/html/
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [delegate](./sip.js.outgoingrequest.delegate.md) |  | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) | Delegate providing custom handling of this outgoing request. |
-|  [message](./sip.js.outgoingrequest.message.md) |  | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) | The outgoing message. |
+| Property                                         | Modifiers | Type                                                           | Description                                                  |
+| ------------------------------------------------ | --------- | -------------------------------------------------------------- | ------------------------------------------------------------ |
+| [delegate](./sip.js.outgoingrequest.delegate.md) |           | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) | Delegate providing custom handling of this outgoing request. |
+| [message](./sip.js.outgoingrequest.message.md)   |           | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md)   | The outgoing message.                                        |
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [cancel(reason, options)](./sip.js.outgoingrequest.cancel.md) | Sends a CANCEL message targeting this request to the UAS. |
-|  [dispose()](./sip.js.outgoingrequest.dispose.md) | Destroy request. |
-
+| Method                                                        | Description                                               |
+| ------------------------------------------------------------- | --------------------------------------------------------- |
+| [cancel(reason, options)](./sip.js.outgoingrequest.cancel.md) | Sends a CANCEL message targeting this request to the UAS. |
+| [dispose()](./sip.js.outgoingrequest.dispose.md)              | Destroy request.                                          |

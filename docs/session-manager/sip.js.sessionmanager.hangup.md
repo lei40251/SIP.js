@@ -14,9 +14,9 @@ hangup(session: Session): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session | Session to hangup. |
+| Parameter | Type    | Description        |
+| --------- | ------- | ------------------ |
+| session   | Session | Session to hangup. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Send a BYE request, CANCEL request or reject response to end the current Session. Resolves when the request/response is sent, otherwise rejects. Use `onCallHangup` delegate method to determine if and when call is ended.
-

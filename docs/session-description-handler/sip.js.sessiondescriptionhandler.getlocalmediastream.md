@@ -14,11 +14,10 @@ protected getLocalMediaStream(options?: SessionDescriptionHandlerOptions): Promi
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [SessionDescriptionHandlerOptions](./sip.js.sessiondescriptionhandleroptions.md) | Session description handler options. |
+| Parameter | Type                                                                             | Description                          |
+| --------- | -------------------------------------------------------------------------------- | ------------------------------------ |
+| options   | [SessionDescriptionHandlerOptions](./sip.js.sessiondescriptionhandleroptions.md) | Session description handler options. |
 
 <b>Returns:</b>
 
 Promise&lt;void&gt;
-

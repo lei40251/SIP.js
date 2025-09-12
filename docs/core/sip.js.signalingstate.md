@@ -9,21 +9,20 @@ Offer/Answer state.
 <b>Signature:</b>
 
 ```typescript
-export declare enum SignalingState 
+export declare enum SignalingState
 ```
 
 ## Enumeration Members
 
-|  Member | Value | Description |
-|  --- | --- | --- |
-|  Closed | <code>&quot;Closed&quot;</code> |  |
-|  HaveLocalOffer | <code>&quot;HaveLocalOffer&quot;</code> |  |
-|  HaveRemoteOffer | <code>&quot;HaveRemoteOffer&quot;</code> |  |
-|  Initial | <code>&quot;Initial&quot;</code> |  |
-|  Stable | <code>&quot;Stable&quot;</code> |  |
+| Member          | Value                                    | Description |
+| --------------- | ---------------------------------------- | ----------- |
+| Closed          | <code>&quot;Closed&quot;</code>          |             |
+| HaveLocalOffer  | <code>&quot;HaveLocalOffer&quot;</code>  |             |
+| HaveRemoteOffer | <code>&quot;HaveRemoteOffer&quot;</code> |             |
+| Initial         | <code>&quot;Initial&quot;</code>         |             |
+| Stable          | <code>&quot;Stable&quot;</code>          |             |
 
 ## Remarks
-
 
 ```txt
         Offer                Answer             RFC    Ini Est Early
@@ -37,5 +36,5 @@ export declare enum SignalingState
 
       Table 1: Summary of SIP Usage of the Offer/Answer Model
 ```
-https://tools.ietf.org/html/rfc6337\#section-2.2
 
+https://tools.ietf.org/html/rfc6337\#section-2.2

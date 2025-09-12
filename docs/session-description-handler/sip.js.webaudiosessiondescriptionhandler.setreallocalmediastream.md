@@ -5,7 +5,6 @@
 ## WebAudioSessionDescriptionHandler.setRealLocalMediaStream() method
 
 > This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
-> 
 
 Sets the original local media stream.
 
@@ -17,9 +16,9 @@ setRealLocalMediaStream(stream: MediaStream): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  stream | MediaStream | Media stream containing tracks to be utilized. |
+| Parameter | Type        | Description                                    |
+| --------- | ----------- | ---------------------------------------------- |
+| stream    | MediaStream | Media stream containing tracks to be utilized. |
 
 <b>Returns:</b>
 
@@ -28,4 +27,3 @@ void
 ## Remarks
 
 Only the first audio and video tracks of the provided MediaStream are utilized. Adds tracks if audio and/or video tracks are not already present, otherwise replaces tracks.
-

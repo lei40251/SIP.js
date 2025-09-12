@@ -11,7 +11,7 @@
 ```typescript
 unsubscribe(): OutgoingSubscribeRequest;
 ```
+
 <b>Returns:</b>
 
 [OutgoingSubscribeRequest](./sip.js.outgoingsubscriberequest.md)
-

@@ -9,13 +9,13 @@ An exception indicating an invalid state transition error occured.
 <b>Signature:</b>
 
 ```typescript
-export declare class StateTransitionError extends Exception 
+export declare class StateTransitionError extends Exception
 ```
+
 <b>Extends:</b> Exception
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(message)](./sip.js.statetransitionerror._constructor_.md) |  | Constructs a new instance of the <code>StateTransitionError</code> class |
-
+| Constructor                                                              | Modifiers | Description                                                              |
+| ------------------------------------------------------------------------ | --------- | ------------------------------------------------------------------------ |
+| [(constructor)(message)](./sip.js.statetransitionerror._constructor_.md) |           | Constructs a new instance of the <code>StateTransitionError</code> class |

@@ -9,29 +9,28 @@ A registerer registers a contact for an address of record (outgoing REGISTER).
 <b>Signature:</b>
 
 ```typescript
-export declare class Registerer 
+export declare class Registerer
 ```
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(userAgent, options)](./sip.js.registerer._constructor_.md) |  | Constructs a new instance of the <code>Registerer</code> class. |
+| Constructor                                                               | Modifiers | Description                                                     |
+| ------------------------------------------------------------------------- | --------- | --------------------------------------------------------------- |
+| [(constructor)(userAgent, options)](./sip.js.registerer._constructor_.md) |           | Constructs a new instance of the <code>Registerer</code> class. |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [contacts](./sip.js.registerer.contacts.md) |  | Array&lt;string&gt; | The registered contacts. |
-|  [retryAfter](./sip.js.registerer.retryafter.md) |  | number \| undefined | The number of seconds to wait before retrying to register. |
-|  [state](./sip.js.registerer.state.md) |  | [RegistererState](./sip.js.registererstate.md) | The registration state. |
-|  [stateChange](./sip.js.registerer.statechange.md) |  | [Emitter](./sip.js.emitter.md)<!-- -->&lt;[RegistererState](./sip.js.registererstate.md)<!-- -->&gt; | Emits when the registerer state changes. |
+| Property                                          | Modifiers | Type                                                                                                 | Description                                                |
+| ------------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| [contacts](./sip.js.registerer.contacts.md)       |           | Array&lt;string&gt;                                                                                  | The registered contacts.                                   |
+| [retryAfter](./sip.js.registerer.retryafter.md)   |           | number \| undefined                                                                                  | The number of seconds to wait before retrying to register. |
+| [state](./sip.js.registerer.state.md)             |           | [RegistererState](./sip.js.registererstate.md)                                                       | The registration state.                                    |
+| [stateChange](./sip.js.registerer.statechange.md) |           | [Emitter](./sip.js.emitter.md)<!-- -->&lt;[RegistererState](./sip.js.registererstate.md)<!-- -->&gt; | Emits when the registerer state changes.                   |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [dispose()](./sip.js.registerer.dispose.md) |  | Destructor. |
-|  [register(options)](./sip.js.registerer.register.md) |  | Sends the REGISTER request. |
-|  [unregister(options)](./sip.js.registerer.unregister.md) |  | Sends the REGISTER request with expires equal to zero. |
-
+| Method                                                   | Modifiers | Description                                            |
+| -------------------------------------------------------- | --------- | ------------------------------------------------------ |
+| [dispose()](./sip.js.registerer.dispose.md)              |           | Destructor.                                            |
+| [register(options)](./sip.js.registerer.register.md)     |           | Sends the REGISTER request.                            |
+| [unregister(options)](./sip.js.registerer.unregister.md) |           | Sends the REGISTER request with expires equal to zero. |

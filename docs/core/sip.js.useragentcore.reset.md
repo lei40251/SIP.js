@@ -11,7 +11,7 @@ Reset.
 ```typescript
 reset(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

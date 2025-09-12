@@ -14,10 +14,10 @@ onCallDTMFReceived?(tone: string, duration: number): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  tone | string |  |
-|  duration | number |  |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| tone      | string |             |
+| duration  | number |             |
 
 <b>Returns:</b>
 
@@ -26,4 +26,3 @@ void
 ## Remarks
 
 Callback for handling an incoming INFO request with content type application/dtmf-relay.
-

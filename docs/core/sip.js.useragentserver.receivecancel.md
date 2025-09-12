@@ -14,11 +14,10 @@ receiveCancel(message: IncomingRequestMessage): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) |  |
+| Parameter | Type                                                         | Description |
+| --------- | ------------------------------------------------------------ | ----------- |
+| message   | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) |             |
 
 <b>Returns:</b>
 
 void
-

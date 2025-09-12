@@ -9,7 +9,7 @@ Outgoing PUBLISH request.
 <b>Signature:</b>
 
 ```typescript
-export interface OutgoingPublishRequest extends OutgoingRequest 
+export interface OutgoingPublishRequest extends OutgoingRequest
 ```
-<b>Extends:</b> [OutgoingRequest](./sip.js.outgoingrequest.md)
 
+<b>Extends:</b> [OutgoingRequest](./sip.js.outgoingrequest.md)

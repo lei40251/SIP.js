@@ -11,7 +11,7 @@ Called when user is registered to received calls.
 ```typescript
 onRegistered?(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

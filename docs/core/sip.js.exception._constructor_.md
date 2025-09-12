@@ -14,7 +14,6 @@ protected constructor(message?: string);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | string |  |
-
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| message   | string |             |

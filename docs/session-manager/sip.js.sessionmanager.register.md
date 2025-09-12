@@ -14,9 +14,9 @@ register(registererRegisterOptions?: RegistererRegisterOptions): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  registererRegisterOptions | RegistererRegisterOptions |  |
+| Parameter                 | Type                      | Description |
+| ------------------------- | ------------------------- | ----------- |
+| registererRegisterOptions | RegistererRegisterOptions |             |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Send a REGISTER request for the UserAgent's AOR. Resolves when the REGISTER request is sent, otherwise rejects. Attempts will be made to re-register as needed.
-

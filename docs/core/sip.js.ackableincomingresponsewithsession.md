@@ -9,19 +9,19 @@ Incoming INVITE response received when request is accepted.
 <b>Signature:</b>
 
 ```typescript
-export interface AckableIncomingResponseWithSession extends IncomingResponse 
+export interface AckableIncomingResponseWithSession extends IncomingResponse
 ```
+
 <b>Extends:</b> [IncomingResponse](./sip.js.incomingresponse.md)
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [session](./sip.js.ackableincomingresponsewithsession.session.md) |  | [Session](./sip.js.session.md) | Session associated with outgoing request acceptance. |
+| Property                                                          | Modifiers | Type                           | Description                                          |
+| ----------------------------------------------------------------- | --------- | ------------------------------ | ---------------------------------------------------- |
+| [session](./sip.js.ackableincomingresponsewithsession.session.md) |           | [Session](./sip.js.session.md) | Session associated with outgoing request acceptance. |
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [ack(options)](./sip.js.ackableincomingresponsewithsession.ack.md) | Send an ACK to acknowledge this response. |
-
+| Method                                                             | Description                               |
+| ------------------------------------------------------------------ | ----------------------------------------- |
+| [ack(options)](./sip.js.ackableincomingresponsewithsession.ack.md) | Send an ACK to acknowledge this response. |

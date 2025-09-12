@@ -9,22 +9,22 @@ Re-SUBSCRIBE UAC.
 <b>Signature:</b>
 
 ```typescript
-export declare class ReSubscribeUserAgentClient extends UserAgentClient implements OutgoingSubscribeRequest 
+export declare class ReSubscribeUserAgentClient extends UserAgentClient implements OutgoingSubscribeRequest
 ```
+
 <b>Extends:</b> [UserAgentClient](./sip.js.useragentclient.md)
 
 <b>Implements:</b> [OutgoingSubscribeRequest](./sip.js.outgoingsubscriberequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(dialog, delegate, options)](./sip.js.resubscribeuseragentclient._constructor_.md) |  | Constructs a new instance of the <code>ReSubscribeUserAgentClient</code> class |
+| Constructor                                                                                      | Modifiers | Description                                                                    |
+| ------------------------------------------------------------------------------------------------ | --------- | ------------------------------------------------------------------------------ |
+| [(constructor)(dialog, delegate, options)](./sip.js.resubscribeuseragentclient._constructor_.md) |           | Constructs a new instance of the <code>ReSubscribeUserAgentClient</code> class |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [receiveResponse(message)](./sip.js.resubscribeuseragentclient.receiveresponse.md) |  | Receive a response from the transaction layer. |
-|  [waitNotifyStop()](./sip.js.resubscribeuseragentclient.waitnotifystop.md) |  |  |
-
+| Method                                                                             | Modifiers | Description                                    |
+| ---------------------------------------------------------------------------------- | --------- | ---------------------------------------------- |
+| [receiveResponse(message)](./sip.js.resubscribeuseragentclient.receiveresponse.md) |           | Receive a response from the transaction layer. |
+| [waitNotifyStop()](./sip.js.resubscribeuseragentclient.waitnotifystop.md)          |           |                                                |

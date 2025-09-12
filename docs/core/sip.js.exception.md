@@ -9,13 +9,13 @@ An Exception is considered a condition that a reasonable application may wish to
 <b>Signature:</b>
 
 ```typescript
-export declare abstract class Exception extends Error 
+export declare abstract class Exception extends Error
 ```
+
 <b>Extends:</b> Error
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(message)](./sip.js.exception._constructor_.md) |  | Constructs a new instance of the <code>Exception</code> class |
-
+| Constructor                                                   | Modifiers | Description                                                   |
+| ------------------------------------------------------------- | --------- | ------------------------------------------------------------- |
+| [(constructor)(message)](./sip.js.exception._constructor_.md) |           | Constructs a new instance of the <code>Exception</code> class |

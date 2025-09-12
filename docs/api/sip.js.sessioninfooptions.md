@@ -9,13 +9,12 @@ Options for [Session.info()](./sip.js.session.info.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface SessionInfoOptions 
+export interface SessionInfoOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [requestDelegate](./sip.js.sessioninfooptions.requestdelegate.md) |  | OutgoingRequestDelegate | See <code>core</code> API. |
-|  [requestOptions](./sip.js.sessioninfooptions.requestoptions.md) |  | RequestOptions | See <code>core</code> API. |
-
+| Property                                                          | Modifiers | Type                    | Description                |
+| ----------------------------------------------------------------- | --------- | ----------------------- | -------------------------- |
+| [requestDelegate](./sip.js.sessioninfooptions.requestdelegate.md) |           | OutgoingRequestDelegate | See <code>core</code> API. |
+| [requestOptions](./sip.js.sessioninfooptions.requestoptions.md)   |           | RequestOptions          | See <code>core</code> API. |

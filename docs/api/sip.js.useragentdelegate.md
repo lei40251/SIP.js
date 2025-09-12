@@ -9,16 +9,15 @@ Delegate for [UserAgent](./sip.js.useragent.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface UserAgentDelegate 
+export interface UserAgentDelegate
 ```
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [onConnect()](./sip.js.useragentdelegate.onconnect.md) | Called upon transport transitioning to connected state. |
-|  [onDisconnect(error)](./sip.js.useragentdelegate.ondisconnect.md) | Called upon transport transitioning from connected state. |
-|  [onInvite(invitation)](./sip.js.useragentdelegate.oninvite.md) | Called upon receipt of an invitation. |
-|  [onMessage(message)](./sip.js.useragentdelegate.onmessage.md) | Called upon receipt of a message. |
-|  [onNotify(notification)](./sip.js.useragentdelegate.onnotify.md) | Called upon receipt of a notification. |
-
+| Method                                                            | Description                                               |
+| ----------------------------------------------------------------- | --------------------------------------------------------- |
+| [onConnect()](./sip.js.useragentdelegate.onconnect.md)            | Called upon transport transitioning to connected state.   |
+| [onDisconnect(error)](./sip.js.useragentdelegate.ondisconnect.md) | Called upon transport transitioning from connected state. |
+| [onInvite(invitation)](./sip.js.useragentdelegate.oninvite.md)    | Called upon receipt of an invitation.                     |
+| [onMessage(message)](./sip.js.useragentdelegate.onmessage.md)     | Called upon receipt of a message.                         |
+| [onNotify(notification)](./sip.js.useragentdelegate.onnotify.md)  | Called upon receipt of a notification.                    |

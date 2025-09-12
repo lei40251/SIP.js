@@ -13,6 +13,7 @@ The React Native `SessionDescriptionHandler` has been removed. If you are using 
 ### WebRTC [SessionDescriptionHandler](./session-description-handler) Rewrite
 
 Issues addressed:
+
 - Support for providing alternative media acquisition
 - Supports upgrading audio session to video session
 - Options may be modified on a per call basis
@@ -21,12 +22,14 @@ Issues addressed:
 - Data channel usage is now supported
 
 Breaking changes:
+
 - The `getMediaStream` method has been replaced by the `MediaStreamFactory` interface
 - All the various "events" are no longer emitted
 
 #### Events Removed
 
 Replaced by [MediaStreamFactory](./session-description-handler/sip.js.mediastreamfactory.md) interface:
+
 - "userMedia"
 - "userMediaRequest"
 - "userMediaFailed"
@@ -43,10 +46,10 @@ const myMediaStreamFactory: Web.MediaStreamFactory = (
 ): Promise<MediaStream> => {
   const mediaStream = new MediaStream(); // my custom media stream acquisition
   return Promise.resolve(mediaStream);
-}
+};
 
 // Create session description handler factory
-const mySessionDescriptionHandlerFactory: Web.SessionDescriptionHandlerFactory = 
+const mySessionDescriptionHandlerFactory: Web.SessionDescriptionHandlerFactory =
   Web.defaultSessionDescriptionHandlerFactory(myMediaStreamFactory);
 
 // Create user agent
@@ -56,12 +59,14 @@ const myUserAgent = new UserAgent({
 ```
 
 Replaced by [SessionDescriptionHandler.remoteMediaStream](./session-description-handler/sip.js.sessiondescriptionhandler.remotemediastream.md) property:
+
 - "addTrack"
 - "addStream"
 
 Getting a handle on remote tracks when they are added has historically been tricky. Now [SessionDescriptionHandler.remoteMediaStream](./session-description-handler/sip.js.sessiondescriptionhandler.remotemediastream.md) is always available and always has the current remote tracks (if any). Furthermore You can add event handlers for `addTrack` and `removeTrack` to the `MediaStream` and get updated when tracks are added or removed.
 
 Replaced by [SessionDescriptionHandler.peerConnectionDelegate](./session-description-handler/sip.js.peerconnectiondelegate.md) property:
+
 - "iceCandidate"
 - "iceConnection"
 - "iceConnectionClosed"
@@ -74,6 +79,7 @@ Replaced by [SessionDescriptionHandler.peerConnectionDelegate](./session-descrip
 - "iceGatheringComplete"
 
 Should no longer be needed with new API, but extend `SessionDescriptionHandler` if need be:
+
 - "confirmed"
 - "getDescription"
 - "setDescription"
@@ -86,4 +92,3 @@ Should no longer be needed with new API, but extend `SessionDescriptionHandler` 
 ## Core library
 
 The [Core](./core.md) library is compatible with 0.16.x. No changes are required.
-

@@ -14,9 +14,9 @@ onCallHangup?(session: Session): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session |  |
+| Parameter | Type    | Description |
+| --------- | ------- | ----------- |
+| session   | Session |             |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ void
 ## Remarks
 
 Callback for handling termination of a Session.
-

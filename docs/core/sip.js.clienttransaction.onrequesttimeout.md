@@ -11,7 +11,7 @@ A 408 to non-INVITE will always arrive too late to be useful (\[3\]), The client
 ```typescript
 protected onRequestTimeout(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

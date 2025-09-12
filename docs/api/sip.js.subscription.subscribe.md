@@ -14,11 +14,10 @@ abstract subscribe(options?: SubscriptionSubscribeOptions): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [SubscriptionSubscribeOptions](./sip.js.subscriptionsubscribeoptions.md) |  |
+| Parameter | Type                                                                     | Description |
+| --------- | ------------------------------------------------------------------------ | ----------- |
+| options   | [SubscriptionSubscribeOptions](./sip.js.subscriptionsubscribeoptions.md) |             |
 
 <b>Returns:</b>
 
 Promise&lt;void&gt;
-

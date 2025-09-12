@@ -9,7 +9,7 @@ Incoming PUBLISH response.
 <b>Signature:</b>
 
 ```typescript
-export interface IncomingPublishResponse extends IncomingResponse 
+export interface IncomingPublishResponse extends IncomingResponse
 ```
-<b>Extends:</b> [IncomingResponse](./sip.js.incomingresponse.md)
 
+<b>Extends:</b> [IncomingResponse](./sip.js.incomingresponse.md)

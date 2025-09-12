@@ -9,7 +9,7 @@ A request to reject an [Invitation](./sip.js.invitation.md) (incoming CANCEL).
 <b>Signature:</b>
 
 ```typescript
-export declare class Cancel 
+export declare class Cancel
 ```
 
 ## Remarks
@@ -18,7 +18,6 @@ The constructor for this class is marked as internal. Third-party code should no
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [request](./sip.js.cancel.request.md) |  | IncomingRequestMessage | Incoming CANCEL request message. |
-
+| Property                              | Modifiers | Type                   | Description                      |
+| ------------------------------------- | --------- | ---------------------- | -------------------------------- |
+| [request](./sip.js.cancel.request.md) |           | IncomingRequestMessage | Incoming CANCEL request message. |

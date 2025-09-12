@@ -9,13 +9,12 @@ Options for [Session.message()](./sip.js.session.message.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface SessionMessageOptions 
+export interface SessionMessageOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [requestDelegate](./sip.js.sessionmessageoptions.requestdelegate.md) |  | OutgoingRequestDelegate | See <code>core</code> API. |
-|  [requestOptions](./sip.js.sessionmessageoptions.requestoptions.md) |  | RequestOptions | See <code>core</code> API. |
-
+| Property                                                             | Modifiers | Type                    | Description                |
+| -------------------------------------------------------------------- | --------- | ----------------------- | -------------------------- |
+| [requestDelegate](./sip.js.sessionmessageoptions.requestdelegate.md) |           | OutgoingRequestDelegate | See <code>core</code> API. |
+| [requestOptions](./sip.js.sessionmessageoptions.requestoptions.md)   |           | RequestOptions          | See <code>core</code> API. |

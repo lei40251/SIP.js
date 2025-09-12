@@ -11,6 +11,7 @@ Stop the user agent.
 ```typescript
 stop(): Promise<void>;
 ```
+
 <b>Returns:</b>
 
 Promise&lt;void&gt;
@@ -27,6 +28,7 @@ Resolves when the user agent has completed a graceful shutdown.
 5) Transport disconnects.
 6) User Agent Core resets.
 ```
+
 The user agent state transistions to stopped once these steps have been completed. Calling `start()` after calling `stop()` will fail if `stop()` has yet to resolve.
 
 NOTE: While this is a "graceful shutdown", it can also be very slow one if you are waiting for the returned Promise to resolve. The disposal of the clients and dialogs is done serially - waiting on one to finish before moving on to the next. This can be slow if there are lot of subscriptions to unsubscribe for example.
@@ -34,4 +36,3 @@ NOTE: While this is a "graceful shutdown", it can also be very slow one if you a
 THE SLOW PACE IS INTENTIONAL! While one could spin them all down in parallel, this could slam the remote server. It is bad practice to denial of service attack (DoS attack) servers!!! Moreover, production servers will automatically blacklist clients which send too many requests in too short a period of time - dropping any additional requests.
 
 If a different approach to disposing is needed, one can implement whatever is needed and execute that prior to calling `stop()`<!-- -->. Alternatively one may simply not wait for the Promise returned by `stop()` to complete.
-

@@ -15,4 +15,3 @@ contact: Contact;
 ## Remarks
 
 https://tools.ietf.org/html/rfc3261\#section-8.1.1.8
-

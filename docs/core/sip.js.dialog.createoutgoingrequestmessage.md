@@ -18,12 +18,11 @@ createOutgoingRequestMessage(method: string, options?: {
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  method | string | Outgoing request method. |
-|  options | { cseq?: number; extraHeaders?: Array&lt;string&gt;; body?: [Body](./sip.js.body.md)<!-- -->; } |  |
+| Parameter | Type                                                                                            | Description              |
+| --------- | ----------------------------------------------------------------------------------------------- | ------------------------ |
+| method    | string                                                                                          | Outgoing request method. |
+| options   | { cseq?: number; extraHeaders?: Array&lt;string&gt;; body?: [Body](./sip.js.body.md)<!-- -->; } |                          |
 
 <b>Returns:</b>
 
 [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md)
-

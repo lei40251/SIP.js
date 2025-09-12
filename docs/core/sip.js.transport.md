@@ -9,7 +9,7 @@ Transport layer interface expected by the user agent core.
 <b>Signature:</b>
 
 ```typescript
-export interface Transport 
+export interface Transport
 ```
 
 ## Remarks
@@ -18,13 +18,12 @@ The transport layer is responsible for the actual transmission of requests and r
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [protocol](./sip.js.transport.protocol.md) |  | string | The transport protocol. |
+| Property                                   | Modifiers | Type   | Description             |
+| ------------------------------------------ | --------- | ------ | ----------------------- |
+| [protocol](./sip.js.transport.protocol.md) |           | string | The transport protocol. |
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [send(message)](./sip.js.transport.send.md) | Send a message. |
-
+| Method                                      | Description     |
+| ------------------------------------------- | --------------- |
+| [send(message)](./sip.js.transport.send.md) | Send a message. |

@@ -9,7 +9,7 @@
 ```typescript
 dispose(): Promise<void>;
 ```
+
 <b>Returns:</b>
 
 Promise&lt;void&gt;
-

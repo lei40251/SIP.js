@@ -9,7 +9,7 @@ A request to confirm a [Session](./sip.js.session.md) (incoming ACK).
 <b>Signature:</b>
 
 ```typescript
-export declare class Ack 
+export declare class Ack
 ```
 
 ## Remarks
@@ -18,7 +18,6 @@ The constructor for this class is marked as internal. Third-party code should no
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [request](./sip.js.ack.request.md) |  | IncomingRequestMessage | Incoming ACK request message. |
-
+| Property                           | Modifiers | Type                   | Description                   |
+| ---------------------------------- | --------- | ---------------------- | ----------------------------- |
+| [request](./sip.js.ack.request.md) |           | IncomingRequestMessage | Incoming ACK request message. |

@@ -14,10 +14,9 @@ constructor(initialTransaction: InviteClientTransaction | InviteServerTransactio
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  initialTransaction | [InviteClientTransaction](./sip.js.inviteclienttransaction.md) \| [InviteServerTransaction](./sip.js.inviteservertransaction.md) |  |
-|  core | [UserAgentCore](./sip.js.useragentcore.md) |  |
-|  state | [DialogState](./sip.js.dialogstate.md) |  |
-|  delegate | [SessionDelegate](./sip.js.sessiondelegate.md) |  |
-
+| Parameter          | Type                                                                                                                             | Description |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| initialTransaction | [InviteClientTransaction](./sip.js.inviteclienttransaction.md) \| [InviteServerTransaction](./sip.js.inviteservertransaction.md) |             |
+| core               | [UserAgentCore](./sip.js.useragentcore.md)                                                                                       |             |
+| state              | [DialogState](./sip.js.dialogstate.md)                                                                                           |             |
+| delegate           | [SessionDelegate](./sip.js.sessiondelegate.md)                                                                                   |             |

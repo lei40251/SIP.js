@@ -9,21 +9,21 @@ REGISTER UAS.
 <b>Signature:</b>
 
 ```typescript
-export declare class RegisterUserAgentServer extends UserAgentServer implements IncomingRegisterRequest 
+export declare class RegisterUserAgentServer extends UserAgentServer implements IncomingRegisterRequest
 ```
+
 <b>Extends:</b> [UserAgentServer](./sip.js.useragentserver.md)
 
 <b>Implements:</b> [IncomingRegisterRequest](./sip.js.incomingregisterrequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(core, message, delegate)](./sip.js.registeruseragentserver._constructor_.md) |  | Constructs a new instance of the <code>RegisterUserAgentServer</code> class |
+| Constructor                                                                                 | Modifiers | Description                                                                 |
+| ------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------- |
+| [(constructor)(core, message, delegate)](./sip.js.registeruseragentserver._constructor_.md) |           | Constructs a new instance of the <code>RegisterUserAgentServer</code> class |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [core](./sip.js.registeruseragentserver.core.md) |  | [UserAgentCore](./sip.js.useragentcore.md) |  |
-
+| Property                                         | Modifiers | Type                                       | Description |
+| ------------------------------------------------ | --------- | ------------------------------------------ | ----------- |
+| [core](./sip.js.registeruseragentserver.core.md) |           | [UserAgentCore](./sip.js.useragentcore.md) |             |

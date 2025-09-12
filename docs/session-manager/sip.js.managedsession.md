@@ -9,16 +9,15 @@ An interface for managed the sessions.
 <b>Signature:</b>
 
 ```typescript
-export interface ManagedSession 
+export interface ManagedSession
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [held](./sip.js.managedsession.held.md) |  | boolean |  |
-|  [mediaLocal](./sip.js.managedsession.medialocal.md) |  | [SessionManagerMediaLocal](./sip.js.sessionmanagermedialocal.md) |  |
-|  [mediaRemote](./sip.js.managedsession.mediaremote.md) |  | [SessionManagerMediaRemote](./sip.js.sessionmanagermediaremote.md) |  |
-|  [muted](./sip.js.managedsession.muted.md) |  | boolean |  |
-|  [session](./sip.js.managedsession.session.md) |  | Session |  |
-
+| Property                                              | Modifiers | Type                                                               | Description |
+| ----------------------------------------------------- | --------- | ------------------------------------------------------------------ | ----------- |
+| [held](./sip.js.managedsession.held.md)               |           | boolean                                                            |             |
+| [mediaLocal](./sip.js.managedsession.medialocal.md)   |           | [SessionManagerMediaLocal](./sip.js.sessionmanagermedialocal.md)   |             |
+| [mediaRemote](./sip.js.managedsession.mediaremote.md) |           | [SessionManagerMediaRemote](./sip.js.sessionmanagermediaremote.md) |             |
+| [muted](./sip.js.managedsession.muted.md)             |           | boolean                                                            |             |
+| [session](./sip.js.managedsession.session.md)         |           | Session                                                            |             |

@@ -12,7 +12,7 @@ If requirements are still more advanced, working directly with the [API](./api.m
 
 ## Reference Documentation
 
-* [SimpleUser Class Reference](./simple-user/sip.js.md)
+- [SimpleUser Class Reference](./simple-user/sip.js.md)
 
 ## Getting Started
 
@@ -22,18 +22,18 @@ For this example, we will assume the `SimpleUser` class is imported as a module.
 
 ### Making a Call
 
-* construct `SimpleUser` instance
-* connect instance to a server
-* place a call
-* hangup
+- construct `SimpleUser` instance
+- connect instance to a server
+- place a call
+- hangup
 
 ### Receiving a Call
 
-* construct `SimpleUser` instance
-* provide instance with delegate to handle incoming calls
-* connect instance to a server
-* answer call
-* hangup
+- construct `SimpleUser` instance
+- provide instance with delegate to handle incoming calls
+- connect instance to a server
+- answer call
+- hangup
 
 #### HTML
 
@@ -66,7 +66,6 @@ async function wait(ms: number): Promise<void> {
 
 // Main function
 async function main(): Promise<void> {
-
   // SIP over WebSocket Server URL
   // The URL of a SIP over WebSocket server which will complete the call.
   // FreeSwitch is an example of a server which supports SIP over WebSocket.

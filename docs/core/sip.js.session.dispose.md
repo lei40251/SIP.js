@@ -11,7 +11,7 @@ Destroy session.
 ```typescript
 dispose(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

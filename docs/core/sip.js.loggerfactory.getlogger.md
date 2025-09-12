@@ -12,12 +12,11 @@ getLogger(category: string, label?: string): Logger;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  category | string |  |
-|  label | string |  |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| category  | string |             |
+| label     | string |             |
 
 <b>Returns:</b>
 
 [Logger](./sip.js.logger.md)
-

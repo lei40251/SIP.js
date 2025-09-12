@@ -14,11 +14,10 @@ receiveRequest(request: IncomingRequestMessage): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | Request matching this transaction. |
+| Parameter | Type                                                         | Description                        |
+| --------- | ------------------------------------------------------------ | ---------------------------------- |
+| request   | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | Request matching this transaction. |
 
 <b>Returns:</b>
 
 void
-

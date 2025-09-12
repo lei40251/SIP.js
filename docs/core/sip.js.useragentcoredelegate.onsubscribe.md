@@ -14,11 +14,10 @@ onSubscribe?(request: IncomingSubscribeRequest): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [IncomingSubscribeRequest](./sip.js.incomingsubscriberequest.md) | Incoming SUBSCRIBE request. |
+| Parameter | Type                                                             | Description                 |
+| --------- | ---------------------------------------------------------------- | --------------------------- |
+| request   | [IncomingSubscribeRequest](./sip.js.incomingsubscriberequest.md) | Incoming SUBSCRIBE request. |
 
 <b>Returns:</b>
 
 void
-

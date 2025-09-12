@@ -15,4 +15,3 @@ readonly state: TransportState;
 ## Remarks
 
 The initial Transport state MUST be "disconnected" (after calling constructor).
-

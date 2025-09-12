@@ -9,15 +9,15 @@ PRACK UAC.
 <b>Signature:</b>
 
 ```typescript
-export declare class PrackUserAgentClient extends UserAgentClient implements OutgoingPrackRequest 
+export declare class PrackUserAgentClient extends UserAgentClient implements OutgoingPrackRequest
 ```
+
 <b>Extends:</b> [UserAgentClient](./sip.js.useragentclient.md)
 
 <b>Implements:</b> [OutgoingPrackRequest](./sip.js.outgoingprackrequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(dialog, delegate, options)](./sip.js.prackuseragentclient._constructor_.md) |  | Constructs a new instance of the <code>PrackUserAgentClient</code> class |
-
+| Constructor                                                                                | Modifiers | Description                                                              |
+| ------------------------------------------------------------------------------------------ | --------- | ------------------------------------------------------------------------ |
+| [(constructor)(dialog, delegate, options)](./sip.js.prackuseragentclient._constructor_.md) |           | Constructs a new instance of the <code>PrackUserAgentClient</code> class |

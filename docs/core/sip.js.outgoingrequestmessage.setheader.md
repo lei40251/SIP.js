@@ -14,12 +14,11 @@ setHeader(name: string, value: string | Array<string>): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  name | string | header name |
-|  value | string \| Array&lt;string&gt; | header value |
+| Parameter | Type                          | Description  |
+| --------- | ----------------------------- | ------------ |
+| name      | string                        | header name  |
+| value     | string \| Array&lt;string&gt; | header value |
 
 <b>Returns:</b>
 
 void
-

@@ -14,11 +14,10 @@ onInfo?(info: Info): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  info | [Info](./sip.js.info.md) | The info. |
+| Parameter | Type                     | Description |
+| --------- | ------------------------ | ----------- |
+| info      | [Info](./sip.js.info.md) | The info.   |
 
 <b>Returns:</b>
 
 void
-

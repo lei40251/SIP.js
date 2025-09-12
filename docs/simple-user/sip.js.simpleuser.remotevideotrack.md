@@ -5,9 +5,8 @@
 ## SimpleUser.remoteVideoTrack property
 
 > Warning: This API is now obsolete.
-> 
+>
 > Use remoteMediaStream and get track from the stream.
-> 
 
 The remote video track, if available.
 

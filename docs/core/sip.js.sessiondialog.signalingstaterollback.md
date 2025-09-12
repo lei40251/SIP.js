@@ -11,7 +11,7 @@ If not in a stable signaling state, rollback to prior stable signaling state.
 ```typescript
 signalingStateRollback(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

@@ -9,19 +9,19 @@ Incoming request message.
 <b>Signature:</b>
 
 ```typescript
-export declare class IncomingRequestMessage extends IncomingMessage 
+export declare class IncomingRequestMessage extends IncomingMessage
 ```
+
 <b>Extends:</b> [IncomingMessage](./sip.js.incomingmessage.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)()](./sip.js.incomingrequestmessage._constructor_.md) |  | Constructs a new instance of the <code>IncomingRequestMessage</code> class |
+| Constructor                                                         | Modifiers | Description                                                                |
+| ------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------- |
+| [(constructor)()](./sip.js.incomingrequestmessage._constructor_.md) |           | Constructs a new instance of the <code>IncomingRequestMessage</code> class |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [ruri](./sip.js.incomingrequestmessage.ruri.md) |  | [URI](./sip.js.uri.md) \| undefined |  |
-
+| Property                                        | Modifiers | Type                                | Description |
+| ----------------------------------------------- | --------- | ----------------------------------- | ----------- |
+| [ruri](./sip.js.incomingrequestmessage.ruri.md) |           | [URI](./sip.js.uri.md) \| undefined |             |

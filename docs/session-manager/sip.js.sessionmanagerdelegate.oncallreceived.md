@@ -14,9 +14,9 @@ onCallReceived?(session: Session): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session |  |
+| Parameter | Type    | Description |
+| --------- | ------- | ----------- |
+| session   | Session |             |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ void
 ## Remarks
 
 Callback for handling incoming INVITE requests. The callback must either accept or reject the incoming call by calling `answer()` or `decline()` respectively.
-

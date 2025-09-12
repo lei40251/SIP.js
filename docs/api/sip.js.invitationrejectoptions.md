@@ -9,15 +9,14 @@ Options for [Invitation.reject()](./sip.js.invitation.reject.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface InvitationRejectOptions 
+export interface InvitationRejectOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [body](./sip.js.invitationrejectoptions.body.md) |  | string \| { body: string; contentType: string; } | Body |
-|  [extraHeaders](./sip.js.invitationrejectoptions.extraheaders.md) |  | Array&lt;string&gt; | Array of extra headers added to the response. |
-|  [reasonPhrase](./sip.js.invitationrejectoptions.reasonphrase.md) |  | string | Reason phrase for response. |
-|  [statusCode](./sip.js.invitationrejectoptions.statuscode.md) |  | number | Status code for response. |
-
+| Property                                                         | Modifiers | Type                                             | Description                                   |
+| ---------------------------------------------------------------- | --------- | ------------------------------------------------ | --------------------------------------------- |
+| [body](./sip.js.invitationrejectoptions.body.md)                 |           | string \| { body: string; contentType: string; } | Body                                          |
+| [extraHeaders](./sip.js.invitationrejectoptions.extraheaders.md) |           | Array&lt;string&gt;                              | Array of extra headers added to the response. |
+| [reasonPhrase](./sip.js.invitationrejectoptions.reasonphrase.md) |           | string                                           | Reason phrase for response.                   |
+| [statusCode](./sip.js.invitationrejectoptions.statuscode.md)     |           | number                                           | Status code for response.                     |

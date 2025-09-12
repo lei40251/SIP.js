@@ -14,11 +14,10 @@ onNotify(notification: Notification): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  notification | [Notification](./sip.js.notification.md) | A notification. See [Notification](./sip.js.notification.md) for details. |
+| Parameter    | Type                                     | Description                                                               |
+| ------------ | ---------------------------------------- | ------------------------------------------------------------------------- |
+| notification | [Notification](./sip.js.notification.md) | A notification. See [Notification](./sip.js.notification.md) for details. |
 
 <b>Returns:</b>
 
 void
-

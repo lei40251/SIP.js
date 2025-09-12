@@ -14,11 +14,10 @@ prack(options?: RequestOptions): OutgoingPrackRequest;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [RequestOptions](./sip.js.requestoptions.md) | Request options bucket. |
+| Parameter | Type                                         | Description             |
+| --------- | -------------------------------------------- | ----------------------- |
+| options   | [RequestOptions](./sip.js.requestoptions.md) | Request options bucket. |
 
 <b>Returns:</b>
 
 [OutgoingPrackRequest](./sip.js.outgoingprackrequest.md)
-

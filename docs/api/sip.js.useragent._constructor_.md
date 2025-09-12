@@ -14,7 +14,6 @@ constructor(options?: Partial<UserAgentOptions>);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | Partial&lt;[UserAgentOptions](./sip.js.useragentoptions.md)<!-- -->&gt; | Options bucket. See [UserAgentOptions](./sip.js.useragentoptions.md) for details. |
-
+| Parameter | Type                                                                    | Description                                                                       |
+| --------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| options   | Partial&lt;[UserAgentOptions](./sip.js.useragentoptions.md)<!-- -->&gt; | Options bucket. See [UserAgentOptions](./sip.js.useragentoptions.md) for details. |

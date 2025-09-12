@@ -5,9 +5,8 @@
 ## UserAgentOptions.reconnectionDelay property
 
 > Warning: This API is now obsolete.
-> 
+>
 > Seconds to wait between reconnection attempts when the transport connection drops.
-> 
 
 <b>Signature:</b>
 

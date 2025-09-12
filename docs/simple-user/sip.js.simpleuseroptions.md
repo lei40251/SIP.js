@@ -9,19 +9,18 @@ Options for [SimpleUser](./sip.js.simpleuser.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface SimpleUserOptions 
+export interface SimpleUserOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [aor](./sip.js.simpleuseroptions.aor.md) |  | string | User's SIP Address of Record (AOR). |
-|  [delegate](./sip.js.simpleuseroptions.delegate.md) |  | [SimpleUserDelegate](./sip.js.simpleuserdelegate.md) | Delegate for SimpleUser. |
-|  [media](./sip.js.simpleuseroptions.media.md) |  | [SimpleUserMedia](./sip.js.simpleusermedia.md) | Media options. |
-|  [reconnectionAttempts](./sip.js.simpleuseroptions.reconnectionattempts.md) |  | number | Maximum number of times to attempt to reconnection. |
-|  [reconnectionDelay](./sip.js.simpleuseroptions.reconnectiondelay.md) |  | number | Seconds to wait between reconnection attempts. |
-|  [registererOptions](./sip.js.simpleuseroptions.registereroptions.md) |  | RegistererOptions | Options for Registerer. |
-|  [sendDTMFUsingSessionDescriptionHandler](./sip.js.simpleuseroptions.senddtmfusingsessiondescriptionhandler.md) |  | boolean | Send DTMF using the session description handler (uses RFC 2833 DTMF). |
-|  [userAgentOptions](./sip.js.simpleuseroptions.useragentoptions.md) |  | UserAgentOptions | Options for UserAgent. |
-
+| Property                                                                                                       | Modifiers | Type                                                 | Description                                                           |
+| -------------------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------- | --------------------------------------------------------------------- |
+| [aor](./sip.js.simpleuseroptions.aor.md)                                                                       |           | string                                               | User's SIP Address of Record (AOR).                                   |
+| [delegate](./sip.js.simpleuseroptions.delegate.md)                                                             |           | [SimpleUserDelegate](./sip.js.simpleuserdelegate.md) | Delegate for SimpleUser.                                              |
+| [media](./sip.js.simpleuseroptions.media.md)                                                                   |           | [SimpleUserMedia](./sip.js.simpleusermedia.md)       | Media options.                                                        |
+| [reconnectionAttempts](./sip.js.simpleuseroptions.reconnectionattempts.md)                                     |           | number                                               | Maximum number of times to attempt to reconnection.                   |
+| [reconnectionDelay](./sip.js.simpleuseroptions.reconnectiondelay.md)                                           |           | number                                               | Seconds to wait between reconnection attempts.                        |
+| [registererOptions](./sip.js.simpleuseroptions.registereroptions.md)                                           |           | RegistererOptions                                    | Options for Registerer.                                               |
+| [sendDTMFUsingSessionDescriptionHandler](./sip.js.simpleuseroptions.senddtmfusingsessiondescriptionhandler.md) |           | boolean                                              | Send DTMF using the session description handler (uses RFC 2833 DTMF). |
+| [userAgentOptions](./sip.js.simpleuseroptions.useragentoptions.md)                                             |           | UserAgentOptions                                     | Options for UserAgent.                                                |

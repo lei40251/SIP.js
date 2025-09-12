@@ -17,4 +17,3 @@ UserAgentRegisteredOptionTags: {
 ## Remarks
 
 http://www.iana.org/assignments/sip-parameters/sip-parameters.xhtml\#sip-parameters-4
-

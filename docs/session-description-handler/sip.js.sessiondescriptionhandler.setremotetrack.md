@@ -14,9 +14,9 @@ protected setRemoteTrack(track: MediaStreamTrack): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  track | MediaStreamTrack | Media stream track to be utilized. |
+| Parameter | Type             | Description                        |
+| --------- | ---------------- | ---------------------------------- |
+| track     | MediaStreamTrack | Media stream track to be utilized. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ void
 ## Remarks
 
 Adds tracks if audio and/or video tracks are not already present, otherwise replaces tracks.
-

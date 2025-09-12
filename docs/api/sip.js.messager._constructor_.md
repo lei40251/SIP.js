@@ -14,11 +14,10 @@ constructor(userAgent: UserAgent, targetURI: URI, content: string, contentType?:
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  userAgent | [UserAgent](./sip.js.useragent.md) | User agent. See [UserAgent](./sip.js.useragent.md) for details. |
-|  targetURI | URI | Request URI identifying the target of the message. |
-|  content | string | Content for the body of the message. |
-|  contentType | string | Content type of the body of the message. |
-|  options | [MessagerOptions](./sip.js.messageroptions.md) | Options bucket. See [MessagerOptions](./sip.js.messageroptions.md) for details. |
-
+| Parameter   | Type                                           | Description                                                                     |
+| ----------- | ---------------------------------------------- | ------------------------------------------------------------------------------- |
+| userAgent   | [UserAgent](./sip.js.useragent.md)             | User agent. See [UserAgent](./sip.js.useragent.md) for details.                 |
+| targetURI   | URI                                            | Request URI identifying the target of the message.                              |
+| content     | string                                         | Content for the body of the message.                                            |
+| contentType | string                                         | Content type of the body of the message.                                        |
+| options     | [MessagerOptions](./sip.js.messageroptions.md) | Options bucket. See [MessagerOptions](./sip.js.messageroptions.md) for details. |

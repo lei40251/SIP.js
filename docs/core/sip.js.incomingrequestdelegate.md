@@ -9,13 +9,12 @@ Delegate providing custom handling of incoming requests.
 <b>Signature:</b>
 
 ```typescript
-export interface IncomingRequestDelegate 
+export interface IncomingRequestDelegate
 ```
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [onCancel(message)](./sip.js.incomingrequestdelegate.oncancel.md) | Receive CANCEL request. https://tools.ietf.org/html/rfc3261\#section-9.2 Note: Currently CANCEL is being handled as a special case. No UAS is created to handle the CANCEL and the response to it CANCEL is being handled statelessly by the user agent core. As such, there is currently no way to externally impact the response to the a CANCEL request and thus the method here is receiving a "message" (as apposed to a "uas"). |
-|  [onTransportError(error)](./sip.js.incomingrequestdelegate.ontransporterror.md) | A transport error occurred attempted to send a response. |
-
+| Method                                                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [onCancel(message)](./sip.js.incomingrequestdelegate.oncancel.md)               | Receive CANCEL request. https://tools.ietf.org/html/rfc3261\#section-9.2 Note: Currently CANCEL is being handled as a special case. No UAS is created to handle the CANCEL and the response to it CANCEL is being handled statelessly by the user agent core. As such, there is currently no way to externally impact the response to the a CANCEL request and thus the method here is receiving a "message" (as apposed to a "uas"). |
+| [onTransportError(error)](./sip.js.incomingrequestdelegate.ontransporterror.md) | A transport error occurred attempted to send a response.                                                                                                                                                                                                                                                                                                                                                                              |

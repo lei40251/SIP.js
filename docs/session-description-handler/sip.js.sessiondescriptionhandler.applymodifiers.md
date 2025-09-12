@@ -14,12 +14,11 @@ protected applyModifiers(sdp: RTCSessionDescriptionInit, modifiers?: Array<Sessi
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  sdp | RTCSessionDescriptionInit | SDP to modify. |
-|  modifiers | Array&lt;SessionDescriptionHandlerModifier&gt; | Modifiers to apply. |
+| Parameter | Type                                           | Description         |
+| --------- | ---------------------------------------------- | ------------------- |
+| sdp       | RTCSessionDescriptionInit                      | SDP to modify.      |
+| modifiers | Array&lt;SessionDescriptionHandlerModifier&gt; | Modifiers to apply. |
 
 <b>Returns:</b>
 
 Promise&lt;RTCSessionDescriptionInit&gt;
-

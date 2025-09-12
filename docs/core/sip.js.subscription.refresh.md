@@ -11,7 +11,7 @@
 ```typescript
 refresh(): OutgoingSubscribeRequest;
 ```
+
 <b>Returns:</b>
 
 [OutgoingSubscribeRequest](./sip.js.outgoingsubscriberequest.md)
-

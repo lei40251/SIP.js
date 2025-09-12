@@ -11,6 +11,7 @@ Called when a call is received.
 ```typescript
 onCallReceived?(): void;
 ```
+
 <b>Returns:</b>
 
 void
@@ -18,4 +19,3 @@ void
 ## Remarks
 
 Callback for handling incoming INVITE requests. The callback must either accept or reject the incoming call by calling `answer()` or `decline()` respectively.
-

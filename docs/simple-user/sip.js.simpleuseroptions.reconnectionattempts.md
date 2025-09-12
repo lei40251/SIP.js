@@ -15,4 +15,3 @@ reconnectionAttempts?: number;
 ## Remarks
 
 When the transport connection is lost (WebSocket disconnects), reconnection will be attempted immediately. If that fails, reconnection will be attempted again when the browser indicates the application has come online. See: https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine
-

@@ -11,7 +11,7 @@ Gets the peer connection's local session description.
 ```typescript
 protected getLocalSessionDescription(): Promise<RTCSessionDescription>;
 ```
+
 <b>Returns:</b>
 
 Promise&lt;RTCSessionDescription&gt;
-

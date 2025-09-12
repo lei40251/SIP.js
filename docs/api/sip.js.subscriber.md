@@ -9,8 +9,9 @@ A subscriber establishes a [Subscription](./sip.js.subscription.md) (outgoing SU
 <b>Signature:</b>
 
 ```typescript
-export declare class Subscriber extends Subscription 
+export declare class Subscriber extends Subscription
 ```
+
 <b>Extends:</b> [Subscription](./sip.js.subscription.md)
 
 ## Remarks
@@ -18,7 +19,6 @@ export declare class Subscriber extends Subscription
 This is (more or less) an implementation of a "subscriber" as defined in RFC 6665 "SIP-Specific Event Notifications". https://tools.ietf.org/html/rfc6665
 
 ## Example
-
 
 ```ts
 // Create a new subscriber.
@@ -51,14 +51,13 @@ subscriber.unsubscribe();
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(userAgent, targetURI, eventType, options)](./sip.js.subscriber._constructor_.md) |  | Constructor. |
+| Constructor                                                                                     | Modifiers | Description  |
+| ----------------------------------------------------------------------------------------------- | --------- | ------------ |
+| [(constructor)(userAgent, targetURI, eventType, options)](./sip.js.subscriber._constructor_.md) |           | Constructor. |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [subscribe(options)](./sip.js.subscriber.subscribe.md) |  | Subscribe to event notifications. |
-|  [unsubscribe(options)](./sip.js.subscriber.unsubscribe.md) |  | Unsubscribe from event notifications. |
-
+| Method                                                     | Modifiers | Description                           |
+| ---------------------------------------------------------- | --------- | ------------------------------------- |
+| [subscribe(options)](./sip.js.subscriber.subscribe.md)     |           | Subscribe to event notifications.     |
+| [unsubscribe(options)](./sip.js.subscriber.unsubscribe.md) |           | Unsubscribe from event notifications. |

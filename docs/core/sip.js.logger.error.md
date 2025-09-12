@@ -12,11 +12,10 @@ error(content: string): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  content | string |  |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| content   | string |             |
 
 <b>Returns:</b>
 
 void
-

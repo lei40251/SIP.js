@@ -11,6 +11,7 @@ Called when a call is created.
 ```typescript
 onCallCreated?(): void;
 ```
+
 <b>Returns:</b>
 
 void
@@ -18,4 +19,3 @@ void
 ## Remarks
 
 Callback for handling the creation of a new Session.
-

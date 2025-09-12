@@ -9,21 +9,21 @@ SUBSCRIBE UAS.
 <b>Signature:</b>
 
 ```typescript
-export declare class SubscribeUserAgentServer extends UserAgentServer implements IncomingSubscribeRequest 
+export declare class SubscribeUserAgentServer extends UserAgentServer implements IncomingSubscribeRequest
 ```
+
 <b>Extends:</b> [UserAgentServer](./sip.js.useragentserver.md)
 
 <b>Implements:</b> [IncomingSubscribeRequest](./sip.js.incomingsubscriberequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(core, message, delegate)](./sip.js.subscribeuseragentserver._constructor_.md) |  | Constructs a new instance of the <code>SubscribeUserAgentServer</code> class |
+| Constructor                                                                                  | Modifiers | Description                                                                  |
+| -------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------------------------- |
+| [(constructor)(core, message, delegate)](./sip.js.subscribeuseragentserver._constructor_.md) |           | Constructs a new instance of the <code>SubscribeUserAgentServer</code> class |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [core](./sip.js.subscribeuseragentserver.core.md) |  | [UserAgentCore](./sip.js.useragentcore.md) |  |
-
+| Property                                          | Modifiers | Type                                       | Description |
+| ------------------------------------------------- | --------- | ------------------------------------------ | ----------- |
+| [core](./sip.js.subscribeuseragentserver.core.md) |           | [UserAgentCore](./sip.js.useragentcore.md) |             |

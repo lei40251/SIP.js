@@ -2,16 +2,15 @@
 
 ## Overview
 
-This API is intended to provide a complete and suitable framework for most end user applications wishing initiate and carry various forms of real-time multimedia session data such as voice, video, or text messages. 
+This API is intended to provide a complete and suitable framework for most end user applications wishing initiate and carry various forms of real-time multimedia session data such as voice, video, or text messages.
 
 The API is implemented on top of the [Core Library](./core.md) which provides lower protocol level access.
 
 A working knowledge of the SIP protocol is a prerequisite for working with this API. The SIP protocol is an internet standard the details of which are well beyond the scope of the documentation herein. However there are many resources available. See: https://tools.ietf.org/html/rfc3261 for the primary specification.
 
-
 ## Reference Documentation
 
-* [API Reference](./api/sip.js.md)
+- [API Reference](./api/sip.js.md)
 
 ## Getting Started
 
@@ -45,7 +44,7 @@ if (!uri) {
   throw new Error("Failed to create URI");
 }
 const userAgentOptions: UserAgentOptions = {
-  uri,
+  uri
   /* ... */
 };
 const userAgent = new UserAgent(userAgentOptions);
@@ -55,7 +54,6 @@ const userAgent = new UserAgent(userAgentOptions);
  */
 userAgent.delegate = {
   onInvite(invitation: Invitation): void {
-
     // An Invitation is a Session
     const incomingSession: Session = invitation;
 
@@ -87,30 +85,31 @@ userAgent.delegate = {
     // Handle incoming INVITE request.
     let constrainsDefault: MediaStreamConstraints = {
       audio: true,
-      video: false,
-    }
+      video: false
+    };
 
     const options: InvitationAcceptOptions = {
       sessionDescriptionHandlerOptions: {
-        constraints: constrainsDefault,
-      },
-    }
+        constraints: constrainsDefault
+      }
+    };
 
-    incomingSession.accept(options)
+    incomingSession.accept(options);
   }
 };
 
 /*
  * Create a Registerer to register user agent
  */
-const registererOptions: RegistererOptions = { /* ... */ };
+const registererOptions: RegistererOptions = {
+  /* ... */
+};
 const registerer = new Registerer(userAgent, registererOptions);
 
 /*
  * Start the user agent
  */
 userAgent.start().then(() => {
-
   // Register the user agent
   registerer.register();
 
@@ -121,7 +120,9 @@ userAgent.start().then(() => {
   }
 
   // Create a new Inviter
-  const inviterOptions: InviterOptions = { /* ... */ };
+  const inviterOptions: InviterOptions = {
+    /* ... */
+  };
   const inviter = new Inviter(userAgent, target, inviterOptions);
 
   // An Inviter is a Session
@@ -153,7 +154,8 @@ userAgent.start().then(() => {
   });
 
   // Send the INVITE request
-  inviter.invite()
+  inviter
+    .invite()
     .then(() => {
       // INVITE sent
     })
@@ -171,9 +173,7 @@ userAgent.start().then(() => {
   outgoingSession.refer(transferTarget, {
     // Example of extra headers in REFER request
     requestOptions: {
-      extraHeaders: [
-        'X-Referred-By-Someone: Username'
-      ]
+      extraHeaders: ["X-Referred-By-Someone: Username"]
     },
     requestDelegate: {
       onAccept(): void {
@@ -223,42 +223,44 @@ const attemptReconnection = (reconnectionAttempt = 1): void => {
   // We're attempting a reconnection
   attemptingReconnection = true;
 
-  setTimeout(() => {
-    // If not intentionally connected, don't reconnect.
-    if (!shouldBeConnected) {
-      attemptingReconnection = false;
-      return;
-    }
-    // Attempt reconnect
-    userAgent.reconnect()
-      .then(() => {
-        // Reconnect attempt succeeded
+  setTimeout(
+    () => {
+      // If not intentionally connected, don't reconnect.
+      if (!shouldBeConnected) {
         attemptingReconnection = false;
-      })
-      .catch((error: Error) => {
-        // Reconnect attempt failed
-        attemptingReconnection = false;
-        attemptReconnection(++reconnectionAttempt);
-      });
-  }, reconnectionAttempt === 1 ? 0 : reconnectionDelay * 1000);
+        return;
+      }
+      // Attempt reconnect
+      userAgent
+        .reconnect()
+        .then(() => {
+          // Reconnect attempt succeeded
+          attemptingReconnection = false;
+        })
+        .catch((error: Error) => {
+          // Reconnect attempt failed
+          attemptingReconnection = false;
+          attemptReconnection(++reconnectionAttempt);
+        });
+    },
+    reconnectionAttempt === 1 ? 0 : reconnectionDelay * 1000
+  );
 };
 
 // Handle connection with server established
 userAgent.delegate.onConnect = () => {
   // On connecting, register the user agent
-  registerer.register()
-    .catch((e: Error) => {
-      // Register failed
-    });
+  registerer.register().catch((e: Error) => {
+    // Register failed
+  });
 };
 
 // Handle connection with server lost
 userAgent.delegate.onDisconnect = (error?: Error) => {
   // On disconnect, cleanup invalid registrations
-  registerer.unregister()
-    .catch((e: Error) => {
-      // Unregister failed
-    });
+  registerer.unregister().catch((e: Error) => {
+    // Unregister failed
+  });
   // Only attempt to reconnect if network/server dropped the connection (if there is an error)
   if (error) {
     attemptReconnection();

@@ -14,9 +14,9 @@ protected createDataChannel(options?: SessionDescriptionHandlerOptions): Promise
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [SessionDescriptionHandlerOptions](./sip.js.sessiondescriptionhandleroptions.md) | Session description handler options. |
+| Parameter | Type                                                                             | Description                          |
+| --------- | -------------------------------------------------------------------------------- | ------------------------------------ |
+| options   | [SessionDescriptionHandlerOptions](./sip.js.sessiondescriptionhandleroptions.md) | Session description handler options. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Only creates a data channel if SessionDescriptionHandlerOptions.dataChannel is true. Only creates a data channel if creating a local offer. Only if one does not already exist.
-

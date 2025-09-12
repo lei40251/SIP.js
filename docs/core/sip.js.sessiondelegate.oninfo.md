@@ -14,11 +14,10 @@ onInfo?(request: IncomingInfoRequest): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [IncomingInfoRequest](./sip.js.incominginforequest.md) | Incoming INFO request. |
+| Parameter | Type                                                   | Description            |
+| --------- | ------------------------------------------------------ | ---------------------- |
+| request   | [IncomingInfoRequest](./sip.js.incominginforequest.md) | Incoming INFO request. |
 
 <b>Returns:</b>
 
 void
-

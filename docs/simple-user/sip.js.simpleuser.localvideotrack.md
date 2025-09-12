@@ -5,9 +5,8 @@
 ## SimpleUser.localVideoTrack property
 
 > Warning: This API is now obsolete.
-> 
+>
 > Use localMediaStream and get track from the stream.
-> 
 
 The local video track, if available.
 

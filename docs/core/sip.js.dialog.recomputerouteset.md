@@ -18,11 +18,10 @@ recomputeRouteSet(message: IncomingResponseMessage): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | [IncomingResponseMessage](./sip.js.incomingresponsemessage.md) |  |
+| Parameter | Type                                                           | Description |
+| --------- | -------------------------------------------------------------- | ----------- |
+| message   | [IncomingResponseMessage](./sip.js.incomingresponsemessage.md) |             |
 
 <b>Returns:</b>
 
 void
-

@@ -14,13 +14,12 @@ getHeaders(name: string): Array<string>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  name | string | header name |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| name      | string | header name |
 
 <b>Returns:</b>
 
 Array&lt;string&gt;
 
 Array with all the headers of the specified name.
-

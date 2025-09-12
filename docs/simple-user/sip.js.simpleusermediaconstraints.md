@@ -9,13 +9,12 @@ Constraints for [SimpleUserMedia](./sip.js.simpleusermedia.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface SimpleUserMediaConstraints 
+export interface SimpleUserMediaConstraints
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [audio](./sip.js.simpleusermediaconstraints.audio.md) |  | boolean | If true, offer and answer to send and receive audio. |
-|  [video](./sip.js.simpleusermediaconstraints.video.md) |  | boolean | If true, offer and answer to send and receive video. |
-
+| Property                                              | Modifiers | Type    | Description                                          |
+| ----------------------------------------------------- | --------- | ------- | ---------------------------------------------------- |
+| [audio](./sip.js.simpleusermediaconstraints.audio.md) |           | boolean | If true, offer and answer to send and receive audio. |
+| [video](./sip.js.simpleusermediaconstraints.video.md) |           | boolean | If true, offer and answer to send and receive video. |

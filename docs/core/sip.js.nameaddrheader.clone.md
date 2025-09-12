@@ -9,7 +9,7 @@
 ```typescript
 clone(): NameAddrHeader;
 ```
+
 <b>Returns:</b>
 
 [NameAddrHeader](./sip.js.nameaddrheader.md)
-

@@ -9,20 +9,19 @@ Delegate for [Session](./sip.js.session.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface SessionDelegate 
+export interface SessionDelegate
 ```
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [onAck(ack)](./sip.js.sessiondelegate.onack.md) | Called upon receiving an incoming in dialog ACK request. |
-|  [onBye(bye)](./sip.js.sessiondelegate.onbye.md) | Called upon receiving an incoming in dialog BYE request. |
-|  [onCancel(cancel)](./sip.js.sessiondelegate.oncancel.md) | Called upon receiving an incoming CANCEL request. |
-|  [onInfo(info)](./sip.js.sessiondelegate.oninfo.md) | Called upon receiving an incoming in dialog INFO request. |
-|  [onInvite(request, response, statusCode)](./sip.js.sessiondelegate.oninvite.md) | Called upon receiving an incoming in dialog INVITE request. |
-|  [onMessage(message)](./sip.js.sessiondelegate.onmessage.md) | Called upon receiving an incoming in dialog MESSAGE request. |
-|  [onNotify(notification)](./sip.js.sessiondelegate.onnotify.md) | Called upon receiving an incoming in dialog NOTIFY request. |
-|  [onRefer(referral)](./sip.js.sessiondelegate.onrefer.md) | Called upon receiving an incoming in dialog REFER request. |
-|  [onSessionDescriptionHandler(sessionDescriptionHandler, provisional)](./sip.js.sessiondelegate.onsessiondescriptionhandler.md) | Called upon creating a SessionDescriptionHandler. |
-
+| Method                                                                                                                         | Description                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ |
+| [onAck(ack)](./sip.js.sessiondelegate.onack.md)                                                                                | Called upon receiving an incoming in dialog ACK request.     |
+| [onBye(bye)](./sip.js.sessiondelegate.onbye.md)                                                                                | Called upon receiving an incoming in dialog BYE request.     |
+| [onCancel(cancel)](./sip.js.sessiondelegate.oncancel.md)                                                                       | Called upon receiving an incoming CANCEL request.            |
+| [onInfo(info)](./sip.js.sessiondelegate.oninfo.md)                                                                             | Called upon receiving an incoming in dialog INFO request.    |
+| [onInvite(request, response, statusCode)](./sip.js.sessiondelegate.oninvite.md)                                                | Called upon receiving an incoming in dialog INVITE request.  |
+| [onMessage(message)](./sip.js.sessiondelegate.onmessage.md)                                                                    | Called upon receiving an incoming in dialog MESSAGE request. |
+| [onNotify(notification)](./sip.js.sessiondelegate.onnotify.md)                                                                 | Called upon receiving an incoming in dialog NOTIFY request.  |
+| [onRefer(referral)](./sip.js.sessiondelegate.onrefer.md)                                                                       | Called upon receiving an incoming in dialog REFER request.   |
+| [onSessionDescriptionHandler(sessionDescriptionHandler, provisional)](./sip.js.sessiondelegate.onsessiondescriptionhandler.md) | Called upon creating a SessionDescriptionHandler.            |

@@ -12,11 +12,10 @@ hasHeader(name: string): boolean;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  name | string |  |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| name      | string |             |
 
 <b>Returns:</b>
 
 boolean
-

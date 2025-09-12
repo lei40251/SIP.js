@@ -11,7 +11,7 @@ DEPRECATED: This is a hack to get around `Transport` requiring the `UA` to start
 ```typescript
 transportAccessor(): Transport | undefined;
 ```
+
 <b>Returns:</b>
 
 [Transport](./sip.js.transport.md) \| undefined
-

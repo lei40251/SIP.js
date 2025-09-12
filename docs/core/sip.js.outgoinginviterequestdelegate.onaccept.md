@@ -14,11 +14,10 @@ onAccept?(response: AckableIncomingResponseWithSession): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  response | [AckableIncomingResponseWithSession](./sip.js.ackableincomingresponsewithsession.md) | Incoming response (including a confirmed Session). |
+| Parameter | Type                                                                                 | Description                                        |
+| --------- | ------------------------------------------------------------------------------------ | -------------------------------------------------- |
+| response  | [AckableIncomingResponseWithSession](./sip.js.ackableincomingresponsewithsession.md) | Incoming response (including a confirmed Session). |
 
 <b>Returns:</b>
 
 void
-

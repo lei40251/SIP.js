@@ -15,4 +15,3 @@ contactName?: string;
 ## Remarks
 
 If not specifed a random string will be generated and utilized as the user portion of the contact URI.
-

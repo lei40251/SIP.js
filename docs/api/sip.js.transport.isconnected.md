@@ -11,6 +11,7 @@ Returns true if the `state` equals "Connected".
 ```typescript
 isConnected(): boolean;
 ```
+
 <b>Returns:</b>
 
 boolean
@@ -20,7 +21,6 @@ boolean
 This is equivalent to `state === TransportState.Connected`<!-- -->. It is convenient. A common paradigm is, for example...
 
 ## Example
-
 
 ```ts
 // Monitor transport connectivity
@@ -32,4 +32,3 @@ userAgent.transport.stateChange.addListener(() => {
   }
 });
 ```
-

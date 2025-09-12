@@ -11,6 +11,7 @@ Called when a call is answered.
 ```typescript
 onCallAnswered?(): void;
 ```
+
 <b>Returns:</b>
 
 void
@@ -18,4 +19,3 @@ void
 ## Remarks
 
 Callback for handling establishment of a new Session.
-

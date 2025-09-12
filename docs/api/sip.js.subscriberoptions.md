@@ -9,16 +9,16 @@ Options for [Subscriber](./sip.js.subscriber.md) constructor.
 <b>Signature:</b>
 
 ```typescript
-export interface SubscriberOptions extends SubscriptionOptions 
+export interface SubscriberOptions extends SubscriptionOptions
 ```
+
 <b>Extends:</b> [SubscriptionOptions](./sip.js.subscriptionoptions.md)
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [body](./sip.js.subscriberoptions.body.md) |  | string |  |
-|  [contentType](./sip.js.subscriberoptions.contenttype.md) |  | string |  |
-|  [expires](./sip.js.subscriberoptions.expires.md) |  | number |  |
-|  [extraHeaders](./sip.js.subscriberoptions.extraheaders.md) |  | Array&lt;string&gt; |  |
-
+| Property                                                   | Modifiers | Type                | Description |
+| ---------------------------------------------------------- | --------- | ------------------- | ----------- |
+| [body](./sip.js.subscriberoptions.body.md)                 |           | string              |             |
+| [contentType](./sip.js.subscriberoptions.contenttype.md)   |           | string              |             |
+| [expires](./sip.js.subscriberoptions.expires.md)           |           | number              |             |
+| [extraHeaders](./sip.js.subscriberoptions.extraheaders.md) |           | Array&lt;string&gt; |             |

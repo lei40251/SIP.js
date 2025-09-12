@@ -11,7 +11,7 @@
 ```typescript
 terminate(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

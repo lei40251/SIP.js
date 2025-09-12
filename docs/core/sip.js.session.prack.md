@@ -14,12 +14,11 @@ prack(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingPra
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  delegate | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) | Request delegate. |
-|  options | [RequestOptions](./sip.js.requestoptions.md) | Options bucket. |
+| Parameter | Type                                                           | Description       |
+| --------- | -------------------------------------------------------------- | ----------------- |
+| delegate  | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) | Request delegate. |
+| options   | [RequestOptions](./sip.js.requestoptions.md)                   | Options bucket.   |
 
 <b>Returns:</b>
 
 [OutgoingPrackRequest](./sip.js.outgoingprackrequest.md)
-

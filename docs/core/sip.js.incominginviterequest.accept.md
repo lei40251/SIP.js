@@ -14,13 +14,12 @@ accept(options?: ResponseOptions): OutgoingResponseWithSession;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [ResponseOptions](./sip.js.responseoptions.md) | Response options bucket. |
+| Parameter | Type                                           | Description              |
+| --------- | ---------------------------------------------- | ------------------------ |
+| options   | [ResponseOptions](./sip.js.responseoptions.md) | Response options bucket. |
 
 <b>Returns:</b>
 
 [OutgoingResponseWithSession](./sip.js.outgoingresponsewithsession.md)
 
 Outgoing response and a confirmed Session.
-

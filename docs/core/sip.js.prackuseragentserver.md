@@ -9,21 +9,21 @@ PRACK UAS.
 <b>Signature:</b>
 
 ```typescript
-export declare class PrackUserAgentServer extends UserAgentServer implements IncomingPrackRequest 
+export declare class PrackUserAgentServer extends UserAgentServer implements IncomingPrackRequest
 ```
+
 <b>Extends:</b> [UserAgentServer](./sip.js.useragentserver.md)
 
 <b>Implements:</b> [IncomingPrackRequest](./sip.js.incomingprackrequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(dialog, message, delegate)](./sip.js.prackuseragentserver._constructor_.md) |  | Constructs a new instance of the <code>PrackUserAgentServer</code> class |
+| Constructor                                                                                | Modifiers | Description                                                              |
+| ------------------------------------------------------------------------------------------ | --------- | ------------------------------------------------------------------------ |
+| [(constructor)(dialog, message, delegate)](./sip.js.prackuseragentserver._constructor_.md) |           | Constructs a new instance of the <code>PrackUserAgentServer</code> class |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [accept(options)](./sip.js.prackuseragentserver.accept.md) |  | Update the dialog signaling state on a 2xx response. |
-
+| Method                                                     | Modifiers | Description                                          |
+| ---------------------------------------------------------- | --------- | ---------------------------------------------------- |
+| [accept(options)](./sip.js.prackuseragentserver.accept.md) |           | Update the dialog signaling state on a 2xx response. |

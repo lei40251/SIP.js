@@ -14,11 +14,10 @@ onInvite?(request: IncomingInviteRequest): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [IncomingInviteRequest](./sip.js.incominginviterequest.md) | Incoming INVITE request. |
+| Parameter | Type                                                       | Description              |
+| --------- | ---------------------------------------------------------- | ------------------------ |
+| request   | [IncomingInviteRequest](./sip.js.incominginviterequest.md) | Incoming INVITE request. |
 
 <b>Returns:</b>
 
 void
-

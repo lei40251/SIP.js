@@ -6,7 +6,6 @@
 
 ## Packages
 
-|  Package | Description |
-|  --- | --- |
-|  [sip.js](./sip.js.md) | A Transport implementation for web browsers. |
-
+| Package               | Description                                  |
+| --------------------- | -------------------------------------------- |
+| [sip.js](./sip.js.md) | A Transport implementation for web browsers. |

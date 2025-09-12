@@ -14,11 +14,10 @@ protected receiveResponse(message: IncomingResponseMessage): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | [IncomingResponseMessage](./sip.js.incomingresponsemessage.md) | Incoming response message. |
+| Parameter | Type                                                           | Description                |
+| --------- | -------------------------------------------------------------- | -------------------------- |
+| message   | [IncomingResponseMessage](./sip.js.incomingresponsemessage.md) | Incoming response message. |
 
 <b>Returns:</b>
 
 void
-

@@ -11,6 +11,7 @@ Start the user agent.
 ```typescript
 start(): Promise<void>;
 ```
+
 <b>Returns:</b>
 
 Promise&lt;void&gt;
@@ -21,9 +22,9 @@ Resolves if transport connects, otherwise rejects. Calling `start()` after calli
 
 ## Example
 
-
 ```ts
-userAgent.start()
+userAgent
+  .start()
   .then(() => {
     // userAgent.isConnected() === true
   })
@@ -31,4 +32,3 @@ userAgent.start()
     // userAgent.isConnected() === false
   });
 ```
-

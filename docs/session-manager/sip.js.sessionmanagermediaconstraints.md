@@ -9,13 +9,12 @@ Constraints for [SessionManagerMedia](./sip.js.sessionmanagermedia.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface SessionManagerMediaConstraints 
+export interface SessionManagerMediaConstraints
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [audio](./sip.js.sessionmanagermediaconstraints.audio.md) |  | boolean | If true, offer and answer to send and receive audio. |
-|  [video](./sip.js.sessionmanagermediaconstraints.video.md) |  | boolean | If true, offer and answer to send and receive video. |
-
+| Property                                                  | Modifiers | Type    | Description                                          |
+| --------------------------------------------------------- | --------- | ------- | ---------------------------------------------------- |
+| [audio](./sip.js.sessionmanagermediaconstraints.audio.md) |           | boolean | If true, offer and answer to send and receive audio. |
+| [video](./sip.js.sessionmanagermediaconstraints.video.md) |           | boolean | If true, offer and answer to send and receive video. |

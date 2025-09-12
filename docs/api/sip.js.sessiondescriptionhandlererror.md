@@ -9,13 +9,13 @@ An exception indicating a session description handler error occured.
 <b>Signature:</b>
 
 ```typescript
-export declare class SessionDescriptionHandlerError extends Exception 
+export declare class SessionDescriptionHandlerError extends Exception
 ```
+
 <b>Extends:</b> Exception
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(message)](./sip.js.sessiondescriptionhandlererror._constructor_.md) |  | Constructs a new instance of the <code>SessionDescriptionHandlerError</code> class |
-
+| Constructor                                                                        | Modifiers | Description                                                                        |
+| ---------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------------------------------- |
+| [(constructor)(message)](./sip.js.sessiondescriptionhandlererror._constructor_.md) |           | Constructs a new instance of the <code>SessionDescriptionHandlerError</code> class |

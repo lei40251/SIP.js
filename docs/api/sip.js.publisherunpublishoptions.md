@@ -9,5 +9,5 @@ Options for [Publisher.unpublish()](./sip.js.publisher.unpublish.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface PublisherUnpublishOptions 
+export interface PublisherUnpublishOptions
 ```

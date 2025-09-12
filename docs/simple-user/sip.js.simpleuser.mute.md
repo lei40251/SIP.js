@@ -11,6 +11,7 @@ Mute call.
 ```typescript
 mute(): void;
 ```
+
 <b>Returns:</b>
 
 void
@@ -18,4 +19,3 @@ void
 ## Remarks
 
 Disable sender's media tracks.
-

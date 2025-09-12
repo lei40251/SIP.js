@@ -14,9 +14,9 @@ protected setLocalMediaStream(stream: MediaStream): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  stream | MediaStream | Media stream containing tracks to be utilized. |
+| Parameter | Type        | Description                                    |
+| --------- | ----------- | ---------------------------------------------- |
+| stream    | MediaStream | Media stream containing tracks to be utilized. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Only the first audio and video tracks of the provided MediaStream are utilized. Adds tracks if audio and/or video tracks are not already present, otherwise replaces tracks.
-

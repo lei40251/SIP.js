@@ -9,36 +9,36 @@ Transport for SIP over secure WebSocket (WSS).
 <b>Signature:</b>
 
 ```typescript
-export declare class Transport implements TransportDefinition 
+export declare class Transport implements TransportDefinition
 ```
+
 <b>Implements:</b> TransportDefinition
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(logger, options)](./sip.js.transport._constructor_.md) |  | Constructs a new instance of the <code>Transport</code> class |
+| Constructor                                                           | Modifiers | Description                                                   |
+| --------------------------------------------------------------------- | --------- | ------------------------------------------------------------- |
+| [(constructor)(logger, options)](./sip.js.transport._constructor_.md) |           | Constructs a new instance of the <code>Transport</code> class |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [onConnect](./sip.js.transport.onconnect.md) |  | (() =&gt; void) \| undefined |  |
-|  [onDisconnect](./sip.js.transport.ondisconnect.md) |  | ((error?: Error) =&gt; void) \| undefined |  |
-|  [onMessage](./sip.js.transport.onmessage.md) |  | ((message: string) =&gt; void) \| undefined |  |
-|  [protocol](./sip.js.transport.protocol.md) |  | string | The protocol. |
-|  [server](./sip.js.transport.server.md) |  | string | The URL of the WebSocket Server. |
-|  [state](./sip.js.transport.state.md) |  | TransportState | Transport state. |
-|  [stateChange](./sip.js.transport.statechange.md) |  | Emitter&lt;TransportState&gt; | Transport state change emitter. |
-|  [ws](./sip.js.transport.ws.md) |  | WebSocket \| undefined | The WebSocket. |
+| Property                                           | Modifiers | Type                                        | Description                      |
+| -------------------------------------------------- | --------- | ------------------------------------------- | -------------------------------- |
+| [onConnect](./sip.js.transport.onconnect.md)       |           | (() =&gt; void) \| undefined                |                                  |
+| [onDisconnect](./sip.js.transport.ondisconnect.md) |           | ((error?: Error) =&gt; void) \| undefined   |                                  |
+| [onMessage](./sip.js.transport.onmessage.md)       |           | ((message: string) =&gt; void) \| undefined |                                  |
+| [protocol](./sip.js.transport.protocol.md)         |           | string                                      | The protocol.                    |
+| [server](./sip.js.transport.server.md)             |           | string                                      | The URL of the WebSocket Server. |
+| [state](./sip.js.transport.state.md)               |           | TransportState                              | Transport state.                 |
+| [stateChange](./sip.js.transport.statechange.md)   |           | Emitter&lt;TransportState&gt;               | Transport state change emitter.  |
+| [ws](./sip.js.transport.ws.md)                     |           | WebSocket \| undefined                      | The WebSocket.                   |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [connect()](./sip.js.transport.connect.md) |  | Connect to network. Resolves once connected. Otherwise rejects with an Error. |
-|  [disconnect()](./sip.js.transport.disconnect.md) |  | Disconnect from network. Resolves once disconnected. Otherwise rejects with an Error. |
-|  [dispose()](./sip.js.transport.dispose.md) |  |  |
-|  [isConnected()](./sip.js.transport.isconnected.md) |  | Returns true if the <code>state</code> equals "Connected". |
-|  [send(message)](./sip.js.transport.send.md) |  | Sends a message. Resolves once message is sent. Otherwise rejects with an Error. |
-
+| Method                                             | Modifiers | Description                                                                           |
+| -------------------------------------------------- | --------- | ------------------------------------------------------------------------------------- |
+| [connect()](./sip.js.transport.connect.md)         |           | Connect to network. Resolves once connected. Otherwise rejects with an Error.         |
+| [disconnect()](./sip.js.transport.disconnect.md)   |           | Disconnect from network. Resolves once disconnected. Otherwise rejects with an Error. |
+| [dispose()](./sip.js.transport.dispose.md)         |           |                                                                                       |
+| [isConnected()](./sip.js.transport.isconnected.md) |           | Returns true if the <code>state</code> equals "Connected".                            |
+| [send(message)](./sip.js.transport.send.md)        |           | Sends a message. Resolves once message is sent. Otherwise rejects with an Error.      |

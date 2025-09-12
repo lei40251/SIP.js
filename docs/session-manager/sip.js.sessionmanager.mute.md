@@ -14,9 +14,9 @@ mute(session: Session): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session | Session to mute. |
+| Parameter | Type    | Description      |
+| --------- | ------- | ---------------- |
+| session   | Session | Session to mute. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ void
 ## Remarks
 
 Disable sender's media tracks.
-

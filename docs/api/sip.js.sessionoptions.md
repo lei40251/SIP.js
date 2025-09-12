@@ -9,12 +9,11 @@ Options for [Session](./sip.js.session.md) constructor.
 <b>Signature:</b>
 
 ```typescript
-export interface SessionOptions 
+export interface SessionOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [delegate](./sip.js.sessionoptions.delegate.md) |  | [SessionDelegate](./sip.js.sessiondelegate.md) |  |
-
+| Property                                        | Modifiers | Type                                           | Description |
+| ----------------------------------------------- | --------- | ---------------------------------------------- | ----------- |
+| [delegate](./sip.js.sessionoptions.delegate.md) |           | [SessionDelegate](./sip.js.sessiondelegate.md) |             |

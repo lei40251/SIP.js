@@ -9,7 +9,7 @@ Incoming REFER response.
 <b>Signature:</b>
 
 ```typescript
-export interface IncomingReferResponse extends IncomingResponse 
+export interface IncomingReferResponse extends IncomingResponse
 ```
-<b>Extends:</b> [IncomingResponse](./sip.js.incomingresponse.md)
 
+<b>Extends:</b> [IncomingResponse](./sip.js.incomingresponse.md)

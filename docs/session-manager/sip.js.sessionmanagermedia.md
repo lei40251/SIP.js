@@ -9,14 +9,13 @@ Media for [SessionManagerOptions](./sip.js.sessionmanageroptions.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface SessionManagerMedia 
+export interface SessionManagerMedia
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [constraints](./sip.js.sessionmanagermedia.constraints.md) |  | [SessionManagerMediaConstraints](./sip.js.sessionmanagermediaconstraints.md) | Offer/Answer constraints determine if audio and/or video are utilized. If not specified, only audio is utilized (audio is true, video is false). |
-|  [local](./sip.js.sessionmanagermedia.local.md) |  | [SessionManagerMediaLocal](./sip.js.sessionmanagermedialocal.md) \| ((session: Session) =&gt; [SessionManagerMediaLocal](./sip.js.sessionmanagermedialocal.md)<!-- -->) | HTML elements for local media streams. |
-|  [remote](./sip.js.sessionmanagermedia.remote.md) |  | [SessionManagerMediaRemote](./sip.js.sessionmanagermediaremote.md) \| ((session: Session) =&gt; [SessionManagerMediaRemote](./sip.js.sessionmanagermediaremote.md)<!-- -->) | Local HTML media elements. |
-
+| Property                                                   | Modifiers | Type                                                                                                                                                                        | Description                                                                                                                                      |
+| ---------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [constraints](./sip.js.sessionmanagermedia.constraints.md) |           | [SessionManagerMediaConstraints](./sip.js.sessionmanagermediaconstraints.md)                                                                                                | Offer/Answer constraints determine if audio and/or video are utilized. If not specified, only audio is utilized (audio is true, video is false). |
+| [local](./sip.js.sessionmanagermedia.local.md)             |           | [SessionManagerMediaLocal](./sip.js.sessionmanagermedialocal.md) \| ((session: Session) =&gt; [SessionManagerMediaLocal](./sip.js.sessionmanagermedialocal.md)<!-- -->)     | HTML elements for local media streams.                                                                                                           |
+| [remote](./sip.js.sessionmanagermedia.remote.md)           |           | [SessionManagerMediaRemote](./sip.js.sessionmanagermediaremote.md) \| ((session: Session) =&gt; [SessionManagerMediaRemote](./sip.js.sessionmanagermediaremote.md)<!-- -->) | Local HTML media elements.                                                                                                                       |

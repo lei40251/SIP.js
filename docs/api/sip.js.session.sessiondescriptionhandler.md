@@ -15,4 +15,3 @@ get sessionDescriptionHandler(): SessionDescriptionHandler | undefined;
 ## Remarks
 
 If `this` is an instance of `Invitation`<!-- -->, `sessionDescriptionHandler` will be defined when the session state changes to "established". If `this` is an instance of `Inviter` and an offer was sent in the INVITE, `sessionDescriptionHandler` will be defined when the session state changes to "establishing". If `this` is an instance of `Inviter` and an offer was not sent in the INVITE, `sessionDescriptionHandler` will be defined when the session state changes to "established". Otherwise `undefined`<!-- -->.
-

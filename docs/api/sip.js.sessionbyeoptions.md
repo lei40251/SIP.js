@@ -9,13 +9,12 @@ Options for [Session.bye()](./sip.js.session.bye.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface SessionByeOptions 
+export interface SessionByeOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [requestDelegate](./sip.js.sessionbyeoptions.requestdelegate.md) |  | OutgoingRequestDelegate | See <code>core</code> API. |
-|  [requestOptions](./sip.js.sessionbyeoptions.requestoptions.md) |  | RequestOptions | See <code>core</code> API. |
-
+| Property                                                         | Modifiers | Type                    | Description                |
+| ---------------------------------------------------------------- | --------- | ----------------------- | -------------------------- |
+| [requestDelegate](./sip.js.sessionbyeoptions.requestdelegate.md) |           | OutgoingRequestDelegate | See <code>core</code> API. |
+| [requestOptions](./sip.js.sessionbyeoptions.requestoptions.md)   |           | RequestOptions          | See <code>core</code> API. |

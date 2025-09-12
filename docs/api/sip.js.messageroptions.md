@@ -9,13 +9,12 @@ Options for [Messager](./sip.js.messager.md) constructor.
 <b>Signature:</b>
 
 ```typescript
-export interface MessagerOptions 
+export interface MessagerOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [extraHeaders](./sip.js.messageroptions.extraheaders.md) |  | Array&lt;string&gt; | Array of extra headers added to the MESSAGE. |
-|  [params](./sip.js.messageroptions.params.md) |  | { fromDisplayName?: string; fromTag?: string; fromUri?: string \| URI; toDisplayName?: string; toUri?: string \| URI; } |  |
-
+| Property                                                 | Modifiers | Type                                                                                                                    | Description                                  |
+| -------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| [extraHeaders](./sip.js.messageroptions.extraheaders.md) |           | Array&lt;string&gt;                                                                                                     | Array of extra headers added to the MESSAGE. |
+| [params](./sip.js.messageroptions.params.md)             |           | { fromDisplayName?: string; fromTag?: string; fromUri?: string \| URI; toDisplayName?: string; toUri?: string \| URI; } |                                              |

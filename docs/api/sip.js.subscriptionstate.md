@@ -9,17 +9,17 @@
 <b>Signature:</b>
 
 ```typescript
-export declare enum SubscriptionState 
+export declare enum SubscriptionState
 ```
 
 ## Enumeration Members
 
-|  Member | Value | Description |
-|  --- | --- | --- |
-|  Initial | <code>&quot;Initial&quot;</code> |  |
-|  NotifyWait | <code>&quot;NotifyWait&quot;</code> |  |
-|  Subscribed | <code>&quot;Subscribed&quot;</code> |  |
-|  Terminated | <code>&quot;Terminated&quot;</code> |  |
+| Member     | Value                               | Description |
+| ---------- | ----------------------------------- | ----------- |
+| Initial    | <code>&quot;Initial&quot;</code>    |             |
+| NotifyWait | <code>&quot;NotifyWait&quot;</code> |             |
+| Subscribed | <code>&quot;Subscribed&quot;</code> |             |
+| Terminated | <code>&quot;Terminated&quot;</code> |             |
 
 ## Remarks
 
@@ -31,4 +31,3 @@ Subscription      |                                       v
 Constructed -> Initial -> NotifyWait -> Subscribed -> Terminated
                              |____________________________^
 ```
-

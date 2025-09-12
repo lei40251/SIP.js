@@ -9,7 +9,7 @@
 ```typescript
 clearHeaders(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

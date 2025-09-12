@@ -14,13 +14,12 @@ constructor(method: string, ruri: URI, fromURI: URI, toURI: URI, options?: Outgo
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  method | string |  |
-|  ruri | [URI](./sip.js.uri.md) |  |
-|  fromURI | [URI](./sip.js.uri.md) |  |
-|  toURI | [URI](./sip.js.uri.md) |  |
-|  options | [OutgoingRequestMessageOptions](./sip.js.outgoingrequestmessageoptions.md) |  |
-|  extraHeaders | Array&lt;string&gt; |  |
-|  body | [Body](./sip.js.body.md) |  |
-
+| Parameter    | Type                                                                       | Description |
+| ------------ | -------------------------------------------------------------------------- | ----------- |
+| method       | string                                                                     |             |
+| ruri         | [URI](./sip.js.uri.md)                                                     |             |
+| fromURI      | [URI](./sip.js.uri.md)                                                     |             |
+| toURI        | [URI](./sip.js.uri.md)                                                     |             |
+| options      | [OutgoingRequestMessageOptions](./sip.js.outgoingrequestmessageoptions.md) |             |
+| extraHeaders | Array&lt;string&gt;                                                        |             |
+| body         | [Body](./sip.js.body.md)                                                   |             |

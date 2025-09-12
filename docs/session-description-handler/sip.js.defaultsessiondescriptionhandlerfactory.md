@@ -9,14 +9,19 @@ Function which returns a SessionDescriptionHandlerFactory.
 <b>Signature:</b>
 
 ```typescript
-export declare function defaultSessionDescriptionHandlerFactory(mediaStreamFactory?: (constraints: MediaStreamConstraints, sessionDescriptionHandler: SessionDescriptionHandler) => Promise<MediaStream>): SessionDescriptionHandlerFactory;
+export declare function defaultSessionDescriptionHandlerFactory(
+  mediaStreamFactory?: (
+    constraints: MediaStreamConstraints,
+    sessionDescriptionHandler: SessionDescriptionHandler
+  ) => Promise<MediaStream>
+): SessionDescriptionHandlerFactory;
 ```
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  mediaStreamFactory | (constraints: MediaStreamConstraints, sessionDescriptionHandler: [SessionDescriptionHandler](./sip.js.sessiondescriptionhandler.md)<!-- -->) =&gt; Promise&lt;MediaStream&gt; | MediaStream factory. |
+| Parameter          | Type                                                                                                                                                                          | Description          |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
+| mediaStreamFactory | (constraints: MediaStreamConstraints, sessionDescriptionHandler: [SessionDescriptionHandler](./sip.js.sessiondescriptionhandler.md)<!-- -->) =&gt; Promise&lt;MediaStream&gt; | MediaStream factory. |
 
 <b>Returns:</b>
 
@@ -25,4 +30,3 @@ export declare function defaultSessionDescriptionHandlerFactory(mediaStreamFacto
 ## Remarks
 
 See [defaultPeerConnectionConfiguration()](./sip.js.defaultpeerconnectionconfiguration.md) for the default peer connection configuration. The ICE gathering timeout defaults to 5000ms.
-

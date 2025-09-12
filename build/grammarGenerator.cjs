@@ -1,12 +1,12 @@
 "use strict";
 const fs = require("fs"),
-    pegjs = require("peggy"),
-    tspegjs = require("ts-pegjs");
+  pegjs = require("peggy"),
+  tspegjs = require("ts-pegjs");
 
 const thisFolder = "./src/grammar/pegjs",
-    inputFile = thisFolder + "/src/grammar.pegjs",
-    outputFolder = thisFolder + "/dist",
-    outputFile = outputFolder + "/grammar.ts";
+  inputFile = thisFolder + "/src/grammar.pegjs",
+  outputFolder = thisFolder + "/dist",
+  outputFile = outputFolder + "/grammar.ts";
 
 const grammarContents = fs.readFileSync(inputFile, "utf8");
 
@@ -50,11 +50,12 @@ const parser = pegjs.generate(grammarContents, {
   output: "source",
   optimize: "size",
   plugins: [tspegjs],
-  "tspegjs": {
-    "tslintIgnores": "interface-name, trailing-comma, object-literal-sort-keys, max-line-length, only-arrow-functions, one-variable-per-declaration, no-consecutive-blank-lines, align, radix, quotemark, semicolon, object-literal-shorthand, variable-name, no-var-keyword, whitespace, curly, prefer-const, object-literal-key-quotes, no-string-literal, one-line, no-unused-expression, space-before-function-paren, arrow-return-shorthand",
-    "customHeader": "import { NameAddrHeader } from \"../../name-addr-header.js\";\nimport { URI } from \"../../uri.js\";"
+  tspegjs: {
+    tslintIgnores:
+      "interface-name, trailing-comma, object-literal-sort-keys, max-line-length, only-arrow-functions, one-variable-per-declaration, no-consecutive-blank-lines, align, radix, quotemark, semicolon, object-literal-shorthand, variable-name, no-var-keyword, whitespace, curly, prefer-const, object-literal-key-quotes, no-string-literal, one-line, no-unused-expression, space-before-function-paren, arrow-return-shorthand",
+    customHeader: 'import { NameAddrHeader } from "../../name-addr-header.js";\nimport { URI } from "../../uri.js";'
   },
-  "returnTypes": {
+  returnTypes: {
     Contact: "URI | NameAddrHeader",
     Name_Addr_Header: "NameAddrHeader",
     Record_Route: "NameAddrHeader",
@@ -92,11 +93,11 @@ const parser = pegjs.generate(grammarContents, {
   }
 });
 
-if (!fs.existsSync(outputFolder)){
+if (!fs.existsSync(outputFolder)) {
   fs.mkdirSync(outputFolder);
 }
 
-fs.writeFile(outputFile, parser, err => {
+fs.writeFile(outputFile, parser, (err) => {
   if (err) {
     console.log(err);
   } else {

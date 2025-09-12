@@ -14,11 +14,10 @@ protected onTransportError(error: TransportError): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  error | [TransportError](./sip.js.transporterror.md) | The error. |
+| Parameter | Type                                         | Description |
+| --------- | -------------------------------------------- | ----------- |
+| error     | [TransportError](./sip.js.transporterror.md) | The error.  |
 
 <b>Returns:</b>
 
 void
-

@@ -9,8 +9,9 @@ Client Transaction.
 <b>Signature:</b>
 
 ```typescript
-export declare abstract class ClientTransaction extends Transaction 
+export declare abstract class ClientTransaction extends Transaction
 ```
+
 <b>Extends:</b> [Transaction](./sip.js.transaction.md)
 
 ## Remarks
@@ -21,21 +22,20 @@ The TU communicates with the client transaction through a simple interface. When
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(\_request, transport, user, state, loggerCategory)](./sip.js.clienttransaction._constructor_.md) |  | Constructs a new instance of the <code>ClientTransaction</code> class |
+| Constructor                                                                                                     | Modifiers | Description                                                           |
+| --------------------------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------- |
+| [(constructor)(\_request, transport, user, state, loggerCategory)](./sip.js.clienttransaction._constructor_.md) |           | Constructs a new instance of the <code>ClientTransaction</code> class |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [request](./sip.js.clienttransaction.request.md) |  | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) | The outgoing request the transaction handling. |
-|  [user](./sip.js.clienttransaction.user.md) |  | [ClientTransactionUser](./sip.js.clienttransactionuser.md) |  |
+| Property                                         | Modifiers | Type                                                         | Description                                    |
+| ------------------------------------------------ | --------- | ------------------------------------------------------------ | ---------------------------------------------- |
+| [request](./sip.js.clienttransaction.request.md) |           | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) | The outgoing request the transaction handling. |
+| [user](./sip.js.clienttransaction.user.md)       |           | [ClientTransactionUser](./sip.js.clienttransactionuser.md)   |                                                |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [onRequestTimeout()](./sip.js.clienttransaction.onrequesttimeout.md) |  | A 408 to non-INVITE will always arrive too late to be useful (\[3\]), The client already has full knowledge of the timeout. The only information this message would convey is whether or not the server believed the transaction timed out. However, with the current design of the NIT, a client cannot do anything with this knowledge. Thus, the 408 is simply wasting network resources and contributes to the response bombardment illustrated in \[3\]. https://tools.ietf.org/html/rfc4320\#section-4.1 |
-|  [receiveResponse(response)](./sip.js.clienttransaction.receiveresponse.md) |  | Receive incoming responses from the transport which match this transaction. Responses will be delivered to the transaction user as necessary. |
-
+| Method                                                                     | Modifiers | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| -------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [onRequestTimeout()](./sip.js.clienttransaction.onrequesttimeout.md)       |           | A 408 to non-INVITE will always arrive too late to be useful (\[3\]), The client already has full knowledge of the timeout. The only information this message would convey is whether or not the server believed the transaction timed out. However, with the current design of the NIT, a client cannot do anything with this knowledge. Thus, the 408 is simply wasting network resources and contributes to the response bombardment illustrated in \[3\]. https://tools.ietf.org/html/rfc4320\#section-4.1 |
+| [receiveResponse(response)](./sip.js.clienttransaction.receiveresponse.md) |           | Receive incoming responses from the transport which match this transaction. Responses will be delivered to the transaction user as necessary.                                                                                                                                                                                                                                                                                                                                                                  |

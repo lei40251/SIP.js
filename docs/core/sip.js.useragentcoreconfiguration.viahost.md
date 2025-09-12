@@ -15,4 +15,3 @@ viaHost: string;
 ## Remarks
 
 The Via header field indicates the path taken by the request so far and indicates the path that should be followed in routing responses.
-

@@ -11,7 +11,7 @@ Re-confirm the dialog. Only matters if handling re-INVITE request.
 ```typescript
 reConfirm(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

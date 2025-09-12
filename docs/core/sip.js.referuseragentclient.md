@@ -9,15 +9,15 @@ REFER UAC.
 <b>Signature:</b>
 
 ```typescript
-export declare class ReferUserAgentClient extends UserAgentClient implements OutgoingReferRequest 
+export declare class ReferUserAgentClient extends UserAgentClient implements OutgoingReferRequest
 ```
+
 <b>Extends:</b> [UserAgentClient](./sip.js.useragentclient.md)
 
 <b>Implements:</b> [OutgoingReferRequest](./sip.js.outgoingreferrequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(dialog, delegate, options)](./sip.js.referuseragentclient._constructor_.md) |  | Constructs a new instance of the <code>ReferUserAgentClient</code> class |
-
+| Constructor                                                                                | Modifiers | Description                                                              |
+| ------------------------------------------------------------------------------------------ | --------- | ------------------------------------------------------------------------ |
+| [(constructor)(dialog, delegate, options)](./sip.js.referuseragentclient._constructor_.md) |           | Constructs a new instance of the <code>ReferUserAgentClient</code> class |

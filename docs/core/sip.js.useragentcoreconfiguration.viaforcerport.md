@@ -15,4 +15,3 @@ viaForceRport: boolean;
 ## Remarks
 
 https://www.ietf.org/rfc/rfc3581.txt
-

@@ -14,11 +14,10 @@ message(options?: SessionMessageOptions): Promise<OutgoingMessageRequest>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [SessionMessageOptions](./sip.js.sessionmessageoptions.md) | Options bucket. See [SessionMessageOptions](./sip.js.sessionmessageoptions.md) for details. |
+| Parameter | Type                                                       | Description                                                                                 |
+| --------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| options   | [SessionMessageOptions](./sip.js.sessionmessageoptions.md) | Options bucket. See [SessionMessageOptions](./sip.js.sessionmessageoptions.md) for details. |
 
 <b>Returns:</b>
 
 Promise&lt;OutgoingMessageRequest&gt;
-

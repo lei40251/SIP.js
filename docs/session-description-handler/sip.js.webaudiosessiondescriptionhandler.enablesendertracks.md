@@ -5,7 +5,6 @@
 ## WebAudioSessionDescriptionHandler.enableSenderTracks() method
 
 > This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
-> 
 
 Helper function to enable/disable media tracks.
 
@@ -17,11 +16,10 @@ enableSenderTracks(enable: boolean): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  enable | boolean | If true enable tracks. |
+| Parameter | Type    | Description            |
+| --------- | ------- | ---------------------- |
+| enable    | boolean | If true enable tracks. |
 
 <b>Returns:</b>
 
 void
-

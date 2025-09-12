@@ -14,10 +14,10 @@ message(destination: string, message: string): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  destination | string | The target destination for the message. A SIP address to send the MESSAGE to. |
-|  message | string |  |
+| Parameter   | Type   | Description                                                                   |
+| ----------- | ------ | ----------------------------------------------------------------------------- |
+| destination | string | The target destination for the message. A SIP address to send the MESSAGE to. |
+| message     | string |                                                                               |
 
 <b>Returns:</b>
 
@@ -26,4 +26,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Send a MESSAGE request.
-

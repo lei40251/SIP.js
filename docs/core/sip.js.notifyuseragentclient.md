@@ -9,15 +9,15 @@ NOTIFY UAS.
 <b>Signature:</b>
 
 ```typescript
-export declare class NotifyUserAgentClient extends UserAgentClient implements OutgoingNotifyRequest 
+export declare class NotifyUserAgentClient extends UserAgentClient implements OutgoingNotifyRequest
 ```
+
 <b>Extends:</b> [UserAgentClient](./sip.js.useragentclient.md)
 
 <b>Implements:</b> [OutgoingNotifyRequest](./sip.js.outgoingnotifyrequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(dialog, delegate, options)](./sip.js.notifyuseragentclient._constructor_.md) |  | Constructs a new instance of the <code>NotifyUserAgentClient</code> class |
-
+| Constructor                                                                                 | Modifiers | Description                                                               |
+| ------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------- |
+| [(constructor)(dialog, delegate, options)](./sip.js.notifyuseragentclient._constructor_.md) |           | Constructs a new instance of the <code>NotifyUserAgentClient</code> class |

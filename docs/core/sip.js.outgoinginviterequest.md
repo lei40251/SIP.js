@@ -9,13 +9,13 @@ Outgoing INVITE request.
 <b>Signature:</b>
 
 ```typescript
-export interface OutgoingInviteRequest extends OutgoingRequest 
+export interface OutgoingInviteRequest extends OutgoingRequest
 ```
+
 <b>Extends:</b> [OutgoingRequest](./sip.js.outgoingrequest.md)
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [delegate](./sip.js.outgoinginviterequest.delegate.md) |  | [OutgoingInviteRequestDelegate](./sip.js.outgoinginviterequestdelegate.md) | Delegate providing custom handling of this outgoing INVITE request. |
-
+| Property                                               | Modifiers | Type                                                                       | Description                                                         |
+| ------------------------------------------------------ | --------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| [delegate](./sip.js.outgoinginviterequest.delegate.md) |           | [OutgoingInviteRequestDelegate](./sip.js.outgoinginviterequestdelegate.md) | Delegate providing custom handling of this outgoing INVITE request. |

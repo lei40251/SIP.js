@@ -11,6 +11,7 @@ Called when user is connected to server.
 ```typescript
 onServerConnect?(): void;
 ```
+
 <b>Returns:</b>
 
 void
@@ -18,4 +19,3 @@ void
 ## Remarks
 
 Callback for handling user becomes connected.
-

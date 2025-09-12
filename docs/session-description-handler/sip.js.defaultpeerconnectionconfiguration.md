@@ -11,7 +11,7 @@ Function which returns an RTCConfiguration.
 ```typescript
 export declare function defaultPeerConnectionConfiguration(): RTCConfiguration;
 ```
+
 <b>Returns:</b>
 
 RTCConfiguration
-

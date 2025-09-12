@@ -11,7 +11,7 @@ Timeout waiting for ACK request. If no handler is provided the Session will term
 ```typescript
 onAckTimeout?(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

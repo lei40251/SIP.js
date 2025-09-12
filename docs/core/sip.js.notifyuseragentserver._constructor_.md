@@ -14,9 +14,8 @@ constructor(dialogOrCore: Dialog | UserAgentCore, message: IncomingRequestMessag
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  dialogOrCore | [Dialog](./sip.js.dialog.md) \| [UserAgentCore](./sip.js.useragentcore.md) | Dialog for in dialog NOTIFY, UserAgentCore for out of dialog NOTIFY (deprecated). |
-|  message | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | Incoming NOTIFY request message. |
-|  delegate | [IncomingRequestDelegate](./sip.js.incomingrequestdelegate.md) |  |
-
+| Parameter    | Type                                                                       | Description                                                                       |
+| ------------ | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| dialogOrCore | [Dialog](./sip.js.dialog.md) \| [UserAgentCore](./sip.js.useragentcore.md) | Dialog for in dialog NOTIFY, UserAgentCore for out of dialog NOTIFY (deprecated). |
+| message      | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md)               | Incoming NOTIFY request message.                                                  |
+| delegate     | [IncomingRequestDelegate](./sip.js.incomingrequestdelegate.md)             |                                                                                   |

@@ -9,8 +9,9 @@ Re-INVITE UAC.
 <b>Signature:</b>
 
 ```typescript
-export declare class ReInviteUserAgentClient extends UserAgentClient implements OutgoingInviteRequest 
+export declare class ReInviteUserAgentClient extends UserAgentClient implements OutgoingInviteRequest
 ```
+
 <b>Extends:</b> [UserAgentClient](./sip.js.useragentclient.md)
 
 <b>Implements:</b> [OutgoingInviteRequest](./sip.js.outgoinginviterequest.md)
@@ -21,19 +22,18 @@ export declare class ReInviteUserAgentClient extends UserAgentClient implements 
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(dialog, delegate, options)](./sip.js.reinviteuseragentclient._constructor_.md) |  | Constructs a new instance of the <code>ReInviteUserAgentClient</code> class |
+| Constructor                                                                                   | Modifiers | Description                                                                 |
+| --------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------- |
+| [(constructor)(dialog, delegate, options)](./sip.js.reinviteuseragentclient._constructor_.md) |           | Constructs a new instance of the <code>ReInviteUserAgentClient</code> class |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [delegate](./sip.js.reinviteuseragentclient.delegate.md) |  | [OutgoingInviteRequestDelegate](./sip.js.outgoinginviterequestdelegate.md) \| undefined |  |
+| Property                                                 | Modifiers | Type                                                                                    | Description |
+| -------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------- | ----------- |
+| [delegate](./sip.js.reinviteuseragentclient.delegate.md) |           | [OutgoingInviteRequestDelegate](./sip.js.outgoinginviterequestdelegate.md) \| undefined |             |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [receiveResponse(message)](./sip.js.reinviteuseragentclient.receiveresponse.md) |  |  |
-
+| Method                                                                          | Modifiers | Description |
+| ------------------------------------------------------------------------------- | --------- | ----------- |
+| [receiveResponse(message)](./sip.js.reinviteuseragentclient.receiveresponse.md) |           |             |

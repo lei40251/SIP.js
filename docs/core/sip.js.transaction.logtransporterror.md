@@ -12,12 +12,11 @@ protected logTransportError(error: TransportError, message: string): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  error | [TransportError](./sip.js.transporterror.md) |  |
-|  message | string |  |
+| Parameter | Type                                         | Description |
+| --------- | -------------------------------------------- | ----------- |
+| error     | [TransportError](./sip.js.transporterror.md) |             |
+| message   | string                                       |             |
 
 <b>Returns:</b>
 
 void
-

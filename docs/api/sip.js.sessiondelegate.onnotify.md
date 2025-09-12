@@ -14,9 +14,9 @@ onNotify?(notification: Notification): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  notification | [Notification](./sip.js.notification.md) | The notification. |
+| Parameter    | Type                                     | Description       |
+| ------------ | ---------------------------------------- | ----------------- |
+| notification | [Notification](./sip.js.notification.md) | The notification. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ void
 ## Remarks
 
 If a refer is in progress notifications are delivered to the referrers delegate.
-

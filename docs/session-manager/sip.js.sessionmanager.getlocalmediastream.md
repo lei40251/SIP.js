@@ -14,11 +14,10 @@ getLocalMediaStream(session: Session): MediaStream | undefined;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session | Session to get the media stream from. |
+| Parameter | Type    | Description                           |
+| --------- | ------- | ------------------------------------- |
+| session   | Session | Session to get the media stream from. |
 
 <b>Returns:</b>
 
 MediaStream \| undefined
-

@@ -9,13 +9,12 @@ Remote media elements for [SimpleUserMedia](./sip.js.simpleusermedia.md)<!-- -->
 <b>Signature:</b>
 
 ```typescript
-export interface SimpleUserMediaRemote 
+export interface SimpleUserMediaRemote
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [audio](./sip.js.simpleusermediaremote.audio.md) |  | HTMLAudioElement | The remote audio media stream is attached to this element. |
-|  [video](./sip.js.simpleusermediaremote.video.md) |  | HTMLVideoElement | The remote video media stream is attached to this element. |
-
+| Property                                         | Modifiers | Type             | Description                                                |
+| ------------------------------------------------ | --------- | ---------------- | ---------------------------------------------------------- |
+| [audio](./sip.js.simpleusermediaremote.audio.md) |           | HTMLAudioElement | The remote audio media stream is attached to this element. |
+| [video](./sip.js.simpleusermediaremote.video.md) |           | HTMLVideoElement | The remote video media stream is attached to this element. |

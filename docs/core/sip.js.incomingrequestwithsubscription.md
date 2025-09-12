@@ -9,13 +9,12 @@ Incoming NOTIFY request with associated [Subscription](./sip.js.subscription.md)
 <b>Signature:</b>
 
 ```typescript
-export interface IncomingRequestWithSubscription 
+export interface IncomingRequestWithSubscription
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [request](./sip.js.incomingrequestwithsubscription.request.md) |  | [IncomingNotifyRequest](./sip.js.incomingnotifyrequest.md) | The NOTIFY request which established the subscription. |
-|  [subscription](./sip.js.incomingrequestwithsubscription.subscription.md) |  | [Subscription](./sip.js.subscription.md) | If subscription state is not "terminated", then the subscription. Otherwise undefined. |
-
+| Property                                                                 | Modifiers | Type                                                       | Description                                                                            |
+| ------------------------------------------------------------------------ | --------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [request](./sip.js.incomingrequestwithsubscription.request.md)           |           | [IncomingNotifyRequest](./sip.js.incomingnotifyrequest.md) | The NOTIFY request which established the subscription.                                 |
+| [subscription](./sip.js.incomingrequestwithsubscription.subscription.md) |           | [Subscription](./sip.js.subscription.md)                   | If subscription state is not "terminated", then the subscription. Otherwise undefined. |

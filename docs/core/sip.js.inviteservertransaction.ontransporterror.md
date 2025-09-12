@@ -14,11 +14,10 @@ protected onTransportError(error: Error): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  error | Error |  |
+| Parameter | Type  | Description |
+| --------- | ----- | ----------- |
+| error     | Error |             |
 
 <b>Returns:</b>
 
 void
-

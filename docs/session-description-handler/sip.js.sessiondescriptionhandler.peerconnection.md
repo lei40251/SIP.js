@@ -23,6 +23,7 @@ peerConnection.onicecandidate = (event) => {
   // do something
 };
 ```
+
 Instead, do this...
 
 ```ts
@@ -32,5 +33,5 @@ peerConnection.peerConnectionDelegate = {
   }
 };
 ```
-While access to the underlying `RTCPeerConnection` is provided, note that using methods which modify it may break the operation of this class. In particular, this class depends on exclusive access to the event handler properties. If you need access to the peer connection events, either register for events using `addEventListener()` on the `RTCPeerConnection` or set the `peerConnectionDelegate` on this `SessionDescriptionHandler`<!-- -->.
 
+While access to the underlying `RTCPeerConnection` is provided, note that using methods which modify it may break the operation of this class. In particular, this class depends on exclusive access to the event handler properties. If you need access to the peer connection events, either register for events using `addEventListener()` on the `RTCPeerConnection` or set the `peerConnectionDelegate` on this `SessionDescriptionHandler`<!-- -->.

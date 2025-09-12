@@ -14,17 +14,16 @@ makeOutgoingRequestMessage(method: string, requestURI: URI, fromURI: URI, toURI:
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  method | string | Method. |
-|  requestURI | [URI](./sip.js.uri.md) | Request-URI. |
-|  fromURI | [URI](./sip.js.uri.md) | From URI. |
-|  toURI | [URI](./sip.js.uri.md) | To URI. |
-|  options | [OutgoingRequestMessageOptions](./sip.js.outgoingrequestmessageoptions.md) | Request options. |
-|  extraHeaders | Array&lt;string&gt; | Extra headers to add. |
-|  body | [Body](./sip.js.body.md) | Message body. |
+| Parameter    | Type                                                                       | Description           |
+| ------------ | -------------------------------------------------------------------------- | --------------------- |
+| method       | string                                                                     | Method.               |
+| requestURI   | [URI](./sip.js.uri.md)                                                     | Request-URI.          |
+| fromURI      | [URI](./sip.js.uri.md)                                                     | From URI.             |
+| toURI        | [URI](./sip.js.uri.md)                                                     | To URI.               |
+| options      | [OutgoingRequestMessageOptions](./sip.js.outgoingrequestmessageoptions.md) | Request options.      |
+| extraHeaders | Array&lt;string&gt;                                                        | Extra headers to add. |
+| body         | [Body](./sip.js.body.md)                                                   | Message body.         |
 
 <b>Returns:</b>
 
 [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md)
-

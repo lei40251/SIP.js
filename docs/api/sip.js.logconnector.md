@@ -9,7 +9,12 @@ Log connector function.
 <b>Signature:</b>
 
 ```typescript
-export declare type LogConnector = (level: LogLevel, category: string, label: string | undefined, content: string) => void;
+export declare type LogConnector = (
+  level: LogLevel,
+  category: string,
+  label: string | undefined,
+  content: string
+) => void;
 ```
-<b>References:</b> [LogLevel](./sip.js.loglevel.md)
 
+<b>References:</b> [LogLevel](./sip.js.loglevel.md)

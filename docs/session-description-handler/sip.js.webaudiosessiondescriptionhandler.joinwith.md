@@ -5,7 +5,6 @@
 ## WebAudioSessionDescriptionHandler.joinWith() method
 
 > This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
-> 
 
 Join (conference) media streams with another party.
 
@@ -17,11 +16,10 @@ joinWith(peer: WebAudioSessionDescriptionHandler): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  peer | [WebAudioSessionDescriptionHandler](./sip.js.webaudiosessiondescriptionhandler.md) | The session description handler of the peer to join with. |
+| Parameter | Type                                                                               | Description                                               |
+| --------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| peer      | [WebAudioSessionDescriptionHandler](./sip.js.webaudiosessiondescriptionhandler.md) | The session description handler of the peer to join with. |
 
 <b>Returns:</b>
 
 void
-

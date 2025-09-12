@@ -9,13 +9,13 @@ Transport error.
 <b>Signature:</b>
 
 ```typescript
-export declare class TransportError extends Exception 
+export declare class TransportError extends Exception
 ```
+
 <b>Extends:</b> [Exception](./sip.js.exception.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(message)](./sip.js.transporterror._constructor_.md) |  | Constructs a new instance of the <code>TransportError</code> class |
-
+| Constructor                                                        | Modifiers | Description                                                        |
+| ------------------------------------------------------------------ | --------- | ------------------------------------------------------------------ |
+| [(constructor)(message)](./sip.js.transporterror._constructor_.md) |           | Constructs a new instance of the <code>TransportError</code> class |

@@ -14,9 +14,9 @@ progress(options?: InvitationProgressOptions): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [InvitationProgressOptions](./sip.js.invitationprogressoptions.md) | Options bucket. |
+| Parameter | Type                                                               | Description     |
+| --------- | ------------------------------------------------------------------ | --------------- |
+| options   | [InvitationProgressOptions](./sip.js.invitationprogressoptions.md) | Options bucket. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Report progress to the the caller. Replies to the INVITE request with a 1xx provisional response. Resolves once the response sent, otherwise rejects.
-

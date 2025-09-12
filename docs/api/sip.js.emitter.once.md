@@ -5,9 +5,8 @@
 ## Emitter.once() method
 
 > Warning: This API is now obsolete.
-> 
+>
 > Use addListener.
-> 
 
 Registers a listener then unregisters the listener after one event emission.
 
@@ -19,11 +18,10 @@ once(listener: (data: T) => void): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  listener | (data: T) =&gt; void | Callback function. |
+| Parameter | Type                 | Description        |
+| --------- | -------------------- | ------------------ |
+| listener  | (data: T) =&gt; void | Callback function. |
 
 <b>Returns:</b>
 
 void
-

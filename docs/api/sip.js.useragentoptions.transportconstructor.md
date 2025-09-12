@@ -15,4 +15,3 @@ transportConstructor?: new (logger: Logger, options: any) => Transport;
 ## Remarks
 
 For more information about creating your own transport see `Transport`<!-- -->.
-

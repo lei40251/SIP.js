@@ -11,7 +11,7 @@ Retransmit the last 2xx response. This is a noop if not in the "accepted" state.
 ```typescript
 retransmitAcceptedResponse(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

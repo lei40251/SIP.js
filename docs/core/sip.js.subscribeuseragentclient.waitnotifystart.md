@@ -9,7 +9,7 @@
 ```typescript
 waitNotifyStart(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

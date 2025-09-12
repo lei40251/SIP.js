@@ -11,7 +11,7 @@ Return true if connected.
 ```typescript
 isConnected(): boolean;
 ```
+
 <b>Returns:</b>
 
 boolean
-

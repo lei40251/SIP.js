@@ -9,15 +9,15 @@ MESSAGE UAC.
 <b>Signature:</b>
 
 ```typescript
-export declare class MessageUserAgentClient extends UserAgentClient implements OutgoingMessageRequest 
+export declare class MessageUserAgentClient extends UserAgentClient implements OutgoingMessageRequest
 ```
+
 <b>Extends:</b> [UserAgentClient](./sip.js.useragentclient.md)
 
 <b>Implements:</b> [OutgoingMessageRequest](./sip.js.outgoingmessagerequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(core, message, delegate)](./sip.js.messageuseragentclient._constructor_.md) |  | Constructs a new instance of the <code>MessageUserAgentClient</code> class |
-
+| Constructor                                                                                | Modifiers | Description                                                                |
+| ------------------------------------------------------------------------------------------ | --------- | -------------------------------------------------------------------------- |
+| [(constructor)(core, message, delegate)](./sip.js.messageuseragentclient._constructor_.md) |           | Constructs a new instance of the <code>MessageUserAgentClient</code> class |

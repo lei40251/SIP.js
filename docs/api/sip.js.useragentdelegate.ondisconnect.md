@@ -14,11 +14,10 @@ onDisconnect?(error?: Error): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  error | Error | An error if disconnect triggered by transport. Otherwise undefined. |
+| Parameter | Type  | Description                                                         |
+| --------- | ----- | ------------------------------------------------------------------- |
+| error     | Error | An error if disconnect triggered by transport. Otherwise undefined. |
 
 <b>Returns:</b>
 
 void
-

@@ -14,9 +14,9 @@ sendDTMF(tone: string): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  tone | string | Tone to send. |
+| Parameter | Type   | Description   |
+| --------- | ------ | ------------- |
+| tone      | string | Tone to send. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Send an INFO request with content type application/dtmf-relay.
-

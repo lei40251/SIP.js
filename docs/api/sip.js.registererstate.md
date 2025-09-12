@@ -9,17 +9,17 @@
 <b>Signature:</b>
 
 ```typescript
-export declare enum RegistererState 
+export declare enum RegistererState
 ```
 
 ## Enumeration Members
 
-|  Member | Value | Description |
-|  --- | --- | --- |
-|  Initial | <code>&quot;Initial&quot;</code> |  |
-|  Registered | <code>&quot;Registered&quot;</code> |  |
-|  Terminated | <code>&quot;Terminated&quot;</code> |  |
-|  Unregistered | <code>&quot;Unregistered&quot;</code> |  |
+| Member       | Value                                 | Description |
+| ------------ | ------------------------------------- | ----------- |
+| Initial      | <code>&quot;Initial&quot;</code>      |             |
+| Registered   | <code>&quot;Registered&quot;</code>   |             |
+| Terminated   | <code>&quot;Terminated&quot;</code>   |             |
+| Unregistered | <code>&quot;Unregistered&quot;</code> |             |
 
 ## Remarks
 
@@ -33,4 +33,3 @@ Constructed -> Initial -> Registered -> Unregistered -> Terminated
                              |   ^____________|             ^
                              |______________________________|
 ```
-

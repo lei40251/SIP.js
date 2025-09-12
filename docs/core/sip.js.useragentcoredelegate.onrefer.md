@@ -14,11 +14,10 @@ onRefer?(request: IncomingReferRequest): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [IncomingReferRequest](./sip.js.incomingreferrequest.md) | Incoming REFER request. |
+| Parameter | Type                                                     | Description             |
+| --------- | -------------------------------------------------------- | ----------------------- |
+| request   | [IncomingReferRequest](./sip.js.incomingreferrequest.md) | Incoming REFER request. |
 
 <b>Returns:</b>
 
 void
-

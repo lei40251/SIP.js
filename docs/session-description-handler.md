@@ -109,9 +109,8 @@ const myMediaStreamFactory: Web.MediaStreamFactory = (
 };
 
 // Create session description handler factory
-const mySessionDescriptionHandlerFactory: Web.SessionDescriptionHandlerFactory = Web.defaultSessionDescriptionHandlerFactory(
-  myMediaStreamFactory
-);
+const mySessionDescriptionHandlerFactory: Web.SessionDescriptionHandlerFactory =
+  Web.defaultSessionDescriptionHandlerFactory(myMediaStreamFactory);
 
 // Create user agent
 const myUserAgent = new UserAgent({

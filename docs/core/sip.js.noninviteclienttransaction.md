@@ -9,8 +9,9 @@ Non-INVITE Client Transaction.
 <b>Signature:</b>
 
 ```typescript
-export declare class NonInviteClientTransaction extends ClientTransaction 
+export declare class NonInviteClientTransaction extends ClientTransaction
 ```
+
 <b>Extends:</b> [ClientTransaction](./sip.js.clienttransaction.md)
 
 ## Remarks
@@ -19,22 +20,21 @@ Non-INVITE transactions do not make use of ACK. They are simple request-response
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(request, transport, user)](./sip.js.noninviteclienttransaction._constructor_.md) |  | Constructor Upon construction, the outgoing request's Via header is updated by calling <code>setViaHeader</code>. Then <code>toString</code> is called on the outgoing request and the message is sent via the transport. After construction the transaction will be in the "calling" state and the transaction id will equal the branch parameter set in the Via header of the outgoing request. https://tools.ietf.org/html/rfc3261\#section-17.1.2 |
+| Constructor                                                                                     | Modifiers | Description                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ----------------------------------------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [(constructor)(request, transport, user)](./sip.js.noninviteclienttransaction._constructor_.md) |           | Constructor Upon construction, the outgoing request's Via header is updated by calling <code>setViaHeader</code>. Then <code>toString</code> is called on the outgoing request and the message is sent via the transport. After construction the transaction will be in the "calling" state and the transaction id will equal the branch parameter set in the Via header of the outgoing request. https://tools.ietf.org/html/rfc3261\#section-17.1.2 |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [kind](./sip.js.noninviteclienttransaction.kind.md) |  | string | Transaction kind. Deprecated. |
+| Property                                            | Modifiers | Type   | Description                   |
+| --------------------------------------------------- | --------- | ------ | ----------------------------- |
+| [kind](./sip.js.noninviteclienttransaction.kind.md) |           | string | Transaction kind. Deprecated. |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [dispose()](./sip.js.noninviteclienttransaction.dispose.md) |  | Destructor. |
-|  [onTransportError(error)](./sip.js.noninviteclienttransaction.ontransporterror.md) |  | The client transaction SHOULD inform the TU that a transport failure has occurred, and the client transaction SHOULD transition directly to the "Terminated" state. The TU will handle the fail over mechanisms described in \[4\]. https://tools.ietf.org/html/rfc3261\#section-17.1.4 |
-|  [receiveResponse(response)](./sip.js.noninviteclienttransaction.receiveresponse.md) |  | Handler for incoming responses from the transport which match this transaction. |
-|  [typeToString()](./sip.js.noninviteclienttransaction.typetostring.md) |  | For logging. |
-
+| Method                                                                              | Modifiers | Description                                                                                                                                                                                                                                                                             |
+| ----------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [dispose()](./sip.js.noninviteclienttransaction.dispose.md)                         |           | Destructor.                                                                                                                                                                                                                                                                             |
+| [onTransportError(error)](./sip.js.noninviteclienttransaction.ontransporterror.md)  |           | The client transaction SHOULD inform the TU that a transport failure has occurred, and the client transaction SHOULD transition directly to the "Terminated" state. The TU will handle the fail over mechanisms described in \[4\]. https://tools.ietf.org/html/rfc3261\#section-17.1.4 |
+| [receiveResponse(response)](./sip.js.noninviteclienttransaction.receiveresponse.md) |           | Handler for incoming responses from the transport which match this transaction.                                                                                                                                                                                                         |
+| [typeToString()](./sip.js.noninviteclienttransaction.typetostring.md)               |           | For logging.                                                                                                                                                                                                                                                                            |

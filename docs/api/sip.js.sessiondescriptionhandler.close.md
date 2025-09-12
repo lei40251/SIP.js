@@ -11,7 +11,7 @@ Destructor.
 ```typescript
 close(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

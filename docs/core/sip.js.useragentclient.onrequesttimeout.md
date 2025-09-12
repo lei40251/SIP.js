@@ -11,7 +11,7 @@
 ```typescript
 protected onRequestTimeout(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

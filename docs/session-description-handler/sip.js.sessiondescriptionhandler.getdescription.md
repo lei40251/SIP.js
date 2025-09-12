@@ -14,12 +14,11 @@ getDescription(options?: SessionDescriptionHandlerOptions, modifiers?: Array<Ses
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [SessionDescriptionHandlerOptions](./sip.js.sessiondescriptionhandleroptions.md) | Options bucket. |
-|  modifiers | Array&lt;SessionDescriptionHandlerModifier&gt; | Modifiers. |
+| Parameter | Type                                                                             | Description     |
+| --------- | -------------------------------------------------------------------------------- | --------------- |
+| options   | [SessionDescriptionHandlerOptions](./sip.js.sessiondescriptionhandleroptions.md) | Options bucket. |
+| modifiers | Array&lt;SessionDescriptionHandlerModifier&gt;                                   | Modifiers.      |
 
 <b>Returns:</b>
 
 Promise&lt;BodyAndContentType&gt;
-

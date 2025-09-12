@@ -14,8 +14,7 @@ constructor(server: string, options?: SessionManagerOptions);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  server | string | SIP WebSocket Server URL. |
-|  options | [SessionManagerOptions](./sip.js.sessionmanageroptions.md) | Options bucket. See [SessionManagerOptions](./sip.js.sessionmanageroptions.md) for details. |
-
+| Parameter | Type                                                       | Description                                                                                 |
+| --------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| server    | string                                                     | SIP WebSocket Server URL.                                                                   |
+| options   | [SessionManagerOptions](./sip.js.sessionmanageroptions.md) | Options bucket. See [SessionManagerOptions](./sip.js.sessionmanageroptions.md) for details. |

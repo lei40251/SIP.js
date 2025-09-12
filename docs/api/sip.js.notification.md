@@ -9,7 +9,7 @@ A notification of an event (incoming NOTIFY).
 <b>Signature:</b>
 
 ```typescript
-export declare class Notification 
+export declare class Notification
 ```
 
 ## Remarks
@@ -18,14 +18,13 @@ The constructor for this class is marked as internal. Third-party code should no
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [request](./sip.js.notification.request.md) |  | IncomingRequestMessage | Incoming NOTIFY request message. |
+| Property                                    | Modifiers | Type                   | Description                      |
+| ------------------------------------------- | --------- | ---------------------- | -------------------------------- |
+| [request](./sip.js.notification.request.md) |           | IncomingRequestMessage | Incoming NOTIFY request message. |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [accept(options)](./sip.js.notification.accept.md) |  | Accept the request. |
-|  [reject(options)](./sip.js.notification.reject.md) |  | Reject the request. |
-
+| Method                                             | Modifiers | Description         |
+| -------------------------------------------------- | --------- | ------------------- |
+| [accept(options)](./sip.js.notification.accept.md) |           | Accept the request. |
+| [reject(options)](./sip.js.notification.reject.md) |           | Reject the request. |

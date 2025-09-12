@@ -9,13 +9,12 @@ Options for [Registerer.register()](./sip.js.registerer.register.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface RegistererRegisterOptions 
+export interface RegistererRegisterOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [requestDelegate](./sip.js.registererregisteroptions.requestdelegate.md) |  | OutgoingRequestDelegate | See <code>core</code> API. |
-|  [requestOptions](./sip.js.registererregisteroptions.requestoptions.md) |  | RequestOptions | See <code>core</code> API. |
-
+| Property                                                                 | Modifiers | Type                    | Description                |
+| ------------------------------------------------------------------------ | --------- | ----------------------- | -------------------------- |
+| [requestDelegate](./sip.js.registererregisteroptions.requestdelegate.md) |           | OutgoingRequestDelegate | See <code>core</code> API. |
+| [requestOptions](./sip.js.registererregisteroptions.requestoptions.md)   |           | RequestOptions          | See <code>core</code> API. |

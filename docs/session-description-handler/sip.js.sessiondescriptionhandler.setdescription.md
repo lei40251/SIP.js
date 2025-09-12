@@ -14,13 +14,12 @@ setDescription(sdp: string, options?: SessionDescriptionHandlerOptions, modifier
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  sdp | string | The session description. |
-|  options | [SessionDescriptionHandlerOptions](./sip.js.sessiondescriptionhandleroptions.md) | Options bucket. |
-|  modifiers | Array&lt;SessionDescriptionHandlerModifier&gt; | Modifiers. |
+| Parameter | Type                                                                             | Description              |
+| --------- | -------------------------------------------------------------------------------- | ------------------------ |
+| sdp       | string                                                                           | The session description. |
+| options   | [SessionDescriptionHandlerOptions](./sip.js.sessiondescriptionhandleroptions.md) | Options bucket.          |
+| modifiers | Array&lt;SessionDescriptionHandlerModifier&gt;                                   | Modifiers.               |
 
 <b>Returns:</b>
 
 Promise&lt;void&gt;
-

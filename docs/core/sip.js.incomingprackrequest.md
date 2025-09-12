@@ -9,7 +9,7 @@ Incoming PRACK request.
 <b>Signature:</b>
 
 ```typescript
-export interface IncomingPrackRequest extends IncomingRequest 
+export interface IncomingPrackRequest extends IncomingRequest
 ```
-<b>Extends:</b> [IncomingRequest](./sip.js.incomingrequest.md)
 
+<b>Extends:</b> [IncomingRequest](./sip.js.incomingrequest.md)

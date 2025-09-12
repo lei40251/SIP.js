@@ -14,10 +14,10 @@ onSessionDescriptionHandler?(sessionDescriptionHandler: SessionDescriptionHandle
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  sessionDescriptionHandler | [SessionDescriptionHandler](./sip.js.sessiondescriptionhandler.md) | The handler. |
-|  provisional | boolean | True if created provisionally. |
+| Parameter                 | Type                                                               | Description                    |
+| ------------------------- | ------------------------------------------------------------------ | ------------------------------ |
+| sessionDescriptionHandler | [SessionDescriptionHandler](./sip.js.sessiondescriptionhandler.md) | The handler.                   |
+| provisional               | boolean                                                            | True if created provisionally. |
 
 <b>Returns:</b>
 
@@ -30,4 +30,3 @@ It's recommended that the SessionDescriptionHandler be accessed via the `Session
 In most scenarios a single SessionDescriptionHandler will be created per Session in which case this callback will be called at most once and `provisional` will be `false`<!-- -->.
 
 However if reliable provisional responses are being supported and an INVITE is sent without SDP, one or more session description handlers will be created if remote offers are received in reliable provisional responses. When remote offers are received in reliable provisional responses, the `provisional` parameter will be `true`<!-- -->. When the `provisional` paramter is `true`<!-- -->, this callback may (or may not) be called again. If the session is ultimately established using a SessionDescriptionHandler which was not created provisionally, this callback will be called again and the `provisional` parameter will be `false`<!-- -->. If the session is ultimately established using a SessionDescriptionHandler which was created provisionally, this callback will not be called again. Note that if the session is ultimately established using a SessionDescriptionHandler which was created provisionally, the provisional SessionDescriptionHandler being utilized will be available via the `Session.sessionDescriptionHandler` property.
-

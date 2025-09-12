@@ -11,7 +11,7 @@ The logger factory.
 ```typescript
 getLoggerFactory(): LoggerFactory;
 ```
+
 <b>Returns:</b>
 
 LoggerFactory
-

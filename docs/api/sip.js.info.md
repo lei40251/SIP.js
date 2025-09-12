@@ -9,7 +9,7 @@ An exchange of information (incoming INFO).
 <b>Signature:</b>
 
 ```typescript
-export declare class Info 
+export declare class Info
 ```
 
 ## Remarks
@@ -18,14 +18,13 @@ The constructor for this class is marked as internal. Third-party code should no
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [request](./sip.js.info.request.md) |  | IncomingRequestMessage | Incoming MESSAGE request message. |
+| Property                            | Modifiers | Type                   | Description                       |
+| ----------------------------------- | --------- | ---------------------- | --------------------------------- |
+| [request](./sip.js.info.request.md) |           | IncomingRequestMessage | Incoming MESSAGE request message. |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [accept(options)](./sip.js.info.accept.md) |  | Accept the request. |
-|  [reject(options)](./sip.js.info.reject.md) |  | Reject the request. |
-
+| Method                                     | Modifiers | Description         |
+| ------------------------------------------ | --------- | ------------------- |
+| [accept(options)](./sip.js.info.accept.md) |           | Accept the request. |
+| [reject(options)](./sip.js.info.reject.md) |           | Reject the request. |

@@ -25,6 +25,7 @@ peerConnection.onicecandidate = (event) => {
   // do something
 };
 ```
+
 Instead, do this...
 
 ```
@@ -34,5 +35,5 @@ peerConnection.peerConnectionDelegate = {
   }
 };
 ```
-Setting the peer connection event handlers directly is not supported and may break this class. As this class depends on exclusive access to them. This delegate is intended to provide access to the RTCPeerConnection events in a fashion which is supported.
 
+Setting the peer connection event handlers directly is not supported and may break this class. As this class depends on exclusive access to them. This delegate is intended to provide access to the RTCPeerConnection events in a fashion which is supported.

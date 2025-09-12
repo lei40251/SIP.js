@@ -9,27 +9,26 @@ Logger.
 <b>Signature:</b>
 
 ```typescript
-export declare class LoggerFactory 
+export declare class LoggerFactory
 ```
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)()](./sip.js.loggerfactory._constructor_.md) |  | Constructs a new instance of the <code>LoggerFactory</code> class |
+| Constructor                                                | Modifiers | Description                                                       |
+| ---------------------------------------------------------- | --------- | ----------------------------------------------------------------- |
+| [(constructor)()](./sip.js.loggerfactory._constructor_.md) |           | Constructs a new instance of the <code>LoggerFactory</code> class |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [builtinEnabled](./sip.js.loggerfactory.builtinenabled.md) |  | boolean |  |
-|  [connector](./sip.js.loggerfactory.connector.md) |  | ((level: string, category: string, label: string \| undefined, content: any) =&gt; void) \| undefined |  |
-|  [level](./sip.js.loggerfactory.level.md) |  | [Levels](./sip.js.levels.md) |  |
+| Property                                                   | Modifiers | Type                                                                                                  | Description |
+| ---------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------- | ----------- |
+| [builtinEnabled](./sip.js.loggerfactory.builtinenabled.md) |           | boolean                                                                                               |             |
+| [connector](./sip.js.loggerfactory.connector.md)           |           | ((level: string, category: string, label: string \| undefined, content: any) =&gt; void) \| undefined |             |
+| [level](./sip.js.loggerfactory.level.md)                   |           | [Levels](./sip.js.levels.md)                                                                          |             |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [genericLog(levelToLog, category, label, content)](./sip.js.loggerfactory.genericlog.md) |  |  |
-|  [getLogger(category, label)](./sip.js.loggerfactory.getlogger.md) |  |  |
-
+| Method                                                                                   | Modifiers | Description |
+| ---------------------------------------------------------------------------------------- | --------- | ----------- |
+| [genericLog(levelToLog, category, label, content)](./sip.js.loggerfactory.genericlog.md) |           |             |
+| [getLogger(category, label)](./sip.js.loggerfactory.getlogger.md)                        |           |             |

@@ -14,10 +14,10 @@ onCallHold?(session: Session, held: boolean): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session |  |
-|  held | boolean |  |
+| Parameter | Type    | Description |
+| --------- | ------- | ----------- |
+| session   | Session |             |
+| held      | boolean |             |
 
 <b>Returns:</b>
 
@@ -26,4 +26,3 @@ void
 ## Remarks
 
 Callback for handling re-INVITE responses.
-

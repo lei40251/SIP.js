@@ -16,12 +16,11 @@ setViaHeader(branch: string, transport: string): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  branch | string |  |
-|  transport | string | The sent protocol transport. |
+| Parameter | Type   | Description                  |
+| --------- | ------ | ---------------------------- |
+| branch    | string |                              |
+| transport | string | The sent protocol transport. |
 
 <b>Returns:</b>
 
 void
-

@@ -14,12 +14,11 @@ constructor(subscriptionEvent: string, subscriptionExpires: number, subscription
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  subscriptionEvent | string |  |
-|  subscriptionExpires | number |  |
-|  subscriptionState | [SubscriptionState](./sip.js.subscriptionstate.md) |  |
-|  core | [UserAgentCore](./sip.js.useragentcore.md) |  |
-|  state | [DialogState](./sip.js.dialogstate.md) |  |
-|  delegate | [SubscriptionDelegate](./sip.js.subscriptiondelegate.md) |  |
-
+| Parameter           | Type                                                     | Description |
+| ------------------- | -------------------------------------------------------- | ----------- |
+| subscriptionEvent   | string                                                   |             |
+| subscriptionExpires | number                                                   |             |
+| subscriptionState   | [SubscriptionState](./sip.js.subscriptionstate.md)       |             |
+| core                | [UserAgentCore](./sip.js.useragentcore.md)               |             |
+| state               | [DialogState](./sip.js.dialogstate.md)                   |             |
+| delegate            | [SubscriptionDelegate](./sip.js.subscriptiondelegate.md) |             |

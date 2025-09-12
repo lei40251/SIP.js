@@ -9,11 +9,11 @@ An exception indicating an outstanding prior request prevented execution.
 <b>Signature:</b>
 
 ```typescript
-export declare class RequestPendingError extends Exception 
+export declare class RequestPendingError extends Exception
 ```
+
 <b>Extends:</b> Exception
 
 ## Remarks
 
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `RequestPendingError` class.
-

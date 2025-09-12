@@ -14,9 +14,9 @@ onNotificationReceived?(notification: Notification): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  notification | Notification | The notication received. |
+| Parameter    | Type         | Description              |
+| ------------ | ------------ | ------------------------ |
+| notification | Notification | The notication received. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ void
 ## Remarks
 
 Callback for handling incoming NOTIFY requests.
-

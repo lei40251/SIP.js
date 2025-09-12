@@ -14,13 +14,12 @@ hasHeader(name: string): boolean;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  name | string | header name |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| name      | string | header name |
 
 <b>Returns:</b>
 
 boolean
 
 true if header with given name exists, false otherwise
-

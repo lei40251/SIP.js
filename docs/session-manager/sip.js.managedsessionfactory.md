@@ -9,5 +9,5 @@ Factory for [ManagedSession](./sip.js.managedsession.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface ManagedSessionFactory 
+export interface ManagedSessionFactory
 ```

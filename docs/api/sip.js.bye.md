@@ -9,7 +9,7 @@ A request to end a [Session](./sip.js.session.md) (incoming BYE).
 <b>Signature:</b>
 
 ```typescript
-export declare class Bye 
+export declare class Bye
 ```
 
 ## Remarks
@@ -18,14 +18,13 @@ The constructor for this class is marked as internal. Third-party code should no
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [request](./sip.js.bye.request.md) |  | IncomingRequestMessage | Incoming BYE request message. |
+| Property                           | Modifiers | Type                   | Description                   |
+| ---------------------------------- | --------- | ---------------------- | ----------------------------- |
+| [request](./sip.js.bye.request.md) |           | IncomingRequestMessage | Incoming BYE request message. |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [accept(options)](./sip.js.bye.accept.md) |  | Accept the request. |
-|  [reject(options)](./sip.js.bye.reject.md) |  | Reject the request. |
-
+| Method                                    | Modifiers | Description         |
+| ----------------------------------------- | --------- | ------------------- |
+| [accept(options)](./sip.js.bye.accept.md) |           | Accept the request. |
+| [reject(options)](./sip.js.bye.reject.md) |           | Reject the request. |

@@ -14,11 +14,10 @@ message(options?: MessagerMessageOptions): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [MessagerMessageOptions](./sip.js.messagermessageoptions.md) |  |
+| Parameter | Type                                                         | Description |
+| --------- | ------------------------------------------------------------ | ----------- |
+| options   | [MessagerMessageOptions](./sip.js.messagermessageoptions.md) |             |
 
 <b>Returns:</b>
 
 Promise&lt;void&gt;
-

@@ -9,8 +9,9 @@ Server Transaction.
 <b>Signature:</b>
 
 ```typescript
-export declare abstract class ServerTransaction extends Transaction 
+export declare abstract class ServerTransaction extends Transaction
 ```
+
 <b>Extends:</b> [Transaction](./sip.js.transaction.md)
 
 ## Remarks
@@ -19,21 +20,20 @@ The server transaction is responsible for the delivery of requests to the TU and
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(\_request, transport, user, state, loggerCategory)](./sip.js.servertransaction._constructor_.md) |  | Constructs a new instance of the <code>ServerTransaction</code> class |
+| Constructor                                                                                                     | Modifiers | Description                                                           |
+| --------------------------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------- |
+| [(constructor)(\_request, transport, user, state, loggerCategory)](./sip.js.servertransaction._constructor_.md) |           | Constructs a new instance of the <code>ServerTransaction</code> class |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [request](./sip.js.servertransaction.request.md) |  | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | The incoming request the transaction handling. |
-|  [user](./sip.js.servertransaction.user.md) |  | [ServerTransactionUser](./sip.js.servertransactionuser.md) |  |
+| Property                                         | Modifiers | Type                                                         | Description                                    |
+| ------------------------------------------------ | --------- | ------------------------------------------------------------ | ---------------------------------------------- |
+| [request](./sip.js.servertransaction.request.md) |           | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | The incoming request the transaction handling. |
+| [user](./sip.js.servertransaction.user.md)       |           | [ServerTransactionUser](./sip.js.servertransactionuser.md)   |                                                |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [receiveRequest(request)](./sip.js.servertransaction.receiverequest.md) |  | Receive incoming requests from the transport which match this transaction. |
-|  [receiveResponse(statusCode, response)](./sip.js.servertransaction.receiveresponse.md) |  | Receive outgoing responses to this request from the transaction user. Responses will be delivered to the transport as necessary. |
-
+| Method                                                                                 | Modifiers | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| [receiveRequest(request)](./sip.js.servertransaction.receiverequest.md)                |           | Receive incoming requests from the transport which match this transaction.                                                       |
+| [receiveResponse(statusCode, response)](./sip.js.servertransaction.receiveresponse.md) |           | Receive outgoing responses to this request from the transaction user. Responses will be delivered to the transport as necessary. |

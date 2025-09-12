@@ -12,11 +12,10 @@ accept(options?: ResponseOptions): OutgoingResponse;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [ResponseOptions](./sip.js.responseoptions.md) |  |
+| Parameter | Type                                           | Description |
+| --------- | ---------------------------------------------- | ----------- |
+| options   | [ResponseOptions](./sip.js.responseoptions.md) |             |
 
 <b>Returns:</b>
 
 [OutgoingResponse](./sip.js.outgoingresponse.md)
-

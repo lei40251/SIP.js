@@ -11,7 +11,7 @@ Rolls back the current local/remote offer to the prior stable state.
 ```typescript
 rollbackDescription?(): Promise<void>;
 ```
+
 <b>Returns:</b>
 
 Promise&lt;void&gt;
-

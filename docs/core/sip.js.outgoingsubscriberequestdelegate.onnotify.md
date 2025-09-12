@@ -14,11 +14,10 @@ onNotify?(request: IncomingRequestWithSubscription): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [IncomingRequestWithSubscription](./sip.js.incomingrequestwithsubscription.md) | Incoming NOTIFY request (including a Subscription). |
+| Parameter | Type                                                                           | Description                                         |
+| --------- | ------------------------------------------------------------------------------ | --------------------------------------------------- |
+| request   | [IncomingRequestWithSubscription](./sip.js.incomingrequestwithsubscription.md) | Incoming NOTIFY request (including a Subscription). |
 
 <b>Returns:</b>
 
 void
-

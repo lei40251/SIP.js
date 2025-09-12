@@ -9,12 +9,11 @@ Delegate for [Subscription](./sip.js.subscription.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface SubscriptionDelegate 
+export interface SubscriptionDelegate
 ```
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [onNotify(notification)](./sip.js.subscriptiondelegate.onnotify.md) | Called upon receiving an incoming NOTIFY request. |
-
+| Method                                                              | Description                                       |
+| ------------------------------------------------------------------- | ------------------------------------------------- |
+| [onNotify(notification)](./sip.js.subscriptiondelegate.onnotify.md) | Called upon receiving an incoming NOTIFY request. |

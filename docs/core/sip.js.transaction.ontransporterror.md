@@ -12,11 +12,10 @@ protected abstract onTransportError(error: TransportError): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  error | [TransportError](./sip.js.transporterror.md) |  |
+| Parameter | Type                                         | Description |
+| --------- | -------------------------------------------- | ----------- |
+| error     | [TransportError](./sip.js.transporterror.md) |             |
 
 <b>Returns:</b>
 
 void
-

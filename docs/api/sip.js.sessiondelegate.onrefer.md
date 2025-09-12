@@ -14,11 +14,10 @@ onRefer?(referral: Referral): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  referral | [Referral](./sip.js.referral.md) | The referral. |
+| Parameter | Type                             | Description   |
+| --------- | -------------------------------- | ------------- |
+| referral  | [Referral](./sip.js.referral.md) | The referral. |
 
 <b>Returns:</b>
 
 void
-

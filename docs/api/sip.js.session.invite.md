@@ -14,11 +14,10 @@ invite(options?: SessionInviteOptions): Promise<OutgoingInviteRequest>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [SessionInviteOptions](./sip.js.sessioninviteoptions.md) | Options bucket. See [SessionInviteOptions](./sip.js.sessioninviteoptions.md) for details. |
+| Parameter | Type                                                     | Description                                                                               |
+| --------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| options   | [SessionInviteOptions](./sip.js.sessioninviteoptions.md) | Options bucket. See [SessionInviteOptions](./sip.js.sessioninviteoptions.md) for details. |
 
 <b>Returns:</b>
 
 Promise&lt;OutgoingInviteRequest&gt;
-

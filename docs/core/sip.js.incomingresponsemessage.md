@@ -9,20 +9,20 @@ Incoming response message.
 <b>Signature:</b>
 
 ```typescript
-export declare class IncomingResponseMessage extends IncomingMessage 
+export declare class IncomingResponseMessage extends IncomingMessage
 ```
+
 <b>Extends:</b> [IncomingMessage](./sip.js.incomingmessage.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)()](./sip.js.incomingresponsemessage._constructor_.md) |  | Constructs a new instance of the <code>IncomingResponseMessage</code> class |
+| Constructor                                                          | Modifiers | Description                                                                 |
+| -------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------- |
+| [(constructor)()](./sip.js.incomingresponsemessage._constructor_.md) |           | Constructs a new instance of the <code>IncomingResponseMessage</code> class |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [reasonPhrase](./sip.js.incomingresponsemessage.reasonphrase.md) |  | string \| undefined |  |
-|  [statusCode](./sip.js.incomingresponsemessage.statuscode.md) |  | number \| undefined |  |
-
+| Property                                                         | Modifiers | Type                | Description |
+| ---------------------------------------------------------------- | --------- | ------------------- | ----------- |
+| [reasonPhrase](./sip.js.incomingresponsemessage.reasonphrase.md) |           | string \| undefined |             |
+| [statusCode](./sip.js.incomingresponsemessage.statuscode.md)     |           | number \| undefined |             |

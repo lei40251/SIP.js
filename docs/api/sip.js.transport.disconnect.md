@@ -11,12 +11,12 @@ Disconnect from network.
 ```typescript
 disconnect(): Promise<void>;
 ```
+
 <b>Returns:</b>
 
 Promise&lt;void&gt;
 
 ## Remarks
-
 
 ```txt
 - If `state` is "Connecting", `state` MUST transition to "Disconnecting" before returning.
@@ -26,5 +26,5 @@ Promise&lt;void&gt;
 - The `state` MUST transition to "Disconnected" before resolving (assuming `state` is not already "Disconnected").
 - The `state` MUST transition to "Connecting" or "Connected" before rejecting and MUST reject with an Error.
 ```
-Resolves when the transport disconnects. Rejects if transport fails to disconnect. Rejects with [StateTransitionError](./sip.js.statetransitionerror.md) if a loop is detected. In particular, callbacks and emitters MUST NOT call this method synchronously.
 
+Resolves when the transport disconnects. Rejects if transport fails to disconnect. Rejects with [StateTransitionError](./sip.js.statetransitionerror.md) if a loop is detected. In particular, callbacks and emitters MUST NOT call this method synchronously.

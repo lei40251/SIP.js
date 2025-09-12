@@ -14,11 +14,10 @@ unpublish(options?: PublisherUnpublishOptions): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [PublisherUnpublishOptions](./sip.js.publisherunpublishoptions.md) |  |
+| Parameter | Type                                                               | Description |
+| --------- | ------------------------------------------------------------------ | ----------- |
+| options   | [PublisherUnpublishOptions](./sip.js.publisherunpublishoptions.md) |             |
 
 <b>Returns:</b>
 
 Promise&lt;void&gt;
-

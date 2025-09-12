@@ -14,9 +14,9 @@ register(options?: RegistererRegisterOptions): Promise<OutgoingRegisterRequest>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [RegistererRegisterOptions](./sip.js.registererregisteroptions.md) |  |
+| Parameter | Type                                                               | Description |
+| --------- | ------------------------------------------------------------------ | ----------- |
+| options   | [RegistererRegisterOptions](./sip.js.registererregisteroptions.md) |             |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ Promise&lt;OutgoingRegisterRequest&gt;
 ## Remarks
 
 If successful, sends re-REGISTER requests prior to registration expiration until `unsubscribe()` is called. Rejects with `RequestPendingError` if a REGISTER request is already in progress.
-

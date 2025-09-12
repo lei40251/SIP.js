@@ -9,15 +9,14 @@ Log levels.
 <b>Signature:</b>
 
 ```typescript
-export declare enum Levels 
+export declare enum Levels
 ```
 
 ## Enumeration Members
 
-|  Member | Value | Description |
-|  --- | --- | --- |
-|  debug | <code>3</code> |  |
-|  error | <code>0</code> |  |
-|  log | <code>2</code> |  |
-|  warn | <code>1</code> |  |
-
+| Member | Value          | Description |
+| ------ | -------------- | ----------- |
+| debug  | <code>3</code> |             |
+| error  | <code>0</code> |             |
+| log    | <code>2</code> |             |
+| warn   | <code>1</code> |             |

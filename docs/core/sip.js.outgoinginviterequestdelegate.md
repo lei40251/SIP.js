@@ -9,14 +9,14 @@ Delegate providing custom handling of outgoing INVITE requests.
 <b>Signature:</b>
 
 ```typescript
-export interface OutgoingInviteRequestDelegate extends OutgoingRequestDelegate 
+export interface OutgoingInviteRequestDelegate extends OutgoingRequestDelegate
 ```
+
 <b>Extends:</b> [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md)
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [onAccept(response)](./sip.js.outgoinginviterequestdelegate.onaccept.md) | Received a 2xx positive final response to this request. |
-|  [onProgress(response)](./sip.js.outgoinginviterequestdelegate.onprogress.md) | Received a 1xx provisional response to this request. Excluding 100 responses. |
-
+| Method                                                                       | Description                                                                   |
+| ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [onAccept(response)](./sip.js.outgoinginviterequestdelegate.onaccept.md)     | Received a 2xx positive final response to this request.                       |
+| [onProgress(response)](./sip.js.outgoinginviterequestdelegate.onprogress.md) | Received a 1xx provisional response to this request. Excluding 100 responses. |

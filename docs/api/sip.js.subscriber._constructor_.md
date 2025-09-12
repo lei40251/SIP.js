@@ -14,10 +14,9 @@ constructor(userAgent: UserAgent, targetURI: URI, eventType: string, options?: S
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  userAgent | [UserAgent](./sip.js.useragent.md) | User agent. See [UserAgent](./sip.js.useragent.md) for details. |
-|  targetURI | URI | The request URI identifying the subscribed event. |
-|  eventType | string | The event type identifying the subscribed event. |
-|  options | [SubscriberOptions](./sip.js.subscriberoptions.md) | Options bucket. See [SubscriberOptions](./sip.js.subscriberoptions.md) for details. |
-
+| Parameter | Type                                               | Description                                                                         |
+| --------- | -------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| userAgent | [UserAgent](./sip.js.useragent.md)                 | User agent. See [UserAgent](./sip.js.useragent.md) for details.                     |
+| targetURI | URI                                                | The request URI identifying the subscribed event.                                   |
+| eventType | string                                             | The event type identifying the subscribed event.                                    |
+| options   | [SubscriberOptions](./sip.js.subscriberoptions.md) | Options bucket. See [SubscriberOptions](./sip.js.subscriberoptions.md) for details. |

@@ -9,13 +9,12 @@ Remote media elements for [SessionManagerMedia](./sip.js.sessionmanagermedia.md)
 <b>Signature:</b>
 
 ```typescript
-export interface SessionManagerMediaRemote 
+export interface SessionManagerMediaRemote
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [audio](./sip.js.sessionmanagermediaremote.audio.md) |  | HTMLAudioElement | The remote audio media stream is attached to this element. |
-|  [video](./sip.js.sessionmanagermediaremote.video.md) |  | HTMLVideoElement | The remote video media stream is attached to this element. |
-
+| Property                                             | Modifiers | Type             | Description                                                |
+| ---------------------------------------------------- | --------- | ---------------- | ---------------------------------------------------------- |
+| [audio](./sip.js.sessionmanagermediaremote.audio.md) |           | HTMLAudioElement | The remote audio media stream is attached to this element. |
+| [video](./sip.js.sessionmanagermediaremote.video.md) |           | HTMLVideoElement | The remote video media stream is attached to this element. |

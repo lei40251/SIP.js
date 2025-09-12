@@ -9,12 +9,11 @@ Options for [Subscription](./sip.js.subscription.md) constructor.
 <b>Signature:</b>
 
 ```typescript
-export interface SubscriptionOptions 
+export interface SubscriptionOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [delegate](./sip.js.subscriptionoptions.delegate.md) |  | [SubscriptionDelegate](./sip.js.subscriptiondelegate.md) |  |
-
+| Property                                             | Modifiers | Type                                                     | Description |
+| ---------------------------------------------------- | --------- | -------------------------------------------------------- | ----------- |
+| [delegate](./sip.js.subscriptionoptions.delegate.md) |           | [SubscriptionDelegate](./sip.js.subscriptiondelegate.md) |             |

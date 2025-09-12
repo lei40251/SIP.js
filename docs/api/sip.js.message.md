@@ -9,7 +9,7 @@ A received message (incoming MESSAGE).
 <b>Signature:</b>
 
 ```typescript
-export declare class Message 
+export declare class Message
 ```
 
 ## Remarks
@@ -18,14 +18,13 @@ The constructor for this class is marked as internal. Third-party code should no
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [request](./sip.js.message.request.md) |  | IncomingRequestMessage | Incoming MESSAGE request message. |
+| Property                               | Modifiers | Type                   | Description                       |
+| -------------------------------------- | --------- | ---------------------- | --------------------------------- |
+| [request](./sip.js.message.request.md) |           | IncomingRequestMessage | Incoming MESSAGE request message. |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [accept(options)](./sip.js.message.accept.md) |  | Accept the request. |
-|  [reject(options)](./sip.js.message.reject.md) |  | Reject the request. |
-
+| Method                                        | Modifiers | Description         |
+| --------------------------------------------- | --------- | ------------------- |
+| [accept(options)](./sip.js.message.accept.md) |           | Accept the request. |
+| [reject(options)](./sip.js.message.reject.md) |           | Reject the request. |

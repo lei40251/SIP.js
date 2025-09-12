@@ -14,11 +14,10 @@ onProgress?(response: IncomingResponse): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  response | [IncomingResponse](./sip.js.incomingresponse.md) | Incoming response. |
+| Parameter | Type                                             | Description        |
+| --------- | ------------------------------------------------ | ------------------ |
+| response  | [IncomingResponse](./sip.js.incomingresponse.md) | Incoming response. |
 
 <b>Returns:</b>
 
 void
-

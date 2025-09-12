@@ -9,7 +9,7 @@ A request to establish a [Session](./sip.js.session.md) elsewhere (incoming REFE
 <b>Signature:</b>
 
 ```typescript
-export declare class Referral 
+export declare class Referral
 ```
 
 ## Remarks
@@ -18,18 +18,17 @@ The constructor for this class is marked as internal. Third-party code should no
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [referredBy](./sip.js.referral.referredby.md) |  | string \| undefined |  |
-|  [referTo](./sip.js.referral.referto.md) |  | NameAddrHeader |  |
-|  [replaces](./sip.js.referral.replaces.md) |  | string \| undefined |  |
-|  [request](./sip.js.referral.request.md) |  | IncomingRequestMessage | Incoming REFER request message. |
+| Property                                      | Modifiers | Type                   | Description                     |
+| --------------------------------------------- | --------- | ---------------------- | ------------------------------- |
+| [referredBy](./sip.js.referral.referredby.md) |           | string \| undefined    |                                 |
+| [referTo](./sip.js.referral.referto.md)       |           | NameAddrHeader         |                                 |
+| [replaces](./sip.js.referral.replaces.md)     |           | string \| undefined    |                                 |
+| [request](./sip.js.referral.request.md)       |           | IncomingRequestMessage | Incoming REFER request message. |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [accept(options)](./sip.js.referral.accept.md) |  | Accept the request. |
-|  [makeInviter(options)](./sip.js.referral.makeinviter.md) |  | Creates an inviter which may be used to send an out of dialog INVITE request. |
-|  [reject(options)](./sip.js.referral.reject.md) |  | Reject the request. |
-
+| Method                                                   | Modifiers | Description                                                                   |
+| -------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
+| [accept(options)](./sip.js.referral.accept.md)           |           | Accept the request.                                                           |
+| [makeInviter(options)](./sip.js.referral.makeinviter.md) |           | Creates an inviter which may be used to send an out of dialog INVITE request. |
+| [reject(options)](./sip.js.referral.reject.md)           |           | Reject the request.                                                           |

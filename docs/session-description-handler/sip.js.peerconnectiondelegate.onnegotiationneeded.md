@@ -14,11 +14,10 @@ onnegotiationneeded?(event: Event): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  event | Event | Event. |
+| Parameter | Type  | Description |
+| --------- | ----- | ----------- |
+| event     | Event | Event.      |
 
 <b>Returns:</b>
 
 void
-

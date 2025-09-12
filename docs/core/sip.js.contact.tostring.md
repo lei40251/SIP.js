@@ -7,9 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-toString: (options?: {
-        anonymous?: boolean;
-        outbound?: boolean;
-        register?: boolean;
-    }) => string;
+toString: (options?: { anonymous?: boolean; outbound?: boolean; register?: boolean }) => string;
 ```

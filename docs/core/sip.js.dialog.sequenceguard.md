@@ -14,13 +14,12 @@ protected sequenceGuard(message: IncomingRequestMessage): boolean;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) |  |
+| Parameter | Type                                                         | Description |
+| --------- | ------------------------------------------------------------ | ----------- |
+| message   | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) |             |
 
 <b>Returns:</b>
 
 boolean
 
 True if the program execution is to continue in the branch in question. Otherwise a 500 Server Internal Error was stateless sent and request processing must stop.
-

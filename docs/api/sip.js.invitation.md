@@ -9,8 +9,9 @@ An invitation is an offer to establish a [Session](./sip.js.session.md) (incomin
 <b>Signature:</b>
 
 ```typescript
-export declare class Invitation extends Session 
+export declare class Invitation extends Session
 ```
+
 <b>Extends:</b> [Session](./sip.js.session.md)
 
 ## Remarks
@@ -19,21 +20,20 @@ The constructor for this class is marked as internal. Third-party code should no
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [autoSendAnInitialProvisionalResponse](./sip.js.invitation.autosendaninitialprovisionalresponse.md) |  | boolean | If true, a first provisional response after the 100 Trying will be sent automatically. This is false it the UAC required reliable provisional responses (100rel in Require header) or the user agent configuration has specified to not send an initial response, otherwise it is true. The provisional is sent by calling <code>progress()</code> without any options. |
-|  [body](./sip.js.invitation.body.md) |  | string \| undefined | Initial incoming INVITE request message body. |
-|  [localIdentity](./sip.js.invitation.localidentity.md) |  | NameAddrHeader | The identity of the local user. |
-|  [logger](./sip.js.invitation.logger.md) |  | Logger | Logger. |
-|  [remoteIdentity](./sip.js.invitation.remoteidentity.md) |  | NameAddrHeader | The identity of the remote user. |
-|  [request](./sip.js.invitation.request.md) |  | IncomingRequestMessage | Initial incoming INVITE request message. |
+| Property                                                                                            | Modifiers | Type                   | Description                                                                                                                                                                                                                                                                                                                                                             |
+| --------------------------------------------------------------------------------------------------- | --------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [autoSendAnInitialProvisionalResponse](./sip.js.invitation.autosendaninitialprovisionalresponse.md) |           | boolean                | If true, a first provisional response after the 100 Trying will be sent automatically. This is false it the UAC required reliable provisional responses (100rel in Require header) or the user agent configuration has specified to not send an initial response, otherwise it is true. The provisional is sent by calling <code>progress()</code> without any options. |
+| [body](./sip.js.invitation.body.md)                                                                 |           | string \| undefined    | Initial incoming INVITE request message body.                                                                                                                                                                                                                                                                                                                           |
+| [localIdentity](./sip.js.invitation.localidentity.md)                                               |           | NameAddrHeader         | The identity of the local user.                                                                                                                                                                                                                                                                                                                                         |
+| [logger](./sip.js.invitation.logger.md)                                                             |           | Logger                 | Logger.                                                                                                                                                                                                                                                                                                                                                                 |
+| [remoteIdentity](./sip.js.invitation.remoteidentity.md)                                             |           | NameAddrHeader         | The identity of the remote user.                                                                                                                                                                                                                                                                                                                                        |
+| [request](./sip.js.invitation.request.md)                                                           |           | IncomingRequestMessage | Initial incoming INVITE request message.                                                                                                                                                                                                                                                                                                                                |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [accept(options)](./sip.js.invitation.accept.md) |  | Accept the invitation. |
-|  [dispose()](./sip.js.invitation.dispose.md) |  | Destructor. |
-|  [progress(options)](./sip.js.invitation.progress.md) |  | Indicate progress processing the invitation. |
-|  [reject(options)](./sip.js.invitation.reject.md) |  | Reject the invitation. |
-
+| Method                                               | Modifiers | Description                                  |
+| ---------------------------------------------------- | --------- | -------------------------------------------- |
+| [accept(options)](./sip.js.invitation.accept.md)     |           | Accept the invitation.                       |
+| [dispose()](./sip.js.invitation.dispose.md)          |           | Destructor.                                  |
+| [progress(options)](./sip.js.invitation.progress.md) |           | Indicate progress processing the invitation. |
+| [reject(options)](./sip.js.invitation.reject.md)     |           | Reject the invitation.                       |

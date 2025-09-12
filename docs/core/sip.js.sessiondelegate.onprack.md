@@ -14,11 +14,10 @@ onPrack?(request: IncomingPrackRequest): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [IncomingPrackRequest](./sip.js.incomingprackrequest.md) | Incoming PRACK request. |
+| Parameter | Type                                                     | Description             |
+| --------- | -------------------------------------------------------- | ----------------------- |
+| request   | [IncomingPrackRequest](./sip.js.incomingprackrequest.md) | Incoming PRACK request. |
 
 <b>Returns:</b>
 
 void
-

@@ -14,9 +14,8 @@ constructor(logger: LoggerFactory, category: string, label?: string);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  logger | [LoggerFactory](./sip.js.loggerfactory.md) |  |
-|  category | string |  |
-|  label | string |  |
-
+| Parameter | Type                                       | Description |
+| --------- | ------------------------------------------ | ----------- |
+| logger    | [LoggerFactory](./sip.js.loggerfactory.md) |             |
+| category  | string                                     |             |
+| label     | string                                     |             |

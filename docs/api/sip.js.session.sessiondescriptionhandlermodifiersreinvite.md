@@ -17,4 +17,3 @@ set sessionDescriptionHandlerModifiersReInvite(modifiers: Array<SessionDescripti
 ## Remarks
 
 Used in all cases when handling a re-INVITE transaction as either UAC or UAS. May be set directly at anytime. May optionally be set via constructor option. May optionally be set via options passed to Session.invite().
-

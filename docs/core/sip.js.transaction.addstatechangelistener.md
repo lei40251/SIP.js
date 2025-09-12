@@ -16,12 +16,11 @@ addStateChangeListener(listener: () => void, options?: {
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  listener | () =&gt; void | Callback function. |
-|  options | { once?: boolean; } | An options object that specifies characteristics about the listener. If once true, indicates that the listener should be invoked at most once after being added. If once true, the listener would be automatically removed when invoked. |
+| Parameter | Type                | Description                                                                                                                                                                                                                              |
+| --------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| listener  | () =&gt; void       | Callback function.                                                                                                                                                                                                                       |
+| options   | { once?: boolean; } | An options object that specifies characteristics about the listener. If once true, indicates that the listener should be invoked at most once after being added. If once true, the listener would be automatically removed when invoked. |
 
 <b>Returns:</b>
 
 void
-

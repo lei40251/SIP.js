@@ -14,11 +14,10 @@ receiveIncomingRequestFromTransport(message: IncomingRequestMessage): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | Incoming request message from transport layer. |
+| Parameter | Type                                                         | Description                                    |
+| --------- | ------------------------------------------------------------ | ---------------------------------------------- |
+| message   | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | Incoming request message from transport layer. |
 
 <b>Returns:</b>
 
 void
-

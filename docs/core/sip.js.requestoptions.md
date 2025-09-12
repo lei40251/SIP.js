@@ -9,13 +9,12 @@ Request options bucket.
 <b>Signature:</b>
 
 ```typescript
-export interface RequestOptions 
+export interface RequestOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [body](./sip.js.requestoptions.body.md) |  | [Body](./sip.js.body.md) | Body to include in the message. |
-|  [extraHeaders](./sip.js.requestoptions.extraheaders.md) |  | Array&lt;string&gt; | Extra headers to include in the message. |
-
+| Property                                                | Modifiers | Type                     | Description                              |
+| ------------------------------------------------------- | --------- | ------------------------ | ---------------------------------------- |
+| [body](./sip.js.requestoptions.body.md)                 |           | [Body](./sip.js.body.md) | Body to include in the message.          |
+| [extraHeaders](./sip.js.requestoptions.extraheaders.md) |           | Array&lt;string&gt;      | Extra headers to include in the message. |

@@ -15,4 +15,3 @@ displayName?: string;
 ## Remarks
 
 Descriptive name to be shown to the called party when calling or sending IM messages (the display name portion of the From header). It must NOT be enclosed between double quotes even if the given name contains multi-byte symbols (SIPjs will always enclose the `displayName` value between double quotes).
-

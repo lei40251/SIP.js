@@ -14,11 +14,10 @@ reject(options?: ResponseOptions): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | ResponseOptions |  |
+| Parameter | Type            | Description |
+| --------- | --------------- | ----------- |
+| options   | ResponseOptions |             |
 
 <b>Returns:</b>
 
 Promise&lt;void&gt;
-

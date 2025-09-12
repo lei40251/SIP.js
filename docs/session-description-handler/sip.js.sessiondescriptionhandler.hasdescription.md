@@ -14,11 +14,10 @@ hasDescription(contentType: string): boolean;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  contentType | string | The content type that is in the SIP Message. |
+| Parameter   | Type   | Description                                  |
+| ----------- | ------ | -------------------------------------------- |
+| contentType | string | The content type that is in the SIP Message. |
 
 <b>Returns:</b>
 
 boolean
-

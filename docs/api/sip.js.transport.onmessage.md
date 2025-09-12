@@ -15,4 +15,3 @@ onMessage: ((message: string) => void) | undefined;
 ## Remarks
 
 When the `UserAgent` is constructed, this property is set. The `state` MUST be "Connected" when this is called.
-

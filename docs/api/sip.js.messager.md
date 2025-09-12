@@ -9,18 +9,17 @@ A messager sends a [Message](./sip.js.message.md) (outgoing MESSAGE).
 <b>Signature:</b>
 
 ```typescript
-export declare class Messager 
+export declare class Messager
 ```
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(userAgent, targetURI, content, contentType, options)](./sip.js.messager._constructor_.md) |  | Constructs a new instance of the <code>Messager</code> class. |
+| Constructor                                                                                              | Modifiers | Description                                                   |
+| -------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------- |
+| [(constructor)(userAgent, targetURI, content, contentType, options)](./sip.js.messager._constructor_.md) |           | Constructs a new instance of the <code>Messager</code> class. |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [message(options)](./sip.js.messager.message.md) |  | Send the message. |
-
+| Method                                           | Modifiers | Description       |
+| ------------------------------------------------ | --------- | ----------------- |
+| [message(options)](./sip.js.messager.message.md) |           | Send the message. |

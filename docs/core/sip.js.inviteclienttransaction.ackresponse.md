@@ -18,11 +18,10 @@ ackResponse(ack: OutgoingRequestMessage): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  ack | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) | The outgoing ACK request. |
+| Parameter | Type                                                         | Description               |
+| --------- | ------------------------------------------------------------ | ------------------------- |
+| ack       | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) | The outgoing ACK request. |
 
 <b>Returns:</b>
 
 void
-

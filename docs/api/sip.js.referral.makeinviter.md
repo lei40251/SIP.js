@@ -14,9 +14,9 @@ makeInviter(options?: InviterOptions): Inviter;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [InviterOptions](./sip.js.inviteroptions.md) | Options bucket. |
+| Parameter | Type                                         | Description     |
+| --------- | -------------------------------------------- | --------------- |
+| options   | [InviterOptions](./sip.js.inviteroptions.md) | Options bucket. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ makeInviter(options?: InviterOptions): Inviter;
 ## Remarks
 
 This a helper method to create an Inviter which will execute the referral of the `Session` which was referred. The appropriate headers are set and the referred `Session` is linked to the new `Session`<!-- -->. Note that only a single instance of the `Inviter` will be created and returned (if called more than once a reference to the same `Inviter` will be returned every time).
-

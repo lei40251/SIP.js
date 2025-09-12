@@ -14,9 +14,9 @@ onCancel?(cancel: Cancel): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  cancel | [Cancel](./sip.js.cancel.md) | The cancel. |
+| Parameter | Type                         | Description |
+| --------- | ---------------------------- | ----------- |
+| cancel    | [Cancel](./sip.js.cancel.md) | The cancel. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ void
 ## Remarks
 
 Relevant to an Invitation only. CANCEL reqeusts are being handled as a special case and there is currently no way to externally impact the response to the a CANCEL request. See core implementation for details.
-

@@ -11,7 +11,7 @@ Destroy request.
 ```typescript
 dispose(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

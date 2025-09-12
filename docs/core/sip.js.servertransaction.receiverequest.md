@@ -14,11 +14,10 @@ abstract receiveRequest(request: IncomingRequestMessage): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | The incoming request. |
+| Parameter | Type                                                         | Description           |
+| --------- | ------------------------------------------------------------ | --------------------- |
+| request   | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | The incoming request. |
 
 <b>Returns:</b>
 
 void
-

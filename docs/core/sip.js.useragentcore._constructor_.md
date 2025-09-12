@@ -14,8 +14,7 @@ constructor(configuration: UserAgentCoreConfiguration, delegate?: UserAgentCoreD
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  configuration | [UserAgentCoreConfiguration](./sip.js.useragentcoreconfiguration.md) | Configuration. |
-|  delegate | [UserAgentCoreDelegate](./sip.js.useragentcoredelegate.md) | Delegate. |
-
+| Parameter     | Type                                                                 | Description    |
+| ------------- | -------------------------------------------------------------------- | -------------- |
+| configuration | [UserAgentCoreConfiguration](./sip.js.useragentcoreconfiguration.md) | Configuration. |
+| delegate      | [UserAgentCoreDelegate](./sip.js.useragentcoredelegate.md)           | Delegate.      |

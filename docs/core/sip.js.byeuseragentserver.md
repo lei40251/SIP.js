@@ -9,15 +9,15 @@ BYE UAS.
 <b>Signature:</b>
 
 ```typescript
-export declare class ByeUserAgentServer extends UserAgentServer implements IncomingByeRequest 
+export declare class ByeUserAgentServer extends UserAgentServer implements IncomingByeRequest
 ```
+
 <b>Extends:</b> [UserAgentServer](./sip.js.useragentserver.md)
 
 <b>Implements:</b> [IncomingByeRequest](./sip.js.incomingbyerequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(dialog, message, delegate)](./sip.js.byeuseragentserver._constructor_.md) |  | Constructs a new instance of the <code>ByeUserAgentServer</code> class |
-
+| Constructor                                                                              | Modifiers | Description                                                            |
+| ---------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------------------- |
+| [(constructor)(dialog, message, delegate)](./sip.js.byeuseragentserver._constructor_.md) |           | Constructs a new instance of the <code>ByeUserAgentServer</code> class |

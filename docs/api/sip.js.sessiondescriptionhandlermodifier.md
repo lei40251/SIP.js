@@ -9,5 +9,5 @@ Modifier for [SessionDescriptionHandler](./sip.js.sessiondescriptionhandler.md) 
 <b>Signature:</b>
 
 ```typescript
-export interface SessionDescriptionHandlerModifier 
+export interface SessionDescriptionHandlerModifier
 ```

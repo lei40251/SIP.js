@@ -9,17 +9,16 @@ User Agent Core delegate.
 <b>Signature:</b>
 
 ```typescript
-export interface UserAgentCoreDelegate 
+export interface UserAgentCoreDelegate
 ```
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [onInvite(request)](./sip.js.useragentcoredelegate.oninvite.md) | Receive INVITE request. |
-|  [onMessage(request)](./sip.js.useragentcoredelegate.onmessage.md) | Receive MESSAGE request. |
-|  [onNotify(request)](./sip.js.useragentcoredelegate.onnotify.md) | DEPRECATED. Receive NOTIFY request. |
-|  [onRefer(request)](./sip.js.useragentcoredelegate.onrefer.md) | Receive REFER request. |
-|  [onRegister(request)](./sip.js.useragentcoredelegate.onregister.md) | Receive REGISTER request. |
-|  [onSubscribe(request)](./sip.js.useragentcoredelegate.onsubscribe.md) | Receive SUBSCRIBE request. |
-
+| Method                                                                | Description                         |
+| --------------------------------------------------------------------- | ----------------------------------- |
+| [onInvite(request)](./sip.js.useragentcoredelegate.oninvite.md)       | Receive INVITE request.             |
+| [onMessage(request)](./sip.js.useragentcoredelegate.onmessage.md)     | Receive MESSAGE request.            |
+| [onNotify(request)](./sip.js.useragentcoredelegate.onnotify.md)       | DEPRECATED. Receive NOTIFY request. |
+| [onRefer(request)](./sip.js.useragentcoredelegate.onrefer.md)         | Receive REFER request.              |
+| [onRegister(request)](./sip.js.useragentcoredelegate.onregister.md)   | Receive REGISTER request.           |
+| [onSubscribe(request)](./sip.js.useragentcoredelegate.onsubscribe.md) | Receive SUBSCRIBE request.          |

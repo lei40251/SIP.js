@@ -14,9 +14,9 @@ static makeURI(uri: string): URI | undefined;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  uri | string | The string to parse. |
+| Parameter | Type   | Description          |
+| --------- | ------ | -------------------- |
+| uri       | string | The string to parse. |
 
 <b>Returns:</b>
 
@@ -28,8 +28,6 @@ Returns undefined if the syntax of the URI is invalid. The syntax must conform t
 
 ## Example
 
-
 ```ts
 const uri = UserAgent.makeURI("sip:edgar@example.com");
 ```
-

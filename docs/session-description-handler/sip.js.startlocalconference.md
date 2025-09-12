@@ -5,7 +5,6 @@
 ## startLocalConference() function
 
 > This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
-> 
 
 Start a conference.
 
@@ -17,11 +16,10 @@ export declare function startLocalConference(conferenceSessions: Array<Session>)
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  conferenceSessions | Array&lt;Session&gt; | The sessions to conference. |
+| Parameter          | Type                 | Description                 |
+| ------------------ | -------------------- | --------------------------- |
+| conferenceSessions | Array&lt;Session&gt; | The sessions to conference. |
 
 <b>Returns:</b>
 
 void
-

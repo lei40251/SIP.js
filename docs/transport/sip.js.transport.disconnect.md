@@ -11,7 +11,7 @@ Disconnect from network. Resolves once disconnected. Otherwise rejects with an E
 ```typescript
 disconnect(): Promise<void>;
 ```
+
 <b>Returns:</b>
 
 Promise&lt;void&gt;
-

@@ -15,4 +15,3 @@ constraints?: SimpleUserMediaConstraints;
 ## Remarks
 
 Constraints are used when creating local media stream. If undefined, defaults to audio true and video false. If audio and video are false, media stream will have no tracks.
-

@@ -14,9 +14,8 @@ constructor(dialogOrCore: SessionDialog | UserAgentCore, message: IncomingReques
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  dialogOrCore | [SessionDialog](./sip.js.sessiondialog.md) \| [UserAgentCore](./sip.js.useragentcore.md) | Dialog for in dialog REFER, UserAgentCore for out of dialog REFER. |
-|  message | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | Incoming REFER request message. |
-|  delegate | [IncomingRequestDelegate](./sip.js.incomingrequestdelegate.md) |  |
-
+| Parameter    | Type                                                                                     | Description                                                        |
+| ------------ | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| dialogOrCore | [SessionDialog](./sip.js.sessiondialog.md) \| [UserAgentCore](./sip.js.useragentcore.md) | Dialog for in dialog REFER, UserAgentCore for out of dialog REFER. |
+| message      | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md)                             | Incoming REFER request message.                                    |
+| delegate     | [IncomingRequestDelegate](./sip.js.incomingrequestdelegate.md)                           |                                                                    |

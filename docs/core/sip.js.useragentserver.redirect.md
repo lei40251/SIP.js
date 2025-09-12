@@ -12,12 +12,11 @@ redirect(contacts: Array<URI>, options?: ResponseOptions): OutgoingResponse;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  contacts | Array&lt;[URI](./sip.js.uri.md)<!-- -->&gt; |  |
-|  options | [ResponseOptions](./sip.js.responseoptions.md) |  |
+| Parameter | Type                                           | Description |
+| --------- | ---------------------------------------------- | ----------- |
+| contacts  | Array&lt;[URI](./sip.js.uri.md)<!-- -->&gt;    |             |
+| options   | [ResponseOptions](./sip.js.responseoptions.md) |             |
 
 <b>Returns:</b>
 
 [OutgoingResponse](./sip.js.outgoingresponse.md)
-

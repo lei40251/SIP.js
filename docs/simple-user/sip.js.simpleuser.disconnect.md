@@ -11,6 +11,7 @@ Disconnect.
 ```typescript
 disconnect(): Promise<void>;
 ```
+
 <b>Returns:</b>
 
 Promise&lt;void&gt;
@@ -18,4 +19,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Stop the UserAgent's WebSocket Transport.
-

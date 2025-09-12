@@ -9,12 +9,11 @@ Local media elements for [SessionManagerMedia](./sip.js.sessionmanagermedia.md)<
 <b>Signature:</b>
 
 ```typescript
-export interface SessionManagerMediaLocal 
+export interface SessionManagerMediaLocal
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [video](./sip.js.sessionmanagermedialocal.video.md) |  | HTMLVideoElement | The local video media stream is attached to this element. |
-
+| Property                                            | Modifiers | Type             | Description                                               |
+| --------------------------------------------------- | --------- | ---------------- | --------------------------------------------------------- |
+| [video](./sip.js.sessionmanagermedialocal.video.md) |           | HTMLVideoElement | The local video media stream is attached to this element. |

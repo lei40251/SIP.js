@@ -14,13 +14,12 @@ static initialDialogStateForUserAgentServer(incomingRequestMessage: IncomingRequ
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  incomingRequestMessage | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | Incoming request message creating dialog. |
-|  toTag | string | Tag in the To field in the response to the incoming request. |
-|  early | boolean |  |
+| Parameter              | Type                                                         | Description                                                  |
+| ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| incomingRequestMessage | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | Incoming request message creating dialog.                    |
+| toTag                  | string                                                       | Tag in the To field in the response to the incoming request. |
+| early                  | boolean                                                      |                                                              |
 
 <b>Returns:</b>
 
 [DialogState](./sip.js.dialogstate.md)
-

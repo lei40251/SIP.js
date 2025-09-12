@@ -11,7 +11,7 @@ Stop waiting for an inital subscription creating NOTIFY.
 ```typescript
 waitNotifyStop(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

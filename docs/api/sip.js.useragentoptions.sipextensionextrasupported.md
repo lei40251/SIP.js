@@ -15,4 +15,3 @@ sipExtensionExtraSupported?: Array<string>;
 ## Remarks
 
 Setting an extra option tag does not enable support for the associated extension it simply adds the tag to the list of supported options. See [UserAgentRegisteredOptionTags](./sip.js.useragentregisteredoptiontags.md) for valid option tags.
-

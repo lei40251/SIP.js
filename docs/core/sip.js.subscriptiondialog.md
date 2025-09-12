@@ -9,8 +9,9 @@ Subscription Dialog.
 <b>Signature:</b>
 
 ```typescript
-export declare class SubscriptionDialog extends Dialog implements Subscription 
+export declare class SubscriptionDialog extends Dialog implements Subscription
 ```
+
 <b>Extends:</b> [Dialog](./sip.js.dialog.md)
 
 <b>Implements:</b> [Subscription](./sip.js.subscription.md)
@@ -31,31 +32,30 @@ https://tools.ietf.org/html/rfc6665
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(subscriptionEvent, subscriptionExpires, subscriptionState, core, state, delegate)](./sip.js.subscriptiondialog._constructor_.md) |  | Constructs a new instance of the <code>SubscriptionDialog</code> class |
+| Constructor                                                                                                                                     | Modifiers | Description                                                            |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------------------- |
+| [(constructor)(subscriptionEvent, subscriptionExpires, subscriptionState, core, state, delegate)](./sip.js.subscriptiondialog._constructor_.md) |           | Constructs a new instance of the <code>SubscriptionDialog</code> class |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [autoRefresh](./sip.js.subscriptiondialog.autorefresh.md) |  | boolean |  |
-|  [delegate](./sip.js.subscriptiondialog.delegate.md) |  | [SubscriptionDelegate](./sip.js.subscriptiondelegate.md) \| undefined |  |
-|  [subscriptionEvent](./sip.js.subscriptiondialog.subscriptionevent.md) |  | string |  |
-|  [subscriptionExpires](./sip.js.subscriptiondialog.subscriptionexpires.md) |  | number | Number of seconds until subscription expires. |
-|  [subscriptionExpiresInitial](./sip.js.subscriptiondialog.subscriptionexpiresinitial.md) |  | number |  |
-|  [subscriptionRefresh](./sip.js.subscriptiondialog.subscriptionrefresh.md) |  | number \| undefined | Number of seconds until subscription auto refresh. |
-|  [subscriptionState](./sip.js.subscriptiondialog.subscriptionstate.md) |  | [SubscriptionState](./sip.js.subscriptionstate.md) |  |
+| Property                                                                                | Modifiers | Type                                                                  | Description                                        |
+| --------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------- | -------------------------------------------------- |
+| [autoRefresh](./sip.js.subscriptiondialog.autorefresh.md)                               |           | boolean                                                               |                                                    |
+| [delegate](./sip.js.subscriptiondialog.delegate.md)                                     |           | [SubscriptionDelegate](./sip.js.subscriptiondelegate.md) \| undefined |                                                    |
+| [subscriptionEvent](./sip.js.subscriptiondialog.subscriptionevent.md)                   |           | string                                                                |                                                    |
+| [subscriptionExpires](./sip.js.subscriptiondialog.subscriptionexpires.md)               |           | number                                                                | Number of seconds until subscription expires.      |
+| [subscriptionExpiresInitial](./sip.js.subscriptiondialog.subscriptionexpiresinitial.md) |           | number                                                                |                                                    |
+| [subscriptionRefresh](./sip.js.subscriptiondialog.subscriptionrefresh.md)               |           | number \| undefined                                                   | Number of seconds until subscription auto refresh. |
+| [subscriptionState](./sip.js.subscriptiondialog.subscriptionstate.md)                   |           | [SubscriptionState](./sip.js.subscriptionstate.md)                    |                                                    |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [dispose()](./sip.js.subscriptiondialog.dispose.md) |  |  |
-|  [initialDialogStateForSubscription(outgoingSubscribeRequestMessage, incomingNotifyRequestMessage)](./sip.js.subscriptiondialog.initialdialogstateforsubscription.md) | <code>static</code> | When a UAC receives a response that establishes a dialog, it constructs the state of the dialog. This state MUST be maintained for the duration of the dialog. https://tools.ietf.org/html/rfc3261\#section-12.1.2 |
-|  [receiveRequest(message)](./sip.js.subscriptiondialog.receiverequest.md) |  | Receive in dialog request message from transport. |
-|  [refresh()](./sip.js.subscriptiondialog.refresh.md) |  | 4.1.2.2. Refreshing of Subscriptions https://tools.ietf.org/html/rfc6665\#section-4.1.2.2 |
-|  [subscribe(delegate, options)](./sip.js.subscriptiondialog.subscribe.md) |  | 4.1.2.2. Refreshing of Subscriptions https://tools.ietf.org/html/rfc6665\#section-4.1.2.2 |
-|  [terminate()](./sip.js.subscriptiondialog.terminate.md) |  | 4.4.1. Dialog Creation and Termination A subscription is destroyed after a notifier sends a NOTIFY request with a "Subscription-State" of "terminated", or in certain error situations described elsewhere in this document. https://tools.ietf.org/html/rfc6665\#section-4.4.1 |
-|  [unsubscribe()](./sip.js.subscriptiondialog.unsubscribe.md) |  | 4.1.2.3. Unsubscribing https://tools.ietf.org/html/rfc6665\#section-4.1.2.3 |
-
+| Method                                                                                                                                                               | Modifiers           | Description                                                                                                                                                                                                                                                                     |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [dispose()](./sip.js.subscriptiondialog.dispose.md)                                                                                                                  |                     |                                                                                                                                                                                                                                                                                 |
+| [initialDialogStateForSubscription(outgoingSubscribeRequestMessage, incomingNotifyRequestMessage)](./sip.js.subscriptiondialog.initialdialogstateforsubscription.md) | <code>static</code> | When a UAC receives a response that establishes a dialog, it constructs the state of the dialog. This state MUST be maintained for the duration of the dialog. https://tools.ietf.org/html/rfc3261\#section-12.1.2                                                              |
+| [receiveRequest(message)](./sip.js.subscriptiondialog.receiverequest.md)                                                                                             |                     | Receive in dialog request message from transport.                                                                                                                                                                                                                               |
+| [refresh()](./sip.js.subscriptiondialog.refresh.md)                                                                                                                  |                     | 4.1.2.2. Refreshing of Subscriptions https://tools.ietf.org/html/rfc6665\#section-4.1.2.2                                                                                                                                                                                       |
+| [subscribe(delegate, options)](./sip.js.subscriptiondialog.subscribe.md)                                                                                             |                     | 4.1.2.2. Refreshing of Subscriptions https://tools.ietf.org/html/rfc6665\#section-4.1.2.2                                                                                                                                                                                       |
+| [terminate()](./sip.js.subscriptiondialog.terminate.md)                                                                                                              |                     | 4.4.1. Dialog Creation and Termination A subscription is destroyed after a notifier sends a NOTIFY request with a "Subscription-State" of "terminated", or in certain error situations described elsewhere in this document. https://tools.ietf.org/html/rfc6665\#section-4.4.1 |
+| [unsubscribe()](./sip.js.subscriptiondialog.unsubscribe.md)                                                                                                          |                     | 4.1.2.3. Unsubscribing https://tools.ietf.org/html/rfc6665\#section-4.1.2.3                                                                                                                                                                                                     |

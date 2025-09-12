@@ -5,9 +5,8 @@
 ## UserAgentOptions.reconnectionAttempts property
 
 > Warning: This API is now obsolete.
-> 
+>
 > Maximum number of times to attempt to reconnect when the transport connection drops.
-> 
 
 <b>Signature:</b>
 

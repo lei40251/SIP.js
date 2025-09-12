@@ -9,15 +9,15 @@ PUBLISH UAC.
 <b>Signature:</b>
 
 ```typescript
-export declare class PublishUserAgentClient extends UserAgentClient implements OutgoingPublishRequest 
+export declare class PublishUserAgentClient extends UserAgentClient implements OutgoingPublishRequest
 ```
+
 <b>Extends:</b> [UserAgentClient](./sip.js.useragentclient.md)
 
 <b>Implements:</b> [OutgoingPublishRequest](./sip.js.outgoingpublishrequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(core, message, delegate)](./sip.js.publishuseragentclient._constructor_.md) |  | Constructs a new instance of the <code>PublishUserAgentClient</code> class |
-
+| Constructor                                                                                | Modifiers | Description                                                                |
+| ------------------------------------------------------------------------------------------ | --------- | -------------------------------------------------------------------------- |
+| [(constructor)(core, message, delegate)](./sip.js.publishuseragentclient._constructor_.md) |           | Constructs a new instance of the <code>PublishUserAgentClient</code> class |

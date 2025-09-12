@@ -11,6 +11,7 @@ Unmute call.
 ```typescript
 unmute(): void;
 ```
+
 <b>Returns:</b>
 
 void
@@ -18,4 +19,3 @@ void
 ## Remarks
 
 Enable sender's media tracks.
-

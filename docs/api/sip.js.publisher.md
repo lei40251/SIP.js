@@ -9,27 +9,26 @@ A publisher publishes a publication (outgoing PUBLISH).
 <b>Signature:</b>
 
 ```typescript
-export declare class Publisher 
+export declare class Publisher
 ```
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(userAgent, targetURI, eventType, options)](./sip.js.publisher._constructor_.md) |  | Constructs a new instance of the <code>Publisher</code> class. |
+| Constructor                                                                                    | Modifiers | Description                                                    |
+| ---------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------- |
+| [(constructor)(userAgent, targetURI, eventType, options)](./sip.js.publisher._constructor_.md) |           | Constructs a new instance of the <code>Publisher</code> class. |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [state](./sip.js.publisher.state.md) |  | [PublisherState](./sip.js.publisherstate.md) | The publication state. |
-|  [stateChange](./sip.js.publisher.statechange.md) |  | [Emitter](./sip.js.emitter.md)<!-- -->&lt;[PublisherState](./sip.js.publisherstate.md)<!-- -->&gt; | Emits when the publisher state changes. |
+| Property                                         | Modifiers | Type                                                                                               | Description                             |
+| ------------------------------------------------ | --------- | -------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| [state](./sip.js.publisher.state.md)             |           | [PublisherState](./sip.js.publisherstate.md)                                                       | The publication state.                  |
+| [stateChange](./sip.js.publisher.statechange.md) |           | [Emitter](./sip.js.emitter.md)<!-- -->&lt;[PublisherState](./sip.js.publisherstate.md)<!-- -->&gt; | Emits when the publisher state changes. |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [dispose()](./sip.js.publisher.dispose.md) |  | Destructor. |
-|  [publish(content, options)](./sip.js.publisher.publish.md) |  | Publish. |
-|  [unpublish(options)](./sip.js.publisher.unpublish.md) |  | Unpublish. |
-
+| Method                                                     | Modifiers | Description |
+| ---------------------------------------------------------- | --------- | ----------- |
+| [dispose()](./sip.js.publisher.dispose.md)                 |           | Destructor. |
+| [publish(content, options)](./sip.js.publisher.publish.md) |           | Publish.    |
+| [unpublish(options)](./sip.js.publisher.unpublish.md)      |           | Unpublish.  |

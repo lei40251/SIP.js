@@ -14,11 +14,10 @@ onNotify(uas: NotifyUserAgentServer): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  uas | [NotifyUserAgentServer](./sip.js.notifyuseragentserver.md) | User agent server handling the subscription creating NOTIFY. |
+| Parameter | Type                                                       | Description                                                  |
+| --------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
+| uas       | [NotifyUserAgentServer](./sip.js.notifyuseragentserver.md) | User agent server handling the subscription creating NOTIFY. |
 
 <b>Returns:</b>
 
 void
-

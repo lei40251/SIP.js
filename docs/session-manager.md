@@ -10,7 +10,7 @@ If requirements are more advanced, working directly with the [API](./api.md) whi
 
 ## Reference Documentation
 
-* [SessionManager Class Reference](./session-manager/sip.js.md)
+- [SessionManager Class Reference](./session-manager/sip.js.md)
 
 ## Getting Started
 

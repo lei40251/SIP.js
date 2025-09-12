@@ -17,12 +17,11 @@ sendDtmf(tones: string, options?: {
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  tones | string | A string containing DTMF digits. |
-|  options | { duration: number; interToneGap: number; } | Options object to be used by sendDtmf. |
+| Parameter | Type                                        | Description                            |
+| --------- | ------------------------------------------- | -------------------------------------- |
+| tones     | string                                      | A string containing DTMF digits.       |
+| options   | { duration: number; interToneGap: number; } | Options object to be used by sendDtmf. |
 
 <b>Returns:</b>
 
 boolean
-

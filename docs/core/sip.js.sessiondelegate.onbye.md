@@ -14,11 +14,10 @@ onBye?(request: IncomingByeRequest): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [IncomingByeRequest](./sip.js.incomingbyerequest.md) | Incoming BYE request. |
+| Parameter | Type                                                 | Description           |
+| --------- | ---------------------------------------------------- | --------------------- |
+| request   | [IncomingByeRequest](./sip.js.incomingbyerequest.md) | Incoming BYE request. |
 
 <b>Returns:</b>
 
 void
-

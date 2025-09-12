@@ -9,15 +9,15 @@ INFO UAC.
 <b>Signature:</b>
 
 ```typescript
-export declare class InfoUserAgentClient extends UserAgentClient implements OutgoingInfoRequest 
+export declare class InfoUserAgentClient extends UserAgentClient implements OutgoingInfoRequest
 ```
+
 <b>Extends:</b> [UserAgentClient](./sip.js.useragentclient.md)
 
 <b>Implements:</b> [OutgoingInfoRequest](./sip.js.outgoinginforequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(dialog, delegate, options)](./sip.js.infouseragentclient._constructor_.md) |  | Constructs a new instance of the <code>InfoUserAgentClient</code> class |
-
+| Constructor                                                                               | Modifiers | Description                                                             |
+| ----------------------------------------------------------------------------------------- | --------- | ----------------------------------------------------------------------- |
+| [(constructor)(dialog, delegate, options)](./sip.js.infouseragentclient._constructor_.md) |           | Constructs a new instance of the <code>InfoUserAgentClient</code> class |

@@ -9,20 +9,19 @@ Session state.
 <b>Signature:</b>
 
 ```typescript
-export declare enum SessionState 
+export declare enum SessionState
 ```
 
 ## Enumeration Members
 
-|  Member | Value | Description |
-|  --- | --- | --- |
-|  AckWait | <code>&quot;AckWait&quot;</code> |  |
-|  Confirmed | <code>&quot;Confirmed&quot;</code> |  |
-|  Early | <code>&quot;Early&quot;</code> |  |
-|  Initial | <code>&quot;Initial&quot;</code> |  |
-|  Terminated | <code>&quot;Terminated&quot;</code> |  |
+| Member     | Value                               | Description |
+| ---------- | ----------------------------------- | ----------- |
+| AckWait    | <code>&quot;AckWait&quot;</code>    |             |
+| Confirmed  | <code>&quot;Confirmed&quot;</code>  |             |
+| Early      | <code>&quot;Early&quot;</code>      |             |
+| Initial    | <code>&quot;Initial&quot;</code>    |             |
+| Terminated | <code>&quot;Terminated&quot;</code> |             |
 
 ## Remarks
 
 https://tools.ietf.org/html/rfc3261\#section-13
-

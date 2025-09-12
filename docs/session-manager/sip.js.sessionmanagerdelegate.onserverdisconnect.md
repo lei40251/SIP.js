@@ -14,9 +14,9 @@ onServerDisconnect?(error?: Error): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  error | Error | An Error if server caused the disconnect. Otherwise undefined. |
+| Parameter | Type  | Description                                                    |
+| --------- | ----- | -------------------------------------------------------------- |
+| error     | Error | An Error if server caused the disconnect. Otherwise undefined. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ void
 ## Remarks
 
 Callback for handling user becomes disconnected.
-

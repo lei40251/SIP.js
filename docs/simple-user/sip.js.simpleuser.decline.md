@@ -11,6 +11,7 @@ Decline an incoming call.
 ```typescript
 decline(): Promise<void>;
 ```
+
 <b>Returns:</b>
 
 Promise&lt;void&gt;
@@ -18,4 +19,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Reject an incoming INVITE request. Resolves with the response is sent, otherwise rejects. Use `onCallHangup` delegate method to determine if and when call is ended.
-

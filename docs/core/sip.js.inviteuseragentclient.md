@@ -9,8 +9,9 @@ INVITE UAC.
 <b>Signature:</b>
 
 ```typescript
-export declare class InviteUserAgentClient extends UserAgentClient implements OutgoingInviteRequest 
+export declare class InviteUserAgentClient extends UserAgentClient implements OutgoingInviteRequest
 ```
+
 <b>Extends:</b> [UserAgentClient](./sip.js.useragentclient.md)
 
 <b>Implements:</b> [OutgoingInviteRequest](./sip.js.outgoinginviterequest.md)
@@ -21,21 +22,20 @@ export declare class InviteUserAgentClient extends UserAgentClient implements Ou
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(core, message, delegate)](./sip.js.inviteuseragentclient._constructor_.md) |  | Constructs a new instance of the <code>InviteUserAgentClient</code> class |
+| Constructor                                                                               | Modifiers | Description                                                               |
+| ----------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------- |
+| [(constructor)(core, message, delegate)](./sip.js.inviteuseragentclient._constructor_.md) |           | Constructs a new instance of the <code>InviteUserAgentClient</code> class |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [delegate](./sip.js.inviteuseragentclient.delegate.md) |  | [OutgoingInviteRequestDelegate](./sip.js.outgoinginviterequestdelegate.md) \| undefined |  |
+| Property                                               | Modifiers | Type                                                                                    | Description |
+| ------------------------------------------------------ | --------- | --------------------------------------------------------------------------------------- | ----------- |
+| [delegate](./sip.js.inviteuseragentclient.delegate.md) |           | [OutgoingInviteRequestDelegate](./sip.js.outgoinginviterequestdelegate.md) \| undefined |             |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [dispose()](./sip.js.inviteuseragentclient.dispose.md) |  |  |
-|  [onTransportError(error)](./sip.js.inviteuseragentclient.ontransporterror.md) |  | Special case for transport error while sending ACK. |
-|  [receiveResponse(message)](./sip.js.inviteuseragentclient.receiveresponse.md) |  | Once the INVITE has been passed to the INVITE client transaction, the UAC waits for responses for the INVITE. https://tools.ietf.org/html/rfc3261\#section-13.2.2 |
-
+| Method                                                                        | Modifiers | Description                                                                                                                                                       |
+| ----------------------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [dispose()](./sip.js.inviteuseragentclient.dispose.md)                        |           |                                                                                                                                                                   |
+| [onTransportError(error)](./sip.js.inviteuseragentclient.ontransporterror.md) |           | Special case for transport error while sending ACK.                                                                                                               |
+| [receiveResponse(message)](./sip.js.inviteuseragentclient.receiveresponse.md) |           | Once the INVITE has been passed to the INVITE client transaction, the UAC waits for responses for the INVITE. https://tools.ietf.org/html/rfc3261\#section-13.2.2 |

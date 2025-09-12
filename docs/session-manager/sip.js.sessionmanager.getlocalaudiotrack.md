@@ -5,9 +5,8 @@
 ## SessionManager.getLocalAudioTrack() method
 
 > Warning: This API is now obsolete.
-> 
+>
 > Use localMediaStream and get track from the stream.
-> 
 
 The local audio track, if available.
 
@@ -19,11 +18,10 @@ getLocalAudioTrack(session: Session): MediaStreamTrack | undefined;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session | Session to get track from. |
+| Parameter | Type    | Description                |
+| --------- | ------- | -------------------------- |
+| session   | Session | Session to get track from. |
 
 <b>Returns:</b>
 
 MediaStreamTrack \| undefined
-

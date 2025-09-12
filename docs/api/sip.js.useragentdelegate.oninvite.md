@@ -14,9 +14,9 @@ onInvite?(invitation: Invitation): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  invitation | [Invitation](./sip.js.invitation.md) | The invitation. |
+| Parameter  | Type                                 | Description     |
+| ---------- | ------------------------------------ | --------------- |
+| invitation | [Invitation](./sip.js.invitation.md) | The invitation. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ void
 ## Remarks
 
 Handler for incoming out of dialog INVITE requests.
-

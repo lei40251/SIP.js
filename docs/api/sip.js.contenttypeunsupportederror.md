@@ -9,13 +9,13 @@ An exception indicating an unsupported content type prevented execution.
 <b>Signature:</b>
 
 ```typescript
-export declare class ContentTypeUnsupportedError extends Exception 
+export declare class ContentTypeUnsupportedError extends Exception
 ```
+
 <b>Extends:</b> Exception
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(message)](./sip.js.contenttypeunsupportederror._constructor_.md) |  | Constructs a new instance of the <code>ContentTypeUnsupportedError</code> class |
-
+| Constructor                                                                     | Modifiers | Description                                                                     |
+| ------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------- |
+| [(constructor)(message)](./sip.js.contenttypeunsupportederror._constructor_.md) |           | Constructs a new instance of the <code>ContentTypeUnsupportedError</code> class |

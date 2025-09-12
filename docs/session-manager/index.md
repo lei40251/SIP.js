@@ -6,7 +6,6 @@
 
 ## Packages
 
-|  Package | Description |
-|  --- | --- |
-|  [sip.js](./sip.js.md) |  |
-
+| Package               | Description |
+| --------------------- | ----------- |
+| [sip.js](./sip.js.md) |             |

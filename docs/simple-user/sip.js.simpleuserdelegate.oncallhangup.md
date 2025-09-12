@@ -11,6 +11,7 @@ Called when a call is hung up.
 ```typescript
 onCallHangup?(): void;
 ```
+
 <b>Returns:</b>
 
 void
@@ -18,4 +19,3 @@ void
 ## Remarks
 
 Callback for handling termination of a Session.
-

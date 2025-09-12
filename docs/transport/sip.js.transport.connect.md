@@ -11,7 +11,7 @@ Connect to network. Resolves once connected. Otherwise rejects with an Error.
 ```typescript
 connect(): Promise<void>;
 ```
+
 <b>Returns:</b>
 
 Promise&lt;void&gt;
-

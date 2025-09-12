@@ -6,26 +6,25 @@
 
 ## Classes
 
-|  Class | Description |
-|  --- | --- |
-|  [SessionManager](./sip.js.sessionmanager.md) | A session manager for SIP.js sessions. |
+| Class                                        | Description                            |
+| -------------------------------------------- | -------------------------------------- |
+| [SessionManager](./sip.js.sessionmanager.md) | A session manager for SIP.js sessions. |
 
 ## Functions
 
-|  Function | Description |
-|  --- | --- |
-|  [defaultManagedSessionFactory()](./sip.js.defaultmanagedsessionfactory.md) | Function which returns a ManagedSessionFactory. |
+| Function                                                                   | Description                                     |
+| -------------------------------------------------------------------------- | ----------------------------------------------- |
+| [defaultManagedSessionFactory()](./sip.js.defaultmanagedsessionfactory.md) | Function which returns a ManagedSessionFactory. |
 
 ## Interfaces
 
-|  Interface | Description |
-|  --- | --- |
-|  [ManagedSession](./sip.js.managedsession.md) | An interface for managed the sessions. |
-|  [ManagedSessionFactory](./sip.js.managedsessionfactory.md) | Factory for [ManagedSession](./sip.js.managedsession.md)<!-- -->. |
-|  [SessionManagerDelegate](./sip.js.sessionmanagerdelegate.md) | Delegate for [SessionManager](./sip.js.sessionmanager.md)<!-- -->. |
-|  [SessionManagerMedia](./sip.js.sessionmanagermedia.md) | Media for [SessionManagerOptions](./sip.js.sessionmanageroptions.md)<!-- -->. |
-|  [SessionManagerMediaConstraints](./sip.js.sessionmanagermediaconstraints.md) | Constraints for [SessionManagerMedia](./sip.js.sessionmanagermedia.md)<!-- -->. |
-|  [SessionManagerMediaLocal](./sip.js.sessionmanagermedialocal.md) | Local media elements for [SessionManagerMedia](./sip.js.sessionmanagermedia.md)<!-- -->. |
-|  [SessionManagerMediaRemote](./sip.js.sessionmanagermediaremote.md) | Remote media elements for [SessionManagerMedia](./sip.js.sessionmanagermedia.md)<!-- -->. |
-|  [SessionManagerOptions](./sip.js.sessionmanageroptions.md) | Options for [SessionManager](./sip.js.sessionmanager.md)<!-- -->. |
-
+| Interface                                                                    | Description                                                                               |
+| ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| [ManagedSession](./sip.js.managedsession.md)                                 | An interface for managed the sessions.                                                    |
+| [ManagedSessionFactory](./sip.js.managedsessionfactory.md)                   | Factory for [ManagedSession](./sip.js.managedsession.md)<!-- -->.                         |
+| [SessionManagerDelegate](./sip.js.sessionmanagerdelegate.md)                 | Delegate for [SessionManager](./sip.js.sessionmanager.md)<!-- -->.                        |
+| [SessionManagerMedia](./sip.js.sessionmanagermedia.md)                       | Media for [SessionManagerOptions](./sip.js.sessionmanageroptions.md)<!-- -->.             |
+| [SessionManagerMediaConstraints](./sip.js.sessionmanagermediaconstraints.md) | Constraints for [SessionManagerMedia](./sip.js.sessionmanagermedia.md)<!-- -->.           |
+| [SessionManagerMediaLocal](./sip.js.sessionmanagermedialocal.md)             | Local media elements for [SessionManagerMedia](./sip.js.sessionmanagermedia.md)<!-- -->.  |
+| [SessionManagerMediaRemote](./sip.js.sessionmanagermediaremote.md)           | Remote media elements for [SessionManagerMedia](./sip.js.sessionmanagermedia.md)<!-- -->. |
+| [SessionManagerOptions](./sip.js.sessionmanageroptions.md)                   | Options for [SessionManager](./sip.js.sessionmanager.md)<!-- -->.                         |

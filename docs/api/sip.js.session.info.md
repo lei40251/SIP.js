@@ -14,11 +14,10 @@ info(options?: SessionInfoOptions): Promise<OutgoingInfoRequest>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [SessionInfoOptions](./sip.js.sessioninfooptions.md) | Options bucket. See [SessionInfoOptions](./sip.js.sessioninfooptions.md) for details. |
+| Parameter | Type                                                 | Description                                                                           |
+| --------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| options   | [SessionInfoOptions](./sip.js.sessioninfooptions.md) | Options bucket. See [SessionInfoOptions](./sip.js.sessioninfooptions.md) for details. |
 
 <b>Returns:</b>
 
 Promise&lt;OutgoingInfoRequest&gt;
-

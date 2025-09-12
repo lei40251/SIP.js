@@ -14,9 +14,9 @@ onMessage?(message: Message): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | [Message](./sip.js.message.md) | The message. |
+| Parameter | Type                           | Description  |
+| --------- | ------------------------------ | ------------ |
+| message   | [Message](./sip.js.message.md) | The message. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ void
 ## Remarks
 
 Handler for incoming out of dialog MESSAGE requests.
-

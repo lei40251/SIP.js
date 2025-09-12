@@ -15,8 +15,8 @@
 
 ### api-extractor
 
-- issue updating @microsoft/api-extractor past 7.7.11 where _2 gets added to class names which match globals (Notification, Transport, etc.)
-  - https://github.com/microsoft/rushstack/issues/1830 
+- issue updating @microsoft/api-extractor past 7.7.11 where \_2 gets added to class names which match globals (Notification, Transport, etc.)
+  - https://github.com/microsoft/rushstack/issues/1830
   - potential workaround https://github.com/microsoft/rushstack/issues/2895#issuecomment-943533628
 
 ## Tests
@@ -92,20 +92,20 @@ Non-exhaustive research on these parsers, generally it seems like there is nothi
 ## GRUU and Outbound - would be good to make sure we are compliant (tests)
 
 ### RFC5626: Managing Client-Initiated Connections (Outbound)
+
 ### RFC5627: Obtaining and Using Globally Routable User Agent URIs (GRUUs)
 
 - MUST include the outbound option tag in a Supported header field in a REGISTER request.
 - The UAC MUST support the Path header [RFC3327] mechanism, and
-   indicate its support by including the 'path' option-tag in a
-   Supported header field value in its REGISTER requests.  Other than
-   optionally examining the Path vector in the response, this is all
-   that is required of the UAC to support Path.
+  indicate its support by including the 'path' option-tag in a
+  Supported header field value in its REGISTER requests. Other than
+  optionally examining the Path vector in the response, this is all
+  that is required of the UAC to support Path.
 - UAs that support this specification SHOULD include the outbound
-   option tag in a Supported header field in a request that is not a
-   REGISTER request.
+  option tag in a Supported header field in a request that is not a
+  REGISTER request.
 - support +sip.instance and reg-id
 - support for multiple web sockets
-
 
 ## REFER handling - it has evolved over time and we are out of date
 

@@ -14,11 +14,10 @@ onRegister?(request: IncomingRegisterRequest): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [IncomingRegisterRequest](./sip.js.incomingregisterrequest.md) | Incoming REGISTER request. |
+| Parameter | Type                                                           | Description                |
+| --------- | -------------------------------------------------------------- | -------------------------- |
+| request   | [IncomingRegisterRequest](./sip.js.incomingregisterrequest.md) | Incoming REGISTER request. |
 
 <b>Returns:</b>
 
 void
-

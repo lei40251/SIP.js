@@ -9,7 +9,7 @@ Options for [SessionDescriptionHandler](./sip.js.sessiondescriptionhandler.md) m
 <b>Signature:</b>
 
 ```typescript
-export interface SessionDescriptionHandlerOptions 
+export interface SessionDescriptionHandlerOptions
 ```
 
 ## Remarks
@@ -18,7 +18,6 @@ These options are provided to various UserAgent methods (invite() for example) a
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [constraints](./sip.js.sessiondescriptionhandleroptions.constraints.md) |  | object |  |
-
+| Property                                                                | Modifiers | Type   | Description |
+| ----------------------------------------------------------------------- | --------- | ------ | ----------- |
+| [constraints](./sip.js.sessiondescriptionhandleroptions.constraints.md) |           | object |             |

@@ -15,4 +15,3 @@ readonly protocol: string;
 ## Remarks
 
 Formatted as defined for the Via header sent-protocol transport. https://tools.ietf.org/html/rfc3261\#section-20.42
-

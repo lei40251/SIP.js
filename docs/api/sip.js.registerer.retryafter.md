@@ -18,7 +18,6 @@ When the server rejects a registration request, if it provides a suggested durat
 
 ## Example
 
-
 ```ts
 // Checking for retry after on state change
 registerer.stateChange.addListener((newState) => {
@@ -38,4 +37,3 @@ registerer.register({
   }
 });
 ```
-

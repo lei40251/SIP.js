@@ -15,4 +15,3 @@ managedSessionFactory?: ManagedSessionFactory;
 ## Remarks
 
 The factory will be passed a `Session` object for the current session.
-

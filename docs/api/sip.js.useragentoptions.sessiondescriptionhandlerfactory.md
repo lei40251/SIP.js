@@ -15,4 +15,3 @@ sessionDescriptionHandlerFactory?: SessionDescriptionHandlerFactory;
 ## Remarks
 
 The factory will be passed a `Session` object for the current session and the `sessionDescriptionHandlerFactoryOptions` object.
-

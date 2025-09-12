@@ -14,12 +14,11 @@ register(request: OutgoingRequestMessage, delegate?: OutgoingRequestDelegate): O
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) | Outgoing request. |
-|  delegate | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) | Request delegate. |
+| Parameter | Type                                                           | Description       |
+| --------- | -------------------------------------------------------------- | ----------------- |
+| request   | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md)   | Outgoing request. |
+| delegate  | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) | Request delegate. |
 
 <b>Returns:</b>
 
 [OutgoingRegisterRequest](./sip.js.outgoingregisterrequest.md)
-

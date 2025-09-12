@@ -82,14 +82,9 @@
         "outDir": "../lib",
         "strict": true,
         "target": "es5",
-        "lib": [
-          "es2017",
-          "dom"
-        ]
+        "lib": ["es2017", "dom"]
       },
-      "include": [
-        "**/*.ts"
-      ]
+      "include": ["**/*.ts"]
     }
     /**
      * This option causes the compiler to be invoked with the --skipLibCheck option. This option is not recommended
@@ -195,7 +190,7 @@
      * SUPPORTED TOKENS: <projectFolder>, <packageName>, <unscopedPackageName>
      * DEFAULT VALUE: "<projectFolder>/dist/<unscopedPackageName>.d.ts"
      */
-    "untrimmedFilePath": "<projectFolder>/dist/sip-core.d.ts",
+    "untrimmedFilePath": "<projectFolder>/dist/sip-core.d.ts"
 
     /**
      * Specifies the output path for a .d.ts rollup file to be generated with trimming for a "beta" release.
@@ -208,7 +203,6 @@
      * DEFAULT VALUE: ""
      */
     // "betaTrimmedFilePath": "<projectFolder>/dist/<unscopedPackageName>-beta.d.ts",
-
 
     /**
      * Specifies the output path for a .d.ts rollup file to be generated with trimming for a "public" release.
@@ -244,7 +238,6 @@
      * DEFAULT VALUE: true
      */
     // "enabled": true,
-
     /**
      * Specifies where the TSDoc metadata file should be written.
      *
@@ -292,7 +285,7 @@
          *
          * DEFAULT VALUE: "warning"
          */
-        "logLevel": "warning",
+        "logLevel": "warning"
 
         /**
          * When addToApiReportFile is true:  If API Extractor is configured to write an API report file (.api.md),
@@ -302,7 +295,7 @@
          * DEFAULT VALUE: false
          */
         // "addToApiReportFile": false
-      },
+      }
 
       // "TS2551": {
       //   "logLevel": "warning",
@@ -321,9 +314,9 @@
      */
     "extractorMessageReporting": {
       "default": {
-        "logLevel": "warning",
+        "logLevel": "warning"
         // "addToApiReportFile": false
-      },
+      }
 
       // "ae-extra-release-tag": {
       //   "logLevel": "warning",
@@ -342,7 +335,7 @@
      */
     "tsdocMessageReporting": {
       "default": {
-        "logLevel": "warning",
+        "logLevel": "warning"
         // "addToApiReportFile": false
       }
 
@@ -354,5 +347,4 @@
       // . . .
     }
   }
-
 }

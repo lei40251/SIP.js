@@ -14,10 +14,10 @@ s(name: string, idx?: number): any | undefined;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  name | string | header name |
-|  idx | number | header index |
+| Parameter | Type   | Description  |
+| --------- | ------ | ------------ |
+| name      | string | header name  |
+| idx       | number | header index |
 
 <b>Returns:</b>
 
@@ -28,4 +28,3 @@ Parsed header object, undefined if the header is not present or in case of a par
 ## Example
 
 message.s('via',3).port
-

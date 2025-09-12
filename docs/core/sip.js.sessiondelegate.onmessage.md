@@ -14,11 +14,10 @@ onMessage?(request: IncomingMessageRequest): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [IncomingMessageRequest](./sip.js.incomingmessagerequest.md) | Incoming MESSAGE request. |
+| Parameter | Type                                                         | Description               |
+| --------- | ------------------------------------------------------------ | ------------------------- |
+| request   | [IncomingMessageRequest](./sip.js.incomingmessagerequest.md) | Incoming MESSAGE request. |
 
 <b>Returns:</b>
 
 void
-

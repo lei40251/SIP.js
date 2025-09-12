@@ -9,13 +9,12 @@ Options for [Messager.message()](./sip.js.messager.message.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface MessagerMessageOptions 
+export interface MessagerMessageOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [requestDelegate](./sip.js.messagermessageoptions.requestdelegate.md) |  | OutgoingRequestDelegate | See <code>core</code> API. |
-|  [requestOptions](./sip.js.messagermessageoptions.requestoptions.md) |  | RequestOptions | See <code>core</code> API. |
-
+| Property                                                              | Modifiers | Type                    | Description                |
+| --------------------------------------------------------------------- | --------- | ----------------------- | -------------------------- |
+| [requestDelegate](./sip.js.messagermessageoptions.requestdelegate.md) |           | OutgoingRequestDelegate | See <code>core</code> API. |
+| [requestOptions](./sip.js.messagermessageoptions.requestoptions.md)   |           | RequestOptions          | See <code>core</code> API. |

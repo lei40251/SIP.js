@@ -14,9 +14,8 @@ constructor(dialog: SubscriptionDialog, delegate?: OutgoingRequestDelegate, opti
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  dialog | [SubscriptionDialog](./sip.js.subscriptiondialog.md) |  |
-|  delegate | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) |  |
-|  options | [RequestOptions](./sip.js.requestoptions.md) |  |
-
+| Parameter | Type                                                           | Description |
+| --------- | -------------------------------------------------------------- | ----------- |
+| dialog    | [SubscriptionDialog](./sip.js.subscriptiondialog.md)           |             |
+| delegate  | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) |             |
+| options   | [RequestOptions](./sip.js.requestoptions.md)                   |             |

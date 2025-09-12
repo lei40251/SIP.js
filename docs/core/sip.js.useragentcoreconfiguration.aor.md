@@ -15,4 +15,3 @@ aor: URI;
 ## Remarks
 
 https://tools.ietf.org/html/rfc3261\#section-6
-

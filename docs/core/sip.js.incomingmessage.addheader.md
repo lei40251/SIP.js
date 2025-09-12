@@ -14,12 +14,11 @@ addHeader(name: string, value: string): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  name | string | header name |
-|  value | string | header value |
+| Parameter | Type   | Description  |
+| --------- | ------ | ------------ |
+| name      | string | header name  |
+| value     | string | header value |
 
 <b>Returns:</b>
 
 void
-

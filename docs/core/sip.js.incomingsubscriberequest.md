@@ -9,7 +9,7 @@ Incoming SUBSCRIBE request.
 <b>Signature:</b>
 
 ```typescript
-export interface IncomingSubscribeRequest extends IncomingRequest 
+export interface IncomingSubscribeRequest extends IncomingRequest
 ```
-<b>Extends:</b> [IncomingRequest](./sip.js.incomingrequest.md)
 
+<b>Extends:</b> [IncomingRequest](./sip.js.incomingrequest.md)

@@ -14,11 +14,10 @@ abstract receiveResponse(response: IncomingResponseMessage): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  response | [IncomingResponseMessage](./sip.js.incomingresponsemessage.md) | The incoming response. |
+| Parameter | Type                                                           | Description            |
+| --------- | -------------------------------------------------------------- | ---------------------- |
+| response  | [IncomingResponseMessage](./sip.js.incomingresponsemessage.md) | The incoming response. |
 
 <b>Returns:</b>
 
 void
-

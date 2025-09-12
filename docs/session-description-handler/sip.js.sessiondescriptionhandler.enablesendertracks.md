@@ -14,11 +14,10 @@ enableSenderTracks(enable: boolean): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  enable | boolean | If true enable tracks, otherwise disable tracks. |
+| Parameter | Type    | Description                                      |
+| --------- | ------- | ------------------------------------------------ |
+| enable    | boolean | If true enable tracks, otherwise disable tracks. |
 
 <b>Returns:</b>
 
 void
-

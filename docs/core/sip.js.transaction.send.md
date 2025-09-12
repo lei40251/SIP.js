@@ -14,13 +14,12 @@ protected send(message: string): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | string |  |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| message   | string |             |
 
 <b>Returns:</b>
 
 Promise&lt;void&gt;
 
 Rejects with `TransportError` if transport fails.
-

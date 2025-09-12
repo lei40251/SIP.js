@@ -14,13 +14,12 @@ onInvite?(request: IncomingRequestMessage, response: string, statusCode: number)
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | IncomingRequestMessage |  |
-|  response | string |  |
-|  statusCode | number |  |
+| Parameter  | Type                   | Description |
+| ---------- | ---------------------- | ----------- |
+| request    | IncomingRequestMessage |             |
+| response   | string                 |             |
+| statusCode | number                 |             |
 
 <b>Returns:</b>
 
 void
-

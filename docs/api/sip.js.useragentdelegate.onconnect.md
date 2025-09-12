@@ -11,7 +11,7 @@ Called upon transport transitioning to connected state.
 ```typescript
 onConnect?(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

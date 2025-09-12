@@ -9,8 +9,9 @@ Transport layer interface expected by the `UserAgent`<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface Transport extends CoreTransport 
+export interface Transport extends CoreTransport
 ```
+
 <b>Extends:</b> [CoreTransport](./sip.js.transport.md)
 
 ## Remarks
@@ -26,26 +27,25 @@ Proper handling the application level protocol recovery must be left to the appl
 ```ts
 transport.onDisconnect = () => {
   Promise.resolve().then(() => transport.connect());
-}
+};
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [onConnect](./sip.js.transport.onconnect.md) |  | (() =&gt; void) \| undefined | Callback on state transition to "Connected". |
-|  [onDisconnect](./sip.js.transport.ondisconnect.md) |  | ((error?: Error) =&gt; void) \| undefined | Callback on state transition from "Connected". |
-|  [onMessage](./sip.js.transport.onmessage.md) |  | ((message: string) =&gt; void) \| undefined | Callback on receipt of a message. |
-|  [state](./sip.js.transport.state.md) |  | [TransportState](./sip.js.transportstate.md) | Transport state. |
-|  [stateChange](./sip.js.transport.statechange.md) |  | [Emitter](./sip.js.emitter.md)<!-- -->&lt;[TransportState](./sip.js.transportstate.md)<!-- -->&gt; | Transport state change emitter. |
+| Property                                           | Modifiers | Type                                                                                               | Description                                    |
+| -------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| [onConnect](./sip.js.transport.onconnect.md)       |           | (() =&gt; void) \| undefined                                                                       | Callback on state transition to "Connected".   |
+| [onDisconnect](./sip.js.transport.ondisconnect.md) |           | ((error?: Error) =&gt; void) \| undefined                                                          | Callback on state transition from "Connected". |
+| [onMessage](./sip.js.transport.onmessage.md)       |           | ((message: string) =&gt; void) \| undefined                                                        | Callback on receipt of a message.              |
+| [state](./sip.js.transport.state.md)               |           | [TransportState](./sip.js.transportstate.md)                                                       | Transport state.                               |
+| [stateChange](./sip.js.transport.statechange.md)   |           | [Emitter](./sip.js.emitter.md)<!-- -->&lt;[TransportState](./sip.js.transportstate.md)<!-- -->&gt; | Transport state change emitter.                |
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [connect()](./sip.js.transport.connect.md) | Connect to network. |
-|  [disconnect()](./sip.js.transport.disconnect.md) | Disconnect from network. |
-|  [dispose()](./sip.js.transport.dispose.md) | Dispose. |
-|  [isConnected()](./sip.js.transport.isconnected.md) | Returns true if the <code>state</code> equals "Connected". |
-|  [send(message)](./sip.js.transport.send.md) | Send a message. |
-
+| Method                                             | Description                                                |
+| -------------------------------------------------- | ---------------------------------------------------------- |
+| [connect()](./sip.js.transport.connect.md)         | Connect to network.                                        |
+| [disconnect()](./sip.js.transport.disconnect.md)   | Disconnect from network.                                   |
+| [dispose()](./sip.js.transport.dispose.md)         | Dispose.                                                   |
+| [isConnected()](./sip.js.transport.isconnected.md) | Returns true if the <code>state</code> equals "Connected". |
+| [send(message)](./sip.js.transport.send.md)        | Send a message.                                            |

@@ -9,7 +9,7 @@ Transaction.
 <b>Signature:</b>
 
 ```typescript
-export declare abstract class Transaction 
+export declare abstract class Transaction
 ```
 
 ## Remarks
@@ -18,30 +18,29 @@ SIP is a transactional protocol: interactions between components take place in a
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(\_transport, \_user, \_id, \_state, loggerCategory)](./sip.js.transaction._constructor_.md) |  | Constructs a new instance of the <code>Transaction</code> class |
+| Constructor                                                                                                | Modifiers | Description                                                     |
+| ---------------------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------- |
+| [(constructor)(\_transport, \_user, \_id, \_state, loggerCategory)](./sip.js.transaction._constructor_.md) |           | Constructs a new instance of the <code>Transaction</code> class |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [id](./sip.js.transaction.id.md) |  | string | Transaction id. |
-|  [kind](./sip.js.transaction.kind.md) |  | string | Transaction kind. Deprecated. |
-|  [logger](./sip.js.transaction.logger.md) |  | [Logger](./sip.js.logger.md) |  |
-|  [state](./sip.js.transaction.state.md) |  | [TransactionState](./sip.js.transactionstate.md) | Transaction state. |
-|  [transport](./sip.js.transaction.transport.md) |  | [Transport](./sip.js.transport.md) | Transaction transport. |
+| Property                                       | Modifiers | Type                                             | Description                   |
+| ---------------------------------------------- | --------- | ------------------------------------------------ | ----------------------------- |
+| [id](./sip.js.transaction.id.md)               |           | string                                           | Transaction id.               |
+| [kind](./sip.js.transaction.kind.md)           |           | string                                           | Transaction kind. Deprecated. |
+| [logger](./sip.js.transaction.logger.md)       |           | [Logger](./sip.js.logger.md)                     |                               |
+| [state](./sip.js.transaction.state.md)         |           | [TransactionState](./sip.js.transactionstate.md) | Transaction state.            |
+| [transport](./sip.js.transaction.transport.md) |           | [Transport](./sip.js.transport.md)               | Transaction transport.        |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [addStateChangeListener(listener, options)](./sip.js.transaction.addstatechangelistener.md) |  | Sets up a function that will be called whenever the transaction state changes. |
-|  [dispose()](./sip.js.transaction.dispose.md) |  | Destructor. Once the transaction is in the "terminated" state, it is destroyed immediately and there is no need to call <code>dispose</code>. However, if a transaction needs to be ended prematurely, the transaction user may do so by calling this method (for example, perhaps the UA is shutting down). No state transition will occur upon calling this method, all outstanding transmission timers will be cancelled, and use of the transaction after calling <code>dispose</code> is undefined. |
-|  [logTransportError(error, message)](./sip.js.transaction.logtransporterror.md) |  |  |
-|  [onTransportError(error)](./sip.js.transaction.ontransporterror.md) |  |  |
-|  [removeStateChangeListener(listener)](./sip.js.transaction.removestatechangelistener.md) |  | Removes a listener previously registered with addStateListener. |
-|  [send(message)](./sip.js.transaction.send.md) |  | Pass message to transport for transmission. If transport fails, the transaction user is notified by callback to onTransportError(). |
-|  [setState(state)](./sip.js.transaction.setstate.md) |  |  |
-|  [typeToString()](./sip.js.transaction.typetostring.md) |  |  |
-
+| Method                                                                                      | Modifiers | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [addStateChangeListener(listener, options)](./sip.js.transaction.addstatechangelistener.md) |           | Sets up a function that will be called whenever the transaction state changes.                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| [dispose()](./sip.js.transaction.dispose.md)                                                |           | Destructor. Once the transaction is in the "terminated" state, it is destroyed immediately and there is no need to call <code>dispose</code>. However, if a transaction needs to be ended prematurely, the transaction user may do so by calling this method (for example, perhaps the UA is shutting down). No state transition will occur upon calling this method, all outstanding transmission timers will be cancelled, and use of the transaction after calling <code>dispose</code> is undefined. |
+| [logTransportError(error, message)](./sip.js.transaction.logtransporterror.md)              |           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| [onTransportError(error)](./sip.js.transaction.ontransporterror.md)                         |           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| [removeStateChangeListener(listener)](./sip.js.transaction.removestatechangelistener.md)    |           | Removes a listener previously registered with addStateListener.                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| [send(message)](./sip.js.transaction.send.md)                                               |           | Pass message to transport for transmission. If transport fails, the transaction user is notified by callback to onTransportError().                                                                                                                                                                                                                                                                                                                                                                      |
+| [setState(state)](./sip.js.transaction.setstate.md)                                         |           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| [typeToString()](./sip.js.transaction.typetostring.md)                                      |           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |

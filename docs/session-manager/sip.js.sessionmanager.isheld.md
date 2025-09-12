@@ -14,9 +14,9 @@ isHeld(session: Session): boolean;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session | Session to check. |
+| Parameter | Type    | Description       |
+| --------- | ------- | ----------------- |
+| session   | Session | Session to check. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ boolean
 ## Remarks
 
 True if session is on hold.
-

@@ -11,7 +11,7 @@ Reconnect the transport.
 ```typescript
 reconnect(): Promise<void>;
 ```
+
 <b>Returns:</b>
 
 Promise&lt;void&gt;
-

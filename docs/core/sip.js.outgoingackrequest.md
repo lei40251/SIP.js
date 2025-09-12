@@ -9,12 +9,11 @@ Outgoing ACK request.
 <b>Signature:</b>
 
 ```typescript
-export interface OutgoingAckRequest 
+export interface OutgoingAckRequest
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [message](./sip.js.outgoingackrequest.message.md) |  | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) | The outgoing message. |
-
+| Property                                          | Modifiers | Type                                                         | Description           |
+| ------------------------------------------------- | --------- | ------------------------------------------------------------ | --------------------- |
+| [message](./sip.js.outgoingackrequest.message.md) |           | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) | The outgoing message. |

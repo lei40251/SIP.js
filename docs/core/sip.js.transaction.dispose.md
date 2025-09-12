@@ -11,7 +11,7 @@ Destructor. Once the transaction is in the "terminated" state, it is destroyed i
 ```typescript
 dispose(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

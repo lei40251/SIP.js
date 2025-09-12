@@ -9,14 +9,13 @@ Options for [Registerer.unregister()](./sip.js.registerer.unregister.md)<!-- -->
 <b>Signature:</b>
 
 ```typescript
-export interface RegistererUnregisterOptions 
+export interface RegistererUnregisterOptions
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [all](./sip.js.registererunregisteroptions.all.md) |  | boolean | If true, unregister all contacts. |
-|  [requestDelegate](./sip.js.registererunregisteroptions.requestdelegate.md) |  | OutgoingRequestDelegate | See <code>core</code> API. |
-|  [requestOptions](./sip.js.registererunregisteroptions.requestoptions.md) |  | RequestOptions | See <code>core</code> API. |
-
+| Property                                                                   | Modifiers | Type                    | Description                       |
+| -------------------------------------------------------------------------- | --------- | ----------------------- | --------------------------------- |
+| [all](./sip.js.registererunregisteroptions.all.md)                         |           | boolean                 | If true, unregister all contacts. |
+| [requestDelegate](./sip.js.registererunregisteroptions.requestdelegate.md) |           | OutgoingRequestDelegate | See <code>core</code> API.        |
+| [requestOptions](./sip.js.registererunregisteroptions.requestoptions.md)   |           | RequestOptions          | See <code>core</code> API.        |

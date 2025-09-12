@@ -12,11 +12,10 @@ deleteHeader(header: string): Array<string> | undefined;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  header | string |  |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| header    | string |             |
 
 <b>Returns:</b>
 
 Array&lt;string&gt; \| undefined
-

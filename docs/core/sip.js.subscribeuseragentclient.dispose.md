@@ -11,7 +11,7 @@ Destructor. Note that Timer N may live on waiting for an initial NOTIFY and the 
 ```typescript
 dispose(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

@@ -14,11 +14,10 @@ protected constructor(_transport: Transport, _user: TransactionUser, _id: string
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  \_transport | [Transport](./sip.js.transport.md) |  |
-|  \_user | [TransactionUser](./sip.js.transactionuser.md) |  |
-|  \_id | string |  |
-|  \_state | [TransactionState](./sip.js.transactionstate.md) |  |
-|  loggerCategory | string |  |
-
+| Parameter      | Type                                             | Description |
+| -------------- | ------------------------------------------------ | ----------- |
+| \_transport    | [Transport](./sip.js.transport.md)               |             |
+| \_user         | [TransactionUser](./sip.js.transactionuser.md)   |             |
+| \_id           | string                                           |             |
+| \_state        | [TransactionState](./sip.js.transactionstate.md) |             |
+| loggerCategory | string                                           |             |

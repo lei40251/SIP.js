@@ -14,9 +14,9 @@ accept(options?: InvitationAcceptOptions): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [InvitationAcceptOptions](./sip.js.invitationacceptoptions.md) | Options bucket. |
+| Parameter | Type                                                           | Description     |
+| --------- | -------------------------------------------------------------- | --------------- |
+| options   | [InvitationAcceptOptions](./sip.js.invitationacceptoptions.md) | Options bucket. |
 
 <b>Returns:</b>
 
@@ -27,4 +27,3 @@ Promise&lt;void&gt;
 Accept the incoming INVITE request to start a Session. Replies to the INVITE request with a 200 Ok response. Resolves once the response sent, otherwise rejects.
 
 This method may reject for a variety of reasons including the receipt of a CANCEL request before `accept` is able to construct a response.
-

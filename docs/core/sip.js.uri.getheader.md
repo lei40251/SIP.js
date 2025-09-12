@@ -12,11 +12,10 @@ getHeader(name: string): Array<string> | undefined;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  name | string |  |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| name      | string |             |
 
 <b>Returns:</b>
 
 Array&lt;string&gt; \| undefined
-

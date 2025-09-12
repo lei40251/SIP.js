@@ -1,17 +1,14 @@
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
-
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: "",
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'webpack'],
+    frameworks: ["jasmine", "webpack"],
 
     // list of files / patterns to load in the browser
-    files: [
-      'test/spec/**/*.js',
-    ],
+    files: ["test/spec/**/*.js"],
 
     // list of files to exclude
     exclude: [],
@@ -19,12 +16,12 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'test/spec/**/*.js': ['webpack', 'sourcemap']
+      "test/spec/**/*.js": ["webpack", "sourcemap"]
     },
 
     webpack: {
-      devtool: 'inline-source-map',
-      mode: 'production'
+      devtool: "inline-source-map",
+      mode: "production"
     },
 
     // test results reporter to use
@@ -50,8 +47,8 @@ module.exports = function(config) {
       // --use-fake-ui-for-media-stream avoids the need to grant camera/microphone permissions.
       // --use-fake-device-for-media-stream feeds a test pattern to getUserMedia() instead of live camera input.
       ChromeHeadlessFakeMediaStream: {
-        base: 'ChromeHeadless',
-        flags: ['--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream']
+        base: "ChromeHeadless",
+        flags: ["--use-fake-ui-for-media-stream", "--use-fake-device-for-media-stream"]
       }
     },
 
@@ -78,13 +75,13 @@ module.exports = function(config) {
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
-    plugins : [
-      'karma-chrome-launcher',
-      'karma-jasmine',
-      'karma-jasmine-html-reporter',
-      'karma-mocha-reporter',
-      'karma-webpack',
-      'karma-sourcemap-loader'
+    plugins: [
+      "karma-chrome-launcher",
+      "karma-jasmine",
+      "karma-jasmine-html-reporter",
+      "karma-mocha-reporter",
+      "karma-webpack",
+      "karma-sourcemap-loader"
     ]
-  })
-}
+  });
+};

@@ -9,7 +9,7 @@ UAS Core Transaction User.
 <b>Signature:</b>
 
 ```typescript
-export interface ServerTransactionUser extends TransactionUser 
+export interface ServerTransactionUser extends TransactionUser
 ```
-<b>Extends:</b> [TransactionUser](./sip.js.transactionuser.md)
 
+<b>Extends:</b> [TransactionUser](./sip.js.transactionuser.md)

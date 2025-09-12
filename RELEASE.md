@@ -6,8 +6,8 @@ On `main` branch...
 
 Prior to making a release, consider updating out of date dependencies.
 
-* `npm outdated`
-* `npm update --save`
+- `npm outdated`
+- `npm update --save`
 
 Note that the source code itself has no dependencies.
 A lot of work has been done to make it that way, so please keep it that way.
@@ -16,13 +16,13 @@ A lot of work has been done to make it that way, so please keep it that way.
 
 Make sure it builds and the tests pass from a clean checkout.
 
-* `git clean -xdf .`
-* `npm i`
-* `npm run build-and-test`
+- `git clean -xdf .`
+- `npm i`
+- `npm run build-and-test`
 
 All tests must pass.
 
-* `npm run build-demo`
+- `npm run build-demo`
 
 All the demos must work.
 
@@ -30,7 +30,7 @@ All the demos must work.
 
 Make sure the documentation is up to date and review any changes to the API. Commit any new documentation and consider the version number bump based on the changes to the API. If you commit any changes, go back to the Clean, Build and Test step.
 
-* `npm run build-docs`
+- `npm run build-docs`
 
 ## Version
 
@@ -38,7 +38,7 @@ DO NOT MANUALLY UPDATE THE VERSION NUMBERS.
 
 We hardcode the version in the library, using npm version will update it appropriately.
 
-* `npm version <major.minor.patch> --git-tag-version false`
+- `npm version <major.minor.patch> --git-tag-version false`
 
 The updated files must be commited with a message "Version <major.minor.patch>".
 
@@ -58,10 +58,10 @@ This approach will leverage the `npm pack` command to package up and zip your np
 
 ## Tag, Push and Publish
 
-* `git tag <major.minor.patch>`
-* `git push`
-* `git push --tags`
-* `npm publish`
+- `git tag <major.minor.patch>`
+- `git push`
+- `git push --tags`
+- `npm publish`
 
 ### Sigh, don’t use .npmignore
 
@@ -80,7 +80,6 @@ Build the bundle files to upload.
 
 `npm run build-bundles`
 
-* Find 'Releases' on repository page
-* Draft and publish release notes for new tag
-* Upload bundles for new verison
-
+- Find 'Releases' on repository page
+- Draft and publish release notes for new tag
+- Upload bundles for new verison

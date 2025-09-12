@@ -15,4 +15,3 @@ allowLegacyNotifications?: boolean;
 ## Remarks
 
 RFC 6665 obsoletes the use of out of dialog NOTIFY from RFC 3265.
-

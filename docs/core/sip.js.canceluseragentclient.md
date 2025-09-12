@@ -9,15 +9,15 @@ CANCEL UAC.
 <b>Signature:</b>
 
 ```typescript
-export declare class CancelUserAgentClient extends UserAgentClient implements OutgoingCancelRequest 
+export declare class CancelUserAgentClient extends UserAgentClient implements OutgoingCancelRequest
 ```
+
 <b>Extends:</b> [UserAgentClient](./sip.js.useragentclient.md)
 
 <b>Implements:</b> [OutgoingCancelRequest](./sip.js.outgoingcancelrequest.md)
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(core, message, delegate)](./sip.js.canceluseragentclient._constructor_.md) |  | Constructs a new instance of the <code>CancelUserAgentClient</code> class |
-
+| Constructor                                                                               | Modifiers | Description                                                               |
+| ----------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------- |
+| [(constructor)(core, message, delegate)](./sip.js.canceluseragentclient._constructor_.md) |           | Constructs a new instance of the <code>CancelUserAgentClient</code> class |

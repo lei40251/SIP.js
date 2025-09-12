@@ -14,11 +14,10 @@ removeStateChangeListener(listener: () => void): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  listener | () =&gt; void | Callback function. |
+| Parameter | Type          | Description        |
+| --------- | ------------- | ------------------ |
+| listener  | () =&gt; void | Callback function. |
 
 <b>Returns:</b>
 
 void
-

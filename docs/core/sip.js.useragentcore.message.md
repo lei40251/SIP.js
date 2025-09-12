@@ -14,12 +14,11 @@ message(request: OutgoingRequestMessage, delegate?: OutgoingRequestDelegate): Ou
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) | Outgoing request. |
-|  delegate | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) | Request delegate. |
+| Parameter | Type                                                           | Description       |
+| --------- | -------------------------------------------------------------- | ----------------- |
+| request   | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md)   | Outgoing request. |
+| delegate  | [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md) | Request delegate. |
 
 <b>Returns:</b>
 
 [OutgoingMessageRequest](./sip.js.outgoingmessagerequest.md)
-

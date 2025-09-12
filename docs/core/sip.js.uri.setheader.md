@@ -12,12 +12,11 @@ setHeader(name: string, value: Array<string> | string): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  name | string |  |
-|  value | Array&lt;string&gt; \| string |  |
+| Parameter | Type                          | Description |
+| --------- | ----------------------------- | ----------- |
+| name      | string                        |             |
+| value     | Array&lt;string&gt; \| string |             |
 
 <b>Returns:</b>
 
 void
-

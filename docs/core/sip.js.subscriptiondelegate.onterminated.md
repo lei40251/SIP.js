@@ -11,7 +11,7 @@ Subscription termination. This includes non-NOTIFY termination causes only. Thus
 ```typescript
 onTerminated?(): void;
 ```
+
 <b>Returns:</b>
 
 void
-

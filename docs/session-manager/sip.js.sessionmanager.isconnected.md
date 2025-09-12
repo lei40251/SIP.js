@@ -11,7 +11,7 @@ Return true if transport is connected.
 ```typescript
 isConnected(): boolean;
 ```
+
 <b>Returns:</b>
 
 boolean
-

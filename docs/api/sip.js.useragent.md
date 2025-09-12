@@ -9,7 +9,7 @@ A user agent sends and receives requests using a `Transport`<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export declare class UserAgent 
+export declare class UserAgent
 ```
 
 ## Remarks
@@ -18,33 +18,32 @@ A user agent (UA) is associated with a user via the user's SIP address of record
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(options)](./sip.js.useragent._constructor_.md) |  | Constructs a new instance of the <code>UserAgent</code> class. |
+| Constructor                                                   | Modifiers | Description                                                    |
+| ------------------------------------------------------------- | --------- | -------------------------------------------------------------- |
+| [(constructor)(options)](./sip.js.useragent._constructor_.md) |           | Constructs a new instance of the <code>UserAgent</code> class. |
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [configuration](./sip.js.useragent.configuration.md) |  | Required&lt;[UserAgentOptions](./sip.js.useragentoptions.md)<!-- -->&gt; | User agent configuration. |
-|  [contact](./sip.js.useragent.contact.md) |  | Contact | User agent contact. |
-|  [data](./sip.js.useragent.data.md) |  | unknown | Property reserved for use by instance owner. |
-|  [delegate](./sip.js.useragent.delegate.md) |  | [UserAgentDelegate](./sip.js.useragentdelegate.md) \| undefined | Delegate. |
-|  [instanceId](./sip.js.useragent.instanceid.md) |  | string | User agent instance id. |
-|  [state](./sip.js.useragent.state.md) |  | [UserAgentState](./sip.js.useragentstate.md) | User agent state. |
-|  [stateChange](./sip.js.useragent.statechange.md) |  | [Emitter](./sip.js.emitter.md)<!-- -->&lt;[UserAgentState](./sip.js.useragentstate.md)<!-- -->&gt; | User agent state change emitter. |
-|  [transport](./sip.js.useragent.transport.md) |  | [Transport](./sip.js.transport.md) | User agent transport. |
-|  [userAgentCore](./sip.js.useragent.useragentcore.md) |  | UserAgentCore | User agent core. |
+| Property                                             | Modifiers | Type                                                                                               | Description                                  |
+| ---------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| [configuration](./sip.js.useragent.configuration.md) |           | Required&lt;[UserAgentOptions](./sip.js.useragentoptions.md)<!-- -->&gt;                           | User agent configuration.                    |
+| [contact](./sip.js.useragent.contact.md)             |           | Contact                                                                                            | User agent contact.                          |
+| [data](./sip.js.useragent.data.md)                   |           | unknown                                                                                            | Property reserved for use by instance owner. |
+| [delegate](./sip.js.useragent.delegate.md)           |           | [UserAgentDelegate](./sip.js.useragentdelegate.md) \| undefined                                    | Delegate.                                    |
+| [instanceId](./sip.js.useragent.instanceid.md)       |           | string                                                                                             | User agent instance id.                      |
+| [state](./sip.js.useragent.state.md)                 |           | [UserAgentState](./sip.js.useragentstate.md)                                                       | User agent state.                            |
+| [stateChange](./sip.js.useragent.statechange.md)     |           | [Emitter](./sip.js.emitter.md)<!-- -->&lt;[UserAgentState](./sip.js.useragentstate.md)<!-- -->&gt; | User agent state change emitter.             |
+| [transport](./sip.js.useragent.transport.md)         |           | [Transport](./sip.js.transport.md)                                                                 | User agent transport.                        |
+| [userAgentCore](./sip.js.useragent.useragentcore.md) |           | UserAgentCore                                                                                      | User agent core.                             |
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [getLogger(category, label)](./sip.js.useragent.getlogger.md) |  | The logger. |
-|  [getLoggerFactory()](./sip.js.useragent.getloggerfactory.md) |  | The logger factory. |
-|  [isConnected()](./sip.js.useragent.isconnected.md) |  | True if transport is connected. |
-|  [makeURI(uri)](./sip.js.useragent.makeuri.md) | <code>static</code> | Create a URI instance from a string. |
-|  [reconnect()](./sip.js.useragent.reconnect.md) |  | Reconnect the transport. |
-|  [start()](./sip.js.useragent.start.md) |  | Start the user agent. |
-|  [stop()](./sip.js.useragent.stop.md) |  | Stop the user agent. |
-
+| Method                                                        | Modifiers           | Description                          |
+| ------------------------------------------------------------- | ------------------- | ------------------------------------ |
+| [getLogger(category, label)](./sip.js.useragent.getlogger.md) |                     | The logger.                          |
+| [getLoggerFactory()](./sip.js.useragent.getloggerfactory.md)  |                     | The logger factory.                  |
+| [isConnected()](./sip.js.useragent.isconnected.md)            |                     | True if transport is connected.      |
+| [makeURI(uri)](./sip.js.useragent.makeuri.md)                 | <code>static</code> | Create a URI instance from a string. |
+| [reconnect()](./sip.js.useragent.reconnect.md)                |                     | Reconnect the transport.             |
+| [start()](./sip.js.useragent.start.md)                        |                     | Start the user agent.                |
+| [stop()](./sip.js.useragent.stop.md)                          |                     | Stop the user agent.                 |

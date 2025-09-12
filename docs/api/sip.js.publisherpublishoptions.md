@@ -9,5 +9,5 @@ Options for [Publisher.publish()](./sip.js.publisher.publish.md)<!-- -->.
 <b>Signature:</b>
 
 ```typescript
-export interface PublisherPublishOptions 
+export interface PublisherPublishOptions
 ```

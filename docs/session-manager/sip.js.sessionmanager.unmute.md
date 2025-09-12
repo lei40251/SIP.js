@@ -14,9 +14,9 @@ unmute(session: Session): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session | Session to unmute. |
+| Parameter | Type    | Description        |
+| --------- | ------- | ------------------ |
+| session   | Session | Session to unmute. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ void
 ## Remarks
 
 Enable sender's media tracks.
-

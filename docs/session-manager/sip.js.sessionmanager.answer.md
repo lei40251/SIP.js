@@ -14,10 +14,10 @@ answer(session: Session, invitationAcceptOptions?: InvitationAcceptOptions): Pro
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session | Session to answer. |
-|  invitationAcceptOptions | InvitationAcceptOptions | Optional options for Inviter.accept(). |
+| Parameter               | Type                    | Description                            |
+| ----------------------- | ----------------------- | -------------------------------------- |
+| session                 | Session                 | Session to answer.                     |
+| invitationAcceptOptions | InvitationAcceptOptions | Optional options for Inviter.accept(). |
 
 <b>Returns:</b>
 
@@ -26,4 +26,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Accept an incoming INVITE request creating a new Session. Resolves with the response is sent, otherwise rejects. Use `onCallAnswered` delegate method to determine if and when call is established.
-

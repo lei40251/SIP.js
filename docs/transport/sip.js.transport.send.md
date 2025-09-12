@@ -14,11 +14,10 @@ send(message: string): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | string | Message to send. |
+| Parameter | Type   | Description      |
+| --------- | ------ | ---------------- |
+| message   | string | Message to send. |
 
 <b>Returns:</b>
 
 Promise&lt;void&gt;
-

@@ -21,5 +21,5 @@ When the `UserAgent` is constructed, this property is set.
 - If prior `state` is "Connecting" or "Connected", `error` MUST be defined.
 - If prior `state` is "Disconnecting", `error` MUST NOT be undefined.
 ```
-If the transition from "Connected" occurs because the transport user requested it by calling `disconnect`<!-- -->, then `error` will be undefined. Otherwise `error` will be defined to provide an indication that the transport initiated the transition from "Connected" - for example, perhaps network connectivity was lost.
 
+If the transition from "Connected" occurs because the transport user requested it by calling `disconnect`<!-- -->, then `error` will be undefined. Otherwise `error` will be defined to provide an indication that the transport initiated the transition from "Connected" - for example, perhaps network connectivity was lost.

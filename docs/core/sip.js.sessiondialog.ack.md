@@ -14,11 +14,10 @@ ack(options?: RequestOptions): OutgoingAckRequest;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [RequestOptions](./sip.js.requestoptions.md) | ACK options bucket. |
+| Parameter | Type                                         | Description         |
+| --------- | -------------------------------------------- | ------------------- |
+| options   | [RequestOptions](./sip.js.requestoptions.md) | ACK options bucket. |
 
 <b>Returns:</b>
 
 [OutgoingAckRequest](./sip.js.outgoingackrequest.md)
-

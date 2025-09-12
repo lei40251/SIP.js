@@ -5,9 +5,8 @@
 ## UserAgentOptions.hackAllowUnregisteredOptionTags property
 
 > Warning: This API is now obsolete.
-> 
+>
 > TBD
-> 
 
 Hack
 

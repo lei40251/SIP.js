@@ -18,12 +18,11 @@ constructor(scheme: string | undefined, user: string, host: string, port?: numbe
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  scheme | string \| undefined |  |
-|  user | string |  |
-|  host | string |  |
-|  port | number |  |
-|  parameters | { \[name: string\]: string \| number \| null; } |  |
-|  headers | { \[name: string\]: Array&lt;string&gt;; } |  |
-
+| Parameter  | Type                                            | Description |
+| ---------- | ----------------------------------------------- | ----------- |
+| scheme     | string \| undefined                             |             |
+| user       | string                                          |             |
+| host       | string                                          |             |
+| port       | number                                          |             |
+| parameters | { \[name: string\]: string \| number \| null; } |             |
+| headers    | { \[name: string\]: Array&lt;string&gt;; }      |             |

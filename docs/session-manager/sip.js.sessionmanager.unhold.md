@@ -14,9 +14,9 @@ unhold(session: Session): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session | Session to unhold. |
+| Parameter | Type    | Description        |
+| --------- | ------- | ------------------ |
+| session   | Session | Session to unhold. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Send a re-INVITE with new offer indicating "unhold". Resolves when the re-INVITE request is sent, otherwise rejects. Use `onCallHold` delegate method to determine if request is accepted or rejected. See: https://tools.ietf.org/html/rfc6337
-

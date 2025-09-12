@@ -9,14 +9,14 @@ Incoming INVITE request.
 <b>Signature:</b>
 
 ```typescript
-export interface IncomingInviteRequest extends IncomingRequest 
+export interface IncomingInviteRequest extends IncomingRequest
 ```
+
 <b>Extends:</b> [IncomingRequest](./sip.js.incomingrequest.md)
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [accept(options)](./sip.js.incominginviterequest.accept.md) | Send a 2xx positive final response to this request. Defaults to 200. |
-|  [progress(options)](./sip.js.incominginviterequest.progress.md) | Send a 1xx provisional response to this request. Defaults to 180. Excludes 100. |
-
+| Method                                                          | Description                                                                     |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [accept(options)](./sip.js.incominginviterequest.accept.md)     | Send a 2xx positive final response to this request. Defaults to 200.            |
+| [progress(options)](./sip.js.incominginviterequest.progress.md) | Send a 1xx provisional response to this request. Defaults to 180. Excludes 100. |

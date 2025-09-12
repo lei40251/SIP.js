@@ -14,9 +14,8 @@ constructor(logger: Logger, mediaStreamFactory: MediaStreamFactory, sessionDescr
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  logger | Logger | A logger |
-|  mediaStreamFactory | [MediaStreamFactory](./sip.js.mediastreamfactory.md) | A factory to provide a MediaStream |
-|  sessionDescriptionHandlerConfiguration | [SessionDescriptionHandlerConfiguration](./sip.js.sessiondescriptionhandlerconfiguration.md) |  |
-
+| Parameter                              | Type                                                                                         | Description                        |
+| -------------------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------- |
+| logger                                 | Logger                                                                                       | A logger                           |
+| mediaStreamFactory                     | [MediaStreamFactory](./sip.js.mediastreamfactory.md)                                         | A factory to provide a MediaStream |
+| sessionDescriptionHandlerConfiguration | [SessionDescriptionHandlerConfiguration](./sip.js.sessiondescriptionhandlerconfiguration.md) |                                    |

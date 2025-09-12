@@ -11,6 +11,7 @@ Returns true if the `state` equals "Connected".
 ```typescript
 isConnected(): boolean;
 ```
+
 <b>Returns:</b>
 
 boolean
@@ -18,4 +19,3 @@ boolean
 ## Remarks
 
 This is equivalent to `state === TransportState.Connected`<!-- -->.
-

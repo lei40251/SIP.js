@@ -14,12 +14,11 @@ replyStateless(message: IncomingRequestMessage, options: ResponseOptions): Outgo
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | Incoming request message to reply to. |
-|  options | [ResponseOptions](./sip.js.responseoptions.md) |  |
+| Parameter | Type                                                         | Description                           |
+| --------- | ------------------------------------------------------------ | ------------------------------------- |
+| message   | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) | Incoming request message to reply to. |
+| options   | [ResponseOptions](./sip.js.responseoptions.md)               |                                       |
 
 <b>Returns:</b>
 
 [OutgoingResponse](./sip.js.outgoingresponse.md)
-

@@ -16,14 +16,13 @@ protected authenticationGuard(message: IncomingResponseMessage, dialog?: Dialog)
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | [IncomingResponseMessage](./sip.js.incomingresponsemessage.md) |  |
-|  dialog | [Dialog](./sip.js.dialog.md) | If defined, the dialog within which the response was received. |
+| Parameter | Type                                                           | Description                                                    |
+| --------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| message   | [IncomingResponseMessage](./sip.js.incomingresponsemessage.md) |                                                                |
+| dialog    | [Dialog](./sip.js.dialog.md)                                   | If defined, the dialog within which the response was received. |
 
 <b>Returns:</b>
 
 boolean
 
 True if the program execution is to continue in the branch in question. Otherwise the request is retried with credentials and current request processing must stop.
-

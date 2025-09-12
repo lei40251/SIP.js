@@ -14,11 +14,10 @@ onicecandidate?(event: RTCPeerConnectionIceEvent): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  event | RTCPeerConnectionIceEvent | RTCPeerConnectionIceEvent. |
+| Parameter | Type                      | Description                |
+| --------- | ------------------------- | -------------------------- |
+| event     | RTCPeerConnectionIceEvent | RTCPeerConnectionIceEvent. |
 
 <b>Returns:</b>
 
 void
-

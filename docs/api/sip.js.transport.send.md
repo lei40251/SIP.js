@@ -14,9 +14,9 @@ send(message: string): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | string | Message to send. |
+| Parameter | Type   | Description      |
+| --------- | ------ | ---------------- |
+| message   | string | Message to send. |
 
 <b>Returns:</b>
 
@@ -24,11 +24,9 @@ Promise&lt;void&gt;
 
 ## Remarks
 
-
 ```txt
 - If `state` is "Connecting", rejects with an Error.
 - If `state` is "Connected", resolves when the message is sent otherwise rejects with an Error.
 - If `state` is "Disconnecting", rejects with an Error.
 - If `state` is "Disconnected", rejects with an Error.
 ```
-

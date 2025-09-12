@@ -14,12 +14,11 @@ receiveResponse(statusCode: number, response: string): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  statusCode | number | Status code of response. 101-199 not allowed per RFC 4320. |
-|  response | string | Response to send. |
+| Parameter  | Type   | Description                                                |
+| ---------- | ------ | ---------------------------------------------------------- |
+| statusCode | number | Status code of response. 101-199 not allowed per RFC 4320. |
+| response   | string | Response to send.                                          |
 
 <b>Returns:</b>
 
 void
-

@@ -14,11 +14,10 @@ onNotify?(request: IncomingNotifyRequest): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [IncomingNotifyRequest](./sip.js.incomingnotifyrequest.md) | Incoming NOTIFY request. |
+| Parameter | Type                                                       | Description              |
+| --------- | ---------------------------------------------------------- | ------------------------ |
+| request   | [IncomingNotifyRequest](./sip.js.incomingnotifyrequest.md) | Incoming NOTIFY request. |
 
 <b>Returns:</b>
 
 void
-

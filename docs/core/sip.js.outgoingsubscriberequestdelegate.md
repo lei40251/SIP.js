@@ -9,14 +9,14 @@ Delegate providing custom handling of outgoing SUBSCRIBE requests.
 <b>Signature:</b>
 
 ```typescript
-export interface OutgoingSubscribeRequestDelegate extends OutgoingRequestDelegate 
+export interface OutgoingSubscribeRequestDelegate extends OutgoingRequestDelegate
 ```
+
 <b>Extends:</b> [OutgoingRequestDelegate](./sip.js.outgoingrequestdelegate.md)
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [onNotify(request)](./sip.js.outgoingsubscriberequestdelegate.onnotify.md) | Received the initial subscription creating NOTIFY in response to this request. Called for out of dialog SUBSCRIBE requests only (not called for re-SUBSCRIBE requests). |
-|  [onNotifyTimeout()](./sip.js.outgoingsubscriberequestdelegate.onnotifytimeout.md) | Timed out waiting to receive the initial subscription creating NOTIFY in response to this request. Called for out of dialog SUBSCRIBE requests only (not called for re-SUBSCRIBE requests). |
-
+| Method                                                                            | Description                                                                                                                                                                                 |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [onNotify(request)](./sip.js.outgoingsubscriberequestdelegate.onnotify.md)        | Received the initial subscription creating NOTIFY in response to this request. Called for out of dialog SUBSCRIBE requests only (not called for re-SUBSCRIBE requests).                     |
+| [onNotifyTimeout()](./sip.js.outgoingsubscriberequestdelegate.onnotifytimeout.md) | Timed out waiting to receive the initial subscription creating NOTIFY in response to this request. Called for out of dialog SUBSCRIBE requests only (not called for re-SUBSCRIBE requests). |

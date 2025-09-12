@@ -14,9 +14,8 @@ constructor(core: UserAgentCore, message: IncomingRequestMessage, delegate?: Inc
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  core | [UserAgentCore](./sip.js.useragentcore.md) |  |
-|  message | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) |  |
-|  delegate | [IncomingRequestDelegate](./sip.js.incomingrequestdelegate.md) |  |
-
+| Parameter | Type                                                           | Description |
+| --------- | -------------------------------------------------------------- | ----------- |
+| core      | [UserAgentCore](./sip.js.useragentcore.md)                     |             |
+| message   | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md)   |             |
+| delegate  | [IncomingRequestDelegate](./sip.js.incomingrequestdelegate.md) |             |

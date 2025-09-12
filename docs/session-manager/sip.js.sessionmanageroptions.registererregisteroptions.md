@@ -15,4 +15,3 @@ registererRegisterOptions?: RegistererRegisterOptions;
 ## Remarks
 
 Any options provided here are overriden by the options provided via a cal to `register()`<!-- -->.
-

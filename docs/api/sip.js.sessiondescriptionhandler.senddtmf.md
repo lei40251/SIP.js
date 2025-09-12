@@ -14,14 +14,13 @@ sendDtmf(tones: string, options?: unknown): boolean;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  tones | string | A string containing DTMF digits. |
-|  options | unknown | Options object to be used by sendDtmf. |
+| Parameter | Type    | Description                            |
+| --------- | ------- | -------------------------------------- |
+| tones     | string  | A string containing DTMF digits.       |
+| options   | unknown | Options object to be used by sendDtmf. |
 
 <b>Returns:</b>
 
 boolean
 
 True if DTMF send is successful, false otherwise.
-

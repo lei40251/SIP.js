@@ -6,7 +6,6 @@
 
 ## Packages
 
-|  Package | Description |
-|  --- | --- |
-|  [sip.js](./sip.js.md) | A core library implementing low level SIP protocol elements. |
-
+| Package               | Description                                                  |
+| --------------------- | ------------------------------------------------------------ |
+| [sip.js](./sip.js.md) | A core library implementing low level SIP protocol elements. |

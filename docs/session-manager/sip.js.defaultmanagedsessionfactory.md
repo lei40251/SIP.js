@@ -11,7 +11,7 @@ Function which returns a ManagedSessionFactory.
 ```typescript
 export declare function defaultManagedSessionFactory(): ManagedSessionFactory;
 ```
+
 <b>Returns:</b>
 
 [ManagedSessionFactory](./sip.js.managedsessionfactory.md)
-

@@ -9,13 +9,13 @@ An exception indicating the session terminated before the action completed.
 <b>Signature:</b>
 
 ```typescript
-export declare class SessionTerminatedError extends Exception 
+export declare class SessionTerminatedError extends Exception
 ```
+
 <b>Extends:</b> Exception
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)()](./sip.js.sessionterminatederror._constructor_.md) |  | Constructs a new instance of the <code>SessionTerminatedError</code> class |
-
+| Constructor                                                         | Modifiers | Description                                                                |
+| ------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------- |
+| [(constructor)()](./sip.js.sessionterminatederror._constructor_.md) |           | Constructs a new instance of the <code>SessionTerminatedError</code> class |

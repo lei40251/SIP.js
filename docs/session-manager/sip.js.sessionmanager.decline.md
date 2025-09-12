@@ -14,9 +14,9 @@ decline(session: Session): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  session | Session | Session to decline. |
+| Parameter | Type    | Description         |
+| --------- | ------- | ------------------- |
+| session   | Session | Session to decline. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ Promise&lt;void&gt;
 ## Remarks
 
 Reject an incoming INVITE request. Resolves with the response is sent, otherwise rejects. Use `onCallHangup` delegate method to determine if and when call is ended.
-

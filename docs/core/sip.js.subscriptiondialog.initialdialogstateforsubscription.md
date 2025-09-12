@@ -14,12 +14,11 @@ static initialDialogStateForSubscription(outgoingSubscribeRequestMessage: Outgoi
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  outgoingSubscribeRequestMessage | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) |  |
-|  incomingNotifyRequestMessage | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) |  |
+| Parameter                       | Type                                                         | Description |
+| ------------------------------- | ------------------------------------------------------------ | ----------- |
+| outgoingSubscribeRequestMessage | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) |             |
+| incomingNotifyRequestMessage    | [IncomingRequestMessage](./sip.js.incomingrequestmessage.md) |             |
 
 <b>Returns:</b>
 
 [DialogState](./sip.js.dialogstate.md)
-

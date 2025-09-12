@@ -5,9 +5,8 @@
 ## RegistererOptions.instanceId property
 
 > Warning: This API is now obsolete.
-> 
+>
 > Use UserAgentOptions.instanceId
-> 
 
 UUID to provide with "+sip.instance" Contact parameter.
 

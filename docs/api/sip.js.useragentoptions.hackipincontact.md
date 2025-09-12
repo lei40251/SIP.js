@@ -5,9 +5,8 @@
 ## UserAgentOptions.hackIpInContact property
 
 > Warning: This API is now obsolete.
-> 
+>
 > TBD
-> 
 
 Hack
 

@@ -14,9 +14,9 @@ onMessageReceived?(message: string): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  message | string | The message received. |
+| Parameter | Type   | Description           |
+| --------- | ------ | --------------------- |
+| message   | string | The message received. |
 
 <b>Returns:</b>
 
@@ -25,4 +25,3 @@ void
 ## Remarks
 
 Callback for handling incoming MESSAGE requests.
-

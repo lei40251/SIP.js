@@ -14,11 +14,10 @@ onicecandidateerror?(event: RTCPeerConnectionIceErrorEvent): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  event | RTCPeerConnectionIceErrorEvent | RTCPeerConnectionIceErrorEvent. |
+| Parameter | Type                           | Description                     |
+| --------- | ------------------------------ | ------------------------------- |
+| event     | RTCPeerConnectionIceErrorEvent | RTCPeerConnectionIceErrorEvent. |
 
 <b>Returns:</b>
 
 void
-

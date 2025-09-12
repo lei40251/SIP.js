@@ -9,13 +9,12 @@ Configuration for SessionDescriptionHandler.
 <b>Signature:</b>
 
 ```typescript
-export interface SessionDescriptionHandlerConfiguration 
+export interface SessionDescriptionHandlerConfiguration
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [iceGatheringTimeout](./sip.js.sessiondescriptionhandlerconfiguration.icegatheringtimeout.md) |  | number | The maximum duration to wait in ms for ICE gathering to complete. If undefined, implementation dependent. If zero, no timeout. |
-|  [peerConnectionConfiguration](./sip.js.sessiondescriptionhandlerconfiguration.peerconnectionconfiguration.md) |  | RTCConfiguration | Peer connection options. |
-
+| Property                                                                                                      | Modifiers | Type             | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------- | --------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| [iceGatheringTimeout](./sip.js.sessiondescriptionhandlerconfiguration.icegatheringtimeout.md)                 |           | number           | The maximum duration to wait in ms for ICE gathering to complete. If undefined, implementation dependent. If zero, no timeout. |
+| [peerConnectionConfiguration](./sip.js.sessiondescriptionhandlerconfiguration.peerconnectionconfiguration.md) |           | RTCConfiguration | Peer connection options.                                                                                                       |

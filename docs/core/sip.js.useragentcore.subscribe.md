@@ -14,12 +14,11 @@ subscribe(request: OutgoingRequestMessage, delegate?: OutgoingSubscribeRequestDe
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  request | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md) | Outgoing request. |
-|  delegate | [OutgoingSubscribeRequestDelegate](./sip.js.outgoingsubscriberequestdelegate.md) | Request delegate. |
+| Parameter | Type                                                                             | Description       |
+| --------- | -------------------------------------------------------------------------------- | ----------------- |
+| request   | [OutgoingRequestMessage](./sip.js.outgoingrequestmessage.md)                     | Outgoing request. |
+| delegate  | [OutgoingSubscribeRequestDelegate](./sip.js.outgoingsubscriberequestdelegate.md) | Request delegate. |
 
 <b>Returns:</b>
 
 [OutgoingSubscribeRequest](./sip.js.outgoingsubscriberequest.md)
-
